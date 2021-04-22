@@ -1,5 +1,5 @@
 {
-  "name": "business-market",
+  "name": "house-e-hostel",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -12,14 +12,13 @@
     "IE 11"
   ],
   "author": "Bruno Brasolin",
-  "homepage": "https://github.com/BrunoBrasolin/desafios-kbrtec/desafio-1/",
+  "homepage": "https://github.com/BrunoBrasolin/desafios-kbrtec/desafio-2/",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-concat": "^2.6.1",
+    "gulp-connect-php": "^1.0.3",
     "gulp-minify": "^3.1.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-webserver": "^0.9.1",
-    "node-sass": "^5.0.0"
+    "gulp-sass": "^4.1.0"
   }
 }
