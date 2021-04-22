@@ -1,0 +1,240 @@
+#cadastro-page {
+  background: url("../img/cadastro-background.png");
+  background-size: cover;
+  background-position: center;
+
+  .main {
+    height: 100%;
+    width: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+
+    .title {
+      margin-bottom: -60px;
+      position: relative;
+      margin-top: 2rem;
+
+      &::before {
+        content: "";
+        transform: rotate(45deg);
+        background: linear-gradient(99.95deg, #1d737e -2.54%, #4fb9c7 114.45%);
+        position: absolute;
+        top: calc(-300px / 2 - 2rem);
+        left: calc(50% - 300px / 2);
+        height: 300px;
+        width: 300px;
+        border-radius: 50px;
+      }
+
+      img {
+        height: 120px;
+        width: auto;
+        position: relative;
+      }
+    }
+
+    .content {
+      background-color: #000;
+      border-radius: 25px;
+      margin: 0 auto;
+      padding: 120px;
+      width: 50%;
+      height: 80%;
+      margin-bottom: calc(60px + 2rem);
+
+      .list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style-type: none;
+
+        .item {
+          position: relative;
+          cursor: pointer;
+
+          .number,
+          .check {
+            font: 700 13px $font-source-sans-pro;
+            position: relative;
+            z-index: 2;
+          }
+
+          .number {
+            color: #fff;
+          }
+
+          .check {
+            display: none;
+            font-size: 1.5rem;
+            color: #000;
+          }
+
+          .square {
+            position: absolute;
+            top: calc(50% - 45px / 2);
+            left: calc(50% - 45px / 2);
+            height: 45px;
+            width: 45px;
+            border-radius: 15px;
+            border: 2px solid $green;
+            transform: rotate(45deg);
+          }
+
+          .check {
+            z-index: 2;
+            position: relative;
+          }
+
+          &.active {
+            .number {
+              display: none;
+            }
+
+            .check {
+              display: block;
+            }
+
+            .square {
+              background-color: $green;
+            }
+          }
+          @media screen and (max-width: 1300px) {
+            .dots {
+              display: none;
+            }
+          }
+
+          .dots-next {
+            top: 50%;
+            right: -86px;
+          }
+
+          .dots.dots-prev {
+            top: 50%;
+            left: -90px;
+          }
+        }
+      }
+
+      .subtitle {
+        color: #fff;
+        font-weight: 300;
+        text-align: center;
+
+        &,
+        .strong {
+          text-transform: uppercase;
+          font-size: 25px;
+          font-family: $font-oswald;
+          margin: 2rem 0;
+        }
+      }
+
+      .step:not(.step-1) {
+        display: none;
+      }
+
+      .form {
+        .fieldset {
+          &.step-1 {
+            display: flex;
+          }
+
+          flex-direction: column;
+          align-items: center;
+
+          .input-container {
+            margin: 1rem 0;
+
+            &,
+            .input {
+              color: #fff;
+            }
+
+            .input {
+              &,
+              &::placeholder {
+                font-size: 0.9rem;
+              }
+            }
+          }
+
+          .button {
+            @include button(0.8rem 2rem);
+          }
+
+          .select {
+            .option {
+              color: #000;
+            }
+          }
+        }
+      }
+
+      .obrigado {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .obrigado-subtitle,
+        .text,
+        .link {
+          color: #fff;
+          text-align: center;
+        }
+
+        svg {
+          margin: 2rem 0;
+        }
+
+        .link {
+          margin-top: 1rem;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    @media screen and (max-width: 960px) {
+      .content {
+        width: 60%;
+        padding: {
+          left: 5rem;
+          right: 5rem;
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .content {
+        width: 80%;
+        padding: {
+          left: 3rem;
+          right: 3rem;
+        }
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      .content {
+        width: 90%;
+        padding: {
+          left: 2rem;
+          right: 2rem;
+        }
+      }
+    }
+  }
+
+  .cadastro-footer {
+    background-color: #000;
+    padding: 2rem 4rem;
+    display: flex;
+
+    .designed {
+      margin-left: auto;
+    }
+  }
+}

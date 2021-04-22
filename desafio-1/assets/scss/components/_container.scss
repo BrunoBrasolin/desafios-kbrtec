@@ -1,0 +1,10 @@
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+
+  @media screen and (max-width: 600px) {
+    padding-left: $mobile-padding-x;
+    padding-right: $mobile-padding-x;
+  }
+}

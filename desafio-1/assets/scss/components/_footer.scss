@@ -1,0 +1,43 @@
+.footer {
+  background-color: #000;
+
+  .content {
+    @extend .container;
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+    .text {
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      font-family: $font-fira-sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 21px;
+
+      small {
+        font-family: $font-fira-sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 21px;
+        color: #4b4b4b;
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .content {
+      flex-direction: column;
+
+      > * {
+        margin-top: 2rem;
+      }
+    }
+  }
+}

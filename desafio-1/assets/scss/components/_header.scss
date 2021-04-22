@@ -1,0 +1,114 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  width: 100%;
+
+  .logo::after {
+    content: "";
+    background: linear-gradient(99.95deg, #1d737e -2.54%, #4fb9c7 114.45%);
+    border-radius: 57px;
+    transform: rotate(-45deg);
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: calc(0px - 150px / 2);
+    left: calc(0px - 150px / 3);
+    z-index: -1;
+  }
+
+  .background-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .div-helper {
+    display: flex;
+    align-items: center;
+
+    .more-info {
+      @include button(15px 30px, $blue-gradient);
+      color: $green;
+      margin-right: 2rem;
+      transition: box-shadow 0.5s;
+
+      &:hover {
+        box-shadow: 0 5px 20px rgba(#000, 0.1);
+      }
+    }
+
+    .menu {
+      display: flex;
+      cursor: pointer;
+      height: calc((0.25em * 3) + (10px * 2));
+      align-items: center;
+      justify-content: center;
+
+      span {
+        width: 3em;
+        height: 0.25em;
+        background-color: #000;
+        border-radius: 5px;
+        transition: all 0.25s;
+        position: relative;
+
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          width: 1.5em;
+          height: 0.25em;
+          background-color: #197081;
+          border-radius: 5px;
+          transition: all 0.25s;
+        }
+
+        &::before {
+          transform: translateY(-10px);
+        }
+
+        &::after {
+          transform: translateY(10px);
+          right: 0;
+        }
+      }
+
+      &:hover {
+        span::after,
+        span::before {
+          width: 3em;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    justify-content: center;
+
+    .logo {
+      img {
+        height: 7rem;
+      }
+
+      &::after {
+        height: 13rem;
+        width: 13rem;
+        top: calc(-13rem / 4);
+        left: calc(50% - 13rem / 2);
+      }
+    }
+
+    .div-helper {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .logo::after {
+      content: none;
+    }
+  }
+}

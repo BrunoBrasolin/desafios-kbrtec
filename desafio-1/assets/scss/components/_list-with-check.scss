@@ -1,0 +1,28 @@
+.list-with-check {
+  position: relative;
+
+  &::before,
+  &::after {
+    transition: left 0.1s;
+  }
+  @include check(20px);
+
+  &::before {
+    left: -25px;
+  }
+
+  &::after {
+    top: 2px;
+    left: -23px;
+  }
+
+  &:hover {
+    &::before {
+      left: -30px;
+    }
+
+    &::after {
+      left: -28px;
+    }
+  }
+}

@@ -1,0 +1,145 @@
+.modal {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  z-index: -99;
+}
+
+.modal.active {
+  background-color: rgba(#333, 0.5);
+  height: 100vh;
+  width: 100vw;
+  right: 0;
+  cursor: pointer;
+  z-index: 99;
+  opacity: 1;
+  transition: opacity 0.5s;
+
+  &,
+  .content,
+  .before,
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content {
+    background: url("../img/modal-background.png");
+    background-position: center;
+    background-size: cover;
+    max-height: 650px;
+    height: 80%;
+    max-width: 1000px;
+    width: 80%;
+    margin: 0 auto;
+    cursor: default;
+    padding: 2rem;
+    overflow: hidden;
+    border-radius: 18px;
+    position: relative;
+
+    .close-icon {
+      position: absolute;
+      cursor: pointer;
+      top: 1.5rem;
+      right: 1.5rem;
+      padding: 0.5rem;
+    }
+
+    .image-container {
+      position: absolute;
+      left: -105px;
+      top: -101px;
+    }
+
+    .logo-container {
+      display: none;
+      position: relative;
+      margin-bottom: 2rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background: linear-gradient(99.95deg, #1d737e -2.54%, #4fb9c7 114.45%);
+        border-radius: 57px;
+        width: 300px;
+        height: 300px;
+        transform: rotate(45deg);
+        top: calc(50% - 215px);
+        left: calc(50% - 150px);
+      }
+
+      img {
+        position: relative;
+      }
+    }
+
+    .before {
+      justify-content: space-evenly;
+      position: relative;
+      width: 50%;
+
+      .title {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 37.05px;
+        cursor: text;
+        margin-bottom: 1rem;
+      }
+
+      .form {
+        width: 100%;
+
+        .button {
+          @include button(1rem 3rem, $blue-gradient);
+          margin-top: 1rem;
+          color: #fff;
+          transition: box-shadow 0.5s;
+
+          &:hover {
+            box-shadow: 0 5px 20px rgba(#000, 0.1);
+          }
+        }
+      }
+    }
+
+    .after {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+
+      svg {
+        margin: 2rem 0;
+      }
+    }
+
+    @media screen and (max-width: 1050px) {
+      height: auto;
+      max-height: inherit;
+      .image-container {
+        display: none;
+      }
+
+      .logo-container {
+        display: flex;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .before {
+        width: 80%;
+        .title {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    @media screen and (max-width: 450px) {
+      .before {
+        width: 100%;
+      }
+    }
+  }
+}

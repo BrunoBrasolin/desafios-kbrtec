@@ -1,0 +1,25 @@
+@mixin check($size) {
+  &::before {
+    content: "✓";
+    font-size: $size * 0.6;
+    color: #00aa54;
+    background-color: $green;
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: $size;
+    width: $size;
+  }
+
+  &::after {
+    content: "";
+    border: 1px solid #00aa54;
+    border-radius: 50%;
+    position: absolute;
+    height: $size * 0.7;
+    width: $size * 0.7;
+  }
+}

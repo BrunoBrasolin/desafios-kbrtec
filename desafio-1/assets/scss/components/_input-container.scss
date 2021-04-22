@@ -1,0 +1,72 @@
+.input-container {
+  position: relative;
+  width: 100%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: calc(2rem - 5px);
+    width: 0;
+    height: 2px;
+    background-color: $green;
+    transition: width 0.5s;
+  }
+
+  &.active {
+    .label {
+      top: -5px;
+      font-size: 0.8rem;
+    }
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &.error {
+    &::after {
+      background-color: red;
+    }
+  }
+
+  .label {
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    font-size: 1rem;
+    transition: top 0.2s, font-size 0.2s;
+    cursor: text;
+    font-weight: 700;
+    font-family: $font-source-sans-pro;
+  }
+
+  .input {
+    width: 100%;
+    border: none;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    padding: 1rem 0;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-text-fill-color: #000;
+      -webkit-box-shadow: 0 0 0px 1000px white inset;
+      box-shadow: 0 0 0px 1000px white inset;
+    }
+  }
+
+  .error-message {
+    position: absolute;
+    bottom: calc(1rem - 5px);
+    left: 0;
+
+    &,
+    .b {
+      font-size: 0.75rem;
+      color: red;
+    }
+  }
+}

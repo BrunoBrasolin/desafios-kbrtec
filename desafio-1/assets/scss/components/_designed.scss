@@ -1,0 +1,18 @@
+.designed {
+  display: flex;
+  align-items: center;
+  color: #fff;
+
+  small {
+    font-family: $font-poppins;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 19px;
+    margin: 0.5rem;
+  }
+
+  img {
+    height: 20px;
+    width: auto;
+  }
+}
