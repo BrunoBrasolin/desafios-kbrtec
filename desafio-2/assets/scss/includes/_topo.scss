@@ -1,0 +1,24 @@
+section.topo {
+  background-color: $salmao;
+  padding: {
+    top: 1rem;
+    bottom: 1rem;
+  }
+
+  .content {
+    @extend .container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .link {
+      color: #fff;
+    }
+
+    .redes-sociais {
+      .link {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}

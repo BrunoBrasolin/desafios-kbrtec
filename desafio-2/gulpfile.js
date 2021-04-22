@@ -37,7 +37,7 @@ function compImg() {
 }
 
 function serve() {
-  server.server();
+  server.server({ port: 8001 });
 }
 
 function watchFiles() {
