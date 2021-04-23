@@ -5,8 +5,7 @@ section.topo {
     bottom: 1rem;
   }
 
-  .content {
-    @extend .container;
+  .conteudo {
     display: flex;
     align-items: center;
     justify-content: space-between;

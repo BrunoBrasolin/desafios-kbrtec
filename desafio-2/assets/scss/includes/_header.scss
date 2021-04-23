@@ -1,0 +1,36 @@
+.cabecalho {
+  .conteudo {
+    @extend .container;
+
+    .primeira-linha {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 0;
+
+      .link {
+        display: flex;
+        align-items: center;
+
+        i {
+          margin-right: 0.5rem;
+        }
+      }
+
+      .esquerda .link {
+        color: #000;
+        font-weight: bold;
+
+        i {
+          color: $salmao;
+        }
+      }
+
+      .direita .link {
+        background-color: $salmao;
+        color: white;
+        padding: 0.75rem;
+      }
+    }
+  }
+}

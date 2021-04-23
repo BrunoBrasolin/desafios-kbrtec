@@ -11,5 +11,23 @@
 </head>
 
 <body>
+    <header class="cabecalho">
+        <?php include_once 'topo.php'; ?>
+        <section class="conteudo">
+            <div class="primeira-linha">
+                <div class="esquerda">
+                    <a class="link" href="https://api.whatsapp.com/send?phone=5500000000000" target="_blank" title="WhatsApp | House & Hostel">
+                        <i class="fab fa-lg fa-whatsapp"></i>
+                        (00) 00000-0000
+                    </a>
+                </div>
 
-    <?php include_once 'topo.php'; ?>
+                <div class="direita">
+                    <a class="link" href="/faca-sua-reserva" title="Faça sua Reserva | House & Hostel">
+                        <i class="far fa-lg fa-calendar-alt"></i>
+                        Faça sua Reserva
+                    </a>
+                </div>
+            </div>
+        </section>
+    </header>
