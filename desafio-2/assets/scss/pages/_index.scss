@@ -104,3 +104,88 @@ section.banner {
     }
   }
 }
+
+section.acomodacoes {
+  background-color: #f4f6f8;
+
+  .acomodacoes-conteudo {
+    @extend .container;
+    padding: {
+      top: 5rem;
+      bottom: 10rem;
+    }
+
+    .titulo {
+      text-align: center;
+      margin-bottom: 3rem;
+      @extend .underline;
+    }
+
+    .lista {
+      display: flex;
+      justify-content: space-between;
+
+      .item {
+        width: 28%;
+        background-color: #ebedf1;
+
+        .imagem {
+          z-index: -1;
+          width: 100%;
+          height: auto;
+        }
+        .inferior {
+          padding: 1rem;
+
+          .conteudo {
+            margin-top: -30%;
+            background-color: #fff;
+            position: relative;
+            padding: 2rem;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: 0.2s;
+
+            .subtitulo {
+              @extend .underline;
+              margin-bottom: 1.5rem;
+            }
+
+            .texto {
+              padding: 1.5rem 0;
+              font-size: 0.9rem;
+            }
+
+            .link {
+              text-transform: uppercase;
+              padding: 0.25rem 0.75rem;
+              border: 1px solid $salmao;
+              color: $salmao;
+              font-family: $fonte-titulo;
+              font-weight: 700;
+            }
+          }
+        }
+
+        &:hover {
+          .inferior {
+            .conteudo {
+              border-color: $salmao;
+              margin-top: -35%;
+              box-shadow: 0 0 20px 0px rgba(#000, 0.05);
+
+              .subtitulo {
+                color: $salmao;
+              }
+
+              .link {
+                background-color: $salmao;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

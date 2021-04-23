@@ -47,10 +47,9 @@
 
           .logo {
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            left: calc(50% - 215px / 2);
             top: 0;
-            height: 225px;
+            width: 215px;
             z-index: 2;
           }
         }

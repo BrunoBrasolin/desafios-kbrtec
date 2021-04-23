@@ -1,0 +1,13 @@
+.underline {
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 50px;
+    height: 1px;
+    position: absolute;
+    bottom: -20px;
+    left: calc(50% - 25px);
+    background-color: $salmao;
+  }
+}
