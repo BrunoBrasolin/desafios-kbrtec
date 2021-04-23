@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="../public/css/main.css" />
+    <link rel="stylesheet" href="public/css/main.css" />
     <title>House & Hostel</title>
 </head>
 
@@ -35,7 +34,11 @@
                     <li><a href="/" class="item">O HOSTEL</a></li>
                     <li><a href="/" class="item">ACOMODAÇÃO</a></li>
                     <li><a href="/" class="item">FOTOS</a></li>
-                    <li><a href="/" class="item"><img src="public/img/full-logo.png" class="logo" alt="Logo House & Hostel" title="Logo House & Hostel"></a></li>
+                    <li>
+                        <a href="/" class="item">
+                            <h1><img src="public/img/full-logo.png" class="logo" alt="Logo House & Hostel" title="Logo House & Hostel"></h1>
+                        </a>
+                    </li>
                     <li><a href="/" class="item">BLOG</a></li>
                     <li><a href="/" class="item">LOCALIZAÇÃO</a></li>
                     <li><a href="/" class="item">CONTATOS</a></li>

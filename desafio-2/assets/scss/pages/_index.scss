@@ -1,0 +1,106 @@
+section.banner {
+  .banner-slider {
+    .banner-item {
+      position: relative;
+      height: 600px;
+      overflow: hidden;
+
+      .imagem-fundo {
+        position: absolute;
+        height: auto;
+        width: 100%;
+        z-index: -1;
+      }
+
+      .conteudo {
+        @extend .container;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        color: #fff;
+        text-transform: uppercase;
+
+        .subtitulo {
+          font-weight: 300;
+          font-size: 1.25rem;
+        }
+
+        .titulo {
+          font-size: 3rem;
+          line-height: 3.5rem;
+          letter-spacing: 3px;
+          margin: {
+            top: 1rem;
+            bottom: 3rem;
+          }
+        }
+
+        .link {
+          color: #fff;
+          font-weight: 700;
+          font-size: 1.25rem;
+          position: relative;
+
+          &::before,
+          &::after {
+            content: "";
+            width: 40%;
+            height: 200%;
+            position: absolute;
+            z-index: -1;
+          }
+
+          &::before {
+            bottom: -100%;
+            left: -15px;
+            border: {
+              bottom: 2px solid $salmao;
+              left: 2px solid $salmao;
+            }
+          }
+          &::after {
+            top: -100%;
+            right: -15px;
+            border: {
+              top: 2px solid $salmao;
+              right: 2px solid $salmao;
+            }
+          }
+        }
+      }
+    }
+
+    .slick-dots {
+      display: flex;
+
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+
+      li:not(:last-child) {
+        margin-right: 1rem;
+      }
+
+      li {
+        button {
+          font-size: 0;
+          border: 1px solid #fff;
+          background-color: transparent;
+          height: 10px;
+          width: 10px;
+          transition: background-color 0.2s;
+          border-radius: 0;
+        }
+
+        &.slick-active {
+          button {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
