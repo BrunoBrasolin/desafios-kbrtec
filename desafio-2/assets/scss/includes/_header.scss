@@ -32,5 +32,27 @@
         padding: 0.75rem;
       }
     }
+
+    .segunda-linha {
+      .itens {
+        display: flex;
+        justify-content: space-between;
+
+        .item {
+          font-weight: 300;
+          font-family: $fonte-titulo;
+          color: #000;
+          font-size: 1.1rem;
+
+          .logo {
+            position: relative;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+          }
+        }
+      }
+    }
   }
 }

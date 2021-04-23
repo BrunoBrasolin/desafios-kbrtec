@@ -29,5 +29,17 @@
                     </a>
                 </div>
             </div>
+
+            <nav class="segunda-linha">
+                <ul class="itens">
+                    <li><a href="/" class="item">O HOSTEL</a></li>
+                    <li><a href="/" class="item">ACOMODAÇÃO</a></li>
+                    <li><a href="/" class="item">FOTOS</a></li>
+                    <li><a href="/" class="item"><img src="public/img/full-logo.png" class="logo" alt="Logo House & Hostel" title="Logo House & Hostel"></a></li>
+                    <li><a href="/" class="item">BLOG</a></li>
+                    <li><a href="/" class="item">LOCALIZAÇÃO</a></li>
+                    <li><a href="/" class="item">CONTATOS</a></li>
+                </ul>
+            </nav>
         </section>
     </header>

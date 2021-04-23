@@ -41,10 +41,10 @@ function serve() {
 }
 
 function watchFiles() {
-  serve();
   gulp.watch(paths.dev.scss, gulp.series("compScss"));
   gulp.watch([paths.dev.js, paths.dev.jsLibs], gulp.series("compJs"));
   gulp.watch(paths.dev.img, gulp.series("compImg"));
+  serve();
 }
 
 gulp.task("compScss", compScss);
