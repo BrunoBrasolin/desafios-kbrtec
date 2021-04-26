@@ -1,0 +1,14 @@
+@mixin botao-transparente($background-color: $salmao, $border-color: $salmao, $color: $salmao, $padding: 0.25rem 0.75rem) {
+  text-transform: uppercase;
+  border: 1px solid $border-color;
+  color: $color;
+  font-family: $fonte-titulo;
+  font-weight: 700;
+  padding: $padding;
+  transition: background-color 0.2s, color 0.2s;
+
+  &:hover {
+    background-color: $border-color;
+    color: #fff;
+  }
+}

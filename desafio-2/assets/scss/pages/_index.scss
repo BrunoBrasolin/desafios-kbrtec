@@ -110,20 +110,21 @@ section.acomodacoes {
 
   .acomodacoes-conteudo {
     @extend .container;
-    padding: {
-      top: 5rem;
-      bottom: 10rem;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0;
 
     .titulo {
       text-align: center;
-      margin-bottom: 3rem;
       @extend .underline;
     }
 
     .lista {
       display: flex;
       justify-content: space-between;
+      margin: 3rem 0;
 
       .item {
         width: 28%;
@@ -157,12 +158,7 @@ section.acomodacoes {
             }
 
             .link {
-              text-transform: uppercase;
-              padding: 0.25rem 0.75rem;
-              border: 1px solid $salmao;
-              color: $salmao;
-              font-family: $fonte-titulo;
-              font-weight: 700;
+              @include botao-transparente(transparent, $salmao, $salmao, 0.25rem 0.75rem);
             }
           }
         }
@@ -177,14 +173,194 @@ section.acomodacoes {
               .subtitulo {
                 color: $salmao;
               }
-
-              .link {
-                background-color: $salmao;
-                color: #fff;
-              }
             }
           }
         }
+      }
+    }
+
+    .botao {
+      @include botao-transparente(transparent, $salmao, $salmao, 0.25rem 0.75rem);
+    }
+  }
+}
+
+section.sobre {
+  @extend .container;
+  .linha {
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem 0;
+
+    .esquerda {
+      width: 64%;
+
+      .subtitulo {
+        font-weight: 300;
+      }
+
+      .titulo {
+        @extend .underline;
+        display: inline;
+
+        &::after {
+          left: 0;
+        }
+      }
+
+      .texto {
+        padding: 2.5rem 0;
+        font-size: 0.9rem;
+      }
+
+      .estrutura {
+        font-weight: 300;
+        width: fit-content;
+        position: relative;
+
+        &::after {
+          content: url("../img/sobre-seta.png");
+          position: absolute;
+          top: calc(50% + 2px);
+          right: -125%;
+        }
+      }
+    }
+
+    .direita {
+      width: 28%;
+      padding: 0.5rem;
+      position: relative;
+      background-color: #fff;
+
+      &::after,
+      &::before {
+        content: "";
+        width: 100px;
+        height: 70px;
+        position: absolute;
+        z-index: -1;
+        transition: 0.2s;
+      }
+
+      &::after {
+        right: -25px;
+        top: -20px;
+        border: {
+          top: 4px solid #ebedf1;
+          right: 4px solid #ebedf1;
+          left: 4px solid #ebedf1;
+        }
+      }
+      &::before {
+        left: -25px;
+        bottom: -20px;
+        border: {
+          right: 4px solid #ebedf1;
+          bottom: 4px solid #ebedf1;
+          left: 4px solid #ebedf1;
+        }
+      }
+
+      img {
+        transition: transform 0.2s;
+      }
+
+      &:hover {
+        &::after,
+        &::before {
+          transition: 0.8s;
+        }
+        &::after {
+          top: 50%;
+          right: 50%;
+        }
+        &::before {
+          bottom: 50%;
+          left: 50%;
+        }
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  .estrutura-slider {
+    margin-bottom: 10rem;
+
+    .estrutura-arrows-container {
+      padding: 1rem;
+      background-color: #fff;
+      position: absolute;
+      bottom: -17px;
+      z-index: 1;
+      cursor: pointer;
+
+      .estrutura-arrows {
+        background-color: $salmao;
+        color: #fff;
+        padding: 0.5rem 0.75rem;
+        border: 1px solid $salmao;
+        transition: background-color 0.2s, color 0.2s;
+
+        &:hover {
+          background-color: transparent;
+          color: $salmao;
+        }
+      }
+
+      &#estrutura-prev-arrow {
+        padding-right: 0;
+        right: 30%;
+      }
+      &#estrutura-next-arrow {
+        padding-left: 0;
+        left: 70%;
+      }
+    }
+  }
+
+  .estrutura-item {
+    position: relative;
+    height: 300px;
+
+    img {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .texto {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(#000, 0.7);
+      transition: opacity 0.3s;
+
+      .titulo {
+        color: #fff;
+        @extend .h2;
+        font-weight: 300;
+        margin-bottom: 1rem;
+      }
+
+      .botao {
+        @include botao-transparente(transparent, $salmao, #fff);
+      }
+    }
+
+    &:hover {
+      .texto {
+        opacity: 1;
       }
     }
   }
