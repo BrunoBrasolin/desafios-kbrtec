@@ -1,0 +1,52 @@
+.rodape {
+  position: relative;
+  .imagem-fundo {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
+  }
+
+  .conteudo {
+    @extend .container;
+
+    .subtitulo {
+      font-weight: 300;
+    }
+
+    .titulo {
+      @include underline(false);
+    }
+
+    .informacoes {
+      margin-top: 2.5rem;
+      padding: 3rem;
+      display: flex;
+      justify-content: space-around;
+      border: 1px solid $salmao;
+      background-color: rgba(#fff, 0.8);
+
+      .informacao {
+        display: flex;
+
+        .icon {
+          background-color: $salmao;
+          padding: 0.75rem;
+          height: fit-content;
+          color: #fff;
+        }
+
+        .conteudo {
+          display: flex;
+          flex-direction: column;
+
+          .subtitulo {
+            color: $salmao;
+            font-weight: 400;
+            font-family: $fonte-texto;
+          }
+        }
+      }
+    }
+  }
+}

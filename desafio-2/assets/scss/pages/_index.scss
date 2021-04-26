@@ -118,7 +118,7 @@ section.acomodacoes {
 
     .titulo {
       text-align: center;
-      @extend .underline;
+      @include underline();
     }
 
     .lista {
@@ -148,7 +148,7 @@ section.acomodacoes {
             transition: 0.2s;
 
             .subtitulo {
-              @extend .underline;
+              @include underline();
               margin-bottom: 1.5rem;
             }
 
@@ -200,12 +200,8 @@ section.sobre {
       }
 
       .titulo {
-        @extend .underline;
+        @include underline(false);
         display: inline;
-
-        &::after {
-          left: 0;
-        }
       }
 
       .texto {
