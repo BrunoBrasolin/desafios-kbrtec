@@ -2,7 +2,6 @@ section.banner {
   .banner-slider {
     .banner-item {
       position: relative;
-      height: 600px;
       overflow: hidden;
 
       .imagem-fundo {
@@ -10,10 +9,17 @@ section.banner {
         height: auto;
         width: 100%;
         z-index: -1;
+
+        @media screen and (max-width: 540px) {
+          height: 100%;
+          width: auto;
+          object-fit: cover;
+        }
       }
 
       .conteudo {
         @extend .container;
+        padding: 10% 0;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -69,6 +75,24 @@ section.banner {
             }
           }
         }
+
+        @media screen and (max-width: 768px) {
+          align-items: center;
+          text-align: center;
+
+          .titulo {
+            font-size: 2.5rem;
+          }
+
+          .link {
+            font-size: 1rem;
+          }
+        }
+        @media screen and (max-width: 540px) {
+          .titulo {
+            font-size: 2rem;
+          }
+        }
       }
     }
 
@@ -76,7 +100,7 @@ section.banner {
       display: flex;
 
       position: absolute;
-      bottom: 2rem;
+      bottom: 5%;
       left: 50%;
       transform: translateX(-50%);
 
@@ -123,6 +147,7 @@ section.acomodacoes {
 
     .lista {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       margin: 3rem 0;
 
@@ -167,7 +192,6 @@ section.acomodacoes {
           .inferior {
             .conteudo {
               border-color: $salmao;
-              margin-top: -35%;
               box-shadow: 0 0 20px 0px rgba(#000, 0.05);
 
               .subtitulo {
@@ -175,6 +199,19 @@ section.acomodacoes {
               }
             }
           }
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        justify-content: space-evenly;
+        .item {
+          width: 40%;
+          margin-bottom: 1rem;
+        }
+      }
+      @media screen and (max-width: 568px) {
+        .item {
+          width: 80%;
         }
       }
     }
@@ -187,6 +224,7 @@ section.acomodacoes {
 
 section.sobre {
   @extend .container;
+
   .linha {
     display: flex;
     justify-content: space-between;
@@ -220,6 +258,23 @@ section.sobre {
           top: calc(50% + 2px);
           right: -125%;
         }
+        @media screen and (max-width: 768px) {
+          &::after {
+            right: -100%;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 550px) {
+      padding-bottom: 2rem;
+      .esquerda {
+        .estrutura {
+          margin: 0 auto;
+
+          &::after {
+            content: none;
+          }
+        }
       }
     }
 
@@ -228,6 +283,8 @@ section.sobre {
       padding: 0.5rem;
       position: relative;
       background-color: #fff;
+      display: flex;
+      align-items: center;
 
       &::after,
       &::before {
@@ -279,11 +336,27 @@ section.sobre {
           transform: scale(1.1);
         }
       }
+
+      @media screen and (max-width: 1235px) {
+        background: transparent;
+        &::after,
+        &::before {
+          content: none;
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      align-items: center;
+      justify-content: center;
+
+      .direita {
+        display: none;
+      }
     }
   }
 
   .estrutura-slider {
-
     .estrutura-arrows-container {
       padding: 1rem;
       background-color: #fff;

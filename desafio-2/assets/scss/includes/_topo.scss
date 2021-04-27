@@ -20,4 +20,8 @@ section.topo {
       }
     }
   }
+
+  @media screen and(max-width: 490px) {
+    display: none;
+  }
 }

@@ -22,7 +22,11 @@
     }
 
     .informacoes {
-      margin-top: 3rem;
+      margin: {
+        top: 3rem;
+        left: auto;
+        right: auto;
+      }
       padding: 3rem;
       display: flex;
       justify-content: space-around;
@@ -35,10 +39,14 @@
         .icon {
           background-color: $salmao;
           border: 1px solid $salmao;
-          padding: 0.75rem;
           height: fit-content;
           color: #fff;
           transition: 0.2s;
+          height: 2.5rem;
+          width: 2.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .conteudo {
@@ -76,6 +84,23 @@
             border-radius: 8px;
           }
         }
+      }
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        width: fit-content;
+        .informacao {
+          margin-bottom: 1rem;
+          .conteudo {
+            margin: {
+              right: auto;
+              left: 0.5rem;
+            }
+          }
+        }
+      }
+      @media screen and (max-width: 768px) {
+        padding: 1rem;
       }
     }
   }

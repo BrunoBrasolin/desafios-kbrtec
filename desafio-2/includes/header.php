@@ -21,6 +21,10 @@
                     </a>
                 </div>
 
+                <div class="meio">
+                    <h1><img src="public/img/logo.jpg" class="logo" alt="Logo House & Hostel" title="Logo House & Hostel"></h1>
+                </div>
+
                 <div class="direita">
                     <a class="link" href="/faca-sua-reserva" title="Faça sua Reserva | House & Hostel">
                         <i class="far fa-lg fa-calendar-alt"></i>
@@ -28,15 +32,26 @@
                     </a>
                 </div>
             </div>
-
             <nav class="segunda-linha">
+                <div class="mobile-linha">
+                    <a href="/">
+                        <h1 class="mobile-logo">
+                            <img src="public/img/logo.jpg" class="imagem-mobile-logo" alt="Logo House & Hostel" title="Logo House & Hostel">
+                        </h1>
+                    </a>
+                    <button class="mobile-menu">
+                        <i class="fas fa-lg fa-bars"></i>
+                        Menu
+                    </button>
+                </div>
+
                 <ul class="itens">
                     <li><a href="/" class="item">O HOSTEL</a></li>
                     <li><a href="/" class="item">ACOMODAÇÃO</a></li>
                     <li><a href="/" class="item">FOTOS</a></li>
-                    <li>
+                    <li class="logo-item">
                         <a href="/" class="item">
-                            <h1><img src="public/img/full-logo.png" class="logo" alt="Logo House & Hostel" title="Logo House & Hostel"></h1>
+                            <h1><img src="public/img/full-logo.png" class="logo-lista" alt="Logo House & Hostel" title="Logo House & Hostel"></h1>
                         </a>
                     </li>
                     <li><a href="/" class="item">BLOG</a></li>

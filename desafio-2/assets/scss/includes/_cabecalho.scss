@@ -11,6 +11,7 @@
       .link {
         display: flex;
         align-items: center;
+        text-align: center;
 
         i {
           margin-right: 0.5rem;
@@ -26,6 +27,12 @@
         }
       }
 
+      .meio {
+        .logo {
+          display: none;
+        }
+      }
+
       .direita .link {
         background-color: $salmao;
         color: white;
@@ -34,10 +41,19 @@
     }
 
     .segunda-linha {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding-bottom: 1rem;
+
+      .mobile-linha {
+        display: none;
+      }
+
       .itens {
         display: flex;
         justify-content: space-between;
+        width: 100%;
 
         .item {
           font-weight: 300;
@@ -45,12 +61,91 @@
           color: #000;
           font-size: 1.1rem;
 
-          .logo {
+          .logo-lista {
             position: absolute;
             left: calc(50% - 215px / 2);
             top: 0;
             width: 215px;
             z-index: 2;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      .segunda-linha .itens .item .logo-lista {
+        width: 150px;
+        left: calc(50% - 150px / 2);
+        top: 70px;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      .primeira-linha .meio .logo {
+        display: block;
+        height: 100px;
+        width: auto;
+      }
+
+      .segunda-linha .itens .logo-item {
+        display: none;
+      }
+    }
+
+    @media screen and(max-width: 490px) {
+      .primeira-linha {
+        padding-top: 1rem;
+
+        .meio .logo {
+          display: none;
+        }
+      }
+
+      .segunda-linha {
+        flex-direction: column;
+
+        .itens {
+          display: flex;
+          flex-direction: column;
+          text-align: end;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.5s ease-out;
+
+          li {
+            margin-bottom: 0.5rem;
+          }
+
+          &.aberto {
+            max-height: 200px;
+            transition: max-height 0.5s ease-in;
+          }
+        }
+
+        .mobile-linha {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          width: 100%;
+
+          .mobile-menu {
+            display: flex;
+            align-content: center;
+            background-color: $salmao;
+            color: #fff;
+            padding: 0.5rem;
+
+            i {
+              margin-right: 0.5rem;
+            }
+          }
+
+          .mobile-logo {
+            img {
+              height: 100px;
+              width: auto;
+            }
           }
         }
       }
