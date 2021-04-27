@@ -1,6 +1,5 @@
 <footer class="rodape">
     <div class="conteudo">
-
         <h2 class="subtitulo">Fale conosco</h2>
         <h1 class="titulo">
             Reserve sua hospedagem<br />
@@ -28,10 +27,10 @@
                 </div>
                 <div class="conteudo">
                     <h3 class="subtitulo">Endereço</h3>
-                    <p class="texto">
+                    <a href="https://goo.gl/maps/WiydTheXsWZCgEyH7" target="_blank" title="Avenida Miguel Stéfano, 4923, Enseada, Guarujá." class="link">
                         Avenida Miguel Stéfano, 4923<br />
                         Enseada, Guarujá.
-                    </p>
+                    </a>
                 </div>
             </div>
             <div class="informacao">
