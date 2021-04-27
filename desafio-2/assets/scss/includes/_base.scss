@@ -1,0 +1,16 @@
+.base {
+  background-color: $salmao;
+  padding: 2rem 0;
+
+  .conteudo {
+    @extend .container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .item {
+      color: #fff;
+      font-size: 0.8rem;
+    }
+  }
+}
