@@ -1,7 +1,4 @@
 <footer class="rodape">
-    <div class="imagem-fundo">
-        <img src="public/img/contato-fundo.png" alt="Contato | House & Hostel">
-    </div>
     <div class="conteudo">
 
         <h2 class="subtitulo">Fale conosco</h2>
