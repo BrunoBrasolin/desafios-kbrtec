@@ -46,7 +46,7 @@
                 </div>
 
                 <ul class="itens">
-                    <li><a href="sobre.php" class="item" id="sobre">O HOSTEL</a></li>
+                    <li><a href="sobre" class="item" id="sobre">O HOSTEL</a></li>
                     <li><a href="/" class="item">ACOMODAÇÃO</a></li>
                     <li><a href="/" class="item">FOTOS</a></li>
                     <li class="logo-item">
