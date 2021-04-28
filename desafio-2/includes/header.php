@@ -24,7 +24,9 @@
                 </div>
 
                 <div class="meio">
-                    <h1><img src="public/img/logo.jpg" class="logo" alt="Logo House & Hostel" title="Logo House & Hostel"></h1>
+                    <a href="<?= $GLOBALS['home_url'] ?>">
+                        <h1><img src="public/img/logo.jpg" class="logo" alt="Logo House & Hostel" title="Logo House & Hostel"></h1>
+                    </a>
                 </div>
 
                 <div class="direita">
@@ -36,7 +38,7 @@
             </div>
             <nav class="segunda-linha">
                 <div class="mobile-linha">
-                    <a href="/">
+                    <a href="<?= $GLOBALS['home_url'] ?>">
                         <h1 class="mobile-logo">
                             <img src="public/img/logo.jpg" class="imagem-mobile-logo" alt="Logo House & Hostel" title="Logo House & Hostel">
                         </h1>
@@ -48,7 +50,7 @@
                 </div>
 
                 <ul class="itens">
-                    <li><a href="<?= $GLOBALS['home_url'] ?>/sobre" class="item" id="sobre">O HOSTEL</a></li>
+                    <li><a href="<?= $GLOBALS['home_url'] ?>/sobre.php" class="item" id="sobre">O HOSTEL</a></li>
                     <li><a href="/" class="item">ACOMODAÇÃO</a></li>
                     <li><a href="/" class="item">FOTOS</a></li>
                     <li class="logo-item">

@@ -1,5 +1,6 @@
-if (window.location.pathname.replace("/", ""))
-  document.querySelector(`#${window.location.pathname.replace("/", "")}`).classList.add("active");
+let url = window.location.pathname.split("/");
+
+if (url[url.length - 1].replace(".php", "")) document.querySelector(`#${url[url.length - 1].replace(".php", "")}`).classList.add("active");
 
 $(document).ready(function () {
   $(".banner-slider").slick({
