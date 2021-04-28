@@ -31,12 +31,14 @@ section.banner {
         .subtitulo {
           font-weight: 300;
           font-size: 1.25rem;
+          color: #fff;
         }
 
         .titulo {
           font-size: 3rem;
           line-height: 3.5rem;
           letter-spacing: 3px;
+          color: #fff;
           margin: {
             top: 1rem;
             bottom: 3rem;
@@ -48,30 +50,43 @@ section.banner {
           font-weight: 700;
           font-size: 1.25rem;
           position: relative;
+          font-family: $fonte-titulo;
+          letter-spacing: 2px;
+          transition: 0.2s;
 
           &::before,
           &::after {
             content: "";
-            width: 40%;
-            height: 200%;
+            width: 90px;
+            height: 40px;
             position: absolute;
             z-index: -1;
+            transition: 0.2s;
           }
 
           &::before {
-            bottom: -100%;
+            bottom: -20px;
             left: -15px;
             border: {
               bottom: 2px solid $salmao;
               left: 2px solid $salmao;
             }
           }
+
           &::after {
-            top: -100%;
+            top: -20px;
             right: -15px;
             border: {
               top: 2px solid $salmao;
               right: 2px solid $salmao;
+            }
+          }
+
+          &:hover {
+            &::before,
+            &::after {
+              width: 100%;
+              height: calc(100% + 20px);
             }
           }
         }
@@ -82,15 +97,20 @@ section.banner {
 
           .titulo {
             font-size: 2.5rem;
+            line-height: 3rem;
           }
 
           .link {
             font-size: 1rem;
           }
         }
+
         @media screen and (max-width: 540px) {
+          padding: 20% 0;
+
           .titulo {
             font-size: 2rem;
+            line-height: 2.5rem;
           }
         }
       }
@@ -141,6 +161,7 @@ section.acomodacoes {
     padding: 5rem 0;
 
     .titulo {
+      @extend .h1;
       text-align: center;
       @include underline();
     }
@@ -152,7 +173,7 @@ section.acomodacoes {
       margin: 3rem 0;
 
       .item {
-        width: 28%;
+        width: 30%;
         background-color: #ebedf1;
 
         .imagem {
@@ -160,6 +181,7 @@ section.acomodacoes {
           width: 100%;
           height: auto;
         }
+
         .inferior {
           padding: 1rem;
 
@@ -180,6 +202,7 @@ section.acomodacoes {
             .texto {
               padding: 1.5rem 0;
               font-size: 0.9rem;
+              line-height: 1.25rem;
             }
 
             .link {
@@ -201,234 +224,31 @@ section.acomodacoes {
           }
         }
       }
-
-      @media screen and (max-width: 768px) {
-        justify-content: space-evenly;
-        .item {
-          width: 40%;
-          margin-bottom: 1rem;
-        }
-      }
-      @media screen and (max-width: 568px) {
-        .item {
-          width: 80%;
-        }
-      }
     }
 
     .botao {
       @include botao-transparente(transparent, $salmao, $salmao, 0.25rem 0.75rem);
     }
-  }
-}
-
-section.sobre {
-  @extend .container;
-
-  .linha {
-    display: flex;
-    justify-content: space-between;
-    padding: 5rem 0;
-
-    .esquerda {
-      width: 64%;
-
-      .subtitulo {
-        font-weight: 300;
-      }
-
-      .titulo {
-        @include underline(false);
-        display: inline;
-      }
-
-      .texto {
-        padding: 2.5rem 0;
-        font-size: 0.9rem;
-      }
-
-      .estrutura {
-        font-weight: 300;
-        width: fit-content;
-        position: relative;
-
-        &::after {
-          content: url("../img/sobre-seta.png");
-          position: absolute;
-          top: calc(50% + 2px);
-          right: -125%;
-        }
-        @media screen and (max-width: 768px) {
-          &::after {
-            right: -100%;
-          }
-        }
-      }
-    }
-    @media screen and (max-width: 550px) {
-      padding-bottom: 2rem;
-      .esquerda {
-        .estrutura {
-          margin: 0 auto;
-
-          &::after {
-            content: none;
-          }
-        }
-      }
-    }
-
-    .direita {
-      width: 28%;
-      padding: 0.5rem;
-      position: relative;
-      background-color: #fff;
-      display: flex;
-      align-items: center;
-
-      &::after,
-      &::before {
-        content: "";
-        width: 100px;
-        height: 70px;
-        position: absolute;
-        z-index: -1;
-        transition: 0.2s;
-      }
-
-      &::after {
-        right: -25px;
-        top: -20px;
-        border: {
-          top: 4px solid #ebedf1;
-          right: 4px solid #ebedf1;
-          left: 4px solid #ebedf1;
-        }
-      }
-      &::before {
-        left: -25px;
-        bottom: -20px;
-        border: {
-          right: 4px solid #ebedf1;
-          bottom: 4px solid #ebedf1;
-          left: 4px solid #ebedf1;
-        }
-      }
-
-      img {
-        transition: transform 0.2s;
-      }
-
-      &:hover {
-        &::after,
-        &::before {
-          transition: 0.8s;
-        }
-        &::after {
-          top: 50%;
-          right: 50%;
-        }
-        &::before {
-          bottom: 50%;
-          left: 50%;
-        }
-        img {
-          transform: scale(1.1);
-        }
-      }
-
-      @media screen and (max-width: 1235px) {
-        background: transparent;
-        &::after,
-        &::before {
-          content: none;
-        }
-      }
-    }
 
     @media screen and (max-width: 768px) {
-      align-items: center;
-      justify-content: center;
+      padding: 3rem 0;
 
-      .direita {
-        display: none;
-      }
-    }
-  }
+      .lista {
+        justify-content: space-evenly;
+        margin-bottom: 0;
 
-  .estrutura-slider {
-    .estrutura-arrows-container {
-      padding: 1rem;
-      background-color: #fff;
-      position: absolute;
-      bottom: -17px;
-      z-index: 1;
-      cursor: pointer;
-
-      .estrutura-arrows {
-        background-color: $salmao;
-        color: #fff;
-        padding: 0.5rem 0.75rem;
-        border: 1px solid $salmao;
-        transition: background-color 0.2s, color 0.2s;
-
-        &:hover {
-          background-color: transparent;
-          color: $salmao;
+        .item {
+          width: 40%;
+          margin-bottom: 2rem;
         }
       }
-
-      &#estrutura-prev-arrow {
-        padding-right: 0;
-        right: 30%;
-      }
-      &#estrutura-next-arrow {
-        padding-left: 0;
-        left: 70%;
-      }
-    }
-  }
-
-  .estrutura-item {
-    position: relative;
-    height: 300px;
-
-    img {
-      position: absolute;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      z-index: -1;
     }
 
-    .texto {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      opacity: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: rgba(#000, 0.7);
-      transition: opacity 0.3s;
-
-      .titulo {
-        color: #fff;
-        @extend .h2;
-        font-weight: 300;
-        margin-bottom: 1rem;
-      }
-
-      .botao {
-        @include botao-transparente(transparent, $salmao, #fff);
-      }
-    }
-
-    &:hover {
-      .texto {
-        opacity: 1;
+    @media screen and (max-width: 568px) {
+      .lista {
+        .item {
+          width: 80%;
+        }
       }
     }
   }

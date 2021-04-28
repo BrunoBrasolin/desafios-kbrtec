@@ -1,0 +1,247 @@
+section.sobre {
+  .linha {
+    @extend .container;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    .esquerda {
+      width: 64%;
+
+      .subtitulo {
+        font-weight: 300;
+        @extend .h2;
+      }
+
+      .titulo {
+        @include underline(false);
+        @extend .h1;
+        display: inline;
+      }
+
+      .texto {
+        padding: 2.5rem 0;
+        font-size: 0.9rem;
+        line-height: 1.25rem;
+      }
+
+      .estrutura {
+        @extend .h2;
+        font-weight: 300;
+        width: fit-content;
+        position: relative;
+        letter-spacing: 2px;
+
+        &::after {
+          content: url("../img/sobre-seta.png");
+          position: absolute;
+          top: calc(50% + 2px);
+          right: -125%;
+        }
+
+        @media screen and (max-width: 768px) {
+          &::after {
+            right: -100%;
+          }
+        }
+      }
+    }
+
+    .direita {
+      width: 28%;
+      padding: 0.5rem;
+      position: relative;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+
+      &::after,
+      &::before {
+        content: "";
+        width: 100px;
+        height: 70px;
+        position: absolute;
+        z-index: -1;
+        transition: 0.2s;
+      }
+
+      &::after {
+        right: -25px;
+        top: -20px;
+        border: {
+          top: 4px solid #ebedf1;
+          right: 4px solid #ebedf1;
+          left: 4px solid #ebedf1;
+        }
+      }
+      &::before {
+        left: -25px;
+        bottom: -20px;
+        border: {
+          right: 4px solid #ebedf1;
+          bottom: 4px solid #ebedf1;
+          left: 4px solid #ebedf1;
+        }
+      }
+
+      img {
+        transition: transform 0.2s;
+      }
+
+      &:hover {
+        &::after,
+        &::before {
+          transition: 0.8s;
+        }
+        &::after {
+          top: 50%;
+          right: 50%;
+        }
+        &::before {
+          bottom: 50%;
+          left: 50%;
+        }
+
+        img {
+          transform: scale(1.05);
+        }
+      }
+
+      @media screen and (max-width: 1235px) {
+        background: transparent;
+        &::after,
+        &::before {
+          content: none;
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      align-items: center;
+      justify-content: center;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+
+      .esquerda {
+        width: 100%;
+
+        .texto {
+          line-height: 1.55rem;
+          font-size: 1rem;
+        }
+      }
+
+      .direita {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 550px) {
+      padding-bottom: 2rem;
+
+      .esquerda {
+        .estrutura {
+          margin: 0 auto;
+          font-weight: 700;
+
+          &::after {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+
+  .estrutura-slider {
+    @media screen and (min-width: 1200px) {
+      margin-left: calc((100vw - 1200px) / 2 + 0.5rem);
+    }
+    @media screen and (max-width: 1200px) {
+      padding: 1rem;
+    }
+
+    .estrutura-arrows-container {
+      padding: 1rem;
+      background-color: #fff;
+      position: absolute;
+      bottom: -17px;
+      z-index: 1;
+      cursor: pointer;
+
+      .estrutura-arrows {
+        background-color: $salmao;
+        color: #fff;
+        padding: 0.5rem 0.75rem;
+        border: 1px solid $salmao;
+        transition: background-color 0.2s, color 0.2s;
+
+        &:hover {
+          background-color: transparent;
+          color: $salmao;
+        }
+      }
+
+      &#estrutura-prev-arrow {
+        padding-right: 0;
+        right: 30%;
+      }
+
+      &#estrutura-next-arrow {
+        padding-left: 0;
+        left: 70%;
+      }
+    }
+  }
+
+  .estrutura-item {
+    position: relative;
+    height: 300px;
+
+    img {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .texto {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(#000, 0.7);
+      transition: opacity 0.3s;
+
+      .titulo {
+        color: #fff;
+        @extend .h2;
+        font-weight: 300;
+        margin-bottom: 1rem;
+      }
+
+      .botao {
+        @include botao-transparente(transparent, $salmao, #fff);
+      }
+    }
+
+    @media screen and(max-width: 768px) {
+      .texto {
+        opacity: 1;
+        width: 50%;
+      }
+    }
+
+    &:hover {
+      .texto {
+        opacity: 1;
+      }
+    }
+  }
+}

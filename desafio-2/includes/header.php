@@ -15,7 +15,7 @@
         <section class="conteudo">
             <div class="primeira-linha">
                 <div class="esquerda">
-                    <a class="link" href="https://api.whatsapp.com/send?phone=5500000000000" target="_blank" title="WhatsApp | House & Hostel">
+                    <a class="link link-whatsapp" href="https://api.whatsapp.com/send?phone=5500000000000" target="_blank" title="WhatsApp | House & Hostel">
                         <i class="fab fa-lg fa-whatsapp"></i>
                         (00) 00000-0000
                     </a>
@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="direita">
-                    <a class="link" href="/faca-sua-reserva" title="Faça sua Reserva | House & Hostel">
+                    <a class="link link-reserva" href="/faca-sua-reserva" title="Faça sua Reserva | House & Hostel">
                         <i class="far fa-lg fa-calendar-alt"></i>
                         Faça sua Reserva
                     </a>
@@ -46,7 +46,7 @@
                 </div>
 
                 <ul class="itens">
-                    <li><a href="/" class="item">O HOSTEL</a></li>
+                    <li><a href="sobre.php" class="item" id="sobre">O HOSTEL</a></li>
                     <li><a href="/" class="item">ACOMODAÇÃO</a></li>
                     <li><a href="/" class="item">FOTOS</a></li>
                     <li class="logo-item">
@@ -57,6 +57,18 @@
                     <li><a href="/" class="item">BLOG</a></li>
                     <li><a href="/" class="item">LOCALIZAÇÃO</a></li>
                     <li><a href="/" class="item">CONTATOS</a></li>
+                    <li class="mobile-item">
+                        <a class="link link-whatsapp" href="https://api.whatsapp.com/send?phone=5500000000000" target="_blank" title="WhatsApp | House & Hostel">
+                            <i class="fab fa-lg fa-whatsapp"></i>
+                            (00) 00000-0000
+                        </a>
+                    </li>
+                    <li class="mobile-item">
+                        <a class="link link-reserva" href="/faca-sua-reserva" title="Faça sua Reserva | House & Hostel">
+                            <i class="far fa-lg fa-calendar-alt"></i>
+                            Faça sua Reserva
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </section>

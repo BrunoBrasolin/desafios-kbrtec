@@ -2,6 +2,35 @@
   .conteudo {
     @extend .container;
 
+    .link-whatsapp {
+      color: #000;
+      font-weight: bold;
+
+      i {
+        color: $salmao;
+        transition: margin-right 0.2s;
+      }
+
+      &:hover {
+        i {
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    .link-reserva {
+      background-color: $salmao;
+      color: white;
+      padding: 0.75rem;
+      border: 1px solid $salmao;
+      transition: background-color 0.2s, color 0.2s;
+
+      &:hover {
+        background-color: transparent;
+        color: $salmao;
+      }
+    }
+
     .primeira-linha {
       display: flex;
       justify-content: space-between;
@@ -18,25 +47,10 @@
         }
       }
 
-      .esquerda .link {
-        color: #000;
-        font-weight: bold;
-
-        i {
-          color: $salmao;
-        }
-      }
-
       .meio {
         .logo {
           display: none;
         }
-      }
-
-      .direita .link {
-        background-color: $salmao;
-        color: white;
-        padding: 0.75rem;
       }
     }
 
@@ -54,21 +68,30 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
+      }
 
-        .item {
-          font-weight: 300;
-          font-family: $fonte-titulo;
-          color: #000;
-          font-size: 1.1rem;
+      .item {
+        font-weight: 300;
+        font-family: $fonte-titulo;
+        color: #000;
+        font-size: 1.1rem;
 
-          .logo-lista {
-            position: absolute;
-            left: calc(50% - 215px / 2);
-            top: 0;
-            width: 215px;
-            z-index: 2;
-          }
+        &.active {
+        font-weight: 600;
+        color: $salmao;
         }
+
+        .logo-lista {
+          position: absolute;
+          left: calc(50% - 215px / 2);
+          top: 0;
+          width: 215px;
+          z-index: 2;
+        }
+      }
+
+      .mobile-item {
+        display: none;
       }
     }
 
@@ -94,7 +117,7 @@
 
     @media screen and(max-width: 490px) {
       .primeira-linha {
-        padding-top: 1rem;
+        display: none;
 
         .meio .logo {
           display: none;
@@ -103,6 +126,7 @@
 
       .segunda-linha {
         flex-direction: column;
+        padding: 1rem 0;
 
         .itens {
           display: flex;
@@ -112,12 +136,17 @@
           overflow: hidden;
           transition: max-height 0.5s ease-out;
 
+          .mobile-item {
+            display: block;
+            margin: 0.5rem 0 1rem;
+          }
+
           li {
             margin-bottom: 0.5rem;
           }
 
           &.aberto {
-            max-height: 200px;
+            max-height: 300px;
             transition: max-height 0.5s ease-in;
           }
         }
@@ -126,7 +155,6 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          cursor: pointer;
           width: 100%;
 
           .mobile-menu {
@@ -135,6 +163,7 @@
             background-color: $salmao;
             color: #fff;
             padding: 0.5rem;
+            cursor: pointer;
 
             i {
               margin-right: 0.5rem;
@@ -143,7 +172,7 @@
 
           .mobile-logo {
             img {
-              height: 100px;
+              height: 75px;
               width: auto;
             }
           }
