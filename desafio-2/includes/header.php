@@ -1,3 +1,5 @@
+<?php require_once './config.php'; ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -46,11 +48,11 @@
                 </div>
 
                 <ul class="itens">
-                    <li><a href="sobre" class="item" id="sobre">O HOSTEL</a></li>
+                    <li><a href="<?= $GLOBALS['home_url'] ?>/sobre" class="item" id="sobre">O HOSTEL</a></li>
                     <li><a href="/" class="item">ACOMODAÇÃO</a></li>
                     <li><a href="/" class="item">FOTOS</a></li>
                     <li class="logo-item">
-                        <a href="/" class="item">
+                        <a href="<?= $GLOBALS['home_url'] ?>" class="item">
                             <h1><img src="public/img/full-logo.png" class="logo-lista" alt="Logo House & Hostel" title="Logo House & Hostel"></h1>
                         </a>
                     </li>

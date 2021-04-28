@@ -1,1 +1,1 @@
-RedirectMatch 301 ^/sobre /sobre.php
+RedirectMatch 301 /bruno-brasolin/desafio-2/sobre /bruno-brasolin/desafio-2/sobre.php
