@@ -12,11 +12,69 @@ section.topo {
 
     .link {
       color: #fff;
+      font-size: 0.9rem;
+      &:not(.link-redes-sociais) {
+        position: relative;
+
+        .fa-map-marker-alt {
+          margin-right: 0.25rem;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 1px;
+          width: 0;
+          background: #fff;
+          transition: width 0.2s;
+        }
+
+        &:hover {
+          &::after {
+            width: 100%;
+          }
+        }
+      }
     }
 
     .redes-sociais {
-      .link {
-        margin-left: 0.5rem;
+      .link-redes-sociais {
+        margin-left: 1.5rem;
+        position: relative;
+
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          background-size: 2em 15px;
+          background-repeat: no-repeat;
+          height: 15px;
+          width: 2em;
+          transition: .2s;
+        }
+
+        &::before {
+          background-image: url("../img/border-top-icon.png");
+          top: -9px;
+          right: -0.475em;
+        }
+
+        &::after {
+          background-image: url("../img/border-bottom-icon.png");
+          bottom: -5px;
+          left: -0.475em;
+        }
+
+        &:hover {
+          &::before {
+            top: -11px;
+          }
+          &::after {
+            bottom: -7px;
+          }
+        }
       }
     }
   }

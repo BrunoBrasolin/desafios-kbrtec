@@ -6,15 +6,15 @@
       color: #000;
       font-weight: bold;
 
+      &:hover {
+        i {
+          margin-right: 1rem !important;
+        }
+      }
+
       i {
         color: $salmao;
         transition: margin-right 0.2s;
-      }
-
-      &:hover {
-        i {
-          margin-right: 1rem;
-        }
       }
     }
 
@@ -68,25 +68,46 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
-      }
 
-      .item {
-        font-weight: 300;
-        font-family: $fonte-titulo;
-        color: #000;
-        font-size: 1.1rem;
+        .item {
+          font-weight: 300;
+          font-family: $fonte-titulo;
+          color: #000;
+          font-size: 1.1rem;
+          &:not(.logo-item-container) {
+            position: relative;
 
-        &.active {
-        font-weight: 600;
-        color: $salmao;
-        }
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 0;
+              height: 2px;
+              background-color: $salmao;
+              transition: width 0.2s;
+            }
 
-        .logo-lista {
-          position: absolute;
-          left: calc(50% - 215px / 2);
-          top: 0;
-          width: 215px;
-          z-index: 2;
+            &:hover,
+            &.active {
+              &::after {
+                width: 100%;
+              }
+            }
+
+            &.active {
+              font-weight: 600;
+              color: $salmao;
+            }
+          }
+
+          .logo-lista {
+            position: absolute;
+            left: calc(50% - 215px / 2);
+            top: 0;
+            width: 215px;
+            z-index: 2;
+          }
         }
       }
 

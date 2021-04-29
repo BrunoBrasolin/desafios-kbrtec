@@ -34,6 +34,8 @@
       justify-content: space-around;
       border: 2px solid $salmao;
       background-color: rgba(#fff, 0.8);
+      flex-wrap: wrap;
+      align-items: center;
 
       .informacao {
         display: flex;
@@ -109,9 +111,7 @@
         }
       }
 
-      @media screen and (max-width: 768px) {
-        flex-direction: column;
-        width: fit-content;
+      @media screen and (max-width: 930px) {
         .informacao {
           margin-bottom: 1rem;
           .conteudo {
@@ -121,14 +121,12 @@
             }
           }
         }
-      }
-      @media screen and (max-width: 768px) {
         padding: 1rem;
       }
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 930px) {
     margin-top: 2rem;
     padding: {
       top: 1rem;

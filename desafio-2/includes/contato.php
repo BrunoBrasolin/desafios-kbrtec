@@ -17,7 +17,7 @@
                     <a href="mailto:contato@house&hostel.com.br" class="link">contato@house&hostel.com.br</a>
                     <div class="whatsapp">
                         <i class="fab fa-whatsapp"></i>
-                        <a href="mailto:contato@house&hostel.com.br" class="link whatsapp-link">(00) 0000-000</a>
+                        <a href="https://api.whatsapp.com/send?phone=5500000000000" class="link whatsapp-link">(00) 0000-000</a>
                     </div>
                 </div>
             </div>
@@ -47,5 +47,4 @@
             </div>
         </section>
     </div>
-
 </section>
