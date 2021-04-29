@@ -227,7 +227,7 @@ section.sobre {
       }
 
       .botao {
-        @include botao-transparente(transparent, $salmao, #fff);
+        @include botao(transparent, $salmao, #fff);
       }
     }
 

@@ -206,7 +206,7 @@ section.acomodacoes {
             }
 
             .link {
-              @include botao-transparente(transparent, $salmao, $salmao, 0.25rem 0.75rem);
+              @include botao(transparent, $salmao, $salmao, 0.25rem 0.75rem);
             }
           }
         }
@@ -227,7 +227,7 @@ section.acomodacoes {
     }
 
     .botao {
-      @include botao-transparente(transparent, $salmao, $salmao, 0.25rem 0.75rem);
+      @include botao(transparent, $salmao, $salmao, 0.25rem 0.75rem);
     }
 
     @media screen and (max-width: 768px) {

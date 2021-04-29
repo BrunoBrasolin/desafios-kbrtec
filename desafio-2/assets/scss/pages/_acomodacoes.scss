@@ -1,0 +1,157 @@
+.pagina-acomodacoes {
+  background-color: #f4f6f8;
+
+  .titulo {
+    @extend .h1;
+    text-align: center;
+    @include underline();
+    padding-top: 5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .listagem {
+    display: flex;
+    flex-direction: column;
+    @extend .container;
+
+    .acomodacao {
+      margin-bottom: 2rem;
+      display: flex;
+      background-color: #fff;
+
+      .esquerda {
+        width: 25%;
+        flex-shrink: 0;
+
+        .acomodacao-slider-principal {
+          margin-bottom: 1rem;
+
+          .arrow {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            color: $salmao;
+            background-color: rgba(#fff, 0.8);
+            padding: 0.5rem;
+            transition: background-color 0.2s;
+
+            &.slick-disabled {
+              background-color: rgba(#fff, 0.5);
+            }
+
+            &:not(.slick-disabled) {
+              cursor: pointer;
+
+              &:hover {
+                background-color: #fff;
+              }
+            }
+
+            &.prev {
+              left: 0;
+            }
+            &.next {
+              right: 0;
+            }
+          }
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        .acomodacao-slider-secundario {
+          .slick-list {
+            margin: 0 -0.5rem;
+          }
+
+          .slick-slide {
+            margin: 0 0.5rem;
+          }
+        }
+      }
+
+      .direita {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10%;
+
+        .subtitulo {
+          text-transform: uppercase;
+          @extend .h2;
+          @include underline(false);
+          letter-spacing: 1px;
+          margin: {
+            top: 2rem;
+            bottom: 4rem;
+          }
+        }
+
+        .descricao {
+          display: flex;
+          flex-wrap: wrap;
+          margin-bottom: 4rem;
+
+          .item {
+            font-size: 0.9rem;
+            line-height: 1.25rem;
+            letter-spacing: 1px;
+            margin: 0 1rem;
+            position: relative;
+
+            &::before {
+              content: "";
+              position: absolute;
+              left: -1rem;
+              top: calc(50% - 2.5px);
+              height: 5px;
+              width: 5px;
+              background-color: $salmao;
+              border-radius: 50%;
+            }
+          }
+        }
+
+        .botao {
+          @include botao(transparent, $salmao, $salmao);
+          width: fit-content;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .listagem {
+      .acomodacao {
+        .esquerda {
+          width: 50%;
+        }
+        .direita {
+          padding: 2rem 0;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .listagem {
+      .acomodacao {
+        flex-direction: column;
+        align-items: center;
+
+        .esquerda {
+          width: 60%;
+        }
+
+        .direita {
+          margin-left: 0;
+          align-items: center;
+
+          .descricao {
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}

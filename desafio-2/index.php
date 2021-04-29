@@ -75,7 +75,7 @@
                 </li>
             </ul>
 
-            <a href="#" class="botao" title="Mais acomodações">Mais acomodações</a>
+            <a href="<?= $GLOBALS['acomodacoes_url'] ?>" class="botao" title="Mais acomodações">Mais acomodações</a>
         </div>
     </section>
 

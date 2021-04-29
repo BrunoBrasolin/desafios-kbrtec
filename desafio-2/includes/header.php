@@ -36,6 +36,7 @@
                     </a>
                 </div>
             </div>
+
             <nav class="segunda-linha">
                 <div class="mobile-linha">
                     <a href="<?= $GLOBALS['home_url'] ?>">
@@ -50,8 +51,8 @@
                 </div>
 
                 <ul class="itens">
-                    <li><a href="<?= $GLOBALS['home_url'] ?>/sobre.php" class="item" id="sobre">O HOSTEL</a></li>
-                    <li><a href="/" class="item">ACOMODAÇÃO</a></li>
+                    <li><a href="<?= $GLOBALS['sobre_url'] ?>" class="item" id="sobre">O HOSTEL</a></li>
+                    <li><a href="<?= $GLOBALS['acomodacoes_url'] ?>" class="item" id="acomodacoes">ACOMODAÇÃO</a></li>
                     <li><a href="/" class="item">FOTOS</a></li>
                     <li class="logo-item">
                         <a href="<?= $GLOBALS['home_url'] ?>" class="item logo-item-container">

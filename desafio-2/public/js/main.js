@@ -45,6 +45,27 @@ $(document).ready(function () {
       '<div class="estrutura-arrows-container" id="estrutura-next-arrow"><span class="estrutura-arrows"><i class="fas fa-xs fa-chevron-right"></i></span></div>',
   });
 
+  $(".acomodacao-slider-principal").slick({
+    slidesToShow: 1,
+    asNavFor: ".acomodacao-slider-secundario",
+    infinite: false,
+    prevArrow: '<span class="arrow prev"><i class="fas fa-chevron-left"></i></span>',
+    nextArrow: '<span class="arrow next"><i class="fas fa-chevron-right"></i></span>',
+  });
+
+  $(".acomodacao-slider-secundario").slick({
+    slidesToShow: 4,
+    asNavFor: ".acomodacao-slider-principal",
+    arrows: false,
+    infinite: false,
+  });
+
+  $("a[data-slide]").click(function (e) {
+    e.preventDefault();
+    $(".acomodacao-slider-principal").slick("slickGoTo", $(this).data("slide"));
+    $(".acomodacao-slider-secundario").slick("slickGoTo", $(this).data("slide"));
+  });
+
   $(".mobile-menu").click(function () {
     $(".cabecalho .segunda-linha .itens").toggleClass("aberto");
   });

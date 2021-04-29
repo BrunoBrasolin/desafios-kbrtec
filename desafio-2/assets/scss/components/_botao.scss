@@ -1,4 +1,4 @@
-@mixin botao-transparente($background-color: $salmao, $border-color: $salmao, $color: $salmao, $padding: 0.25rem 0.75rem) {
+@mixin botao($background-color: $salmao, $border-color: $salmao, $color: $salmao, $padding: 0.25rem 0.75rem) {
   text-transform: uppercase;
   border: 1px solid $border-color;
   color: $color;
