@@ -10,3 +10,4 @@ if ($_SERVER['SERVER_NAME'] == 'ambiente-desenvolvimento.provisorio.ws') {
 // URLS
 $GLOBALS['sobre_url'] = $GLOBALS['home_url'] . '/sobre.php';
 $GLOBALS['acomodacoes_url'] = $GLOBALS['home_url'] . '/acomodacoes.php';
+$GLOBALS['localizacao_url'] = $GLOBALS['home_url'] . '/localizacao.php';
