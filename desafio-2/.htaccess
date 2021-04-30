@@ -1,4 +1,5 @@
-# RedirectMatch 301 /bruno-brasolin/desafio-2/sobre /bruno-brasolin/desafio-2/sobre.php
-# RewriteRule ^(.+)\.php$ /$1 [R,L]
-# RewriteCond %{REQUEST_FILENAME}.php -f
-# RewriteRule ^(.*?)/?$ /$1.php [NC,END]
+RewriteEngine On
+
+RewriteRule ^sobre/?$ /bruno-brasolin/desafio-2/sobre.php [NC,L]
+RewriteRule ^acomodacoes/?$ /bruno-brasolin/desafio-2/acomodacoes.php [NC,L]
+RewriteRule ^localizacao/?$ /bruno-brasolin/desafio-2/localizacao.php [NC,L]

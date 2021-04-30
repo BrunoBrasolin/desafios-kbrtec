@@ -56,7 +56,7 @@
 
                 <ul class="itens">
                     <li><a href="<?= $GLOBALS['sobre_url'] ?>" class="item" id="sobre">O HOSTEL</a></li>
-                    <li><a href="<?= $GLOBALS['acomodacoes_url'] ?>" class="item" id="acomodacoes">ACOMODAÇÃO</a></li>
+                    <li><a href="<?= $GLOBALS['acomodacoes_url'] ?>" class="item" id="acomodacoes">ACOMODAÇÕES</a></li>
                     <li><a href="/" class="item">FOTOS</a></li>
                     <li class="logo-item">
                         <a href="<?= $GLOBALS['home_url'] ?>" class="item logo-item-container">
