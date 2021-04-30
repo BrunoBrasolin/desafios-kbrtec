@@ -1,5 +1,8 @@
 RewriteEngine On
 
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.php [NC]
+RewriteRule ^ /%1 [NE,L,R]
+
 RewriteRule ^sobre/?$ /bruno-brasolin/desafio-2/sobre.php [NC,L]
 RewriteRule ^acomodacoes/?$ /bruno-brasolin/desafio-2/acomodacoes.php [NC,L]
 RewriteRule ^localizacao/?$ /bruno-brasolin/desafio-2/localizacao.php [NC,L]
