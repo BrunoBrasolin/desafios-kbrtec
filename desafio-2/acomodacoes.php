@@ -77,10 +77,14 @@ $acomodacoes = array(
 
     <ul class="listagem">
 
-        <?php foreach ($acomodacoes as $acomodacao) : ?>
+        <?php
+        $interacao = 0;
+        foreach ($acomodacoes as $acomodacao) :
+            ++$interacao;
+        ?>
             <li class="acomodacao">
                 <div class="esquerda">
-                    <div class="acomodacao-slider-principal">
+                    <div class="acomodacao-slider-principal" data-interacao="<?= $interacao ?>">
                         <div class="acomodacao-slider-principal-item">
                             <img src="public/img/acomodacoes/acomodacao-1.png" alt="Acomodação 1">
                         </div>
@@ -97,20 +101,21 @@ $acomodacoes = array(
                             <img src="public/img/acomodacoes/acomodacao-5.png" alt="Acomodação 5">
                         </div>
                     </div>
-                    <div class="acomodacao-slider-secundario">
-                        <a href="#" data-slide="0">
+
+                    <div class="acomodacao-slider-secundario" data-interacao="<?= $interacao ?>">
+                        <a href="#" data-interacao="<?= $interacao ?>" data-slide="0">
                             <img src="public/img/acomodacoes/acomodacao-1.png" alt="Acomodação 1">
                         </a>
-                        <a href="#" data-slide="1">
+                        <a href="#" data-interacao="<?= $interacao ?>" data-slide="1">
                             <img src="public/img/acomodacoes/acomodacao-2.png" alt="Acomodação 2">
                         </a>
-                        <a href="#" data-slide="2">
+                        <a href="#" data-interacao="<?= $interacao ?>" data-slide="2">
                             <img src="public/img/acomodacoes/acomodacao-3.png" alt="Acomodação 3">
                         </a>
-                        <a href="#" data-slide="3">
+                        <a href="#" data-interacao="<?= $interacao ?>" data-slide="3">
                             <img src="public/img/acomodacoes/acomodacao-4.png" alt="Acomodação 4">
                         </a>
-                        <a href="#" data-slide="4">
+                        <a href="#" data-interacao="<?= $interacao ?>" data-slide="4">
                             <img src="public/img/acomodacoes/acomodacao-5.png" alt="Acomodação 5">
                         </a>
                     </div>

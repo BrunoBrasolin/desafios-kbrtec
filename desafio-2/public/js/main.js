@@ -47,7 +47,6 @@ $(document).ready(function () {
 
   $(".acomodacao-slider-principal").slick({
     slidesToShow: 1,
-    asNavFor: ".acomodacao-slider-secundario",
     infinite: false,
     prevArrow: '<span class="arrow prev"><i class="fas fa-chevron-left"></i></span>',
     nextArrow: '<span class="arrow next"><i class="fas fa-chevron-right"></i></span>',
@@ -55,15 +54,22 @@ $(document).ready(function () {
 
   $(".acomodacao-slider-secundario").slick({
     slidesToShow: 4,
-    asNavFor: ".acomodacao-slider-principal",
     arrows: false,
     infinite: false,
   });
 
+  $(".acomodacao-slider-principal").on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+    nextSlide -= 1;
+    $(`.acomodacao-slider-secundario[data-interacao="${$(this).data("interacao")}"]`).slick("slickGoTo", nextSlide);
+  });
+  $(".acomodacao-slider-secundario").on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+    $(`.acomodacao-slider-principal[data-interacao="${$(this).data("interacao")}"]`).slick("slickGoTo", nextSlide);
+  });
+
   $("a[data-slide]").click(function (e) {
     e.preventDefault();
-    $(".acomodacao-slider-principal").slick("slickGoTo", $(this).data("slide"));
-    $(".acomodacao-slider-secundario").slick("slickGoTo", $(this).data("slide"));
+    $(`.acomodacao-slider-principal[data-interacao="${$(this).data("interacao")}`).slick("slickGoTo", $(this).data("slide"));
+    $(`.acomodacao-slider-secundario[data-interacao="${$(this).data("interacao")}`).slick("slickGoTo", $(this).data("slide"));
   });
 
   $(".mobile-menu").click(function () {
