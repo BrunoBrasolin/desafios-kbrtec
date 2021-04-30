@@ -59,14 +59,15 @@ $(document).ready(function () {
   });
 
   $(".acomodacao-slider-principal").on("beforeChange", function (event, slick, currentSlide, nextSlide) {
-    nextSlide -= 1;
+    nextSlide = nextSlide == slick.slideCount - 2 ? nextSlide - 2 : nextSlide - 1;
     $(`.acomodacao-slider-secundario[data-interacao="${$(this).data("interacao")}"]`).slick("slickGoTo", nextSlide);
   });
   $(".acomodacao-slider-secundario").on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+    nextSlide = nextSlide == slick.slideCount - 2 ? nextSlide - 2 : nextSlide;
     $(`.acomodacao-slider-principal[data-interacao="${$(this).data("interacao")}"]`).slick("slickGoTo", nextSlide);
   });
 
-  $("a[data-slide]").click(function (e) {
+  $(".acomodacao-slider-secundario a").click(function (e) {
     e.preventDefault();
     $(`.acomodacao-slider-principal[data-interacao="${$(this).data("interacao")}`).slick("slickGoTo", $(this).data("slide"));
     $(`.acomodacao-slider-secundario[data-interacao="${$(this).data("interacao")}`).slick("slickGoTo", $(this).data("slide"));

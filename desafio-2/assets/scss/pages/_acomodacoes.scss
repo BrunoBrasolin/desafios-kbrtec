@@ -5,7 +5,7 @@
     @extend .h1;
     text-align: center;
     @include underline();
-    padding-top: 5rem;
+    padding-top: 3rem;
     margin-bottom: 2.5rem;
   }
 
@@ -77,47 +77,50 @@
         flex-direction: column;
         padding: 2rem 0;
         margin-left: 10%;
+        justify-content: space-around;
 
-        .subtitulo {
-          text-transform: uppercase;
-          @extend .h2;
-          @include underline(false);
-          letter-spacing: 1px;
-          margin-bottom: 3rem;
-        }
-
-        .descricao {
-          display: flex;
-          flex-wrap: wrap;
-        }
-
-        .descricao,
-        .lista {
-          margin-bottom: 2rem;
-        }
-
-        .item {
-          font-size: 0.9rem;
-          line-height: 1.3rem;
-          letter-spacing: 1px;
-          margin: 0 1rem;
-          position: relative;
-
-          &::before {
-            content: "";
-            position: absolute;
-            left: -1rem;
-            top: calc(50% - 2.5px);
-            height: 5px;
-            width: 5px;
-            background-color: $salmao;
-            border-radius: 50%;
+        .topo {
+          .subtitulo {
+            text-transform: uppercase;
+            @extend .h2;
+            @include underline(false);
+            letter-spacing: 1px;
+            margin-bottom: 3rem;
           }
-        }
 
-        .observacao {
-          margin-bottom: 1rem;
-          line-height: 1.25rem;
+          .descricao {
+            display: flex;
+            flex-wrap: wrap;
+          }
+
+          .descricao,
+          .lista {
+            margin-bottom: 2rem;
+          }
+
+          .item {
+            font-size: 0.9rem;
+            line-height: 1.3rem;
+            letter-spacing: 1px;
+            margin: 0 1rem;
+            position: relative;
+
+            &::before {
+              content: "";
+              position: absolute;
+              left: -1rem;
+              top: calc(50% - 2.5px);
+              height: 5px;
+              width: 5px;
+              background-color: $salmao;
+              border-radius: 50%;
+            }
+          }
+
+          .observacao {
+            margin-bottom: 1rem;
+            line-height: 1.25rem;
+          }
         }
 
         .botao {
@@ -141,24 +144,31 @@
       }
     }
   }
+
   @media screen and (max-width: 700px) {
     .listagem {
       .acomodacao {
         flex-direction: column-reverse;
         align-items: center;
+        padding: 2rem;
 
         .esquerda {
-          width: 80%;
+          width: 100%;
         }
 
         .direita {
           margin-left: 0;
           align-items: center;
-          width: 90%;
+          width: 100%;
 
-          .subtitulo {
-            &::after {
-              left: calc(50% - 25px);
+          .topo {
+            .subtitulo {
+              padding-top: 0;
+              text-align: center;
+
+              &::after {
+                left: calc(50% - 25px);
+              }
             }
           }
         }
