@@ -60,7 +60,14 @@ $acomodacoes = array(
             'Frigobar',
             'Locker no quarto com 1 armazenamento para cada pessoa',
         ),
-        'observacao' => 'No caso dos quartos coletivos com 3 e 4 beliches ambos terão 1 banheiro coletivo entre os dois para uso de ambos, segue descrição do banheiro:'
+        'observacao' => 'No caso dos quartos coletivos com 3 e 4 beliches ambos terão 1 banheiro coletivo entre os dois para uso de ambos, segue descrição do banheiro:',
+        'lista-titulo' => 'Banheiro coletivo (dois banheiros coletivos, hum para cada 2 quartos):',
+        'lista' => array(
+            '2 chuveiros com vestiários embutidos',
+            '1 sanitário privativo com porta',
+            '1 pia dupla com espelho',
+            '1 mictório',
+        ),
     ),
 );
 ?>
@@ -116,6 +123,15 @@ $acomodacoes = array(
                             <li class="item"><?= $item ?></li>
                         <?php endforeach; ?>
                     </ul>
+                    <?php if (isset($acomodacao['observacao'])) : ?>
+                        <span class="observacao"><b class="bold">Obs.:</b> <?= $acomodacao['observacao'] ?></span>
+                        <span><?= $acomodacao['lista-titulo'] ?></span>
+                        <ul class="lista">
+                            <?php foreach ($acomodacao['lista'] as $item) : ?>
+                                <li class="item"><?= $item ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
 
                     <a href="" class="botao">Reservar agora</a>
                 </div>

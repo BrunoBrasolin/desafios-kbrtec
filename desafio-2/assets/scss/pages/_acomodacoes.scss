@@ -75,6 +75,7 @@
       .direita {
         display: flex;
         flex-direction: column;
+        padding: 2rem 0;
         margin-left: 10%;
 
         .subtitulo {
@@ -82,35 +83,41 @@
           @extend .h2;
           @include underline(false);
           letter-spacing: 1px;
-          margin: {
-            top: 2rem;
-            bottom: 4rem;
-          }
+          margin-bottom: 3rem;
         }
 
         .descricao {
           display: flex;
           flex-wrap: wrap;
-          margin-bottom: 4rem;
+        }
 
-          .item {
-            font-size: 0.9rem;
-            line-height: 1.25rem;
-            letter-spacing: 1px;
-            margin: 0 1rem;
-            position: relative;
+        .descricao,
+        .lista {
+          margin-bottom: 2rem;
+        }
 
-            &::before {
-              content: "";
-              position: absolute;
-              left: -1rem;
-              top: calc(50% - 2.5px);
-              height: 5px;
-              width: 5px;
-              background-color: $salmao;
-              border-radius: 50%;
-            }
+        .item {
+          font-size: 0.9rem;
+          line-height: 1.3rem;
+          letter-spacing: 1px;
+          margin: 0 1rem;
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: -1rem;
+            top: calc(50% - 2.5px);
+            height: 5px;
+            width: 5px;
+            background-color: $salmao;
+            border-radius: 50%;
           }
+        }
+
+        .observacao {
+          margin-bottom: 1rem;
+          line-height: 1.25rem;
         }
 
         .botao {
@@ -127,8 +134,9 @@
         .esquerda {
           width: 50%;
         }
+
         .direita {
-          padding: 2rem 0;
+          justify-content: center;
         }
       }
     }
@@ -136,19 +144,22 @@
   @media screen and (max-width: 700px) {
     .listagem {
       .acomodacao {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
 
         .esquerda {
-          width: 60%;
+          width: 80%;
         }
 
         .direita {
           margin-left: 0;
           align-items: center;
+          width: 90%;
 
-          .descricao {
-            justify-content: center;
+          .subtitulo {
+            &::after {
+              left: calc(50% - 25px);
+            }
           }
         }
       }
