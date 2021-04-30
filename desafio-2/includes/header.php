@@ -64,7 +64,7 @@
                         </a>
                     </li>
                     <li><a href="/" class="item">BLOG</a></li>
-                    <li><a href="<?= $GLOBALS['sobre_url'] ?>" class="item" id="localizacao">LOCALIZAÇÃO</a></li>
+                    <li><a href="<?= $GLOBALS['localizacao_url'] ?>" class="item" id="localizacao">LOCALIZAÇÃO</a></li>
                     <li><a href="/" class="item">CONTATOS</a></li>
                     <li class="mobile-item">
                         <a class="link link-whatsapp" href="https://api.whatsapp.com/send?phone=5500000000000" target="_blank" title="WhatsApp | House & Hostel">

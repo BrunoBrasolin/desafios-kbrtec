@@ -15,6 +15,15 @@
     margin-bottom: 3rem;
     font-weight: 300;
     letter-spacing: 1px;
+
+    a {
+      color: #000;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $salmao;
+      }
+    }
   }
 
   .mapa {
