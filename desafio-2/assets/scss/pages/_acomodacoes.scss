@@ -18,10 +18,10 @@
       margin-bottom: 2rem;
       display: flex;
       background-color: #fff;
-      transition: .2s;
+      transition: 0.2s;
 
       &:hover {
-        box-shadow: 0 0 20px rgba(#000, 0.05);
+        box-shadow: 0 0 20px rgba(#000, 0.075);
         .direita .topo .subtitulo::after {
           width: 100%;
         }
@@ -104,20 +104,21 @@
 
           .descricao,
           .lista {
-            margin-bottom: 2rem;
+            margin-bottom: 1.25rem;
+            font-size: 0.875rem;
           }
 
           .item {
-            font-size: 0.9rem;
             line-height: 1.3rem;
             letter-spacing: 1px;
-            margin: 0 1rem;
+            margin-right: 2rem;
             position: relative;
+            font-size: 0.875rem;
 
             &::before {
               content: "";
               position: absolute;
-              left: -1rem;
+              left: calc(-1rem - 2.5px);
               top: calc(50% - 2.5px);
               height: 5px;
               width: 5px;
@@ -127,8 +128,14 @@
           }
 
           .observacao {
-            margin-bottom: 1rem;
+            display: block;
+            margin-bottom: 1.25rem;
             line-height: 1.25rem;
+            font-size: 0.875rem;
+          }
+
+          .lista-titulo {
+            font-size: 0.875rem;
           }
         }
 
@@ -162,7 +169,7 @@
         padding: 2rem;
 
         .esquerda {
-          width: 100%;
+          width: 80%;
         }
 
         .direita {
@@ -174,9 +181,17 @@
             .subtitulo {
               padding-top: 0;
               text-align: center;
+              margin: {
+                left: auto;
+                right: auto;
+              }
+            }
 
-              &::after {
-                left: calc(50% - 25px);
+            .descricao {
+              flex-direction: column;
+              align-items: center;
+              .item {
+                margin-bottom: .25rem;
               }
             }
           }

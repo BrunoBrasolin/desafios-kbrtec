@@ -16,6 +16,7 @@ $acomodacoes = array(
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-3.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-4.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-5.png',
+            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-6.png',
         ),
     ),
     array(
@@ -27,16 +28,12 @@ $acomodacoes = array(
             'Banheiro individual',
         ),
         'fotos' => array(
-            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-1.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-2.png',
+            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-1.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-3.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-4.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-5.png',
-            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-1.png',
-            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-2.png',
-            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-3.png',
-            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-4.png',
-            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-5.png',
+            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-6.png',
         ),
     ),
     array(
@@ -48,11 +45,12 @@ $acomodacoes = array(
             'Locker no quarto com 1 armazenamento para cada pessoa',
         ),
         'fotos' => array(
+            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-3.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-1.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-2.png',
-            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-3.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-4.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-5.png',
+            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-6.png',
         ),
     ),
     array(
@@ -66,11 +64,12 @@ $acomodacoes = array(
             '1 chuveiro com vestiário',
         ),
         'fotos' => array(
+            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-4.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-1.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-2.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-3.png',
-            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-4.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-5.png',
+            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-6.png',
         ),
     ),
     array(
@@ -85,11 +84,12 @@ $acomodacoes = array(
             '1 sanitário privativo com porta',
         ),
         'fotos' => array(
+            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-5.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-1.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-2.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-3.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-4.png',
-            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-5.png',
+            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-6.png',
         ),
     ),
     array(
@@ -101,6 +101,7 @@ $acomodacoes = array(
             'Locker no quarto com 1 armazenamento para cada pessoa',
         ),
         'fotos' => array(
+            $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-6.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-1.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-2.png',
             $GLOBALS['home_url'] . '/public/img/acomodacoes/acomodacao-3.png',
@@ -160,7 +161,7 @@ $acomodacoes = array(
                         </ul>
                         <?php if (isset($acomodacao['observacao'])) : ?>
                             <span class="observacao"><b class="bold">Obs.:</b> <?= $acomodacao['observacao'] ?></span>
-                            <span><?= $acomodacao['lista-titulo'] ?></span>
+                            <span class="lista-titulo"><?= $acomodacao['lista-titulo'] ?></span>
                             <ul class="lista">
                                 <?php foreach ($acomodacao['lista'] as $item) : ?>
                                     <li class="item"><?= $item ?></li>
