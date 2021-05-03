@@ -5,10 +5,10 @@ body,
   z-index: -1;
 }
 .pagina-sobre {
-  background-color: #f4f6f8;
+  background-color: $cinza;
 
   .linha .direita {
-    background-color: #f4f6f8 !important;
+    background-color: $cinza !important;
   }
 
   padding-bottom: 4rem;

@@ -1,12 +1,12 @@
 .pagina-acomodacoes {
-  background-color: #f4f6f8;
+  background-color: $cinza;
 
   .titulo {
     @extend .h1;
     text-align: center;
     @include underline();
     padding-top: 3rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
   }
 
   .listagem {
@@ -18,6 +18,14 @@
       margin-bottom: 2rem;
       display: flex;
       background-color: #fff;
+      transition: .2s;
+
+      &:hover {
+        box-shadow: 0 0 20px rgba(#000, 0.05);
+        .direita .topo .subtitulo::after {
+          width: 100%;
+        }
+      }
 
       .esquerda {
         width: 25%;
@@ -86,6 +94,7 @@
             @include underline(false);
             letter-spacing: 1px;
             margin-bottom: 3rem;
+            width: fit-content;
           }
 
           .descricao {
