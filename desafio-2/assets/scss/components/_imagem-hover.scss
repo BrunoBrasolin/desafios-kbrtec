@@ -35,17 +35,17 @@
     }
   }
 
+  &:hover {
+    .texto {
+      opacity: 1;
+    }
+  }
+
   @if $mobile-text {
     @media screen and(max-width: 768px) {
       .texto {
         opacity: 1;
         width: 50%;
-      }
-    }
-
-    &:hover {
-      .texto {
-        opacity: 1;
       }
     }
   }
