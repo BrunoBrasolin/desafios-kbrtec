@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="direita">
-                    <a class="link link-reserva" href="/faca-sua-reserva" title="Faça sua Reserva | House & Hostel">
+                    <a class="link link-reserva" href="<?= $GLOBALS['contato_url'] ?>" title="Faça sua Reserva | House & Hostel">
                         <i class="far fa-lg fa-calendar-alt"></i>
                         Faça sua Reserva
                     </a>
@@ -64,7 +64,7 @@
                     </li>
                     <li><a href="/" class="item">BLOG</a></li>
                     <li><a href="<?= $GLOBALS['localizacao_url'] ?>" class="item" id="localizacao">LOCALIZAÇÃO</a></li>
-                    <li><a href="/" class="item">CONTATOS</a></li>
+                    <li><a href="<?= $GLOBALS['contato_url'] ?>" class="item" id="contato">CONTATO</a></li>
                     <li class="mobile-item">
                         <a class="link link-whatsapp" href="https://api.whatsapp.com/send?phone=5500000000000" target="_blank" title="WhatsApp | House & Hostel">
                             <i class="fab fa-lg fa-whatsapp"></i>
@@ -72,7 +72,7 @@
                         </a>
                     </li>
                     <li class="mobile-item">
-                        <a class="link link-reserva" href="/faca-sua-reserva" title="Faça sua Reserva | House & Hostel">
+                        <a class="link link-reserva" href="<?= $GLOBALS['contato_url'] ?>" title="Faça sua Reserva | House & Hostel">
                             <i class="far fa-lg fa-calendar-alt"></i>
                             Faça sua Reserva
                         </a>

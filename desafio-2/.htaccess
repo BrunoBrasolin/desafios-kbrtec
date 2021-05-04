@@ -7,4 +7,6 @@ RewriteRule ^sobre/?$ /bruno-brasolin/desafio-2/sobre.php [NC,L]
 RewriteRule ^acomodacoes/?$ /bruno-brasolin/desafio-2/acomodacoes.php [NC,L]
 RewriteRule ^localizacao/?$ /bruno-brasolin/desafio-2/localizacao.php [NC,L]
 RewriteRule ^fotos/?$ /bruno-brasolin/desafio-2/fotos.php [NC,L]
+RewriteRule ^contato/?$ /bruno-brasolin/desafio-2/contato.php [NC,L]
+
 ErrorDocument 404 /bruno-brasolin/desafio-2/404.php

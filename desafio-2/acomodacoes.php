@@ -169,7 +169,7 @@ $acomodacoes = array(
                             </ul>
                         <?php endif; ?>
                     </div>
-                    <a href="" class="botao">Reservar agora</a>
+                    <a href="<?= $GLOBALS['contato_url'] ?>" class="botao">Reservar agora</a>
                 </div>
             </li>
         <?php endforeach; ?>
