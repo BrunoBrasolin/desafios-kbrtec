@@ -40,9 +40,9 @@ $(document).ready(function () {
       },
     ],
     prevArrow:
-      '<div class="estrutura-arrows-container" id="estrutura-prev-arrow"><span class="estrutura-arrows"><i class="fas fa-xs fa-chevron-left"></i></span></div>',
+      '<div class="arrows-container" id="prev-arrow"><span class="arrows"><i class="fas fa-xs fa-chevron-left"></i></span></div>',
     nextArrow:
-      '<div class="estrutura-arrows-container" id="estrutura-next-arrow"><span class="estrutura-arrows"><i class="fas fa-xs fa-chevron-right"></i></span></div>',
+      '<div class="arrows-container" id="next-arrow"><span class="arrows"><i class="fas fa-xs fa-chevron-right"></i></span></div>',
   });
 
   $(".acomodacao-slider-principal").slick({
@@ -75,5 +75,29 @@ $(document).ready(function () {
 
   $(".mobile-menu").click(function () {
     $(".cabecalho .segunda-linha .itens").toggleClass("aberto");
+  });
+
+  $(".pagina-fotos .fotos").lightGallery({
+    download: false,
+  });
+
+  $(".pagina-fotos .fotos").slick({
+    slidesToShow: 5,
+    autoplay: true,
+    prevArrow:
+      '<div class="arrows-container" id="prev-arrow"><span class="arrows"><i class="fas fa-xs fa-chevron-left"></i></span></div>',
+    nextArrow:
+      '<div class="arrows-container" id="next-arrow"><span class="arrows"><i class="fas fa-xs fa-chevron-right"></i></span></div>',
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 999999,
+        settings: "unslick",
+      },
+      {
+        breakpoint: 1050,
+        slidesToShow: 5,
+      },
+    ],
   });
 });

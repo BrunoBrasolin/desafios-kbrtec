@@ -2,7 +2,6 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,7 +56,7 @@
                 <ul class="itens">
                     <li><a href="<?= $GLOBALS['sobre_url'] ?>" class="item" id="sobre">O HOSTEL</a></li>
                     <li><a href="<?= $GLOBALS['acomodacoes_url'] ?>" class="item" id="acomodacoes">ACOMODAÇÕES</a></li>
-                    <li><a href="/" class="item">FOTOS</a></li>
+                    <li><a href="<?= $GLOBALS['fotos_url'] ?>" id="fotos" class="item">FOTOS</a></li>
                     <li class="logo-item">
                         <a href="<?= $GLOBALS['home_url'] ?>" class="item logo-item-container">
                             <h1><img src="public/img/full-logo.png" class="logo-lista" alt="Logo House & Hostel" title="Logo House & Hostel"></h1>

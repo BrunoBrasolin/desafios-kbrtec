@@ -1,3 +1,41 @@
+<?php
+$fotos = array(
+    array(
+        'titulo' => 'Estande Planejada',
+        'url' => 'public/img/estante-planejada.png',
+    ),
+    array(
+        'titulo' => 'Sala Planejada',
+        'url' => 'public/img/sala-planejada.png',
+    ),
+    array(
+        'titulo' => 'Sala Planejada',
+        'url' => 'public/img/sala-planejada.jpg',
+    ),
+    array(
+        'titulo' => 'Cozinha Planejada',
+        'url' => 'public/img/cozinha-planejada.webp',
+    ),
+    array(
+        'titulo' => 'Estande Planejada',
+        'url' => 'public/img/estante-planejada.png',
+    ),
+    array(
+        'titulo' => 'Sala Planejada',
+        'url' => 'public/img/sala-planejada.png',
+    ),
+    array(
+        'titulo' => 'Sala Planejada',
+        'url' => 'public/img/sala-planejada.jpg',
+    ),
+    array(
+        'titulo' => 'Cozinha Planejada',
+        'url' => 'public/img/cozinha-planejada.webp',
+    ),
+);
+?>
+
+
 <section class="sobre">
     <div class="linha">
         <div class="esquerda">
@@ -19,61 +57,14 @@
     </div>
 
     <div class="estrutura-slider">
-        <div class="estrutura-item">
-            <img src="public/img/estante-planejada.png" alt="Estande Planejada | House & Hostel">
-            <div class="texto">
-                <h4 class="titulo">House & Hostel</h4>
-                <a href="#" class="botao">Ver fotos</a>
+        <?php foreach ($fotos as $foto) : ?>
+            <div class="estrutura-item">
+                <img src="<?= $foto['url'] ?>" alt="<?= $foto['titulo'] ?> | House & Hostel">
+                <div class="texto">
+                    <h4 class="titulo">House & Hostel</h4>
+                    <a href="<?= $GLOBALS['fotos_url'] ?>" class="botao">Ver fotos</a>
+                </div>
             </div>
-        </div>
-        <div class="estrutura-item">
-            <img src="public/img/sala-planejada.png" alt="Sala Planejada | House & Hostel">
-            <div class="texto">
-                <h4 class="titulo">House & Hostel</h4>
-                <a href="#" class="botao">Ver fotos</a>
-            </div>
-        </div>
-        <div class="estrutura-item">
-            <img src="public/img/sala-planejada.jpg" alt="Sala Planejada | House & Hostel">
-            <div class="texto">
-                <h4 class="titulo">House & Hostel</h4>
-                <a href="#" class="botao">Ver fotos</a>
-            </div>
-        </div>
-        <div class="estrutura-item">
-            <img src="public/img/cozinha-planejada.webp" alt="Cozinha Planejada | House & Hostel">
-            <div class="texto">
-                <h4 class="titulo">House & Hostel</h4>
-                <a href="#" class="botao">Ver fotos</a>
-            </div>
-        </div>
-        <div class="estrutura-item">
-            <img src="public/img/estante-planejada.png" alt="Estande Planejada | House & Hostel">
-            <div class="texto">
-                <h4 class="titulo">House & Hostel</h4>
-                <a href="#" class="botao">Ver fotos</a>
-            </div>
-        </div>
-        <div class="estrutura-item">
-            <img src="public/img/sala-planejada.png" alt="Sala Planejada | House & Hostel">
-            <div class="texto">
-                <h4 class="titulo">House & Hostel</h4>
-                <a href="#" class="botao">Ver fotos</a>
-            </div>
-        </div>
-        <div class="estrutura-item">
-            <img src="public/img/sala-planejada.jpg" alt="Sala Planejada | House & Hostel">
-            <div class="texto">
-                <h4 class="titulo">House & Hostel</h4>
-                <a href="#" class="botao">Ver fotos</a>
-            </div>
-        </div>
-        <div class="estrutura-item">
-            <img src="public/img/cozinha-planejada.webp" alt="Cozinha Planejada | House & Hostel">
-            <div class="texto">
-                <h4 class="titulo">House & Hostel</h4>
-                <a href="#" class="botao">Ver fotos</a>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
 </section>

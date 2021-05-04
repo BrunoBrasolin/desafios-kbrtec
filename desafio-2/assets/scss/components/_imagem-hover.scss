@@ -1,0 +1,52 @@
+@mixin imagem-hover($height: 300px, $mobile-text: true) {
+  height: $height;
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .texto {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(#000, 0.7);
+    transition: opacity 0.3s;
+
+    .titulo {
+      color: #fff;
+      @extend .h2;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .botao {
+      @include botao(transparent, $salmao, #fff);
+      letter-spacing: 2px;
+    }
+  }
+
+  @if $mobile-text {
+    @media screen and(max-width: 768px) {
+      .texto {
+        opacity: 1;
+        width: 50%;
+      }
+    }
+
+    &:hover {
+      .texto {
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -5,7 +5,9 @@
   font-family: $fonte-titulo;
   font-weight: 700;
   padding: $padding;
+  background-color: $background-color;
   transition: background-color 0.2s, color 0.2s;
+  cursor: pointer;
 
   &:hover {
     background-color: $border-color;

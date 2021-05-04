@@ -78,3 +78,20 @@ body {
     flex: 1;
   }
 }
+
+.lg-backdrop {
+  background-color: rgba(#000, 0.75);
+}
+
+.lg-actions .lg-next,
+.lg-actions .lg-prev {
+  background-color: $salmao;
+  color: #fff;
+  border: 1px solid $salmao;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: #fff;
+    color: $salmao;
+  }
+}

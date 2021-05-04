@@ -1,0 +1,41 @@
+.pagina-fotos {
+  background-color: $cinza;
+
+  .conteudo {
+    @extend .container;
+
+    .fotos-titulo {
+      @include underline(false);
+      @extend .h1;
+      padding-top: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .fotos {
+      display: flex;
+      flex-wrap: wrap;
+      cursor: pointer;
+      margin-bottom: 3rem;
+
+      .foto {
+        @include imagem-hover(350px, false);
+
+        @media screen and (min-width: 1051px) {
+          &.pequeno {
+            width: 25%;
+          }
+
+          &.grande {
+            width: 50%;
+          }
+        }
+
+        @media screen and (max-width: 1050px) {
+          img {
+            position: static;
+          }
+        }
+      }
+    }
+  }
+}
