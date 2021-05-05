@@ -4,8 +4,9 @@ section.topo {
     top: 1rem;
     bottom: 1rem;
   }
+  @extend .container;
 
-  .conteudo {
+  .topo-conteudo {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -43,6 +44,7 @@ section.topo {
       .link-redes-sociais {
         margin-left: 1.5rem;
         position: relative;
+        margin-right: 0.475em;
 
         &::after,
         &::before {
@@ -52,7 +54,7 @@ section.topo {
           background-repeat: no-repeat;
           height: 15px;
           width: 2em;
-          transition: .2s;
+          transition: 0.2s;
         }
 
         &::before {
@@ -80,6 +82,12 @@ section.topo {
   }
 
   @media screen and(max-width: 490px) {
-    display: none;
+    .topo-conteudo {
+      justify-content: flex-end;
+
+      & > .link {
+        display: none;
+      }
+    }
   }
 }

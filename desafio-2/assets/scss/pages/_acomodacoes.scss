@@ -7,6 +7,7 @@
     @include underline();
     padding-top: 3rem;
     margin-bottom: 3rem;
+    text-transform: uppercase;
   }
 
   .listagem {
@@ -22,8 +23,11 @@
 
       &:hover {
         box-shadow: 0 0 20px rgba(#000, 0.075);
-        .direita .topo .subtitulo::after {
-          width: 100%;
+
+        @media screen and (min-width: 701px) {
+          .direita .topo .subtitulo::after {
+            width: 100%;
+          }
         }
       }
 
@@ -185,16 +189,29 @@
                 left: auto;
                 right: auto;
               }
+              &::after {
+                left: calc(50% - 25px);
+              }
             }
 
             .descricao {
               flex-direction: column;
-              align-items: center;
+
               .item {
-                margin-bottom: .25rem;
+                margin-bottom: 0.25rem;
               }
             }
           }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .listagem {
+      .acomodacao {
+        .esquerda {
+          width: 100%;
         }
       }
     }
