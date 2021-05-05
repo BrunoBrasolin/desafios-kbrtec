@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -62,7 +63,7 @@
                             <h1><img src="public/img/full-logo.png" class="logo-lista" alt="Logo House & Hostel" title="Logo House & Hostel"></h1>
                         </a>
                     </li>
-                    <li><a href="/" class="item">BLOG</a></li>
+                    <li><a href="<?= $GLOBALS['blog_url'] ?>" class="item" id="blog">BLOG</a></li>
                     <li><a href="<?= $GLOBALS['localizacao_url'] ?>" class="item" id="localizacao">LOCALIZAÇÃO</a></li>
                     <li><a href="<?= $GLOBALS['contato_url'] ?>" class="item" id="contato">CONTATO</a></li>
                     <li class="mobile-item">

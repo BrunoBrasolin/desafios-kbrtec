@@ -3,7 +3,7 @@
 
   &::after {
     content: "";
-    transition: .2s;
+    transition: 0.2s;
     width: 50px;
     height: 1px;
     position: absolute;
@@ -11,6 +11,7 @@
     background-color: $salmao;
     @if $center == true {
       left: calc(50% - 25px);
+      text-align: center;
     } @else {
       left: 0;
     }

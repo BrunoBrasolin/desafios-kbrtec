@@ -1,0 +1,82 @@
+.pagina-blog {
+  background-color: $cinza;
+
+  .conteudo {
+    @extend .container;
+
+    .linha {
+      padding-top: 3rem;
+      margin-bottom: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .titulo {
+        @include underline(true);
+        @extend .h1;
+      }
+
+      .form {
+        position: absolute;
+        right: 0;
+        display: flex;
+        align-items: center;
+
+        input,
+        button {
+          padding: 0.5rem 1rem;
+          font-size: 0.8rem;
+          border: 2px solid #d9d9d9;
+          font-family: $fonte-open-sans;
+          border-radius: 0;
+        }
+
+        input {
+          width: 200px;
+        }
+
+        button {
+          background-color: $salmao;
+          border-color: $salmao;
+          color: #fff;
+        }
+      }
+    }
+
+    .posts {
+      display: flex;
+      flex-direction: column;
+
+      .post {
+        padding: 2.5rem;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+
+        .esquerda {
+          width: 30%;
+
+          .redes-sociais {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+            
+            .link-facebook {
+              color: #fff;
+              background-color: #4267b2;
+            }
+          }
+        }
+
+        .direita {
+          width: 70%;
+        }
+      }
+    }
+  }
+}
