@@ -53,6 +53,7 @@
         background-color: #fff;
         display: flex;
         justify-content: space-between;
+        transition: 0.2s;
 
         &:not(:last-child) {
           margin-bottom: 1rem;
@@ -65,16 +66,95 @@
             display: flex;
             align-items: center;
             margin-top: 1rem;
-            
-            .link-facebook {
+
+            .link {
               color: #fff;
+              height: 25px;
+              width: 25px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 50%;
+              opacity: 0.8;
+              transition: 0.2s;
+            }
+
+            .link-facebook {
               background-color: #4267b2;
+
+              &:hover {
+                opacity: 1;
+              }
+            }
+            .link-instagram {
+              background-color: $salmao;
+              margin-left: 0.5rem;
+
+              &:hover {
+                opacity: 1;
+              }
             }
           }
         }
 
         .direita {
           width: 70%;
+          position: relative;
+
+          .data {
+            font-size: 0.8rem;
+          }
+
+          .post-titulo {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            @include underline(false);
+            margin-bottom: 2.5rem;
+            width: fit-content;
+
+            &::after {
+              bottom: -10px;
+            }
+          }
+
+          .descricao {
+            letter-spacing: 0.5px;
+            font-family: $fonte-open-sans;
+            font-weight: 300;
+          }
+
+          .link {
+            color: $salmao;
+            letter-spacing: 2px;
+            font-family: $fonte-titulo;
+            font-weight: 300;
+            text-transform: uppercase;
+
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+            i {
+              transition: 0.2s;
+            }
+
+            &:hover {
+              i {
+                margin-left: 0.75rem;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          box-shadow: 0 0 20px rgba(#000, 0.075);
+
+          @media screen and (min-width: 701px) {
+            .direita .post-titulo::after {
+              width: 50%;
+            }
+          }
         }
       }
     }

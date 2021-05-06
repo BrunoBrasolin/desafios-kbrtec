@@ -47,18 +47,22 @@ $posts = array(
                         <img src="<?= $post['imagem'] ?>" alt="<?= $post['titulo'] ?> | House & Hostel" title="<?= $post['titulo'] ?> | House & Hostel">
                         <div class="redes-sociais">
                             <a class="link link-facebook" href="https://facebook.com" target="_blank" title="Facebook | House e Hostel">
-                                <i class="fab fa-lg fa-facebook-f"></i>
+                                <i class="fab fa-facebook-f"></i>
                             </a>
                             <a class="link link-instagram" href="https://instagram.com" target="_blank" title="Instagram | House e Hostel">
-                                <i class="fab fa-lg fa-instagram"></i>
+                                <i class="fab fa-instagram"></i>
                             </a>
                         </div>
                     </div>
 
                     <div class="direita">
                         <span class="data"><?= $post['data'] ?></span>
-                        <h3 class="subtitulo"><?= $post['titulo'] ?></h3>
+                        <h3 class="post-titulo"><?= $post['titulo'] ?></h3>
                         <p class="descricao"><?= $post['descricao'] ?></p>
+                        <a href="#" class="link">
+                            Continue lendo
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </article>
             <?php endforeach; ?>
