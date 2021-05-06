@@ -68,6 +68,14 @@ $posts = array(
             <?php endforeach; ?>
         </section>
 
+        <section class="paginacao">
+            <a href="#" class="anterior acao">Anterior</a>
+            <a href="#" class="numero">1</a>
+            <a href="#" class="numero ativo">2</a>
+            <a href="#" class="numero">3</a>
+            <a href="#" class="anterior acao">Próximo</a>
+        </section>
+
     </section>
 </main>
 
