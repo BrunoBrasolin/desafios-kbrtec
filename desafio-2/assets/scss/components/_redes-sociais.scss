@@ -1,0 +1,32 @@
+.redes-sociais-cor {
+  display: flex;
+  align-items: center;
+
+  .link {
+    color: #fff;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: 0.2s;
+  }
+
+  .link-facebook {
+    background-color: #4267b2;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .link-instagram {
+    background-color: $salmao;
+    margin-left: 0.5rem;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

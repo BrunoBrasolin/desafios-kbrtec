@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/main.css" />
+    <link rel="stylesheet" href="<?= $GLOBALS['home_url'] ?>/public/css/main.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="<?= $GLOBALS['home_url'] ?>/public/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?= $GLOBALS['home_url'] ?>/public/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?= $GLOBALS['home_url'] ?>/public/favicon-16x16.png">
@@ -29,7 +29,7 @@
 
                 <div class="meio">
                     <a href="<?= $GLOBALS['home_url'] ?>">
-                        <h1><img src="public/img/logo.jpg" class="logo" alt="Logo House & Hostel" title="Logo House & Hostel"></h1>
+                        <h1><img src="<?= $GLOBALS['home_url'] ?>/public/img/logo.jpg" class="logo" alt="Logo House & Hostel" title="Logo House & Hostel"></h1>
                     </a>
                 </div>
 
@@ -45,7 +45,7 @@
                 <div class="mobile-linha">
                     <a href="<?= $GLOBALS['home_url'] ?>">
                         <h1 class="mobile-logo">
-                            <img src="public/img/logo.jpg" class="imagem-mobile-logo" alt="Logo House & Hostel" title="Logo House & Hostel">
+                            <img src="<?= $GLOBALS['home_url'] ?>/public/img/logo.jpg" class="imagem-mobile-logo" alt="Logo House & Hostel" title="Logo House & Hostel">
                         </h1>
                     </a>
                     <button class="mobile-menu">
@@ -60,7 +60,7 @@
                     <li><a href="<?= $GLOBALS['fotos_url'] ?>" id="fotos" class="item">FOTOS</a></li>
                     <li class="logo-item">
                         <a href="<?= $GLOBALS['home_url'] ?>" class="item logo-item-container">
-                            <h1><img src="public/img/full-logo.png" class="logo-lista" alt="Logo House & Hostel" title="Logo House & Hostel"></h1>
+                            <h1><img src="<?= $GLOBALS['home_url'] ?>/public/img/full-logo.png" class="logo-lista" alt="Logo House & Hostel" title="Logo House & Hostel"></h1>
                         </a>
                     </li>
                     <li><a href="<?= $GLOBALS['blog_url'] ?>" class="item" id="blog">BLOG</a></li>

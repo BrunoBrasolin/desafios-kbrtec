@@ -25,6 +25,12 @@ $posts = array(
         'data' => '13/08/2018',
     ),
 );
+
+function getPostLink($postName)
+{
+    return
+        strtolower(str_replace(array(' ', ',', '.'), array('-', ''), preg_replace(array("/(á|à|ã|â|ä)/", "/(Á|À|Ã|Â|Ä)/", "/(é|è|ê|ë)/", "/(É|È|Ê|Ë)/", "/(í|ì|î|ï)/", "/(Í|Ì|Î|Ï)/", "/(ó|ò|õ|ô|ö)/", "/(Ó|Ò|Õ|Ô|Ö)/", "/(ú|ù|û|ü)/", "/(Ú|Ù|Û|Ü)/", "/(ñ)/", "/(Ñ)/"), explode(" ", "a A e E i I o O u U n N"), $postName)));
+}
 ?>
 
 
@@ -59,7 +65,7 @@ $posts = array(
                         <span class="data"><?= $post['data'] ?></span>
                         <h3 class="post-titulo"><?= $post['titulo'] ?></h3>
                         <p class="descricao"><?= $post['descricao'] ?></p>
-                        <a href="#" class="link">
+                        <a href="<?= $GLOBALS['blog-integra_url'] ?>/<?= getPostLink($post['titulo']) ?>" class="link">
                             Continue lendo
                             <i class="fas fa-arrow-right"></i>
                         </a>
