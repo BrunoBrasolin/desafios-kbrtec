@@ -1,4 +1,5 @@
 <?php require_once './config.php'; ?>
+<?php require_once './functions.php'; ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">

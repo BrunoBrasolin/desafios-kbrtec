@@ -1,5 +1,26 @@
 <?php include_once 'includes/header.php'; ?>
 
+<?php
+$leiaMais = array(
+    array(
+        'imagem' => $GLOBALS['home_url'] . '/public/img/blog/leia-1.png',
+        'titulo' => 'O verão está chegando, Que tal vista para o mar?'
+    ),
+    array(
+        'imagem' => $GLOBALS['home_url'] . '/public/img/blog/leia-2.png',
+        'titulo' => 'Principais Bares e Restaurantes em Santos'
+    ),
+    array(
+        'imagem' => $GLOBALS['home_url'] . '/public/img/blog/leia-3.png',
+        'titulo' => 'Economia na Hora de Hospedar sua Família'
+    ),
+    array(
+        'imagem' => $GLOBALS['home_url'] . '/public/img/blog/leia-4.png',
+        'titulo' => 'Como avaliar os serviços de um bom hotel para se hospedar?'
+    ),
+);
+?>
+
 <main class="pagina-integra">
     <article class="conteudo">
         <span class="data">13/08/2018</span>
@@ -45,6 +66,26 @@
             </ol>
         </section>
     </article>
+
+    <div class="leia-tambem">
+        <h2 class="subtitulo">
+            <i class="far fa-file-alt"></i>
+            Leia também
+        </h2>
+        <section class="linha">
+            <?php foreach ($leiaMais as $post) : ?>
+                <article class="post">
+                    <a href="<?= $GLOBALS['blog-integra_url'] ?>/<?= getPostLink($post['titulo']) ?>" class="link">
+                        <img src="<?= $post['imagem'] ?>" alt="<?= $post['titulo'] ?> | House & Hostel ">
+                    </a>
+                    <h3 class="post-titulo"><?= $post['titulo'] ?></h3>
+                    <a href="<?= $GLOBALS['blog-integra_url'] ?>/<?= getPostLink($post['titulo']) ?>" class="link">
+                        <i class="fas fa-plus-circle fa-lg"></i>
+                    </a>
+                </article>
+            <?php endforeach; ?>
+        </section>
+    </div>
 </main>
 
 

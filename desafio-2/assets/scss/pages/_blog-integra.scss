@@ -75,4 +75,81 @@
       padding: 3rem 1rem;
     }
   }
+
+  .leia-tambem {
+    @extend .container;
+
+    .subtitulo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $salmao;
+      font-weight: 300;
+      margin: 3rem 0;
+
+      i {
+        margin-right: 1rem;
+        font-size: 1.5rem;
+      }
+    }
+
+    .linha {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .post {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 22%;
+        transition: 0.2s;
+        margin-bottom: 1.5rem;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+
+        .post-titulo {
+          font-size: 1rem;
+          text-align: center;
+          font-weight: 300;
+          max-width: 75%;
+          margin: {
+            top: 1rem;
+            bottom: 1.5rem;
+          }
+          @include underline();
+
+          &::after {
+            bottom: -10px;
+            background-color: transparent;
+          }
+        }
+
+        .link {
+          color: #373435;
+        }
+
+        &:hover {
+          .post-titulo {
+            &::after {
+              background-color: $salmao;
+            }
+          }
+          .link {
+            color: $salmao;
+          }
+        }
+
+        @media screen and(max-width: 768px) {
+          width: 48%;
+        }
+        @media screen and(max-width: 768px) {
+          width: 98%;
+        }
+      }
+    }
+  }
 }
