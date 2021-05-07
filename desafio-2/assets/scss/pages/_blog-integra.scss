@@ -30,7 +30,19 @@
     .banner {
       margin: 2rem 0;
       width: 100%;
-      height: auto;
+      max-height: 300px;
+      min-height: 300px;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
     }
 
     .texto {
@@ -109,6 +121,7 @@
         img {
           width: 100%;
           height: auto;
+          max-height: 200px;
         }
 
         .post-titulo {

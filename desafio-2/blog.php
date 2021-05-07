@@ -1,34 +1,5 @@
-<?php
-$posts = array(
-    array(
-        'titulo' => 'O verão está chegando, Que tal vista para o mar?',
-        'descricao' => 'Phasellus portasce susct vus mi. Cum sociis nat pentibus et magnis dis parturient montnascetur  ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida atcursus nec luctus a lorem Maecenas. tristique orci ac sem. Mauris fermentum dictum magna. Sed laoreet aliquam leo.',
-        'imagem' => 'public/img/blog/blog-1.png',
-        'data' => '13/08/2018',
-    ),
-    array(
-        'titulo' => 'Principais Bares e Restaurantes em Santos',
-        'descricao' => 'Phasellus portasce susct vus mi. Cum sociis nat pentibus et magnis dis parturient montnascetur  ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida atcursus nec luctus a lorem Maecenas. tristique orci ac sem. Mauris fermentum dictum magna. Sed laoreet aliquam leo.',
-        'imagem' => 'public/img/blog/blog-2.png',
-        'data' => '13/08/2018',
-    ),
-    array(
-        'titulo' => 'Economia na Hora de Hospedar sua Família',
-        'descricao' => 'Phasellus portasce susct vus mi. Cum sociis nat pentibus et magnis dis parturient montnascetur  ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida atcursus nec luctus a lorem Maecenas. tristique orci ac sem. Mauris fermentum dictum magna. Sed laoreet aliquam leo.',
-        'imagem' => 'public/img/blog/blog-3.png',
-        'data' => '13/08/2018',
-    ),
-    array(
-        'titulo' => 'Como avaliar os serviços de um bom hotel para se hospedar?',
-        'descricao' => 'Phasellus portasce susct vus mi. Cum sociis nat pentibus et magnis dis parturient montnascetur  ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida atcursus nec luctus a lorem Maecenas. tristique orci ac sem. Mauris fermentum dictum magna. Sed laoreet aliquam leo.',
-        'imagem' => 'public/img/blog/blog-4.png',
-        'data' => '13/08/2018',
-    ),
-);
-?>
-
-
 <?php include_once 'includes/header.php'; ?>
+<?php require_once 'includes/posts.php'; ?>
 
 <main class="pagina-blog">
     <section class="conteudo">
@@ -59,7 +30,7 @@ $posts = array(
                         <span class="data"><?= $post['data'] ?></span>
                         <h3 class="post-titulo"><?= $post['titulo'] ?></h3>
                         <p class="descricao"><?= $post['descricao'] ?></p>
-                        <a href="<?= $GLOBALS['blog-integra_url'] ?>/<?= getPostLink($post['titulo']) ?>" class="link">
+                        <a href="<?= getPostLink($post['id'], $post['titulo']) ?>" class="link">
                             Continue lendo
                             <i class="fas fa-arrow-right"></i>
                         </a>

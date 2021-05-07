@@ -1,6 +1,5 @@
 let url = window.location.pathname.split("/");
-
-if (url[url.length - 1].replace(".php", "")) document.querySelector(`#${url[url.length - 1].replace(".php", "")}`).classList.add("active");
+if (url[url.length - 1].replace(".php", "")) document.querySelector(`#${url[3].replace(".php", "")}`).classList.add("active");
 
 $(document).ready(function () {
   $(".banner-slider").slick({
@@ -39,10 +38,8 @@ $(document).ready(function () {
         },
       },
     ],
-    prevArrow:
-      '<div class="arrows-container" id="prev-arrow"><span class="arrows"><i class="fas fa-xs fa-chevron-left"></i></span></div>',
-    nextArrow:
-      '<div class="arrows-container" id="next-arrow"><span class="arrows"><i class="fas fa-xs fa-chevron-right"></i></span></div>',
+    prevArrow: '<div class="arrows-container" id="prev-arrow"><span class="arrows"><i class="fas fa-xs fa-chevron-left"></i></span></div>',
+    nextArrow: '<div class="arrows-container" id="next-arrow"><span class="arrows"><i class="fas fa-xs fa-chevron-right"></i></span></div>',
   });
 
   $(".acomodacao-slider-principal").slick({
@@ -84,10 +81,8 @@ $(document).ready(function () {
   $(".pagina-fotos .fotos").slick({
     slidesToShow: 5,
     autoplay: true,
-    prevArrow:
-      '<div class="arrows-container" id="prev-arrow"><span class="arrows"><i class="fas fa-xs fa-chevron-left"></i></span></div>',
-    nextArrow:
-      '<div class="arrows-container" id="next-arrow"><span class="arrows"><i class="fas fa-xs fa-chevron-right"></i></span></div>',
+    prevArrow: '<div class="arrows-container" id="prev-arrow"><span class="arrows"><i class="fas fa-xs fa-chevron-left"></i></span></div>',
+    nextArrow: '<div class="arrows-container" id="next-arrow"><span class="arrows"><i class="fas fa-xs fa-chevron-right"></i></span></div>',
     variableWidth: true,
     responsive: [
       {
