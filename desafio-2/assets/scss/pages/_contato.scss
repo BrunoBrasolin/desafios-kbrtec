@@ -4,12 +4,105 @@
   .conteudo {
     @extend .container;
 
-    .titulo {
-      @include underline(true);
-      @extend .h1;
-      padding-top: 3rem;
-      text-align: center;
-      margin-bottom: 3rem;
+    .esquerda {
+      width: 60%;
+
+      .subtitulo {
+        padding-top: 3rem;
+        @extend .h2;
+        font-weight: 300;
+        letter-spacing: 2px;
+      }
+
+      .titulo {
+        @include underline(false);
+        @extend .h1;
+        margin-bottom: 3rem;
+        letter-spacing: 1px;
+        line-height: 2rem;
+      }
+
+      .formulario {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 4rem;
+
+        .linha {
+          display: flex;
+          justify-content: space-between;
+
+          .input-email {
+            width: 58%;
+          }
+          .input-telefone {
+            width: 38%;
+          }
+        }
+
+        .input-group {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 1.5rem;
+
+          .label {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            transition: 0.2s;
+
+            &::before {
+              content: "●";
+              color: #beb9b0;
+              margin-right: 0.5rem;
+            }
+          }
+
+          input,
+          textarea {
+            padding: 0.5rem;
+            border: none;
+            filter: drop-shadow(0px 1px 2px #d6e1ed);
+            border-radius: 4px;
+            resize: none;
+            transition: 0.2s;
+          }
+
+          &:focus-within {
+            .label::before {
+              color: $salmao;
+            }
+
+            input {
+              filter: drop-shadow(0 5px 5px #d6e1ed);
+            }
+          }
+        }
+        .botao-mensagem {
+          display: flex;
+          align-items: center;
+
+          .botao {
+            padding: 0.5rem;
+            background-color: $salmao;
+            font-weight: 800;
+            font-feature-settings: $fonte-titulo;
+            text-transform: uppercase;
+            color: #fff;
+            border: 2px solid $salmao;
+            transition: 0.2s;
+
+            &:hover {
+              background-color: transparent;
+              color: $salmao;
+            }
+          }
+
+          .mensagem {
+            background-color: #defde9;
+            color: #91dc5a;
+            padding: 0.4rem;
+          }
+        }
+      }
     }
   }
 }

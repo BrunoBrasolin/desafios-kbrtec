@@ -9,10 +9,10 @@ if ($_SERVER['SERVER_NAME'] == 'ambiente-desenvolvimento.provisorio.ws' || $_SER
 }
 
 // URLS
-$GLOBALS['sobre_url'] = $GLOBALS['home_url'] . '/o-hostel.php';
-$GLOBALS['acomodacoes_url'] = $GLOBALS['home_url'] . '/acomodacoes.php';
-$GLOBALS['localizacao_url'] = $GLOBALS['home_url'] . '/localizacao.php';
-$GLOBALS['fotos_url'] = $GLOBALS['home_url'] . '/fotos.php';
-$GLOBALS['contato_url'] = $GLOBALS['home_url'] . '/contato.php';
-$GLOBALS['blog_url'] = $GLOBALS['home_url'] . '/blog.php';
+$GLOBALS['sobre_url'] = $GLOBALS['home_url'] . '/o-hostel';
+$GLOBALS['acomodacoes_url'] = $GLOBALS['home_url'] . '/acomodacoes';
+$GLOBALS['localizacao_url'] = $GLOBALS['home_url'] . '/localizacao';
+$GLOBALS['fotos_url'] = $GLOBALS['home_url'] . '/fotos';
+$GLOBALS['contato_url'] = $GLOBALS['home_url'] . '/contato';
+$GLOBALS['blog_url'] = $GLOBALS['home_url'] . '/blog';
 $GLOBALS['blog-integra_url'] = $GLOBALS['home_url'] . '/blog';
