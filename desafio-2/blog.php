@@ -17,7 +17,7 @@
                     <div class="esquerda">
                         <img src="<?= $post['imagem'] ?>" alt="<?= $post['titulo'] ?> | House & Hostel" title="<?= $post['titulo'] ?> | House & Hostel">
                         <div class="redes-sociais">
-                            <a class="link link-facebook" href="https://facebook.com" target="_blank" title="Facebook | House e Hostel">
+                            <a class="link link-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?= $linkPagina ?>&amp;src=sdkpreparse" target="_blank" title="Facebook | House e Hostel">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                             <a class="link link-instagram" href="https://instagram.com" target="_blank" title="Instagram | House e Hostel">
