@@ -89,6 +89,10 @@
 
     @media screen and (max-width: 768px) {
       padding: 3rem;
+
+      .banner {
+        height: 300px;
+      }
     }
     @media screen and (max-width: 500px) {
       padding: 3rem 1rem;
@@ -207,7 +211,7 @@
         @media screen and(max-width: 768px) {
           width: 48%;
         }
-        @media screen and(max-width: 768px) {
+        @media screen and(max-width: 500px) {
           width: 98%;
 
           .post-titulo {

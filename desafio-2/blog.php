@@ -17,11 +17,14 @@
                     <div class="esquerda">
                         <img src="<?= $post['imagem'] ?>" alt="<?= $post['titulo'] ?> | House & Hostel" title="<?= $post['titulo'] ?> | House & Hostel">
                         <div class="redes-sociais">
-                            <a class="link link-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?= $linkPagina ?>&amp;src=sdkpreparse" target="_blank" title="Facebook | House e Hostel">
+                            <a class="link link-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?= getPostLink($post['id'], $post['titulo']) ?>&amp;src=sdkpreparse" target="_blank" title="Facebook | House e Hostel">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a class="link link-instagram" href="https://instagram.com" target="_blank" title="Instagram | House e Hostel">
-                                <i class="fab fa-instagram"></i>
+                            <a class="link link-twitter" href="https://twitter.com/intent/tweet?hashtags=houseehostel&original_referer=<?= getPostLink($post['id'], $post['titulo']) ?>&ref_src=twsrc%5Etfw&related=twitterapi%2Ctwitter&tw_p=tweetbutton&url=<?= getPostLink($post['id'], $post['titulo']) ?>&text=<?= $post['titulo'] ?>" target="_blank" title="Instagram | House e Hostel">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a class="link link-whatsapp" href="https://api.whatsapp.com/send?text=<?= getPostLink($post['id'], $post['titulo']) ?>" target="_blank" title="Instagram | House e Hostel">
+                                <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
                     </div>
