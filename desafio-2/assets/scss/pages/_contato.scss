@@ -173,8 +173,9 @@
       @include informacoes-contato(true);
       width: 40%;
     }
-
-    @media screen and (max-width: 992px) {
+  }
+  @media screen and (max-width: 992px) {
+    .conteudo {
       flex-direction: column;
 
       .esquerda,
@@ -189,7 +190,11 @@
         }
       }
     }
-    @media screen and (max-width: 600px) {
+  }
+  @media screen and (max-width: 600px) {
+    background-size: 150% auto;
+
+    .conteudo {
       .esquerda {
         .formulario {
           .linha {
