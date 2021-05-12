@@ -81,7 +81,7 @@
 
     <?php include_once 'includes/sobre.php'; ?>
 
-    <?php include_once 'includes/contato.php'; ?>
+    <?php include_once 'includes/bloco-contato.php'; ?>
 </main>
 
 

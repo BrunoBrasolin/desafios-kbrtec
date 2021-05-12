@@ -1,11 +1,17 @@
 .pagina-contato {
   background-color: $cinza;
+  background-image: url("../img/contato-fundo.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
 
   .conteudo {
     @extend .container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     .esquerda {
-      width: 60%;
+      width: 50%;
 
       .subtitulo {
         padding-top: 3rem;
@@ -56,14 +62,14 @@
             }
           }
 
-          input,
-          textarea {
+          .input {
             padding: 0.5rem;
             border: none;
             filter: drop-shadow(0px 1px 2px #d6e1ed);
             border-radius: 4px;
             resize: none;
             transition: 0.2s;
+            border-bottom: 1px solid transparent;
           }
 
           &:focus-within {
@@ -71,14 +77,16 @@
               color: $salmao;
             }
 
-            input {
+            .input {
               filter: drop-shadow(0 5px 5px #d6e1ed);
+              border-color: $salmao;
             }
           }
         }
         .botao-mensagem {
           display: flex;
           align-items: center;
+          justify-content: space-between;
 
           .botao {
             padding: 0.5rem;
@@ -99,7 +107,55 @@
           .mensagem {
             background-color: #defde9;
             color: #91dc5a;
-            padding: 0.4rem;
+            padding: 0.5rem;
+            width: 60%;
+            position: relative;
+            flex-shrink: 0;
+
+            &::before {
+              content: "";
+              height: 12px;
+              width: 12px;
+              position: absolute;
+              left: -6px;
+              top: calc(50% - 6px);
+              background-color: #defde9;
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+    }
+
+    .direita {
+      @include informacoes-contato(true);
+      width: 40%;
+    }
+
+    @media screen and (max-width: 992px) {
+      flex-direction: column;
+
+      .esquerda,
+      .direita {
+        width: 100%;
+      }
+
+      .direita {
+        .informacoes {
+          flex-direction: row;
+          margin-bottom: 4rem;
+        }
+      }
+    }
+    @media screen and (max-width: 600px) {
+      .esquerda {
+        .formulario {
+          .linha {
+            flex-direction: column;
+
+            .input-group {
+              width: 100%;
+            }
           }
         }
       }
