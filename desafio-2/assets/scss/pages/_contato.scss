@@ -69,7 +69,11 @@
             border-radius: 4px;
             resize: none;
             transition: 0.2s;
-            border-bottom: 1px solid transparent;
+            border: 1px solid transparent;
+
+            &.erro {
+              border-color: red;
+            }
           }
 
           &:focus-within {
@@ -79,24 +83,25 @@
 
             .input {
               filter: drop-shadow(0 5px 5px #d6e1ed);
-              border-color: $salmao;
+              border-bottom: 1px solid $salmao;
             }
           }
         }
         .botao-mensagem {
           display: flex;
           align-items: center;
-          justify-content: space-between;
+          justify-content: flex-start;
 
           .botao {
-            padding: 0.5rem;
+            padding: 0.3rem 1rem;
             background-color: $salmao;
             font-weight: 800;
-            font-feature-settings: $fonte-titulo;
+            font-family: $fonte-titulo;
             text-transform: uppercase;
             color: #fff;
             border: 2px solid $salmao;
             transition: 0.2s;
+            margin-right: 1rem;
 
             &:hover {
               background-color: transparent;
@@ -105,22 +110,59 @@
           }
 
           .mensagem {
-            background-color: #defde9;
-            color: #91dc5a;
             padding: 0.5rem;
             width: 60%;
-            position: relative;
             flex-shrink: 0;
+            height: 50px;
 
-            &::before {
-              content: "";
-              height: 12px;
-              width: 12px;
-              position: absolute;
-              left: -6px;
-              top: calc(50% - 6px);
-              background-color: #defde9;
-              transform: rotate(45deg);
+            > div {
+              height: 100%;
+              align-items: center;
+              display: none;
+              position: relative;
+              padding-left: 12px;
+              > i,
+              img {
+                margin-right: 0.5rem;
+              }
+
+              &::before {
+                content: "";
+                height: 12px;
+                width: 12px;
+                position: absolute;
+                left: -6px;
+                top: calc(50% - 6px);
+                transform: rotate(45deg);
+              }
+            }
+
+            .sucesso {
+              color: #91dc5a;
+
+              &,
+              &::before {
+                background-color: #defde9;
+              }
+            }
+
+            .erro {
+              color: #c72d2d;
+
+              &,
+              &::before {
+                background-color: #e9a3a3;
+              }
+            }
+
+            .carregando {
+              color: $salmao;
+              background-color: #fff;
+
+              &,
+              &::before {
+                background-color: #fff;
+              }
             }
           }
         }

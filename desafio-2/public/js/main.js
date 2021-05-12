@@ -95,4 +95,71 @@ $(document).ready(function () {
       },
     ],
   });
+
+  var SPMaskBehavior = function (val) {
+      return val.replace(/\D/g, "").length === 11 ? "(00) 00000-0000" : "(00) 0000-00009";
+    },
+    spOptions = {
+      onKeyPress: function (val, e, field, options) {
+        field.mask(SPMaskBehavior.apply({}, arguments), options);
+      },
+    };
+
+  $("#telefone").mask(SPMaskBehavior, spOptions);
+
+  $("#formulario-contato .input").focus(function () {
+    this.classList.remove("erro");
+  });
+
+  $("#formulario-contato").submit(function (e) {
+    e.preventDefault();
+    let erro = false;
+    let nome = $(this).find("#nome");
+    let nomeValue = $(nome).val();
+    if (/\d/.test(nomeValue) || /[^a-z\sáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]/i.test(nomeValue) || nomeValue.length < 2) {
+      erro = true;
+      $(nome).addClass("erro");
+    }
+
+    let telefone = $(this).find("#telefone");
+    let telefoneValue = $(telefone).val();
+    if (telefoneValue.length !== 14 && telefoneValue.length !== 15) {
+      erro = true;
+      $(telefone).addClass("erro");
+    }
+
+    let email = $(this).find("#email");
+    let emailValue = $(email).val();
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!re.test(String(emailValue).toLowerCase())) {
+      erro = true;
+      $(email).addClass("erro");
+    }
+
+    if (!erro)
+      $.ajax({
+        type: "POST",
+        url: "#",
+        data: {
+          nome: nomeValue,
+          email: emailValue,
+          telefone: telefoneValue,
+          mensagem: $(this).find("#mensagem").val(),
+        },
+        beforeSend: () => {
+          $(".mensagem > div").css("display", "none");
+          $(".mensagem .carregando").css("display", "flex");
+        },
+        success: () => {
+          $(".mensagem > div").css("display", "none");
+          $(".mensagem .sucesso").css("display", "flex");
+        },
+        error: () => {
+          $(".mensagem > div").css("display", "none");
+          $(".mensagem .erro").css("display", "flex");
+        },
+        complete: () => console.log("completado"),
+      });
+  });
 });

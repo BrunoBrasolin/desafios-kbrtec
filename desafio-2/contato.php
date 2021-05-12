@@ -9,25 +9,25 @@
                 em Santos
             </h2>
 
-            <form class="formulario">
+            <form class="formulario" id="formulario-contato">
                 <div class="input-group input-nome">
                     <label class="label" for="nome">Seu nome:</label>
-                    <input class="input" type="text" placeholder="Ex: Nome Exemplo" name="nome">
+                    <input id="nome" class="input" type="text" placeholder="Ex: Nome Exemplo" name="nome">
                 </div>
                 <div class="linha">
                     <div class="input-group input-email">
                         <label class="label" for="email">Seu e-mail:</label>
-                        <input class="input" type="email" name="email" placeholder="Ex: mail@exemplo.com.br">
+                        <input id="email" class="input" type="text" name="email" placeholder="Ex: mail@exemplo.com.br">
                     </div>
                     <div class="input-group input-telefone">
                         <label class="label" for="telefone">Telefone:</label>
-                        <input class="input" type="text" name="telefone" placeholder="Ex: 13 997586542">
+                        <input id="telefone" class="input" type="text" name="telefone" placeholder="Ex: 13 997586542">
                     </div>
                 </div>
 
                 <div class="input-group input-mensagem">
                     <label class="label" for="mensagem">Mensagem</label>
-                    <textarea class="input" name="mensagem" placeholder="Digite aqui a mensagem que deseja nos passar" rows="4"></textarea>
+                    <textarea id="mensagem" class="input" name="mensagem" placeholder="Digite aqui a mensagem que deseja nos passar" rows="4"></textarea>
                 </div>
 
                 <div class="botao-mensagem">
@@ -36,6 +36,14 @@
                         <div class="sucesso">
                             <i class="fas fa-check-circle"></i>
                             Dados enviado com sucesso!
+                        </div>
+                        <div class="erro">
+                            <i class="fas fa-times-circle"></i>
+                            Ocorreu um erro
+                        </div>
+                        <div class="carregando">
+                            <img src="public/img/loading.gif" height="32" width="32" alt="Carregando">
+                            Enviando...
                         </div>
                     </div>
                 </div>
