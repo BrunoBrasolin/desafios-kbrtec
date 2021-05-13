@@ -14,14 +14,14 @@
 
     @if $column {
       flex-direction: column;
-      padding: 3rem 1rem 3rem 3rem;
+      padding: 3rem 1rem;
       margin: 0;
       align-items: flex-start;
     }
 
     .informacao {
       display: flex;
-      max-width: 300px;
+      max-width: 350px;
       width: 100%;
       margin: {
         left: auto;
@@ -61,7 +61,7 @@
         .subtitulo {
           @extend .h3;
           color: $salmao;
-          font-weight: 400;
+          font-weight: 800;
           font-family: $fonte-texto;
           margin: {
             top: 0.5rem;
@@ -114,7 +114,9 @@
 
     @media screen and (max-width: 930px) {
       .informacao {
-        margin-bottom: 1rem;
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
         .conteudo {
           margin: {
             right: auto;
