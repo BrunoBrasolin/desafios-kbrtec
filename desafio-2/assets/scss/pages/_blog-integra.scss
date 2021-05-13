@@ -140,7 +140,9 @@
         align-items: center;
         width: 22%;
         transition: 0.2s;
-        margin-bottom: 1.5rem;
+        &:not(:last-child) {
+          margin-bottom: 1.5rem;
+        }
 
         .imagem-link {
           position: relative;
