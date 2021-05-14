@@ -114,6 +114,7 @@ $(document).ready(function () {
   $("#formulario-contato").submit(function (e) {
     e.preventDefault();
     let erro = false;
+
     let nome = $(this).find("#nome");
     let nomeValue = $(nome).val();
     if (/\d/.test(nomeValue) || /[^a-z\sáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]/i.test(nomeValue) || nomeValue.length < 2) {
@@ -137,16 +138,60 @@ $(document).ready(function () {
       $(email).addClass("erro");
     }
 
+    let assunto = $(this).find("#assunto");
+    let assuntoValue = $(assunto).val();
+    let acomodacaoValue = "";
+    let checkinValue = "";
+    let checkoutValue = "";
+    let mensagem = "";
+    let mensagemValue = "";
+
+    if (assuntoValue == "reserva") {
+      let acomodacao = $(this).find("#acomodacao");
+      acomodacaoValue = $(acomodacao).val();
+      if (acomodacaoValue == null) {
+        erro = true;
+        $(acomodacao).addClass("erro");
+      }
+
+      let checkin = $(this).find("#checkin");
+      checkinValue = $(checkin).val();
+      if (checkinValue == "" || checkinValue < new Date().toISOString().slice(0, 10)) {
+        erro = true;
+        $(checkin).addClass("erro");
+      }
+
+      let checkout = $(this).find("#checkout");
+      checkoutValue = $(checkout).val();
+      if (checkoutValue == "" || checkoutValue < checkinValue) {
+        erro = true;
+        $(checkout).addClass("erro");
+      }
+    } else if (assuntoValue == "duvidas" || assuntoValue == "informacoes") {
+      mensagem = $(this).find("#mensagem");
+      mensagemValue = $(mensagem).val();
+      if (mensagemValue == "") {
+        erro = true;
+        $(mensagem).addClass("erro");
+      }
+    }
+
+    var data = {
+      nome: nomeValue,
+      email: emailValue,
+      telefone: telefoneValue,
+      mensagem: mensagemValue,
+      assunto: assuntoValue,
+      checkin: checkinValue,
+      checkout: checkoutValue,
+      acomodacao: acomodacaoValue,
+    };
+
     if (!erro)
       $.ajax({
         type: "POST",
-        url: "#",
-        data: {
-          nome: nomeValue,
-          email: emailValue,
-          telefone: telefoneValue,
-          mensagem: $(this).find("#mensagem").val(),
-        },
+        url: `contato/${assuntoValue}/obrigado`,
+        data: data,
         beforeSend: () => {
           $(".mensagem > div").css("display", "none");
           $(".mensagem .carregando").css("display", "flex");
@@ -154,6 +199,10 @@ $(document).ready(function () {
         success: () => {
           $(".mensagem > div").css("display", "none");
           $(".mensagem .sucesso").css("display", "flex");
+          let url = window.location.pathname.split("/");
+          url.pop();
+          window.location = url.join("/") + `/contato/${assuntoValue}/obrigado`;
+          localStorage.setItem("data", JSON.stringify({ ...data }));
         },
         error: () => {
           $(".mensagem > div").css("display", "none");
@@ -162,4 +211,17 @@ $(document).ready(function () {
         complete: () => console.log("completado"),
       });
   });
+
+  $("input#checkin, input#checkout").attr("min", new Date().toISOString().slice(0, 10));
+  $("input#checkin").change(function () {
+    $("input#checkout").attr("min", $(this).val());
+  });
+  $("input#checkout").change(function () {
+    $("input#checkin").attr("max", $(this).val());
+  });
+
+  $("#assunto").change(function () {
+    $(this).val() == "reserva" ? $(".select-reserva").css("display", "flex") : $(".select-reserva").css("display", "none");
+  });
 });
+

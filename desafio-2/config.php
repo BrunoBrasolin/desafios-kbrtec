@@ -8,6 +8,7 @@ if ($_SERVER['SERVER_NAME'] == 'ambiente-desenvolvimento.provisorio.ws' || $_SER
     die();
 }
 
+
 // URLS
 $GLOBALS['sobre_url'] = $GLOBALS['home_url'] . '/o-hostel';
 $GLOBALS['acomodacoes_url'] = $GLOBALS['home_url'] . '/acomodacoes';

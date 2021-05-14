@@ -1,4 +1,6 @@
 <?php include_once 'includes/header.php'; ?>
+<?php require_once 'includes/acomodacoes.php'; ?>
+
 
 <main class="pagina-contato">
     <section class="conteudo">
@@ -17,12 +19,42 @@
                 <div class="linha">
                     <div class="input-group input-email">
                         <label class="label" for="email">Seu e-mail:</label>
-                        <input id="email" class="input" type="text" name="email" placeholder="Ex: mail@exemplo.com.br">
+                        <input id="email" class="input" type="text" name="email"  placeholder="Ex: mail@exemplo.com.br">
                     </div>
                     <div class="input-group input-telefone">
                         <label class="label" for="telefone">Telefone:</label>
                         <input id="telefone" class="input" type="text" name="telefone" placeholder="Ex: 13 997586542">
                     </div>
+                </div>
+
+                <div class="input-group input-assunto">
+                    <label class="label" for="assunto">Assunto</label>
+                    <select id="assunto" class="input" name="assunto">
+                        <option value="" selected disabled>Selecione um assunto</option>
+                        <option value="reserva">Fazer reserva</option>
+                        <option value="informacoes">Informações sobre reserva</option>
+                        <option value="duvidas">Dúvidas gerais</option>
+                    </select>
+                </div>
+
+                <div class="input-group input-acomodacao select-field select-reserva">
+                    <label class="label" for="acomodacao">Acomodação</label>
+                    <select id="acomodacao" class="input" name="acomodacao">
+                        <option value="" selected disabled>Selecione uma acomodação</option>
+                        <?php foreach ($acomodacoes as $acomodacao) : ?>
+                            <option value="<?= $acomodacao['id'] ?>"><?= $acomodacao['titulo'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <div class="input-group input-checkin select-field select-reserva">
+                    <label class="label" for="checkin">Checkin</label>
+                    <input type="date" class="input" name="checkin" id="checkin">
+                </div>
+
+                <div class="input-group input-checkout select-field select-reserva">
+                    <label class="label" for="checkout">Checkout</label>
+                    <input type="date" class="input" name="checkout" id="checkout">
                 </div>
 
                 <div class="input-group input-mensagem">

@@ -8,6 +8,7 @@ RewriteRule ^acomodacoes/?$ /bruno-brasolin/desafio-2/acomodacoes.php [NC,L]
 RewriteRule ^localizacao/?$ /bruno-brasolin/desafio-2/localizacao.php [NC,L]
 RewriteRule ^fotos/?$ /bruno-brasolin/desafio-2/fotos.php [NC,L]
 RewriteRule ^contato/?$ /bruno-brasolin/desafio-2/contato.php [NC,L]
+RewriteRule ^contato/(.*)/obrigado /bruno-brasolin/desafio-2/contato-obrigado.php [NC,L]
 RewriteRule ^blog/?$ /bruno-brasolin/desafio-2/blog.php [NC,L]
 RewriteRule ^blog/(.*)$ /bruno-brasolin/desafio-2/blog-integra.php [NC,L]
 

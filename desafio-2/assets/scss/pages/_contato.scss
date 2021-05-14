@@ -50,6 +50,10 @@
           flex-direction: column;
           margin-bottom: 1.5rem;
 
+          &.select-field {
+            display: none;
+          }
+
           .label {
             font-size: 0.9rem;
             margin-bottom: 0.5rem;

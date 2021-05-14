@@ -1,0 +1,78 @@
+.contato-obrigado-pagina {
+  background-color: $cinza;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .conteudo {
+    @extend .container;
+    .titulo {
+      @include underline(true);
+      padding-top: 3rem;
+      margin-bottom: 3rem;
+      text-align: center;
+
+      &.mensagem {
+        @extend .h1;
+      }
+    }
+
+    .acomodacao {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 600px;
+      width: 100%;
+      border: 1px solid $salmao;
+      background-color: #fff;
+      padding: 2rem;
+      transition: 0.2s;
+      margin-bottom: 3rem;
+
+      &:hover {
+        box-shadow: 0 0 20px rgba(#000, 0.15);
+      }
+
+      .direita {
+        margin-left: 2rem;
+        .detalhes {
+          display: flex;
+          flex-direction: column;
+          .detalhes-item {
+            margin-bottom: 0.5rem;
+          }
+
+          .descricao-item {
+            position: relative;
+            font-size: 0.875rem;
+
+            &::before {
+              content: "";
+              position: absolute;
+              left: calc(-1rem - 2.5px);
+              top: calc(50% - 2.5px);
+              height: 5px;
+              width: 5px;
+              background-color: $salmao;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 580px) {
+        flex-direction: column;
+
+        .esquerda {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .agradecimento {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+  }
+}
