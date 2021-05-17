@@ -46,7 +46,7 @@
     else {
         let acomodacoes = <?= json_encode($acomodacoes) ?>;
         let acomodacao = acomodacoes.find(acomodacao => acomodacao.id == JSON.parse(localStorage.getItem("data")).acomodacao);
-        console.log(JSON.parse(localStorage.getItem("data")).acomodacao, acomodacao);
+
         document.querySelector("#acomodacao").innerHTML = acomodacao.titulo;
         acomodacao.descricao.map(item => {
             let li = document.createElement("li");
