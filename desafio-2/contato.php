@@ -15,15 +15,18 @@
                 <div class="input-group input-nome">
                     <label class="label" for="nome">Seu nome:</label>
                     <input id="nome" class="input" type="text" placeholder="Ex: Nome Exemplo" name="nome">
+                    <small class="mensagem-erro">Preencha com um nome válido</small>
                 </div>
                 <div class="linha">
                     <div class="input-group input-email">
                         <label class="label" for="email">Seu e-mail:</label>
-                        <input id="email" class="input" type="text" name="email"  placeholder="Ex: mail@exemplo.com.br">
+                        <input id="email" class="input" type="text" name="email" placeholder="Ex: mail@exemplo.com.br">
+                        <small class="mensagem-erro">Preencha com um email válido</small>
                     </div>
                     <div class="input-group input-telefone">
                         <label class="label" for="telefone">Telefone:</label>
-                        <input id="telefone" class="input" type="text" name="telefone" placeholder="Ex: 13 997586542">
+                        <input id="telefone" class="input" type="text" name="telefone" placeholder="Ex: (13) 99758-6542">
+                        <small class="mensagem-erro">Preencha com um telefone válido</small>
                     </div>
                 </div>
 
@@ -35,6 +38,7 @@
                         <option value="informacoes">Informações sobre reserva</option>
                         <option value="duvidas">Dúvidas gerais</option>
                     </select>
+                    <small class="mensagem-erro">Selecione um assunto</small>
                 </div>
 
                 <div class="input-group input-acomodacao select-field select-reserva">
@@ -45,21 +49,25 @@
                             <option value="<?= $acomodacao['id'] ?>"><?= $acomodacao['titulo'] ?></option>
                         <?php endforeach; ?>
                     </select>
+                    <small class="mensagem-erro">Selecione uma acomodação</small>
                 </div>
 
                 <div class="input-group input-checkin select-field select-reserva">
-                    <label class="label" for="checkin">Checkin</label>
+                    <label class="label" for="checkin">Check-in</label>
                     <input type="date" class="input" name="checkin" id="checkin">
+                    <small class="mensagem-erro">Selecione uma data válida</small>
                 </div>
 
                 <div class="input-group input-checkout select-field select-reserva">
                     <label class="label" for="checkout">Checkout</label>
                     <input type="date" class="input" name="checkout" id="checkout">
+                    <small class="mensagem-erro">Selecione uma data válida</small>
                 </div>
 
                 <div class="input-group input-mensagem">
                     <label class="label" for="mensagem">Mensagem</label>
                     <textarea id="mensagem" class="input" name="mensagem" placeholder="Digite aqui a mensagem que deseja nos passar" rows="4"></textarea>
+                    <small class="mensagem-erro">Envie uma mensagem</small>
                 </div>
 
                 <div class="botao-mensagem">
@@ -69,7 +77,7 @@
                             <i class="fas fa-check-circle"></i>
                             Dados enviado com sucesso!
                         </div>
-                        <div class="erro">
+                        <div class="mensagem-erro">
                             <i class="fas fa-times-circle"></i>
                             Ocorreu um erro
                         </div>

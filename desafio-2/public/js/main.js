@@ -109,6 +109,7 @@ $(document).ready(function () {
 
   $("#formulario-contato .input").focus(function () {
     this.classList.remove("erro");
+    $(this).parent().find(".mensagem-erro").css("visibility", "hidden");
   });
 
   $("#formulario-contato").submit(function (e) {
@@ -120,6 +121,7 @@ $(document).ready(function () {
     if (/\d/.test(nomeValue) || /[^a-z\sáàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]/i.test(nomeValue) || nomeValue.length < 2) {
       erro = true;
       $(nome).addClass("erro");
+      $(nome).parent().find(".mensagem-erro").css("visibility", "visible");
     }
 
     let telefone = $(this).find("#telefone");
@@ -127,6 +129,7 @@ $(document).ready(function () {
     if (telefoneValue.length !== 14 && telefoneValue.length !== 15) {
       erro = true;
       $(telefone).addClass("erro");
+      $(telefone).parent().find(".mensagem-erro").css("visibility", "visible");
     }
 
     let email = $(this).find("#email");
@@ -136,6 +139,7 @@ $(document).ready(function () {
     if (!re.test(String(emailValue).toLowerCase())) {
       erro = true;
       $(email).addClass("erro");
+      $(email).parent().find(".mensagem-erro").css("visibility", "visible");
     }
 
     let assunto = $(this).find("#assunto");
@@ -146,12 +150,17 @@ $(document).ready(function () {
     let mensagem = "";
     let mensagemValue = "";
 
-    if (assuntoValue == "reserva") {
+    if (assuntoValue == null) {
+      erro = true;
+      $(assunto).addClass("erro");
+      $(assunto).parent().find(".mensagem-erro").css("visibility", "visible");
+    } else if (assuntoValue == "reserva") {
       let acomodacao = $(this).find("#acomodacao");
       acomodacaoValue = $(acomodacao).val();
       if (acomodacaoValue == null) {
         erro = true;
         $(acomodacao).addClass("erro");
+        $(acomodacao).parent().find(".mensagem-erro").css("visibility", "visible");
       }
 
       let checkin = $(this).find("#checkin");
@@ -159,6 +168,7 @@ $(document).ready(function () {
       if (checkinValue == "" || checkinValue < new Date().toISOString().slice(0, 10)) {
         erro = true;
         $(checkin).addClass("erro");
+        $(checkin).parent().find(".mensagem-erro").css("visibility", "visible");
       }
 
       let checkout = $(this).find("#checkout");
@@ -166,6 +176,7 @@ $(document).ready(function () {
       if (checkoutValue == "" || checkoutValue < checkinValue) {
         erro = true;
         $(checkout).addClass("erro");
+        $(checkout).parent().find(".mensagem-erro").css("visibility", "visible");
       }
     } else if (assuntoValue == "duvidas" || assuntoValue == "informacoes") {
       mensagem = $(this).find("#mensagem");
@@ -173,6 +184,7 @@ $(document).ready(function () {
       if (mensagemValue == "") {
         erro = true;
         $(mensagem).addClass("erro");
+        $(mensagem).parent().find(".mensagem-erro").css("visibility", "visible");
       }
     }
 
@@ -224,4 +236,3 @@ $(document).ready(function () {
     $(this).val() == "reserva" ? $(".select-reserva").css("display", "flex") : $(".select-reserva").css("display", "none");
   });
 });
-

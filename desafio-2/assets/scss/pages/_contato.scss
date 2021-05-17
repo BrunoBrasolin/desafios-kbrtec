@@ -31,7 +31,7 @@
       .formulario {
         display: flex;
         flex-direction: column;
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
 
         .linha {
           display: flex;
@@ -67,7 +67,7 @@
           }
 
           .input {
-            padding: 0.5rem 1rem;
+            padding: 0.65rem 1rem;
             border: none;
             filter: drop-shadow(0px 1px 2px #d6e1ed);
             border-radius: 4px;
@@ -78,6 +78,14 @@
             &.erro {
               border-color: red;
             }
+          }
+
+          .mensagem-erro {
+            // display: none;
+            visibility: hidden;
+            color: red;
+            font-size: 12px;
+            margin-top: 0.3rem;
           }
 
           &:focus-within {
@@ -192,7 +200,7 @@
       .direita {
         .informacoes {
           flex-direction: row;
-          margin-bottom: 4rem;
+          margin-bottom: 3rem;
         }
       }
     }

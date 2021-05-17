@@ -26,7 +26,7 @@
       width: 100%;
       border: 1px solid $salmao;
       background-color: #fff;
-      padding: 2rem;
+      padding: 1rem;
       transition: 0.2s;
       margin-bottom: 3rem;
 
@@ -43,19 +43,23 @@
             margin-bottom: 0.5rem;
           }
 
-          .descricao-item {
-            position: relative;
-            font-size: 0.875rem;
+          #descricao {
+            margin-left: calc(1rem + 5px);
 
-            &::before {
-              content: "";
-              position: absolute;
-              left: calc(-1rem - 2.5px);
-              top: calc(50% - 2.5px);
-              height: 5px;
-              width: 5px;
-              background-color: $salmao;
-              border-radius: 50%;
+            .descricao-item {
+              position: relative;
+              font-size: 0.875rem;
+
+              &::before {
+                content: "";
+                position: absolute;
+                left: calc(-1rem - 2.5px);
+                top: calc(50% - 2.5px);
+                height: 5px;
+                width: 5px;
+                background-color: $salmao;
+                border-radius: 50%;
+              }
             }
           }
         }
@@ -63,16 +67,35 @@
 
       @media screen and (max-width: 580px) {
         flex-direction: column;
+        max-width: 300px;
+        margin: {
+          left: auto;
+          right: auto;
+        }
 
         .esquerda {
           margin-bottom: 1rem;
+        }
+
+        .direita {
+          margin-left: 0;
         }
       }
     }
 
     .agradecimento {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
       text-align: center;
+
+      .subtitulo {
+        @extend .h2;
+      }
+
+      p {
+        @extend .h2;
+        font-weight: 300;
+        margin-top: 1rem;
+      }
     }
   }
 }
