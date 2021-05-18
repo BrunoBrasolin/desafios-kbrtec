@@ -218,6 +218,13 @@ $(document).ready(function () {
     $(this).val() == "reserva" ? $(".select-reserva").css("display", "flex") : $(".select-reserva").css("display", "none");
   });
 
+  let searchParams = new URLSearchParams(window.location.search);
+  if (searchParams.has("acomodacao")) {
+    $("#assunto").val("reserva");
+    $(".select-reserva").css("display", "flex");
+    $("#acomodacao").val(searchParams.get("acomodacao"));
+  }
+
   if (document.getElementById("datas") !== null) {
     const datas = new Litepicker({
       element: document.getElementById("datas"),
@@ -225,8 +232,8 @@ $(document).ready(function () {
       format: "DD/MM/YYYY",
       singleMode: false,
       tooltipText: {
-        one: "dia",
-        other: "dias",
+        one: "noite",
+        other: "noites",
       },
       tooltipNumber: totalDays => {
         return totalDays - 1;
@@ -235,7 +242,7 @@ $(document).ready(function () {
   }
 
   if (document.querySelector("#email")) document.querySelector("#email").innerHTML = JSON.parse(localStorage.getItem("data")).email;
-  else if(document.querySelector("#acomodacao")) {
+  else if (document.querySelector("#acomodacao")) {
     let acomodacoes = [
       {
         id: 1,

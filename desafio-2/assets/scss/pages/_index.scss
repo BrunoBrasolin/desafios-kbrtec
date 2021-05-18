@@ -157,10 +157,8 @@ section.acomodacoes {
 
   .acomodacoes-conteudo {
     @extend .container;
-    padding {
-      top: 5rem;
-      bottom: 5rem;
-    }
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 
     .titulo {
       @extend .h1;
