@@ -37,7 +37,7 @@
                                 Varanda com vista pro mar
                                 Banheiro individual
                             </p>
-                            <a class="link" href="#">Reservar</a>
+                            <a href="<?= $GLOBALS['contato_url'] ?>?acomodacao=1" class="link">Reservar</a>
                         </div>
                     </div>
                 </li>
@@ -53,7 +53,7 @@
                                 Cama de casal Queen, Frigobar, 
                                 Banheiro individual
                             </p>
-                            <a class="link" href="#">Reservar</a>
+                            <a href="<?= $GLOBALS['contato_url'] ?>?acomodacao=2" class="link">Reservar</a>
                         </div>
                     </div>
                 </li>
@@ -69,7 +69,7 @@
                                 quarto com 1 armazenamento
                                 para cada pessoa
                             </p>
-                            <a class="link" href="#">Reservar</a>
+                            <a href="<?= $GLOBALS['contato_url'] ?>?acomodacao=3" class="link">Reservar</a>
                         </div>
                     </div>
                 </li>
