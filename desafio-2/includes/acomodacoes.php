@@ -1,5 +1,5 @@
 <?php
-$acomodacoes = array(
+return $acomodacoes = array(
     array(
         'id' => 1,
         'titulo' => 'Suíte master',

@@ -20,8 +20,7 @@
                             <ul id="descricao">
                             </ul>
                         </li>
-                        <li class="detalhes-item"><strong>Check-in:</strong> <span id="checkin"></span></li>
-                        <li class="detalhes-item"><strong>Check-out:</strong> <span id="checkout"></span></li>
+                        <li class="detalhes-item"><strong>Check-in e check-out:<br></strong> <span id="datas"></span></li>
                     </ul>
                 </div>
             </section>
@@ -39,25 +38,5 @@
         <?php endif; ?>
     </section>
 </main>
-
-<script>
-    if (document.querySelector("#email"))
-        document.querySelector("#email").innerHTML = JSON.parse(localStorage.getItem("data")).email;
-    else {
-        let acomodacoes = <?= json_encode($acomodacoes) ?>;
-        let acomodacao = acomodacoes.find(acomodacao => acomodacao.id == JSON.parse(localStorage.getItem("data")).acomodacao);
-
-        document.querySelector("#acomodacao").innerHTML = acomodacao.titulo;
-        acomodacao.descricao.map(item => {
-            let li = document.createElement("li");
-            li.innerHTML = item;
-            li.classList.add("descricao-item");
-            document.querySelector("#descricao").appendChild(li);
-        })
-        document.querySelector("#acomodacao-imagem").setAttribute("src", acomodacao.fotoPrincipal)
-        document.querySelector("#checkin").innerHTML = JSON.parse(localStorage.getItem("data")).checkin;
-        document.querySelector("#checkout").innerHTML = JSON.parse(localStorage.getItem("data")).checkout;
-    }
-</script>
 
 <?php include_once 'includes/footer.php'; ?>

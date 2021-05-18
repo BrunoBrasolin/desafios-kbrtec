@@ -30,6 +30,7 @@ section.sobre {
         @extend .h2;
         font-weight: 300;
         width: fit-content;
+        max-width: 250px;
         position: relative;
         letter-spacing: 2px;
 
@@ -53,8 +54,6 @@ section.sobre {
       padding: 0.5rem;
       position: relative;
       background-color: #fff;
-      display: flex;
-      align-items: center;
 
       &::after,
       &::before {

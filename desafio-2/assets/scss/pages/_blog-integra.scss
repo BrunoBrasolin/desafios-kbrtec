@@ -1,6 +1,6 @@
 .pagina-integra {
   background-color: $cinza;
-  padding: 3rem 0;
+  padding: 3rem 1rem;
 
   .conteudo {
     @extend .container;
@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 
     .data {
       color: $salmao;
@@ -52,7 +53,8 @@
     }
 
     .texto {
-      .paragrafo {
+    width: 100%;
+    .paragrafo {
         margin-bottom: 2rem;
         font-family: $fonte-open-sans;
         font-weight: 300;
@@ -109,10 +111,6 @@
 
   .leia-tambem {
     @extend .container;
-    padding: {
-      left: 0;
-      right: 0;
-    }
 
     .subtitulo {
       display: flex;
@@ -147,6 +145,7 @@
         .imagem-link {
           position: relative;
           max-height: 190px;
+          overflow: hidden;
 
           img {
             width: 100%;

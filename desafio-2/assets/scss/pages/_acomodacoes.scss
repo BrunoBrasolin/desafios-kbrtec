@@ -11,8 +11,6 @@
   }
 
   .listagem {
-    display: flex;
-    flex-direction: column;
     @extend .container;
 
     .acomodacao {
@@ -90,6 +88,7 @@
         flex-direction: column;
         margin-left: 7%;
         justify-content: space-around;
+        width: 100%;
 
         .topo {
           .subtitulo {
@@ -99,11 +98,13 @@
             letter-spacing: 1px;
             margin-bottom: 3rem;
             width: fit-content;
+            display: table;
           }
 
           .descricao {
             display: flex;
             flex-wrap: wrap;
+            max-width: 100%;
           }
 
           .descricao,
@@ -118,6 +119,7 @@
             margin-right: 2rem;
             position: relative;
             font-size: 0.875rem;
+            max-width: 100%;
 
             &::before {
               content: "";
@@ -146,6 +148,8 @@
         .botao {
           @include botao(transparent, $salmao, $salmao);
           width: fit-content;
+          max-width: 150px;
+          text-align: center;
         }
       }
     }

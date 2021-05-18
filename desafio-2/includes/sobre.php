@@ -14,7 +14,7 @@ $fotos = array(
     ),
     array(
         'titulo' => 'Cozinha Planejada',
-        'url' => 'public/img/cozinha-planejada.webp',
+        'url' => 'public/img/cozinha-planejada.jpg',
     ),
     array(
         'titulo' => 'Estande Planejada',
@@ -30,7 +30,7 @@ $fotos = array(
     ),
     array(
         'titulo' => 'Cozinha Planejada',
-        'url' => 'public/img/cozinha-planejada.webp',
+        'url' => 'public/img/cozinha-planejada.jpg',
     ),
 );
 ?>

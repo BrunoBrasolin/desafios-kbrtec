@@ -1,5 +1,5 @@
 let url = window.location.pathname.split("/");
-if (url[url.length - 1].replace(".php", "")) document.querySelector(`#${url[3].replace(".php", "")}`).classList.add("active");
+if (url[url.length - 1]) document.querySelector(`#${url[3]}`).classList.add("active");
 
 $(document).ready(function () {
   $(".banner-slider").slick({
@@ -145,8 +145,7 @@ $(document).ready(function () {
     let assunto = $(this).find("#assunto");
     let assuntoValue = $(assunto).val();
     let acomodacaoValue = "";
-    let checkinValue = "";
-    let checkoutValue = "";
+    let datasValue = "";
     let mensagem = "";
     let mensagemValue = "";
 
@@ -163,20 +162,12 @@ $(document).ready(function () {
         $(acomodacao).parent().find(".mensagem-erro").css("visibility", "visible");
       }
 
-      let checkin = $(this).find("#checkin");
-      checkinValue = $(checkin).val();
-      if (checkinValue == "" || checkinValue < new Date().toISOString().slice(0, 10)) {
+      let datas = $(this).find("#datas");
+      datasValue = $(datas).val();
+      if (datasValue == "") {
         erro = true;
-        $(checkin).addClass("erro");
-        $(checkin).parent().find(".mensagem-erro").css("visibility", "visible");
-      }
-
-      let checkout = $(this).find("#checkout");
-      checkoutValue = $(checkout).val();
-      if (checkoutValue == "" || checkoutValue < checkinValue) {
-        erro = true;
-        $(checkout).addClass("erro");
-        $(checkout).parent().find(".mensagem-erro").css("visibility", "visible");
+        $(datas).addClass("erro");
+        $(datas).parent().find(".mensagem-erro").css("visibility", "visible");
       }
     } else if (assuntoValue == "duvidas" || assuntoValue == "informacoes") {
       mensagem = $(this).find("#mensagem");
@@ -194,8 +185,7 @@ $(document).ready(function () {
       telefone: telefoneValue,
       mensagem: mensagemValue,
       assunto: assuntoValue,
-      checkin: checkinValue,
-      checkout: checkoutValue,
+      datas: datasValue,
       acomodacao: acomodacaoValue,
     };
 
@@ -224,15 +214,96 @@ $(document).ready(function () {
       });
   });
 
-  $("input#checkin, input#checkout").attr("min", new Date().toISOString().slice(0, 10));
-  $("input#checkin").change(function () {
-    $("input#checkout").attr("min", $(this).val());
-  });
-  $("input#checkout").change(function () {
-    $("input#checkin").attr("max", $(this).val());
-  });
-
   $("#assunto").change(function () {
     $(this).val() == "reserva" ? $(".select-reserva").css("display", "flex") : $(".select-reserva").css("display", "none");
   });
+
+  if (document.getElementById("datas") !== null) {
+    const datas = new Litepicker({
+      element: document.getElementById("datas"),
+      minDate: new Date().toISOString().slice(0, 10),
+      format: "DD/MM/YYYY",
+      singleMode: false,
+      tooltipText: {
+        one: "dia",
+        other: "dias",
+      },
+      tooltipNumber: totalDays => {
+        return totalDays - 1;
+      },
+    });
+  }
+
+  if (document.querySelector("#email")) document.querySelector("#email").innerHTML = JSON.parse(localStorage.getItem("data")).email;
+  else if(document.querySelector("#acomodacao")) {
+    let acomodacoes = [
+      {
+        id: 1,
+        titulo: "Suíte master",
+        descricao: ["Cama de casal Queen", "Frigobar", "Varanda com vista pro mar", "Banheiro individual"],
+        fotoPrincipal: "/bruno-brasolin/desafio-2/public/img/acomodacoes/acomodacao-1.png",
+      },
+      {
+        id: 2,
+        titulo: "Suíte simples",
+        descricao: ["Acomodação para duas pessoas ou 1 pessoa (quarto individual)", "Cama de casal Queen", "Frigobar", "Banheiro individual"],
+        fotoPrincipal: "/bruno-brasolin/desafio-2/public/img/acomodacoes/acomodacao-2.png",
+      },
+      {
+        id: 3,
+        titulo: "Quarto coletivo com 3 beliches",
+        descricao: ["Acomodação coletiva para até 6 pessoas", "3 beliches", "Frigobar", "Locker no quarto com 1 armazenamento para cada pessoa"],
+        fotoPrincipal: "/bruno-brasolin/desafio-2/public/img/acomodacoes/acomodacao-3.png",
+      },
+      {
+        id: 4,
+        titulo: "Quarto coletivo feminino com 3 beliches",
+        descricao: [
+          "Acomodação coletiva de até 6 pessoas",
+          "3 beliches",
+          "Frigobar",
+          "Locker no quarto com 1 armazenamento para cada pessoa",
+          "Banheiro coletivo no quarto com 1 sanitário privativo",
+          "1 chuveiro com vestiário",
+        ],
+        fotoPrincipal: "/bruno-brasolin/desafio-2/public/img/acomodacoes/acomodacao-4.png",
+      },
+      {
+        id: 5,
+        titulo: "Quarto de coletivo com acessibilidade",
+        descricao: [
+          "Acomodação coletiva de até 6 pessoas",
+          "3 beliches",
+          "Frigobar",
+          "Locker no quarto com 1 armazenamento para cada pessoa",
+          "Banheiro coletivo no quarto com 1 sanitário e chuveiro com acessibilidade para deficiente",
+          "1 chuveiro coletivo sem acessibilidade",
+          "1 sanitário privativo com porta",
+        ],
+        fotoPrincipal: "/bruno-brasolin/desafio-2/public/img/acomodacoes/acomodacao-5.png",
+      },
+      {
+        id: 6,
+        titulo: "Quarto coletivo com 4 beliches",
+        descricao: ["Acomodação coletiva para até 8 pessoas", "4 beliches", "Frigobar", "Locker no quarto com 1 armazenamento para cada pessoa"],
+        fotoPrincipal: "/bruno-brasolin/desafio-2/public/img/acomodacoes/acomodacao-6.png",
+        observacao:
+          "No caso dos quartos coletivos com 3 e 4 beliches ambos terão 1 banheiro coletivo entre os dois para uso de ambos, segue descrição do banheiro:",
+        "lista-titulo": "Banheiro coletivo (dois banheiros coletivos, hum para cada 2 quartos):",
+        lista: ["2 chuveiros com vestiários embutidos", "1 sanitário privativo com porta", "1 pia dupla com espelho", "1 mictório"],
+      },
+    ];
+
+    let acomodacao = acomodacoes.find(acomodacao => acomodacao.id == JSON.parse(localStorage.getItem("data")).acomodacao);
+
+    document.querySelector("#acomodacao").innerHTML = acomodacao.titulo;
+    acomodacao.descricao.map(item => {
+      let li = document.createElement("li");
+      li.innerHTML = item;
+      li.classList.add("descricao-item");
+      document.querySelector("#descricao").appendChild(li);
+    });
+    document.querySelector("#acomodacao-imagem").setAttribute("src", acomodacao.fotoPrincipal);
+    document.querySelector("#datas").innerHTML = JSON.parse(localStorage.getItem("data")).datas;
+  }
 });

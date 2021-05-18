@@ -53,14 +53,8 @@
                 </div>
 
                 <div class="input-group input-checkin select-field select-reserva">
-                    <label class="label" for="checkin">Check-in</label>
-                    <input type="date" class="input" name="checkin" id="checkin">
-                    <small class="mensagem-erro">Selecione uma data válida</small>
-                </div>
-
-                <div class="input-group input-checkout select-field select-reserva">
-                    <label class="label" for="checkout">Checkout</label>
-                    <input type="date" class="input" name="checkout" id="checkout">
+                    <label class="label" for="datas">Check-in e check-out</label>
+                    <input type="text" class="input" name="datas" id="datas">
                     <small class="mensagem-erro">Selecione uma data válida</small>
                 </div>
 
