@@ -39,9 +39,10 @@ $fotos = array(
 );
 ?>
 
-
-
-<?php include_once 'includes/header.php'; ?>
+<?php
+$nomePagina = 'Fotos';
+include_once 'includes/header.php';
+?>
 
 <main class="pagina-fotos">
     <section class="conteudo">

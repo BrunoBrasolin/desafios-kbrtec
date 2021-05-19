@@ -1,4 +1,7 @@
-<?php include_once 'includes/header.php' ?>
+<?php
+$nomePagina = 'Localização';
+include_once 'includes/header.php';
+?>
 
 <main class="pagina-localizacao">
     <h2 class="titulo">Localização</h2>

@@ -1,7 +1,10 @@
 <?php require_once 'config.php'; ?>
 
 <?php $segment = basename(dirname((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}")); ?>
-<?php include_once 'includes/header.php'; ?>
+<?php
+$nomePagina = 'Obrigado';
+include_once 'includes/header.php';
+?>
 <?php require_once 'includes/acomodacoes.php'; ?>
 
 <main class="contato-obrigado-pagina">

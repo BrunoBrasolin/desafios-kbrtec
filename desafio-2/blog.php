@@ -1,4 +1,8 @@
-<?php include_once 'includes/header.php'; ?>
+<?php
+$nomePagina = 'Blog';
+include_once 'includes/header.php';
+?>
+
 <?php require_once 'includes/posts.php'; ?>
 
 <main class="pagina-blog">

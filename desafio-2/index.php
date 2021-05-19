@@ -1,4 +1,7 @@
-<?php include_once 'includes/header.php'; ?>
+<?php
+$nomePagina = 'Home';
+include_once 'includes/header.php';
+?>
 
 <main role="main" class="main-home">
     <section class="banner">

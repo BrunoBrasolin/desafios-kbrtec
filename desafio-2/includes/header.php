@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="<?= $GLOBALS['home_url'] ?>/public/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?= $GLOBALS['home_url'] ?>/public/favicon-16x16.png">
     <link rel="manifest" href="<?= $GLOBALS['home_url'] ?>/site.webmanifest">
-    <title>House & Hostel</title>
+    <title><?= $nomePagina ?? null ?> | House & Hostel</title>
 </head>
 
 <body>
