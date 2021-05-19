@@ -1,3 +1,5 @@
+<?php include_once 'whatsapp.php' ?>
+
 <footer class="rodape">
     <div class="conteudo">
         <p class="item">House & Hostel - Todos os direitos reservados</p>
