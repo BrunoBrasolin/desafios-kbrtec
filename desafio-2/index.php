@@ -1,6 +1,6 @@
 <?php include_once 'includes/header.php'; ?>
 
-<main role="main">
+<main role="main" class="main-home">
     <section class="banner">
         <div class="banner-slider">
             <div class="banner-item">
@@ -8,7 +8,7 @@
                 <div class="conteudo">
                     <h2 class="subtitulo">Seja bem vindo</h2>
                     <h1 class="titulo">Reserve sua hospedagem<br />em Guarujá</h1>
-                    <a href="#" class="link" title="Clique e faça sua reserva">Clique e faça sua reserva</a>
+                    <a href="<?= $GLOBALS['contato_url'] ?>" class="link" title="Clique e faça sua reserva">Clique e faça sua reserva</a>
                 </div>
             </div>
             <div class="banner-item">
@@ -16,7 +16,7 @@
                 <div class="conteudo">
                     <h2 class="subtitulo">Seja bem vindo</h2>
                     <h1 class="titulo">Reserve sua hospedagem<br />em Praia Grande</h1>
-                    <a href="#" class="link" title="Clique e faça sua reserva">Clique e faça sua reserva</a>
+                    <a href="<?= $GLOBALS['contato_url'] ?>" class="link" title="Clique e faça sua reserva">Clique e faça sua reserva</a>
                 </div>
             </div>
         </div>

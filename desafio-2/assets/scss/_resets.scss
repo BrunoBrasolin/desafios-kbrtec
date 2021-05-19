@@ -1,97 +1,103 @@
 * {
-  padding: 0;
-  margin: 0;
-  font-size: 16px;
-  font-weight: 400;
-  box-sizing: border-box;
-  font-family: $fonte-texto;
-  list-style: none;
-  outline: none;
-  text-decoration: none;
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	font-weight: 400;
+	box-sizing: border-box;
+	font-family: $fonte-texto;
+	list-style: none;
+	outline: none;
+	text-decoration: none;
 
-  @media screen and (max-width: 400px) {
-    font-size: 14px;
-  }
+	@media screen and (max-width: 400px) {
+		font-size: 14px;
+	}
 }
 
 html,
 body {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
+	position: relative;
+	z-index: -1;
 }
 
 button,
 .button,
-input[type="submit"] {
-  outline: none;
-  cursor: pointer;
-  border: none;
+input[type='submit'] {
+	outline: none;
+	cursor: pointer;
+	border: none;
 }
 
 select,
 option {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 img,
 video {
-  max-width: 100%;
-  height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 fieldset {
-  border: none;
+	border: none;
 }
 
 strong,
 b {
-  font-weight: 700;
+	font-weight: 700;
 }
 
 h1,
 .h1 {
-  font: 700 2rem $fonte-titulo;
-  color: #373435;
+	font: 700 2rem $fonte-titulo;
+	color: #373435;
 }
 
 h2,
 .h2 {
-  font: 700 1.25rem $fonte-titulo;
-  color: #373435;
+	font: 700 1.25rem $fonte-titulo;
+	color: #373435;
 }
 
 h3,
 .h3 {
-  font: 700 1.125rem $fonte-titulo;
+	font: 700 1.125rem $fonte-titulo;
 }
 
 h4,
 .h4 {
-  font: 400 1rem $fonte-titulo;
+	font: 400 1rem $fonte-titulo;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 
-  main {
-    flex: 1 0 0;
-  }
+	main {
+		flex: 1 0 0;
+		&.main-home {
+			display: flex;
+			flex-direction: column;
+		}
+	}
 }
 
 .lg-backdrop {
-  background-color: rgba(#000, 0.75);
+	background-color: rgba(#000, 0.75);
 }
 
 .lg-actions .lg-next,
 .lg-actions .lg-prev {
-  background-color: $salmao;
-  color: #fff;
-  border: 1px solid $salmao;
-  transition: 0.2s;
+	background-color: $salmao;
+	color: #fff;
+	border: 1px solid $salmao;
+	transition: 0.2s;
 
-  &:hover {
-    background-color: #fff;
-    color: $salmao;
-  }
+	&:hover {
+		background-color: #fff;
+		color: $salmao;
+	}
 }

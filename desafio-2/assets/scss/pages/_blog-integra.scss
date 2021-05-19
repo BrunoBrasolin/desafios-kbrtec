@@ -1,225 +1,230 @@
 .pagina-integra {
-  background-color: $cinza;
-  padding: 3rem 1rem;
+	background-color: $cinza;
+	padding: 3rem 1rem;
 
-  .conteudo {
-    @extend .container;
-    background-color: #fff;
-    padding: 3rem 5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+	.conteudo {
+		@extend .container;
+		background-color: #fff;
+		padding: 3rem 5rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
 
-    .data {
-      color: $salmao;
-      font-size: 0.9rem;
-    }
+		.data {
+			color: $salmao;
+			font-size: 0.9rem;
+		}
 
-    .titulo {
-      margin: 0.75rem 0;
-      font-weight: 300;
-      letter-spacing: 2px;
-      font-size: 1.8rem;
-      text-align: center;
-    }
+		.titulo {
+			margin: 0.75rem 0;
+			font-weight: 300;
+			letter-spacing: 2px;
+			font-size: 1.8rem;
+			text-align: center;
+		}
 
-    .redes-sociais {
-      @extend .redes-sociais-cor;
-    }
+		.redes-sociais {
+			@extend .redes-sociais-cor;
+		}
 
-    .banner {
-      margin: 2rem 0;
-      width: 100%;
-      height: 450px;
-      overflow: hidden;
-      position: relative;
+		.banner {
+			margin: 2rem 0;
+			width: 100%;
+			height: 450px;
+			overflow: hidden;
+			position: relative;
 
-      img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        transition: 0.2s;
-      }
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+				transition: 0.2s;
+				@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+					height: auto;
+					transform: translateY(-15%);
+				}
+			}
+			@supports not (-ms-high-contrast: none) {
+				&:hover {
+					img {
+						transform: scale(1.02);
+					}
+				}
+			}
+		}
 
-      &:hover {
-        img {
-          transform: scale(1.02);
-        }
-      }
-    }
+		.texto {
+			width: 100%;
+			.paragrafo {
+				margin-bottom: 2rem;
+				font-family: $fonte-open-sans;
+				font-weight: 300;
+				letter-spacing: 1px;
+			}
 
-    .texto {
-    width: 100%;
-    .paragrafo {
-        margin-bottom: 2rem;
-        font-family: $fonte-open-sans;
-        font-weight: 300;
-        letter-spacing: 1px;
-      }
+			.lista {
+				counter-reset: item;
 
-      .lista {
-        counter-reset: item;
+				.item {
+					display: list-item;
 
-        .item {
-          display: list-item;
+					.subtitulo {
+						font-weight: 300;
+						letter-spacing: 2px;
+						margin-left: calc(1rem + 3px);
+						position: relative;
+						margin-bottom: 1rem;
 
-          .subtitulo {
-            font-weight: 300;
-            letter-spacing: 2px;
-            margin-left: calc(1rem + 3px);
-            position: relative;
-            margin-bottom: 1rem;
+						&:before {
+							content: counters(item, '.') '.';
+							counter-increment: item;
+							position: absolute;
+							font-family: $fonte-titulo;
+							font-weight: 300;
+							color: $salmao;
+							bottom: 0;
+							left: calc(-1rem - 3px);
+						}
+					}
+				}
+			}
+		}
 
-            &:before {
-              content: counters(item, ".") ".";
-              counter-increment: item;
-              position: absolute;
-              font-family: $fonte-titulo;
-              font-weight: 300;
-              color: $salmao;
-              bottom: 0;
-              left: calc(-1rem - 3px);
-            }
-          }
-        }
-      }
-    }
+		@media screen and (max-width: 768px) {
+			padding: 3rem;
 
-    @media screen and (max-width: 768px) {
-      padding: 3rem;
+			.banner {
+				height: 300px;
+			}
+		}
+		@media screen and (max-width: 500px) {
+			padding: 3rem 1rem;
 
-      .banner {
-        height: 300px;
-      }
-    }
-    @media screen and (max-width: 500px) {
-      padding: 3rem 1rem;
+			.banner {
+				height: 250px;
+			}
 
-      .banner {
-        height: 250px;
-      }
+			.texto {
+				text-align: justify;
+			}
+		}
+	}
 
-      .texto {
-        text-align: justify;
-      }
-    }
-  }
+	.leia-tambem {
+		@extend .container;
 
-  .leia-tambem {
-    @extend .container;
+		.subtitulo {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $salmao;
+			font-weight: 300;
+			margin: 3rem 0;
+			font-size: 1.5rem;
 
-    .subtitulo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: $salmao;
-      font-weight: 300;
-      margin: 3rem 0;
-      font-size: 1.5rem;
+			i {
+				margin-right: 1rem;
+				font-size: 1.5rem;
+			}
+		}
 
-      i {
-        margin-right: 1rem;
-        font-size: 1.5rem;
-      }
-    }
+		.linha {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
 
-    .linha {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+			.post {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 22%;
+				transition: 0.2s;
+				&:not(:last-child) {
+					margin-bottom: 1.5rem;
+				}
 
-      .post {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 22%;
-        transition: 0.2s;
-        &:not(:last-child) {
-          margin-bottom: 1.5rem;
-        }
+				.imagem-link {
+					position: relative;
+					max-height: 190px;
+					overflow: hidden;
 
-        .imagem-link {
-          position: relative;
-          max-height: 190px;
-          overflow: hidden;
+					img {
+						width: 100%;
+						height: 100%;
+					}
 
-          img {
-            width: 100%;
-            height: 100%;
-          }
+					.hover {
+						position: absolute;
+						opacity: 0;
+						height: 100%;
+						width: 100%;
+						background-color: rgba(#000, 0.75);
+						top: 0;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						transition: 0.2s;
 
-          .hover {
-            position: absolute;
-            opacity: 0;
-            height: 100%;
-            width: 100%;
-            background-color: rgba(#000, 0.75);
-            top: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.2s;
+						.text {
+							color: $salmao;
+							font-weight: 600;
+							text-transform: uppercase;
+						}
+					}
 
-            .text {
-              color: $salmao;
-              font-weight: 600;
-              text-transform: uppercase;
-            }
-          }
+					&:hover {
+						.hover {
+							opacity: 1;
+						}
+					}
+				}
 
-          &:hover {
-            .hover {
-              opacity: 1;
-            }
-          }
-        }
+				.post-titulo {
+					text-align: center;
+					font-weight: 300;
+					max-width: 75%;
+					margin: {
+						top: 1rem;
+						bottom: 1.5rem;
+					}
+					@include underline();
 
-        .post-titulo {
-          text-align: center;
-          font-weight: 300;
-          max-width: 75%;
-          margin: {
-            top: 1rem;
-            bottom: 1.5rem;
-          }
-          @include underline();
+					&::after {
+						bottom: -10px;
+						background-color: transparent;
+					}
+				}
 
-          &::after {
-            bottom: -10px;
-            background-color: transparent;
-          }
-        }
+				.link {
+					color: #373435;
+				}
 
-        .link {
-          color: #373435;
-        }
+				&:hover {
+					.post-titulo {
+						&::after {
+							background-color: $salmao;
+						}
+					}
+					.link {
+						color: $salmao;
+					}
+				}
 
-        &:hover {
-          .post-titulo {
-            &::after {
-              background-color: $salmao;
-            }
-          }
-          .link {
-            color: $salmao;
-          }
-        }
+				@media screen and(max-width: 768px) {
+					width: 48%;
+				}
+				@media screen and(max-width: 500px) {
+					width: 98%;
 
-        @media screen and(max-width: 768px) {
-          width: 48%;
-        }
-        @media screen and(max-width: 500px) {
-          width: 98%;
-
-          .post-titulo {
-            font-size: 1.25rem;
-          }
-        }
-      }
-    }
-  }
+					.post-titulo {
+						font-size: 1.25rem;
+					}
+				}
+			}
+		}
+	}
 }

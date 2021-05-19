@@ -209,12 +209,21 @@ $(document).ready(function () {
   $("#assunto").change(function () {
     $(this).val() == "reserva" ? $(".select-reserva").css("display", "flex") : $(".select-reserva").css("display", "none");
   });
-  var searchParams = new URLSearchParams(window.location.search);
 
-  if (searchParams.has("acomodacao")) {
+  $.urlParam = function (name) {
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+
+    if (results == null) {
+      return null;
+    } else {
+      return decodeURI(results[1]) || 0;
+    }
+  };
+
+  if ($.urlParam("acomodacao")) {
     $("#assunto").val("reserva");
     $(".select-reserva").css("display", "flex");
-    $("#acomodacao").val(searchParams.get("acomodacao"));
+    $("#acomodacao").val($.urlParam("acomodacao"));
   }
 
   if (document.getElementById("datas") !== null) {
