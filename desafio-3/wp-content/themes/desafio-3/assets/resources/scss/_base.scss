@@ -16,11 +16,50 @@ $light-grey: #f3f5f6;
 	list-style: none;
 	text-decoration: none;
 	border: none;
-	font: 400 16px $font;
+	font-family: $font;
 }
 
 .container {
 	max-width: 1200px;
 	padding: 0 1rem;
 	margin: 0 auto;
+}
+
+img,
+video {
+	max-width: 100%;
+	height: auto;
+}
+
+h1,
+.h1 {
+	font-weight: 700;
+	font-size: 2rem;
+}
+
+h2,
+.h2 {
+	font-weight: 700;
+	font-size: 1.25rem;
+}
+
+h3,
+.h3 {
+	font-weight: 700;
+	font-size: 1.125rem;
+}
+
+h4,
+.h4 {
+	font-weight: 700;
+	font-size: 1rem;
+}
+
+strong,
+.strong {
+	font-weight: 700;
+}
+
+.main-page {
+	padding-top: 70px;
 }

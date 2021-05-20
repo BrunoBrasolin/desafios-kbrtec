@@ -14,3 +14,5 @@
   <header class="header">
     <?php get_template_part('includes/navbar'); ?>
   </header>
+
+  <main role="main" class="main-page">

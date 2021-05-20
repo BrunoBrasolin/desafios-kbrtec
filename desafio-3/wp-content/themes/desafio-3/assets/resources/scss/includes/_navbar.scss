@@ -5,6 +5,9 @@
 	justify-content: space-between;
 	padding: 0.5rem 2rem;
 	text-transform: uppercase;
+	position: fixed;
+	top: 0;
+	width: 100%;
 
 	.item,
 	.button {
