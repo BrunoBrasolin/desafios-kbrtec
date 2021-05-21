@@ -114,3 +114,105 @@
 		}
 	}
 }
+.encontre {
+	background: $purple-gradint;
+	.encontre-content {
+		@extend .container;
+		padding: {
+			top: 2rem;
+			bottom: 2rem;
+		}
+
+		.top {
+			display: flex;
+			align-items: center;
+			margin-left: -100px;
+
+			.title {
+				color: $white;
+				@extend .h1;
+				font-weight: 600;
+				max-width: 400px;
+			}
+
+			.icon {
+				transform: scale(-1, 1);
+				margin-right: 10px;
+
+				svg {
+					height: 90px;
+					width: 90px;
+					color: $yellow;
+				}
+			}
+		}
+
+		.form {
+			display: flex;
+			align-items: baseline;
+
+			.input-group {
+				position: relative;
+				margin-right: 2rem;
+				margin-top: 1rem;
+
+				&::after,
+				&::before {
+					content: '';
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					height: 1.5px;
+					transition: width 0.2s;
+				}
+
+				&::before {
+					background-color: $white;
+					width: 100%;
+				}
+
+				&::after {
+					width: 0;
+					background-color: $yellow;
+				}
+
+				.label {
+					position: absolute;
+					bottom: 8px;
+					left: 0;
+					font-size: 0.8rem;
+					color: $white;
+					transition: 0.2s;
+					cursor: text;
+				}
+
+				.input {
+					background-color: transparent;
+					padding: 1rem 0;
+					outline: none;
+				}
+
+				&:focus-within {
+					&::after {
+						width: 100%;
+					}
+					.label {
+						bottom: 30px;
+						font-size: 0.7rem;
+						cursor: default;
+					}
+				}
+			}
+
+			.button {
+				height: 100%;
+				background-color: $black;
+				padding: 0.9rem 3rem;
+				color: $white;
+				font-size: 0.8rem;
+				font-weight: 600;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
