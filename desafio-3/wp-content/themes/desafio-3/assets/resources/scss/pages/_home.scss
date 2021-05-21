@@ -149,7 +149,7 @@
 
 		.form {
 			display: flex;
-			align-items: baseline;
+			align-items: flex-end;
 
 			.input-group {
 				position: relative;
@@ -161,7 +161,7 @@
 					content: '';
 					position: absolute;
 					left: 0;
-					bottom: 0;
+					bottom: 1.5px;
 					height: 1.5px;
 					transition: width 0.2s;
 				}
@@ -188,16 +188,19 @@
 
 				.input {
 					background-color: transparent;
-					padding: 1rem 0;
+					padding-top: 1rem;
+					padding-bottom: 0.3rem;
 					outline: none;
+					color: $white;
+					font-size: 0.9rem;
 				}
 
-				&:focus-within {
+				&.active {
 					&::after {
 						width: 100%;
 					}
 					.label {
-						bottom: 30px;
+						bottom: 1.5rem;
 						font-size: 0.7rem;
 						cursor: default;
 					}
@@ -212,6 +215,12 @@
 				font-size: 0.8rem;
 				font-weight: 600;
 				text-transform: uppercase;
+				transition: 0.2s;
+
+				&:hover {
+					background-color: $yellow;
+					color: $black;
+				}
 			}
 		}
 	}

@@ -76,7 +76,7 @@
     <form class="form">
       <div class="input-group">
         <label for="cargo" class="label">Cargo:</label>
-        <input type="text" name="cargo" id="cargo" class="input">
+        <input type="text" name="cargo" id="cargo" class="input" placeholder="">
       </div>
       <div class="input-group">
         <label for="cidade" class="label">Cidade:</label>

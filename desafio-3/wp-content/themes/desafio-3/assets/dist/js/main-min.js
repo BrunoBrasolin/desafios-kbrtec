@@ -1,1 +1,1 @@
-"use strict";$(document).ready(function(){feather.replace(),$(".banner-slider").slick({prevArrow:$(".banner-prev-arrow"),nextArrow:$(".banner-next-arrow"),draggable:!1,fade:!0})});
+"use strict";$(document).ready(function(){feather.replace(),$(".banner-slider").slick({prevArrow:$(".banner-prev-arrow"),nextArrow:$(".banner-next-arrow"),draggable:!1,fade:!0}),$(".input").on("focusin focusout keyup keydown",function(){$(this).is(":focus")?$(this).parent().addClass("active"):""==$(this).val()?$(this).parent().removeClass("active"):$(this).parent().addClass("active")})});
