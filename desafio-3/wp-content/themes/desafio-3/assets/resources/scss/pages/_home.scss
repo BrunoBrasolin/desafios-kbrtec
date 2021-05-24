@@ -61,12 +61,10 @@
 						font-size: 0.8rem;
 						font-weight: 600;
 						transition: 0.2s;
-						border: 2px solid;
 
 						&.button-yellow {
 							background-color: $yellow;
 							color: $black;
-							border-color: $yellow;
 
 							&:hover {
 								background-color: $black;
@@ -77,7 +75,6 @@
 						&.button-black {
 							background-color: $black;
 							color: $white;
-							border-color: $black;
 
 							&:hover {
 								background-color: $yellow;
@@ -114,6 +111,7 @@
 		}
 	}
 }
+
 .encontre {
 	background: $purple-gradint;
 	.encontre-content {
@@ -222,6 +220,102 @@
 					color: $black;
 				}
 			}
+		}
+	}
+}
+
+.itens-grandes-slider {
+	.item-grande {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.left,
+		.right {
+			height: 450px;
+			width: 50%;
+		}
+
+		.left {
+			background-color: $dark-grey;
+			color: $white;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding-left: calc((100vw - 1100px) / 2 + 0.5rem);
+			padding-right: 2rem;
+
+			.title {
+				margin: 1rem 0;
+			}
+
+			.text {
+				font-weight: 300;
+				line-height: 1.5rem;
+			}
+		}
+
+		.right {
+			img {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+}
+
+.itens-pequenos-container {
+	display: flex;
+
+	.slick-list {
+		overflow-y: visible;
+		padding: 3rem 0;
+		margin-top: -3rem;
+	}
+
+	.itens-pequenos-slider {
+		width: calc(100% / 7 * 6);
+
+		.item-pequeno {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			cursor: pointer;
+			margin: 0 -1px;
+			transition: 0.2s;
+			height: 125px;
+			width: 125px;
+
+			.title {
+				margin-top: 1rem;
+			}
+
+			&.active-item {
+				transform: scale(1.2);
+				border-radius: 8px;
+			}
+		}
+	}
+
+	.arrows {
+		width: calc(100% / 7);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 3rem 0;
+		margin-top: -3rem;
+
+		.arrow {
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+			width: 50px;
+			height: 50px;
+			cursor: pointer;
 		}
 	}
 }

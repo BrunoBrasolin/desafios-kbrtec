@@ -19,3 +19,9 @@ function scripts()
 add_action('wp_enqueue_scripts', 'scripts');
 
 add_filter('show_admin_bar', '__return_false');
+
+function remove_wordpress_version()
+{
+  return '';
+}
+add_filter('the_generator', 'remove_wordpress_version');

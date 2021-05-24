@@ -92,4 +92,45 @@
   </section>
 </section>
 
+<section class="itens-grandes-slider">
+  <?php for ($i = 0; $i <= 10; $i++) :  ?>
+    <section class="item-grande">
+      <div class="left">
+        <i data-feather="home"></i>
+
+        <h2 class="title">Indústria - <?= $i ?></h2>
+
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+
+      <div class="right">
+        <img src="<?= get_template_directory_uri() ?>/assets/dist/images/industria-image.png" alt="Industria">
+      </div>
+    </section>
+  <?php endfor; ?>
+</section>
+
+<div class="itens-pequenos-container">
+  <section class="itens-pequenos-slider">
+    <?php for ($i = 0; $i <= 10; $i++) :  ?>
+      <section class="item-pequeno" data-background-color="#345" data-color="#fff">
+        <i data-feather="home"></i>
+        <div class="title">Indústria - <?= $i ?></div>
+      </section>
+    <?php endfor; ?>
+  </section>
+
+  <section class="arrows">
+    <span class="arrow itens-prev-arrow">
+      <i data-feather="chevron-left">
+      </i>
+    </span>
+
+    <span class="arrow itens-next-arrow">
+      <i data-feather="chevron-right">
+      </i>
+    </span>
+  </section>
+</div>
+
 <?php get_footer(); ?>
