@@ -6,6 +6,7 @@ $black: #000;
 $white: #fff;
 $yellow: #fdbe2d;
 $dark-grey: #21252c;
+$dark-blue: #202f48;
 $purple-gradint: radial-gradient(178.13% 6214.69% at 157.97% -59.37%, #fed2c9 0%, #404482 100%);
 $light-grey: #f3f5f6;
 
@@ -68,4 +69,8 @@ input[type='submit'] {
 
 .main-page {
 	padding-top: 70px;
+}
+
+main {
+	padding-bottom: 50vh;
 }

@@ -133,4 +133,26 @@
   </section>
 </div>
 
+<section class="numeros">
+  <section class="numeros-content">
+    <div class="item">
+      <h2 class="title">97%</h2>
+      <p class="text">Dos candidatos contratados por nós,
+        permanecem por pelo menos 15 meses na empresa.</p>
+    </div>
+    <div class="item">
+      <h2 class="title">+10 mil</h2>
+      <p class="text">Posições realizadas por nós, somados todo Know How de nosso time.</p>
+    </div>
+    <div class="item">
+      <h2 class="title">+500</h2>
+      <p class="text">Mais de 500 clientes atendidos em todo território nacional.</p>
+    </div>
+    <div class="item">
+      <h2 class="title">12</h2>
+      <p class="text">Nossa operação está presente em 12 estados do país.</p>
+    </div>
+  </section>
+</section>
+
 <?php get_footer(); ?>
