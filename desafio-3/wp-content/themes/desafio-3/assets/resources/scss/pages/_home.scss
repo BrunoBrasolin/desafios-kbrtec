@@ -324,6 +324,17 @@
 	margin-top: 3rem;
 	position: relative;
 
+	&::before {
+		content: '';
+		position: absolute;
+		top: -100%;
+		left: 0;
+		height: 300%;
+		width: 50%;
+		background-color: $dark-grey;
+		z-index: -1;
+	}
+
 	&::after {
 		content: '';
 		position: absolute;
