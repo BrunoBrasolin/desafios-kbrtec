@@ -292,6 +292,11 @@
 				margin-top: 1rem;
 			}
 
+			&:hover {
+				transform: scale(1.1);
+				border-radius: 8px;
+			}
+
 			&.active-item {
 				transform: scale(1.2);
 				border-radius: 8px;
@@ -312,10 +317,16 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 			width: 50px;
 			height: 50px;
 			cursor: pointer;
+			transition: .2s;
+			margin: 0 .25rem;
+			
+			&:hover {
+				box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+			}
 		}
 	}
 }
@@ -339,9 +350,9 @@
 		content: '';
 		position: absolute;
 		right: 0;
-		top: -25%;
+		top: calc(-25% / 2);
 		width: 90%;
-		height: 150%;
+		height: 125%;
 		background-color: $yellow;
 		z-index: -1;
 	}
@@ -355,6 +366,10 @@
 			display: flex;
 			flex-direction: column;
 			margin: 0 2rem;
+			padding: 0.5rem;
+			border: 1.5px solid transparent;
+			border-radius: 8px;
+			transition: 0.2s;
 
 			.title {
 				font-size: 2.5rem;
@@ -365,6 +380,10 @@
 
 			.text {
 				color: $dark-blue;
+			}
+
+			&:hover {
+				border-color: $dark-blue;
 			}
 		}
 	}
@@ -402,6 +421,11 @@
 		.map {
 			width: 60%;
 			height: auto;
+			transition: 0.2s;
+
+			&:hover {
+				transform: scale(1.05);
+			}
 		}
 
 		.subtitle {
@@ -422,8 +446,17 @@
 					top: 4px;
 					height: 8px;
 					width: 8px;
+					border: 1px solid $yellow;
 					background-color: $yellow;
 					border-radius: 50%;
+					transition: 0.2s;
+				}
+
+				&:hover {
+					&::before {
+						background-color: transparent;
+						left: -20px;
+					}
 				}
 			}
 		}
