@@ -1,3 +1,6 @@
+<?php get_template_part('includes/cta'); ?>
+
+
 </main>
 </body>
 
