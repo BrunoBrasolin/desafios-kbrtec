@@ -217,4 +217,17 @@
   </div>
 </section>
 
+<section class="midia">
+  <h2 class="title">Saiu na mídia</h2>
+  <div class="list">
+    <?php for ($i = 1; $i <= 6; $i++) : ?>
+      <article class="article">
+        <a href="#">
+          <h3 class="subtitle"><span class="date">02/09/2020 - </span>Conheça a consultoria mais tecnológica do seguimento de Porto.</h3>
+        </a>
+      </article>
+    <?php endfor; ?>
+  </div>
+</section>
+
 <?php get_footer(); ?>
