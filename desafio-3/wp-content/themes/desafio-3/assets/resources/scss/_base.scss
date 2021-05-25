@@ -27,6 +27,12 @@ $path: '/bruno-brasolin/desafio-3/wp-content/themes/desafio-3/';
 	margin: 0 auto;
 }
 
+.section-title {
+	text-align: center;
+	text-transform: uppercase;
+	color: $dark-blue;
+}
+
 img,
 video {
 	max-width: 100%;

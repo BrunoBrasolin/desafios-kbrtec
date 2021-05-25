@@ -568,12 +568,6 @@
 	padding-bottom: 2rem;
 	overflow: hidden;
 
-	.title {
-		text-align: center;
-		text-transform: uppercase;
-		color: $dark-blue;
-	}
-
 	.list {
 		display: flex;
 		justify-content: space-between;
@@ -674,6 +668,71 @@
 			color: $white;
 			&::after {
 				width: 100%;
+			}
+		}
+	}
+}
+
+.blog {
+	background-color: $light-grey;
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+
+	.blog-content {
+		@extend .container;
+
+		.list {
+			display: flex;
+			justify-content: space-between;
+			margin: 2rem 0;
+
+			.article {
+				width: 30%;
+				display: flex;
+				flex-direction: column;
+
+				.article-content {
+					background-color: $white;
+					padding: 1rem 1.5rem;
+
+					.date {
+						font-size: 0.9rem;
+						font-weight: 300;
+						color: $yellow;
+					}
+
+					.subtitle {
+						font-weight: 600;
+						font-size: 1.1rem;
+						margin: 0.5rem 0 1rem;
+					}
+
+					.text {
+						font-weight: 300;
+						font-size: 0.9rem;
+					}
+				}
+
+				.link {
+					align-self: flex-end;
+					background-color: $yellow;
+					color: $white;
+					width: 50px;
+					height: 50px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					transition: 0.2s;
+
+					svg {
+						width: 40px;
+						height: 40px;
+					}
+
+					&:hover {
+						background-color: #e8a604;
+					}
+				}
 			}
 		}
 	}

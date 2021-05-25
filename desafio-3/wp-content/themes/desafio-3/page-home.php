@@ -218,7 +218,7 @@
 </section>
 
 <section class="midia">
-  <h2 class="title">Saiu na mídia</h2>
+  <h2 class="section-title">Saiu na mídia</h2>
   <div class="list">
     <?php for ($i = 1; $i <= 6; $i++) : ?>
       <article class="article">
@@ -233,6 +233,25 @@
     Veja outras noticias
     <i data-feather="chevron-right" clas="icon"></i>
   </a>
+</section>
+
+<section class="blog">
+  <div class="blog-content">
+    <h2 class="section-title">últimas do blog</h2>
+
+    <div class="list">
+      <?php for ($i = 1; $i <= 3; $i++) : ?>
+        <article class="article">
+          <div class="article-content">
+            <span class="date">27/01/2021</span>
+            <h3 class="subtitle">O QUE FAZER PARA SE DESTACAR EM UM PROCESSO SELETIVO</h3>
+            <p class="text">Assim como qualquer momento crucial da sua vida, quando você encontra a vaga certa</p>
+          </div>
+          <a href="#" class="link"><i data-feather="plus"></i></a>
+        </article>
+      <?php endfor; ?>
+    </div>
+  </div>
 </section>
 
 <?php get_footer(); ?>
