@@ -321,7 +321,7 @@
 }
 
 .numeros {
-	margin-top: 3rem;
+	margin: 3rem 0;
 	position: relative;
 
 	&::before {
@@ -365,6 +365,99 @@
 
 			.text {
 				color: $dark-blue;
+			}
+		}
+	}
+}
+
+.precisa {
+	display: flex;
+	align-items: center;
+	padding-left: 3rem;
+	padding-top: 3rem;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 110%;
+		width: 50%;
+		background-color: $dark-grey;
+		z-index: -1;
+		border-radius: 0 0 120px 0;
+	}
+
+	.left,
+	.right {
+		width: 50%;
+	}
+
+	.left {
+		display: flex;
+		padding-right: 2rem;
+		color: $white;
+
+		.map {
+			width: 60%;
+			height: auto;
+		}
+
+		.subtitle {
+			margin: -1rem 2rem 0 -5rem;
+			line-height: 1rem;
+		}
+
+		.list {
+			.item {
+				position: relative;
+				font-size: 0.85rem;
+				margin-bottom: 0.75rem;
+
+				&::before {
+					content: '';
+					position: absolute;
+					left: -16px;
+					top: 4px;
+					height: 8px;
+					width: 8px;
+					background-color: $yellow;
+					border-radius: 50%;
+				}
+			}
+		}
+	}
+
+	.right {
+		padding-right: calc((100vw - 1100px) / 2 + 0.5rem);
+		padding-left: 2rem;
+		margin-bottom: 5rem;
+
+		.title {
+			color: $dark-blue;
+			font-size: 2.5rem;
+			margin-bottom: 3rem;
+
+			.small {
+				display: block;
+				font-weight: 500;
+				font-size: 1.25rem;
+			}
+		}
+
+		.button {
+			background-color: $yellow;
+			color: $dark-blue;
+			text-transform: uppercase;
+			font-weight: 600;
+			padding: 0.7rem 1.25rem;
+			font-size: 0.8rem;
+			transition: 0.2s;
+
+			&:hover {
+				background-color: $dark-blue;
+				color: $yellow;
 			}
 		}
 	}
