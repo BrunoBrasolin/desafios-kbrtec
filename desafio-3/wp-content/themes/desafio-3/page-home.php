@@ -191,4 +191,30 @@
   </div>
 </section>
 
+<section class="servicos">
+  <div class="servicos-content">
+    <h2 class="title">Nossos <br> serviços</h2>
+    <h3 class="subtitle">Somos especializados em <br> contratação para o setor portuário</h3>
+
+    <ul class="list">
+      <div class="list-group">
+        <li> <a href="#" class="item">Recrutamento e Seleção</a></li>
+        <li> <a href="#" class="item">Desenvolvimento de Liderança</a></li>
+        <li> <a href="#" class="item">Desenvolvimento Organizacional</a></li>
+      </div>
+      <div class="list-group">
+        <li> <a href="#" class="item">Formação Atendimento ao Cliente</a></li>
+        <li> <a href="#" class="item">Desenvolvimentos de Equipe</a></li>
+        <li> <a href="#" class="item">Treinamentos</a></li>
+      </div>
+      <div class="list-group">
+        <li> <a href="#" class="item">Comunicação Intercultural</a></li>
+        <li> <a href="#" class="item">Comunicação e habilidades Interpessoais</a></li>
+        <li> <a href="#" class="item">Gestão de Talentos</a></li>
+      </div>
+    </ul>
+    <a href="#" class="button">Saiba mais</a>
+  </div>
+</section>
+
 <?php get_footer(); ?>
