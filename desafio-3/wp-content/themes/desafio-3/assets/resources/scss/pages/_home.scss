@@ -565,6 +565,7 @@
 .midia {
 	@extend .container;
 	padding-top: 5rem;
+	padding-bottom: 2rem;
 	overflow: hidden;
 
 	.title {
@@ -634,6 +635,45 @@
 					margin-left: 0.25rem;
 					margin-right: 0.25rem;
 				}
+			}
+		}
+	}
+
+	.button {
+		text-transform: uppercase;
+		color: $dark-blue;
+		display: flex;
+		align-items: center;
+		font-size: 0.8rem;
+		width: fit-content;
+		margin: 0 auto;
+		margin-top: 1.5rem;
+		position: relative;
+		transition: color 0.2s;
+		padding: 0.5rem 0 0.5rem 0.75rem;
+		font-weight: 600;
+
+		svg {
+			color: $yellow;
+			margin-left: 0.5rem;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			background-color: $dark-blue;
+			right: 0;
+			width: 25px;
+			height: 25px;
+			z-index: -1;
+			border-radius: 12px;
+			transition: width 0.2s;
+		}
+
+		&:hover {
+			color: $white;
+			&::after {
+				width: 100%;
 			}
 		}
 	}

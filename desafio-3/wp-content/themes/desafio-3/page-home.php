@@ -228,6 +228,11 @@
       </article>
     <?php endfor; ?>
   </div>
+
+  <a href="#" class="button">
+    Veja outras noticias
+    <i data-feather="chevron-right" clas="icon"></i>
+  </a>
 </section>
 
 <?php get_footer(); ?>
