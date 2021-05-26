@@ -73,6 +73,24 @@
       </div>
     </div>
   </section>
+
+  <hr class="division">
+
+  <section class="footer-bottom">
+
+    <h1 class="logo">
+      <a href="<?= home_url() ?>">
+        <img src="<?= get_template_directory_uri() ?>/assets/dist/images/grupo-sartori-logo.svg" alt="Grupo Sartori" title="Grupo Sartori">
+      </a>
+    </h1>
+
+    <span class="copy">GRUPO SARTORI © 2021 - Todos os direitos reservados</span>
+
+    <a href="https://www.kbrtec.com.br" target="_blank" class="credit">
+      Desenvolvido por
+      <img src="https://www.kbrtec.com.br/images/criacao-de-sites-profissionais-em-santos.png" alt="KBRTEC | WEB & SOFTWARE">
+    </a>
+  </section>
 </footer>
 </body>
 

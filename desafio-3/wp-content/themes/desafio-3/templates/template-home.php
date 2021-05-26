@@ -82,13 +82,15 @@
         <label for="cargo" class="label">Cargo:</label>
         <input type="text" name="cargo" id="cargo" class="input" placeholder="">
       </div>
+
       <div class="input-group">
         <label for="cidade" class="label">Cidade:</label>
         <input type="text" name="cidade" id="cidade" class="input">
       </div>
+
       <div class="input-group">
         <label for="estado" class="label">Estado:</label>
-        <input type="text" name="estado" id="estado" class="input">
+        <input type="text" name="estado" id="estado" class="input pequeno">
       </div>
 
       <button type="submit" class="button">Filtrar</button>

@@ -6,6 +6,30 @@
 		height: 90vh;
 		position: relative;
 
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			width: 50%;
+		}
+
+		&::before {
+			bottom: 0;
+			left: 0;
+			height: 30%;
+			border-top: 2px solid rgba($white, 0.2);
+			border-right: 2px solid rgba($white, 0.2);
+			border-top-right-radius: 200px;
+		}
+		&::after {
+			top: 0;
+			right: 0;
+			height: 56%;
+			border-bottom: 2px solid rgba($white, 0.2);
+			border-right: 2px solid rgba($white, 0.2);
+			border-bottom-right-radius: 200px;
+		}
+
 		.background-image {
 			position: absolute;
 			z-index: -1;
@@ -19,6 +43,7 @@
 		.col {
 			width: 30%;
 			color: #fff;
+			z-index: 2;
 
 			&.left {
 				text-align: end;
@@ -38,6 +63,15 @@
 
 				.title {
 					font-size: 2.5rem;
+				}
+
+				&::after {
+					content: 'Desenvolvimento Humano e Organizacional';
+					text-transform: uppercase;
+					color: rgba($white, 0.2);
+					position: absolute;
+					bottom: 12%;
+					left: 8%;
 				}
 			}
 
@@ -147,6 +181,7 @@
 
 		.form {
 			display: flex;
+			justify-content: space-between;
 			align-items: flex-end;
 
 			.input-group {
@@ -191,6 +226,11 @@
 					outline: none;
 					color: $white;
 					font-size: 0.9rem;
+					width: 200px;
+
+					&.pequeno {
+						width: 150px;
+					}
 				}
 
 				&.active {

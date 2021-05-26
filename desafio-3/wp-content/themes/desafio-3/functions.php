@@ -3,7 +3,6 @@ add_theme_support('title-tag');
 
 function scripts()
 {
-
   // CSS
   wp_enqueue_style('slick-slider-css', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
   wp_enqueue_style('main-css', get_template_directory_uri() . '/assets/dist/css/main.css');
