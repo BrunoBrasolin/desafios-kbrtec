@@ -1,0 +1,148 @@
+.footer {
+	background-color: $dark-grey;
+
+	.footer-top {
+		@extend .container;
+		display: flex;
+		justify-content: space-between;
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+
+		.col {
+			width: 30%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+
+			.group {
+				.title {
+					color: $white;
+					margin-bottom: 1.5rem;
+					text-transform: uppercase;
+					font-size: 1.1rem;
+
+					&.contatos {
+						text-align: end;
+					}
+				}
+
+				.list {
+					display: flex;
+					flex-direction: column;
+					.item {
+						&:not(:last-child) {
+							margin-bottom: 1rem;
+						}
+
+						.link {
+							color: $white;
+							text-transform: uppercase;
+							font-size: 0.8rem;
+							position: relative;
+
+							&::before {
+								content: '›';
+								font-size: 1rem;
+								margin-right: 0.5rem;
+								color: #535353;
+								transition: 0.2s;
+							}
+
+							&::after {
+								content: '';
+								bottom: 0;
+								left: 0.75rem;
+								position: absolute;
+								width: 0;
+								height: 1px;
+								background-color: $yellow;
+								transition: 0.2s;
+							}
+
+							&:hover {
+								&::before {
+									color: $yellow;
+								}
+								&::after {
+									width: calc(100% - 0.75rem);
+								}
+							}
+						}
+					}
+				}
+
+				.endereco {
+					color: $white;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+
+				.social-link {
+					color: $white;
+					transition: 0.2s;
+
+					svg {
+						width: 1rem;
+						height: 1rem;
+						margin-right: 0.25rem;
+					}
+
+					&:hover {
+						color: $yellow;
+					}
+				}
+
+				.contato-link {
+					display: flex;
+					align-items: center;
+					margin-bottom: 0.5rem;
+					margin-left: auto;
+					padding: 1rem;
+					color: $white;
+					border: 1px solid transparent;
+					border-radius: 8px;
+					width: fit-content;
+					transition: 0.2s;
+
+					svg {
+						color: $yellow;
+					}
+
+					.right {
+						display: flex;
+						flex-direction: column;
+						margin-left: 1rem;
+
+						.type {
+							font-size: 0.6rem;
+							text-transform: uppercase;
+						}
+
+						.number {
+							font-size: 1.2rem;
+
+							.bold {
+								font-weight: 700;
+							}
+						}
+					}
+
+					&:hover {
+						border-color: $yellow;
+					}
+				}
+
+				.mail {
+					display: block;
+					margin-left: auto;
+					width: fit-content;
+					color: $white;
+					text-transform: uppercase;
+					font-size: 0.75rem;
+				}
+			}
+		}
+	}
+}

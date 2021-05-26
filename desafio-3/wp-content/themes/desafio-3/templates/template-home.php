@@ -1,3 +1,7 @@
+<?php
+// Template name: Página Inicial
+?>
+
 <?php get_header(); ?>
 
 <section class="banner-slider">
@@ -240,16 +244,31 @@
     <h2 class="section-title">últimas do blog</h2>
 
     <div class="list">
-      <?php for ($i = 1; $i <= 3; $i++) : ?>
-        <article class="article">
-          <div class="article-content">
-            <span class="date">27/01/2021</span>
-            <h3 class="subtitle">O QUE FAZER PARA SE DESTACAR EM UM PROCESSO SELETIVO</h3>
-            <p class="text">Assim como qualquer momento crucial da sua vida, quando você encontra a vaga certa</p>
-          </div>
-          <a href="#" class="link"><i data-feather="plus"></i></a>
-        </article>
-      <?php endfor; ?>
+      <?php
+      $query = new WP_Query(
+        array(
+          'post_type' => 'post',
+          'post_per_page' => 3,
+          'order_by' => 'date',
+          'order' => 'DESC',
+          'post_status' => 'publish'
+        )
+      );
+      if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post();
+      ?>
+          <article class="article">
+            <div class="article-content">
+              <span class="date"><?= get_the_date() ?></span>
+              <h3 class="subtitle"><?= get_the_title() ?></h3>
+              <p class="text"><?= get_the_excerpt() ?></p>
+            </div>
+            <a href="<?= get_the_permalink() ?>" class="link"><i data-feather="plus"></i></a>
+          </article>
+      <?php
+        endwhile;
+      endif;
+      ?>
     </div>
   </div>
 </section>

@@ -404,8 +404,8 @@
 		height: 110%;
 		width: 50%;
 		background-color: $dark-grey;
-		z-index: -1;
 		border-radius: 0 0 120px 0;
+		box-shadow: -40px 25px $yellow;
 	}
 
 	.left,
@@ -466,7 +466,7 @@
 	.right {
 		padding-right: calc((100vw - 1100px) / 2 + 0.5rem);
 		padding-left: 2rem;
-		margin-bottom: 5rem;
+		margin-bottom: 10rem;
 
 		.title {
 			color: $dark-blue;
@@ -498,13 +498,13 @@
 }
 
 .servicos {
-	/* background-image: url("#{$path}/assets/dist/images/servicos-background.png"); */
-	background-color: #000;
-	background-size: cover;
+	background-image: url('#{$path}/assets/dist/images/servicos-background.png'), linear-gradient(68.52deg, #000000 40.28%, rgba(0, 0, 0, 0) 82.02%);
+	background-size: auto 100%, cover;
 	background-repeat: no-repeat;
-	background-position: top left;
-	padding-top: 15%;
+	background-position: top right, top right;
+	padding-top: 15rem;
 	padding-bottom: 5rem;
+	margin-top: -5rem;
 
 	.servicos-content {
 		@extend .container;
@@ -558,6 +558,13 @@
 			font-size: 0.75rem;
 			font-weight: 700;
 			text-transform: uppercase;
+			transition: 0.2s;
+
+			&:hover {
+				border-radius: 8px;
+				color: $yellow;
+				background-color: $dark-blue;
+			}
 		}
 	}
 }
