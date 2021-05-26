@@ -622,7 +622,9 @@
 
 		.article {
 			width: 30%;
+			min-width: 300px;
 			margin-top: 2rem;
+			margin-bottom: 1rem;
 			padding: 1rem;
 			transition: 0.2s;
 
@@ -731,10 +733,13 @@
 		.list {
 			display: flex;
 			justify-content: space-between;
+			flex-wrap: wrap;
 			margin: 2rem 0;
 
 			.article {
 				width: 30%;
+				min-width: 300px;
+				margin-bottom: 1rem;
 				display: flex;
 				flex-direction: column;
 
@@ -783,4 +788,16 @@
 			}
 		}
 	}
+}
+
+.banner-slider,
+.encontre,
+.itens-grandes-slider,
+.itens-pequenos-slider,
+.numeros,
+.precisa,
+.servicos,
+.cta,
+.footer {
+	display: none !important;
 }

@@ -2,6 +2,12 @@
 
 $(document).ready(function () {
   feather.replace();
+  $('.navbar .menu').click(function () {
+    return $('.navbar .list').toggleClass('open');
+  });
+  $(document).scroll(function () {
+    return $('.navbar .list').removeClass('open');
+  });
   $('.banner-slider').slick({
     prevArrow: $('.banner-prev-arrow'),
     nextArrow: $('.banner-next-arrow'),

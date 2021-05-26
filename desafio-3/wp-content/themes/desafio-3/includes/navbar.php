@@ -1,24 +1,29 @@
 <nav class="navbar">
-  <h1 class="logo">
-    <a href="<?= home_url() ?>">
-      <img src="<?= get_template_directory_uri() ?>/assets/dist/images/grupo-sartori-logo.svg" alt="Grupo Sartori" title="Grupo Sartori">
-    </a>
-  </h1>
+  <div class="mobile-row">
+    <h1 class="logo">
+      <a href="<?= home_url() ?>">
+        <img src="<?= get_template_directory_uri() ?>/assets/dist/images/grupo-sartori-logo.svg" class="img-logo" alt="Grupo Sartori" title="Grupo Sartori">
+        <img src="<?= get_template_directory_uri() ?>/assets/dist/images/grupo-sartori-icone.svg" class="img-icone" alt="Grupo Sartori" title="Grupo Sartori">
+      </a>
+    </h1>
+
+    <span class="menu"><i data-feather="menu"></i></span>
+  </div>
   <ul class="list">
-    <li>
-      <a href="#" class="item">Sobre nós</a>
+    <li class="item">
+      <a href="#" class="link">Sobre nós</a>
     </li>
-    <li>
-      <a href="#" class="item">Para sua empresa</a>
+    <li class="item">
+      <a href="#" class="link">Para sua empresa</a>
     </li>
-    <li>
-      <a href="#" class="item">Para profissionais</a>
+    <li class="item">
+      <a href="#" class="link">Para profissionais</a>
     </li>
-    <li>
-      <a href="#" class="item">Saiu na mídia</a>
+    <li class="item">
+      <a href="#" class="link">Saiu na mídia</a>
     </li>
-    <li>
-      <a href="#" class="item">Clientes</a>
+    <li class="item">
+      <a href="#" class="link">Clientes</a>
     </li>
   </ul>
 

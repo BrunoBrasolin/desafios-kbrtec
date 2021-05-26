@@ -1,6 +1,10 @@
 $(document).ready(function () {
 	feather.replace();
 
+	$('.navbar .menu').click(() => $('.navbar .list').toggleClass('open'));
+
+	$(document).scroll(() => $('.navbar .list').removeClass('open'));
+
 	$('.banner-slider').slick({
 		prevArrow: $('.banner-prev-arrow'),
 		nextArrow: $('.banner-next-arrow'),
