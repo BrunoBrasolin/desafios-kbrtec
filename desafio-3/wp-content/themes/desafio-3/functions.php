@@ -1,5 +1,6 @@
 <?php
 add_theme_support('title-tag');
+add_theme_support('post-thumbnails');
 
 function scripts()
 {
@@ -31,7 +32,8 @@ function my_excerpt_length($length)
 }
 add_filter('excerpt_length', 'my_excerpt_length');
 
-function new_excerpt_more( $more ) {
-	return '...';
+function new_excerpt_more($more)
+{
+  return '...';
 }
 add_filter('excerpt_more', 'new_excerpt_more');

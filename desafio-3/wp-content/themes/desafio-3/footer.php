@@ -1,5 +1,4 @@
 <?php get_template_part('includes/cta'); ?>
-</main>
 
 <footer class="footer">
   <section class="footer-top">
