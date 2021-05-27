@@ -671,7 +671,7 @@
 
 		.list {
 			display: flex;
-			justify-content: space-between;
+			justify-content: space-around;
 			flex-wrap: wrap;
 			margin: 2rem 0;
 
@@ -821,7 +821,6 @@
 		}
 	}
 }
-
 @media screen and(max-width: 1050px) {
 	.banner-slider {
 		.banner-item {
@@ -862,7 +861,6 @@
 		}
 	}
 }
-
 @media screen and (max-width: 820px) {
 	.encontre {
 		.encontre-content {
@@ -928,7 +926,6 @@
 		}
 	}
 }
-
 @media screen and (max-width: 450px) {
 	.encontre {
 		.encontre-content {
@@ -968,9 +965,4 @@
 			}
 		}
 	}
-}
-
-.cta,
-.footer {
-	display: none !important;
 }
