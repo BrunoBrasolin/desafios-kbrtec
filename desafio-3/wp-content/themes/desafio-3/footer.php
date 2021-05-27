@@ -33,15 +33,17 @@
 
       <div class="group">
         <h2 class="title">Acompanhe-nos</h2>
-        <a href="#" class="social-link">
-          <i data-feather="facebook"></i>
-        </a>
-        <a href="#" class="social-link">
-          <i data-feather="instagram"></i>
-        </a>
-        <a href="#" class="social-link">
-          <i data-feather="play"></i>
-        </a>
+        <div class="social-row">
+          <a href="#" class="social-link">
+            <i data-feather="facebook"></i>
+          </a>
+          <a href="#" class="social-link">
+            <i data-feather="instagram"></i>
+          </a>
+          <a href="#" class="social-link">
+            <i data-feather="play"></i>
+          </a>
+        </div>
       </div>
     </div>
 
