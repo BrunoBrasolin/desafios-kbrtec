@@ -253,8 +253,8 @@
 			display: flex;
 			justify-content: center;
 			flex-direction: column;
-			padding-left: calc((100vw - 1100px) / 2 + 0.5rem);
 			padding-right: 2rem;
+			padding-left: 1rem;
 
 			.title {
 				margin: 1rem 0;
@@ -803,6 +803,13 @@
 			}
 		}
 	}
+	.itens-grandes-slider {
+		.item-grande {
+			.left {
+				padding-left: calc((100vw - 1100px) / 2 + 1rem);
+			}
+		}
+	}
 }
 
 @media screen and(max-width: 1050px) {
@@ -845,6 +852,17 @@
 			}
 		}
 	}
+	.itens-grandes-slider {
+		.item-grande {
+			flex-direction: column-reverse;
+
+			.left,
+			.right {
+				width: 100%;
+				height: 300px;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 450px) {
@@ -869,8 +887,6 @@
 	}
 }
 
-.itens-grandes-slider,
-.itens-pequenos-slider,
 .numeros,
 .precisa,
 .servicos,

@@ -37,6 +37,20 @@ $(document).ready(function () {
 		prevArrow: $('.itens-prev-arrow'),
 		nextArrow: $('.itens-next-arrow'),
 		asNavFor: $('.itens-grandes-slider'),
+		responsive: [
+			{
+				breakpoint: 820,
+				settings: {
+					slidesToShow: 4,
+				},
+			},
+			{
+				breakpoint: 450,
+				settings: {
+					slidesToShow: 2,
+				}
+			}
+		],
 	});
 
 	function activeItem() {
