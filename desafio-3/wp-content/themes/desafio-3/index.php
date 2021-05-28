@@ -56,5 +56,30 @@
     </section>
   </div>
 
+  <section class="paginacao">
+    <?php if (!isset($_GET["pagina"]) || $_GET["pagina"] < 2) : ?>
+      <div class="link prev disabled">
+        <i data-feather="triangle"></i>
+        <span class="texto">Anterior</span>
+      </div>
+      <div class="numbers">
+      <?php endif; ?>
+
+      <?= paginate_links(array(
+        'format' => '?pagina=%#%',
+        'current' => $_GET["pagina"] ?? 1,
+        'prev_text' => '<div class="link prev"><i data-feather="triangle"></i> <span class="texto">Anterior</span></div><div class="numbers">',
+        'next_text' => '</div><div class="link next"><span class="texto">Próximo</span> <i data-feather="triangle"></i></div>'
+      )); ?>
+
+      <?php if (ceil(wp_count_posts()->publish / 10) == $_GET["pagina"]) : ?>
+      </div>
+      <div class="link next disabled">
+        <span class="texto">Próximo</span>
+        <i data-feather="triangle"></i>
+      </div>
+    <?php endif; ?>
+  </section>
+
 </main>
 <?php get_footer(); ?>
