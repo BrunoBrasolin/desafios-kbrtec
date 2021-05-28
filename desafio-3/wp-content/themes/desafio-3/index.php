@@ -13,7 +13,9 @@
         <button type="submit" class="button">OK</button>
       </div>
       <select name="categoria" id="categoria" class="select input">
-        <option value="">Categoria</option>
+        <?php foreach (get_categories() as $category) :  ?>
+          <option value=""><?= $category->name ?></option>
+        <?php endforeach; ?>
       </select>
     </form>
   </header>
@@ -29,7 +31,7 @@
                 <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_title() ?> | Grupo Sartori" title="<?= get_the_title() ?> | Grupo Sartori">
               <?php else : ?>
                 <div class="left no-image">
-                  <img src="<?= get_template_directory_uri() ?>/assets/dist/images/grupo-sartori-logo.svg" alt="Grupo Sartori" title="Grupo Sartori">
+                  <img src="<?= get_template_directory_uri() ?>/assets/dist/images/grupo-sartori-logo.svg" alt="<?= get_the_title() ?> | Grupo Sartori" title="<?= get_the_title() ?> | Grupo Sartori">
                 <?php endif; ?>
                 </div>
 
@@ -40,10 +42,12 @@
                       <?= get_the_title() ?>
                     </a>
                   </h2>
-                  <p class="text"><?= get_the_excerpt() ?></p>
+                  <p class="text"><?= excerpt(50) ?></p>
                   <a href="<?= get_the_permalink() ?>" class="button">
                     Leia Mais
-                    <i data-feather="arrow-right"></i>
+                    <span class="icon">
+                      <i data-feather="arrow-right"></i>
+                    </span>
                   </a>
                 </div>
           </article>

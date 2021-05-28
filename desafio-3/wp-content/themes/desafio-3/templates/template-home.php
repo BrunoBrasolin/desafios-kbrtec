@@ -252,10 +252,10 @@
         $query = new WP_Query(
           array(
             'post_type' => 'post',
-            'post_per_page' => 3,
+            'posts_per_page' => 3,
             'order_by' => 'date',
             'order' => 'DESC',
-            'post_status' => 'publish'
+            'post_status' => 'publish',
           )
         );
         if ($query->have_posts()) :
@@ -265,7 +265,7 @@
               <div class="article-content">
                 <span class="date"><?= get_the_date() ?></span>
                 <h3 class="subtitle"><?= get_the_title() ?></h3>
-                <p class="text"><?= get_the_excerpt() ?></p>
+                <p class="text"><?= excerpt(20) ?></p>
               </div>
               <a href="<?= get_the_permalink() ?>" class="link"><i data-feather="plus"></i></a>
             </article>
