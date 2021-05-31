@@ -8,7 +8,9 @@
   </section>
 
   <div class="banner">
-    <img src="<?= get_the_post_thumbnail_url(); ?>" alt="">
+    <?php if (has_post_thumbnail()) :  ?>
+      <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?= get_the_title() ?> | Grupo Sartori" title="<?= get_the_title() ?> | Grupo Sartori">
+    <?php endif; ?>
   </div>
 
   <section class="content">

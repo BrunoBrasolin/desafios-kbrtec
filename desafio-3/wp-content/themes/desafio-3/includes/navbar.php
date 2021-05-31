@@ -25,6 +25,9 @@
     <li class="item">
       <a href="#" class="link">Clientes</a>
     </li>
+    <li class="item">
+      <a href="<?= home_url() ?>/blog" class="link">Blog</a>
+    </li>
   </ul>
 
   <a href="#" class="button">Contatos</a>

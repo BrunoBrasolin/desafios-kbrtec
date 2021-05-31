@@ -7,7 +7,8 @@ $(document).ready(function () {
   });
   $(document).scroll(function () {
     return $('.navbar .list').removeClass('open');
-  });
+  }); // Home
+
   $('.banner-slider').slick({
     prevArrow: $('.banner-prev-arrow'),
     nextArrow: $('.banner-next-arrow'),
@@ -74,5 +75,23 @@ $(document).ready(function () {
   $('.item-pequeno').click(function () {
     $('.itens-grandes-slider').slick('slickGoTo', $(this).data('slick-index'));
     $('.itens-pequenos-slider').slick('slickGoTo', $(this).data('slick-index'));
+  }); // Blog
+
+  var searchParams = new URLSearchParams(window.location.search);
+  $('#procura').val(searchParams.get('s'));
+  var bigger;
+  $('.custom-select .dropdown li').each(function () {
+    if ($(this).data('id') == searchParams.get('cat')) $('.custom-select .label .text').html($(this).html());
+    bigger = bigger > $(this).width() ? bigger : $(this).width();
+  });
+  $('.custom-select .label .text').width(bigger + 10);
+  $('.custom-select').click(function () {
+    var icon = $('.custom-select .label .right-item svg');
+    $(icon).hasClass('feather-chevron-down') ? icon.replaceWith(feather.icons['chevron-up'].toSvg()) : icon.replaceWith(feather.icons['chevron-down'].toSvg());
+    $(this).toggleClass('open');
+  });
+  $('.custom-select .dropdown li').click(function () {
+    $('.categoria-input').val($(this).data('id'));
+    $('.custom-select .label .text').html($(this).html());
   });
 });

@@ -50,7 +50,8 @@
 			line-height: 20px;
 		}
 
-		p {
+		p,
+		blockquote {
 			font-weight: 300;
 			font-size: 0.9rem;
 		}
@@ -98,6 +99,15 @@
 			font-weight: bold;
 		}
 
+		.link {
+			opacity: 0.75;
+			transition: 0.2s;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+
 		> *:not(:last-child) {
 			margin-right: 1rem;
 		}
@@ -113,6 +123,7 @@
 			.title {
 				text-transform: uppercase;
 				text-align: center;
+				margin-bottom: 4rem;
 			}
 
 			.list {
@@ -122,19 +133,93 @@
 
 				.article {
 					width: 30%;
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
 
 					.image {
-            max-height: 200px;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10px;
+						height: 200px;
+						overflow: hidden;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						border-radius: 10px;
 
-            img {
-              height: 100%;
-              width: 100%;
-            }
+						img {
+							transition: 0.3s;
+						}
+
+						&.with-image {
+							img {
+								object-fit: cover;
+								height: 100%;
+								width: 100%;
+							}
+						}
+						&.no-image {
+							width: 100%;
+							background-color: $dark-grey;
+						}
+					}
+
+					.date {
+						background-color: $yellow;
+						color: $black;
+						font-weight: 500;
+						padding: 0.15rem 0.25rem;
+						font-size: 0.75rem;
+						margin: 0.5rem 0;
+						display: inline-block;
+					}
+
+					.subtitle {
+						font-size: 1.25rem;
+						margin-bottom: 0.5rem;
+					}
+
+					.button {
+						margin-top: auto;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						text-transform: uppercase;
+						font-weight: 600;
+						transition: 0.2s;
+						color: $black;
+						border: 1px solid rgba($black, 0.9);
+						font-size: 0.65rem;
+						font-weight: 600;
+						padding: 0.45rem 1.25rem;
+
+						.icon {
+							height: 20px;
+							width: 20px;
+							background-color: $yellow;
+							border-radius: 50%;
+							margin-left: 1rem;
+							margin-right: 0.25rem;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							transition: 0.2s;
+
+							svg {
+								color: $black;
+								height: 15px;
+								width: 15px;
+							}
+						}
+
+						&:hover {
+							background-color: $black;
+							color: $white;
+							filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+							.icon {
+								margin-left: 1.25rem;
+								margin-right: 0;
+							}
+						}
 					}
 				}
 			}
@@ -146,6 +231,12 @@
 			.title {
 				font-size: 1.5rem;
 			}
+		}
+
+		.relacionadas .relacionadas-content .list .article {
+			width: 100%;
+			margin-bottom: 1rem;
+			max-width: 450px;
 		}
 	}
 }
