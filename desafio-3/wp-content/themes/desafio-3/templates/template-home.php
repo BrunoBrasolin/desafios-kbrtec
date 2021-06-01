@@ -209,7 +209,7 @@
         <li class="item">Mato Grosso do Sul</li>
         <li class="item">Rio de Janeiro</li>
         <li class="item">Sergipe</li>
-        <li class="item">Amapa</li>
+        <li class="item">Amapá</li>
       </ul>
     </div>
 
