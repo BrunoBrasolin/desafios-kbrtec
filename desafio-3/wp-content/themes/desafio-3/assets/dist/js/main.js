@@ -2,11 +2,11 @@
 
 $(document).ready(function () {
   feather.replace();
-  $('.navbar .menu').click(function () {
-    return $('.navbar .list').toggleClass('open');
+  $('.navbar .hamburguer').click(function () {
+    return $('.navbar .menu').toggleClass('open');
   });
   $(document).scroll(function () {
-    return $('.navbar .list').removeClass('open');
+    return $('.navbar .menu').removeClass('open');
   }); // Home
 
   $('.banner-slider').slick({

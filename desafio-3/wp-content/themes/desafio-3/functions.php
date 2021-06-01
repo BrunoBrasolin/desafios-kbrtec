@@ -1,6 +1,4 @@
 <?php
-
-
 add_theme_support('title-tag');
 add_theme_support('post-thumbnails');
 
@@ -70,3 +68,9 @@ function excerpt($limit)
   $excerpt = preg_replace('`\[[^\]]*\]`', '', $excerpt);
   return $excerpt;
 }
+
+function navbar()
+{
+  register_nav_menu('navbar-top', __('Navbar Top'));
+}
+add_action('init', 'navbar');

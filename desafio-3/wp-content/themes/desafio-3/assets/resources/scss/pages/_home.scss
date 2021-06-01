@@ -936,6 +936,7 @@
 							width: fit-content;
 							margin-left: auto;
 							padding: 0.25rem 0.5rem;
+							margin-bottom: 1rem;
 						}
 					}
 				}
@@ -981,6 +982,12 @@
 					.input-group {
 						width: 48%;
 						margin-right: 0;
+
+						.input {
+							&.pequeno {
+								max-width: inherit;
+							}
+						}
 					}
 				}
 			}
@@ -1040,6 +1047,11 @@
 			.left {
 				background-color: $dark-grey;
 				padding: 2rem 1rem;
+				justify-content: space-evenly;
+
+				.subtitle {
+					margin-right: 0;
+				}
 			}
 
 			.right {

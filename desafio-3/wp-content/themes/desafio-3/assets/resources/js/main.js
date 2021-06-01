@@ -1,9 +1,9 @@
 $(document).ready(function () {
 	feather.replace();
 
-	$('.navbar .menu').click(() => $('.navbar .list').toggleClass('open'));
+	$('.navbar .hamburguer').click(() => $('.navbar .menu').toggleClass('open'));
 
-	$(document).scroll(() => $('.navbar .list').removeClass('open'));
+	$(document).scroll(() => $('.navbar .menu').removeClass('open'));
 
 	// Home
 

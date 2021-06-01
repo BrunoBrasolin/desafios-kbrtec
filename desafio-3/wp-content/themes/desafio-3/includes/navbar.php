@@ -7,28 +7,9 @@
       </a>
     </h1>
 
-    <span class="menu"><i data-feather="menu"></i></span>
+    <span class="hamburguer"><i data-feather="menu"></i></span>
   </div>
-  <ul class="list">
-    <li class="item">
-      <a href="#" class="link">Sobre nós</a>
-    </li>
-    <li class="item">
-      <a href="#" class="link">Para sua empresa</a>
-    </li>
-    <li class="item">
-      <a href="#" class="link">Para profissionais</a>
-    </li>
-    <li class="item">
-      <a href="#" class="link">Saiu na mídia</a>
-    </li>
-    <li class="item">
-      <a href="#" class="link">Clientes</a>
-    </li>
-    <li class="item">
-      <a href="<?= home_url() ?>/blog" class="link">Blog</a>
-    </li>
-  </ul>
+  <?php wp_nav_menu(array('theme_location' => 'navbar-top'));  ?>
 
   <a href="#" class="button">Contatos</a>
 </nav>
