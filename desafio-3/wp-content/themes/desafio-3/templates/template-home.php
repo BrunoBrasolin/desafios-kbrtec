@@ -82,7 +82,7 @@
       <form class="form">
         <div class="input-group">
           <label for="cargo" class="label">Cargo:</label>
-          <input type="text" name="cargo" id="cargo" class="input" placeholder="">
+          <input type="text" name="cargo" id="cargo" class="input">
         </div>
 
         <div class="input-group">
@@ -92,40 +92,64 @@
 
         <div class="input-group">
           <label for="estado" class="label">Estado:</label>
-          <input type="text" name="estado" id="estado" class="input pequeno">
+          <select type="text" name="estado" id="estado" class="input pequeno estado-input">
+            <option value=""></option>
+          </select>
         </div>
+
+        <span class="erro">Preencha um campo para fazer a filtragem</span>
 
         <button type="submit" class="button">Filtrar</button>
       </form>
     </section>
   </section>
 
+  <?php $item_query = new WP_Query(array(
+    'post_type' => 'item',
+    'posts_per_page' => -1,
+  )); ?>
+
   <section class="itens-grandes-slider">
-    <?php for ($i = 0; $i <= 10; $i++) :  ?>
-      <section class="item-grande">
-        <div class="left">
-          <i data-feather="home"></i>
-
-          <h2 class="title">Indústria - <?= $i ?></h2>
-
-          <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-
-        <div class="right">
-          <img src="<?= get_template_directory_uri() ?>/assets/dist/images/industria-image.png" alt="Industria">
-        </div>
-      </section>
-    <?php endfor; ?>
+    <?php if ($item_query->have_posts()) : ?>
+      <?php while ($item_query->have_posts()) : $item_query->the_post(); ?>
+        <section class="item-grande">
+          <div class="left">
+            <?php if (get_field('icone')) : ?>
+              <img src="<?= get_field('icone') ?>" alt="<?= get_the_title() ?> | Grupo Sartori" title="<?= get_the_title() ?> | Grupo Sartori">
+            <?php else : ?>
+              <i data-feather="home"></i>
+            <?php endif; ?>
+            <h2 class="title"><?= get_the_title() ?></h2>
+            <p class="text"><?= get_field('texto',) ?></p>
+          </div>
+          <div class="right">
+            <?php if (get_field('banner')) : ?>
+              <img src="<?= get_field('banner')['url'] ?>" alt="<?= get_the_title() ?> | Grupo Sartori" title="<?= get_the_title() ?> | Grupo Sartori">
+            <?php else : ?>
+              <img src="<?= get_template_directory_uri() ?>/assets/dist/images/industria-image.png" alt="<?= get_the_title() ?> | Grupo Sartori" title="<?= get_the_title() ?> | Grupo Sartori">
+            <?php endif; ?>
+          </div>
+        </section>
+      <?php endwhile; ?>
+    <?php endif; ?>
   </section>
-
+  <div class="effect-content">
+    <span class="effect"></span>
+  </div>
   <div class="itens-pequenos-container">
     <section class="itens-pequenos-slider">
-      <?php for ($i = 0; $i <= 10; $i++) :  ?>
-        <section class="item-pequeno" data-background-color="#345" data-color="#fff">
-          <i data-feather="home"></i>
-          <div class="title">Indústria - <?= $i ?></div>
-        </section>
-      <?php endfor; ?>
+      <?php if ($item_query->have_posts()) : ?>
+        <?php while ($item_query->have_posts()) : $item_query->the_post(); ?>
+          <section class="item-pequeno" data-background-color="<?= get_field('cor_fundo') ?>" data-color="<?= get_field('cor_texto') ?>">
+            <?php if (get_field('icone')) : ?>
+              <img src="<?= get_field('icone') ?>" alt="<?= get_the_title() ?> | Grupo Sartori" title="<?= get_the_title() ?> | Grupo Sartori">
+            <?php else : ?>
+              <i data-feather="home"></i>
+            <?php endif; ?>
+            <div class="title"><?= get_the_title() ?></div>
+          </section>
+        <?php endwhile; ?>
+      <?php endif; ?>
     </section>
 
     <section class="arrows">
@@ -239,7 +263,9 @@
 
     <a href="#" class="button">
       Veja outras noticias
-      <i data-feather="chevron-right" clas="icon"></i>
+      <span class="icon">
+        <i data-feather="chevron-right" clas="icon"></i>
+      </span>
     </a>
   </section>
 

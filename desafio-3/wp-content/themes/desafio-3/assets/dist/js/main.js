@@ -15,7 +15,7 @@ $(document).ready(function () {
     draggable: false,
     fade: true
   });
-  $('.input').on('focusin focusout keyup keydown', function () {
+  $('.encontre .input').on('focusin focusout keyup keydown', function () {
     if ($(this).is(':focus')) {
       $(this).parent().addClass('active');
       return;
@@ -28,18 +28,47 @@ $(document).ready(function () {
 
     $(this).parent().removeClass('active');
   });
-  $('.itens-grandes-slider').slick({
-    draggable: false,
-    fade: true,
-    arrows: false
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://servicodados.ibge.gov.br/api/v1/localidades/estados');
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4) {
+      if (xhr.status == 200) {
+        JSON.parse(xhr.responseText).map(function (estado) {
+          var option = document.createElement('option');
+          option.value = estado.id;
+          option.innerHTML = estado.sigla;
+          document.querySelector('.estado-input').append(option);
+        });
+      } else console.log(xhr.responseText);
+    }
+  };
+
+  xhr.send();
+  $('.encontre .form').submit(function (e) {
+    var valido = false;
+    $('.encontre .input').each(function () {
+      if ($(this).val() != '') {
+        valido = true;
+      }
+    });
+
+    if (!valido) {
+      e.preventDefault();
+      $('.encontre .form .erro').css('display', 'block');
+    }
+  });
+  $('.itens-pequenos-slider').on('init', function (event, slick) {
+    if (window.innerWidth >= 350) $('.itens-pequenos-slider .item-pequeno').height($('.itens-pequenos-slider .item-pequeno').width());
   });
   $('.itens-pequenos-slider').slick({
     draggable: false,
+    swipe: false,
     slidesToShow: 6,
     infinite: true,
     prevArrow: $('.itens-prev-arrow'),
     nextArrow: $('.itens-next-arrow'),
-    asNavFor: $('.itens-grandes-slider'),
+    centerMode: true,
     responsive: [{
       breakpoint: 820,
       settings: {
@@ -57,16 +86,36 @@ $(document).ready(function () {
       }
     }]
   });
+  $('.itens-grandes-slider').slick({
+    draggable: false,
+    swipe: false,
+    fade: true,
+    arrows: false,
+    initialSlide: $('.itens-pequenos-slider .slick-active').data('slick-index')
+  });
 
   function activeItem() {
     var active = $('.itens-pequenos-slider .slick-active')[0];
     $('.itens-pequenos-slider .item-pequeno').removeClass('active-item');
-    $(active).addClass('active-item');
+    if (window.innerWidth >= 350) $(active).addClass('active-item');
   }
 
   activeItem();
   $('.itens-pequenos-slider').on('afterChange', function (event, slick, currentSlide, nextSlide) {
     activeItem();
+  });
+  $('.itens-prev-arrow').click(function () {
+    var active = $('.itens-pequenos-slider .slick-active')[0];
+    $('.itens-grandes-slider').slick('slickGoTo', $(active).data('slick-index'));
+  });
+  $('.itens-next-arrow').click(function () {
+    var active = $('.itens-pequenos-slider .slick-active')[0];
+    $('.itens-grandes-slider').slick('slickGoTo', $(active).data('slick-index'));
+  });
+  $('.itens-pequenos-slider .item-pequeno').click(function () {
+    var number = 0;
+    if (window.innerWidth >= 820) number = $(this).data('slick-index') + 2;else if (window.innerWidth >= 450) number = $(this).data('slick-index') + 1;else if (window.innerWidth >= 350) number = $(this).data('slick-index');
+    $('.itens-pequenos-slider').slick('slickGoTo', number);
   });
   $('.item-pequeno').map(function () {
     $(this).css('background-color', $(this).data('background-color'));

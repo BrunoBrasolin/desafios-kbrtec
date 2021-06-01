@@ -1,6 +1,25 @@
 <?php
+
+
 add_theme_support('title-tag');
 add_theme_support('post-thumbnails');
+
+function register_itens()
+{
+  register_post_type(
+    'item',
+    array(
+      'labels' => array(
+        'name' => 'Itens',
+        'singular_name' => 'Item'
+      ),
+      'description' => 'Adicione os itens da home',
+      'public' => true,
+      'supports' => array('title'),
+    )
+  );
+}
+add_action('init', 'register_itens');
 
 function scripts()
 {
