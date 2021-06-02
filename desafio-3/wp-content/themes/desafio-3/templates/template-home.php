@@ -252,13 +252,20 @@
   <section class="midia">
     <h2 class="section-title">Saiu na mídia</h2>
     <div class="list">
-      <?php for ($i = 1; $i <= 6; $i++) : ?>
-        <article class="article">
-          <a href="#">
-            <h3 class="subtitle"><span class="date">02/09/2020 - </span>Conheça a consultoria mais tecnológica do seguimento de Porto.</h3>
+      <?php
+      $midia_query = new WP_Query(array(
+        'post_type' => 'midia',
+        'posts_per_page' => 6,
+      ));
+      if ($midia_query->have_posts()) : while ($midia_query->have_posts()) : $midia_query->the_post();
+      ?>
+          <a href="<?= get_field('link') ?>" target="_blank" class="article">
+            <article>
+              <h3 class="subtitle"><span class="date"><?= get_field('data') ?> - </span><?= get_the_title() ?></h3>
+            </article>
           </a>
-        </article>
-      <?php endfor; ?>
+      <?php endwhile;
+      endif; ?>
     </div>
 
     <a href="#" class="button">

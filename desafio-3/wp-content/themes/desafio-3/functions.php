@@ -16,6 +16,19 @@ function register_itens()
       'supports' => array('title'),
     )
   );
+
+  register_post_type(
+    'midia',
+    array(
+      'labels' => array(
+        'name' => 'Saiu na mídia',
+        'singular_name' => 'Mídia'
+      ),
+      'description' => 'Adicione uma notícia que saiu em alguma mídia',
+      'public' => true,
+      'supports' => array('title'),
+    )
+  );
 }
 add_action('init', 'register_itens');
 
