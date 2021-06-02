@@ -28,23 +28,18 @@ $(document).ready(function () {
 
     $(this).parent().removeClass('active');
   });
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://servicodados.ibge.gov.br/api/v1/localidades/estados');
-
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4) {
-      if (xhr.status == 200) {
-        JSON.parse(xhr.responseText).map(function (estado) {
-          var option = document.createElement('option');
-          option.value = estado.id;
-          option.innerHTML = estado.sigla;
-          document.querySelector('.estado-input').append(option);
-        });
-      } else console.log(xhr.responseText);
+  $.ajax({
+    url: 'https://servicodados.ibge.gov.br/api/v1/localidades/estados',
+    method: 'get',
+    success: function success(data) {
+      data.map(function (estado) {
+        var option = document.createElement('option');
+        option.value = estado.id;
+        option.innerHTML = estado.sigla;
+        document.querySelector('.estado-input').append(option);
+      });
     }
-  };
-
-  xhr.send();
+  });
   $('.encontre .form').submit(function (e) {
     var valido = false;
     $('.encontre .input').each(function () {

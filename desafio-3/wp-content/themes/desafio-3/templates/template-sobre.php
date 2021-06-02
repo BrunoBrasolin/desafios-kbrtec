@@ -3,6 +3,7 @@
 ?>
 
 <?php get_header(); ?>
+<?php get_template_part('includes/whatsapp') ?>
 
 <main class="sobre-page">
   <header class="header">
