@@ -1,0 +1,278 @@
+.sobre-page {
+	.header {
+		padding: 3rem 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		background: $purple-gradint;
+		color: $white;
+
+		.title {
+			text-transform: uppercase;
+		}
+
+		.text {
+			text-transform: uppercase;
+			font-weight: 300;
+			margin: 1rem 0 2rem 0;
+		}
+
+		.subtitle {
+			font-weight: 500;
+			width: 50%;
+			min-width: 450px;
+		}
+	}
+
+	.banner {
+		position: relative;
+		display: flex;
+
+		&::before {
+			content: 'GRUPO SARTORI';
+			font-family: $font;
+			color: rgba($white, 0.06);
+			font-weight: 900;
+			font-size: 5rem;
+			position: absolute;
+			text-transform: uppercase;
+			top: 50%;
+			transform: translateY(-50%);
+			text-shadow: 0px -18px 248px $black;
+		}
+	}
+
+	.sobre-container {
+		background: $purple-gradint;
+
+		.sobre-content {
+			@extend .container;
+			display: flex;
+			justify-content: space-around;
+			padding: 3rem 1rem 0 1rem;
+			.left {
+				color: $white;
+				width: 60%;
+				.text {
+					margin-bottom: 1rem;
+					font-size: 0.9rem;
+					font-weight: 300;
+					line-height: 1.4rem;
+				}
+
+				.strong {
+					font-size: 1.3rem;
+					font-weight: 600;
+					display: block;
+					margin-top: 2rem;
+					margin-bottom: 4rem;
+					transition: 0.2s;
+
+					&:hover {
+						margin-left: 1rem;
+					}
+				}
+
+				.estrategia {
+					display: flex;
+					align-items: center;
+
+					img {
+						transition: 0.2s;
+					}
+
+					.estrategia-text {
+						width: 30%;
+						min-width: 400px;
+						margin-left: 1rem;
+						font-size: 1.2rem;
+						font-weight: 600;
+						text-transform: uppercase;
+					}
+
+					&:hover {
+						img {
+							transform: scale(1.1);
+						}
+					}
+				}
+
+				.dots {
+					margin-top: 3rem;
+				}
+			}
+			.right {
+				width: 30%;
+				padding: 0 3rem;
+				background-color: $dark-grey;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				position: relative;
+
+				&::before,
+				&::after {
+					content: '';
+					background-color: $dark-grey;
+					width: 100%;
+					left: 0;
+					position: absolute;
+				}
+
+				&::before {
+					height: 5rem;
+					top: -5rem;
+				}
+
+				&::after {
+					height: 6rem;
+					bottom: -6rem;
+					border-bottom-right-radius: 120px;
+				}
+
+				.item {
+					.icon {
+						height: 60px;
+						width: 60px;
+						background-color: $yellow;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						border-radius: 50%;
+						box-shadow: -5px -5px rgba($yellow, 0.1);
+						transition: 0.2s;
+
+						img {
+							width: 40px;
+							height: auto;
+						}
+					}
+
+					.item-title {
+						color: $yellow;
+						margin: 1rem 0;
+					}
+
+					.text {
+						color: $white;
+						line-height: 1.5rem;
+						font-size: 0.9rem;
+					}
+
+					&:hover {
+						.icon {
+							box-shadow: -10px -10px rgba($yellow, 0.1);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.valores-container {
+		padding: 4rem 1rem;
+		background-color: $light-grey;
+
+		.valores-content {
+			@extend .container;
+			.valores-title {
+				font-size: 1.5rem;
+				text-transform: uppercase;
+				color: $dark-blue;
+				font-weight: 700;
+			}
+
+			.list {
+				margin: 6rem 0;
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+
+				.item {
+					padding: 4rem 3rem 4rem 1.5rem;
+					margin-bottom: 3rem;
+					width: 32%;
+					background-color: $white;
+					box-shadow: 0px 4px 50px rgba(150, 132, 190, 0.18);
+					position: relative;
+					display: flex;
+					justify-content: center;
+					align-items: flex-start;
+					flex-direction: column;
+					transition: 0.2s;
+
+					.icon {
+						position: absolute;
+						height: 60px;
+						width: 60px;
+						background-color: #ffb500;
+						box-shadow: 0px 30px 30px -20px rgba($black, 0.25);
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						border-radius: 15px;
+						top: -30px;
+						transition: 0.2s;
+
+						svg {
+							height: 25px;
+							width: 25px;
+
+							* {
+								transition: 0.2s;
+							}
+						}
+					}
+
+					.item-title,
+					.text {
+						font-size: 0.9rem;
+						line-height: 1.5rem;
+						letter-spacing: 0.5px;
+					}
+
+					&:hover {
+						background-color: #fdbe2d;
+
+						.icon {
+							background-color: $dark-grey;
+
+							svg * {
+								fill: #fdbe2d;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width: 1051px) {
+		.banner {
+			&::before {
+				left: calc((100vw - 1100px) / 2 + 0.5rem);
+				max-width: 400px;
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				left: calc(((100vw - 1100px) / 2 + 1rem) / 4);
+				height: 150vh;
+				top: 50%;
+				width: calc(((100vw - 1100px) / 2 + 1rem) / 2);
+				border-top: 2px solid rgba($white, 0.2);
+				border-left: 2px solid rgba($white, 0.2);
+				border-radius: 120px 0 0;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1050px) {
+		.banner::before {
+			left: 50%;
+		}
+	}
+}
