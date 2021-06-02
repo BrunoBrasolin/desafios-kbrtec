@@ -11,6 +11,15 @@
     <p class="text">
       Pra resumir em uma frase:</p>
     <h2 class="subtitle">Somos aquela empresa que não busca apenas clientes e sim parceiros de negócios, nos processos estratégicos de RH.</h2>
+
+    <div class="social-container">
+      <a href="#" target="_blank" class="link facebook">
+        <img src="<?= get_template_directory_uri() ?>/assets/dist/images/facebook-icone.png" alt="Grupo Sartori" title="Grupo Sartori">
+      </a>
+      <a href="#" target="_blank" class="link instagram">
+        <img src="<?= get_template_directory_uri() ?>/assets/dist/images/instagram-icone.png" alt="Grupo Sartori" title="Grupo Sartori">
+      </a>
+    </div>
   </header>
   <figure class="banner">
     <img src="<?= get_template_directory_uri() ?>/assets/dist/images/sobre-background.png" alt="Grupo Sartori" title="Grupo Sartori">
