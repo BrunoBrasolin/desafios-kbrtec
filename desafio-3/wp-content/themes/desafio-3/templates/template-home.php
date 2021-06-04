@@ -7,67 +7,46 @@
 <main class="home-page">
 
   <section class="banner-slider">
-    <section class="banner-item">
-      <img src="<?= get_template_directory_uri() ?>/assets/dist/images/background-banner.png" alt="" class="background-image">
-      <section class="col left">
-        <h2 class="welcome">Bem-vindo ao <strong>grupo sartori</strong>
-        </h2>
-        <h1 class="title">
-          treinamento <br />
-          recrutamento <br />
-          e seleção</h1>
-      </section>
+    <?php
+    $banner_query = new WP_Query(array(
+      'post_type' => 'banners_home',
+      'posts_per_page' => -1
+    ));
 
-      <section class="col middle">
-        <p class="text">Assertividade com retenção de talentos, é a nossa especialidade.</p>
-        <div class="button-container">
-          <a href="#" class="button button-yellow">Para profissionais</a>
-          <a href="#" class="button button-black">Para sua empresa</a>
-        </div>
-      </section>
+    if ($banner_query->have_posts()) : while ($banner_query->have_posts()) : $banner_query->the_post();
+    ?>
+        <section class="banner-item">
+          <img src="<?= get_field('banner_imagem') ?>" alt="Grupo Sartori" title="Grupo Sartori" class="background-image">
+          <section class="col left">
+            <h2 class="welcome"><?= get_field('banner_bem_vindo') ?></strong>
+            </h2>
+            <h1 class="title">
+              <?= get_the_title() ?>
+            </h1>
+          </section>
 
-      <section class="col right">
-        <span class="arrow banner-prev-arrow">
-          <i data-feather="chevron-left">
-          </i>
-        </span>
+          <section class="col middle">
+            <p class="text">Assertividade com retenção de talentos, é a nossa especialidade.</p>
+            <div class="button-container">
+              <a href="#" class="button button-yellow">Para profissionais</a>
+              <a href="#" class="button button-black">Para sua empresa</a>
+            </div>
+          </section>
 
-        <span class="arrow banner-next-arrow">
-          <i data-feather="chevron-right">
-          </i>
-        </span>
-      </section>
-    </section>
-    <section class="banner-item">
-      <img src="<?= get_template_directory_uri() ?>/assets/dist/images/background-banner.png" alt="" class="background-image">
-      <section class="col left">
-        <h2 class="welcome">Bem-vindo ao <strong>grupo sartori</strong>
-        </h2>
-        <h1 class="title">
-          treinamento2 <br />
-          recrutamento2 <br />
-          e seleção</h1>
-      </section>
+          <section class="col right">
+            <span class="arrow banner-prev-arrow">
+              <i data-feather="chevron-left">
+              </i>
+            </span>
 
-      <section class="col middle">
-        <p class="text">Assertividade com retenção de talentos, é a nossa especialidade.</p>
-        <div class="button-container">
-          <a href="#" class="button button-yellow">Para profissionais</a>
-          <a href="#" class="button button-black">Para sua empresa</a>
-        </div>
-      </section>
-
-      <section class="col right">
-        <span class="arrow banner-prev-arrow">
-          <i data-feather="chevron-left"></i>
-        </span>
-
-        <span class="arrow banner-next-arrow">
-          <i data-feather="chevron-right">
-          </i>
-        </span>
-      </section>
-    </section>
+            <span class="arrow banner-next-arrow">
+              <i data-feather="chevron-right">
+              </i>
+            </span>
+          </section>
+        </section>
+    <?php endwhile;
+    endif; ?>
   </section>
 
   <section class="encontre">
@@ -165,27 +144,30 @@
     </section>
   </div>
 
+  <?php wp_reset_query(); ?>
+
   <section class="numeros">
     <section class="numeros-content">
       <div class="item">
-        <h2 class="title">97%</h2>
-        <p class="text">Dos candidatos contratados por nós,
-          permanecem por pelo menos 15 meses na empresa.</p>
+        <h2 class="title"><?php echo get_field('primeiro_titulo') ?></h2>
+        <div class="text"><?php echo get_field('primeiro_descricao') ?></div>
       </div>
       <div class="item">
-        <h2 class="title">+10 mil</h2>
-        <p class="text">Posições realizadas por nós, somados todo Know How de nosso time.</p>
+        <h2 class="title"><?php echo get_field('segundo_titulo') ?></h2>
+        <div class="text"><?php echo get_field('segundo_descricao') ?></div>
       </div>
       <div class="item">
-        <h2 class="title">+500</h2>
-        <p class="text">Mais de 500 clientes atendidos em todo território nacional.</p>
+        <h2 class="title"><?php echo get_field('terceiro_titulo') ?></h2>
+        <div class="text"><?php echo get_field('terceiro_descricao') ?></div>
       </div>
       <div class="item">
-        <h2 class="title">12</h2>
-        <p class="text">Nossa operação está presente em 12 estados do país.</p>
+        <h2 class="title"><?php echo get_field('quarto_titulo') ?></h2>
+        <div class="text"><?php echo get_field('quarto_descricao') ?></div>
       </div>
     </section>
   </section>
+
+  <?php wp_reset_query(); ?>
 
   <section class="precisa">
     <div class="left">
@@ -215,37 +197,33 @@
 
     <div class="right">
       <h2 class="title">
-        <small class="small">Capilaridade nacional</small>
-        Estamos presentes onde você precisa.
+        <small class="small"><?= get_field('mapa_subtitulo') ?></small>
+        <?= get_field('mapa_titulo') ?>
       </h2>
 
-      <a href="#" class="button">Fale com nosso time</a>
+      <a href="<?= get_field('mapa_link_botao') ?>" class="button"><?= get_field('mapa_texto_botao') ?></a>
     </div>
   </section>
 
+  <?php wp_reset_query(); ?>
   <section class="servicos">
     <div class="servicos-content">
-      <h2 class="title">Nossos <br> serviços</h2>
-      <h3 class="subtitle">Somos especializados em <br> contratação para o setor portuário</h3>
+      <h2 class="title"><?= get_field('nossos_servicos_titulo') ?></h2>
+      <h3 class="subtitle"><?= get_field('nossos_servicos_subtitulo') ?></h3>
+
+      <?php $servicos_query = new WP_Query(array(
+        'post_type' => 'servicos',
+        'posts_per_page' => -1
+      )); ?>
 
       <ul class="list">
-        <div class="list-group">
-          <li> <a href="#" class="item">Recrutamento e Seleção</a></li>
-          <li> <a href="#" class="item">Desenvolvimento de Liderança</a></li>
-          <li> <a href="#" class="item">Desenvolvimento Organizacional</a></li>
-        </div>
-        <div class="list-group">
-          <li> <a href="#" class="item">Formação Atendimento ao Cliente</a></li>
-          <li> <a href="#" class="item">Desenvolvimentos de Equipe</a></li>
-          <li> <a href="#" class="item">Treinamentos</a></li>
-        </div>
-        <div class="list-group">
-          <li> <a href="#" class="item">Comunicação Intercultural</a></li>
-          <li> <a href="#" class="item">Comunicação e habilidades Interpessoais</a></li>
-          <li> <a href="#" class="item">Gestão de Talentos</a></li>
-        </div>
+        <?php if ($servicos_query->have_posts()) : while ($servicos_query->have_posts()) : $servicos_query->the_post() ?>
+            <li class="item"><?= get_the_title() ?></li>
+        <?php endwhile;
+        endif; ?>
       </ul>
-      <a href="#" class="button">Saiba mais</a>
+      <?php wp_reset_query(); ?>
+      <a href="<?= get_field('nossos_servicos_link_botao') ?>" class="button"><?= get_field('nossos_servicos_texto_botao') ?></a>
     </div>
   </section>
 

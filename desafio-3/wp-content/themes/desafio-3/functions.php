@@ -31,6 +31,34 @@ function register_itens()
       'has_archive' => true,
     )
   );
+
+  register_post_type(
+    'banners_home',
+    array(
+      'labels' => array(
+        'name' => 'Banners Home',
+        'singular_name' => 'Banner Home'
+      ),
+      'description' => 'Banners da home',
+      'public' => true,
+      'supports' => array('title'),
+      'has_archive' => false,
+    )
+  );
+
+  register_post_type(
+    'servicos',
+    array(
+      'labels' => array(
+        'name' => 'Serviços',
+        'singular_name' => 'Serviço'
+      ),
+      'description' => 'Serviços prestados pela Sartori',
+      'public' => true,
+      'supports' => array('title'),
+      'has_archive' => false,
+    )
+  );
 }
 add_action('init', 'register_itens');
 
@@ -96,4 +124,11 @@ function is_blog()
   global  $post;
   $posttype = get_post_type($post);
   return (((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) && ($posttype == 'post')) ? true : false;
+}
+
+add_action('admin_init', 'remove_textarea');
+
+function remove_textarea()
+{
+  remove_post_type_support('page', 'editor');
 }
