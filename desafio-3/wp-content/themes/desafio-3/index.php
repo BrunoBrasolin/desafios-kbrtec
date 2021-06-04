@@ -1,37 +1,7 @@
 <?php get_header(); ?>
 <main class="blog-page">
 
-  <header class="top">
-    <h1 class="title">últimas do blog</h1>
-
-    <form class="form">
-      <span class="icon">
-        <i data-feather="filter"></i>
-      </span>
-      <label for="procura" class="label">O que você procura</label>
-      <div class="input-group">
-        <input type="text" class="input" name="s" id="procura">
-        <button type="submit" class="button right-item">OK</button>
-      </div>
-      <input type="hidden" class="categoria-input" name="cat">
-      <div class="custom-select">
-        <div class="label">
-          <span class="text">
-            Todas as categorias
-          </span>
-          <span class="right-item">
-            <i data-feather="chevron-down"></i>
-          </span>
-        </div>
-        <ul class="dropdown">
-          <li data-id="">Todas as categorias</li>
-          <?php foreach (get_categories() as $category) : ?>
-            <li data-id="<?= $category->term_id ?>"><?= $category->name ?></li>
-          <?php endforeach; ?>
-        </ul>
-      </div>
-    </form>
-  </header>
+  <?php get_template_part('includes/top-filter') ?>
 
   <div class="content">
     <section class="post-list">
@@ -71,32 +41,6 @@
     </section>
   </div>
 
-  <?php if (paginate_links()) : ?>
-
-    <section class="paginacao">
-      <?php if (!isset($_GET["pagina"]) || $_GET["pagina"] < 2) : ?>
-        <div class="link prev disabled">
-          <i data-feather="triangle"></i>
-          <span class="texto">Anterior</span>
-        </div>
-        <div class="numbers">
-        <?php endif; ?>
-
-        <?= paginate_links(array(
-          'format' => '?pagina=%#%',
-          'current' => $_GET["pagina"] ?? 1,
-          'prev_text' => '<div class="link prev"><i data-feather="triangle"></i> <span class="texto">Anterior</span></div><div class="numbers">',
-          'next_text' => '</div><div class="link next"><span class="texto">Próximo</span> <i data-feather="triangle"></i></div>'
-        )); ?>
-
-        <?php if (ceil(wp_count_posts()->publish / 10) == $_GET["pagina"]) : ?>
-        </div>
-        <div class="link next disabled">
-          <span class="texto">Próximo</span>
-          <i data-feather="triangle"></i>
-        </div>
-      <?php endif; ?>
-    </section>
-  <?php endif; ?>
+  <?php get_template_part('includes/pagination') ?>
 </main>
 <?php get_footer(); ?>

@@ -1,0 +1,157 @@
+.top-filter {
+	@extend .container;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem 1rem;
+
+	.title {
+		text-transform: uppercase;
+		margin: 0.25rem 0;
+	}
+
+	.form {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+
+		> *:not(:last-child) {
+			margin: 0.25rem 0.5rem 0.25rem 0;
+		}
+
+		.icon {
+			color: $yellow;
+		}
+
+		.input-group,
+		.custom-select {
+			border: 1px solid $black;
+			border-radius: 15px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0.5rem 1rem;
+
+			.right-item {
+				color: $yellow;
+				position: relative;
+				margin-left: calc(1rem - 0.5px);
+				display: flex;
+				align-items: center;
+
+				&::before {
+					content: '';
+					height: 75%;
+					width: 1px;
+					position: absolute;
+					top: calc(25% / 2);
+					left: calc(-0.5rem + 0.5px);
+					background-color: rgba($black, 0.1);
+				}
+			}
+		}
+
+		.input-group {
+			.input {
+				background-color: transparent;
+				outline: none;
+				margin-right: 1rem;
+				width: 100%;
+			}
+
+			.button {
+				background-color: transparent;
+				transition: 0.2s;
+
+				&:hover {
+					color: $dark-blue;
+				}
+			}
+
+			&.date-input {
+				width: 200px;
+			}
+		}
+
+		.custom-select {
+			position: relative;
+			.label {
+				cursor: pointer;
+				display: flex;
+
+				.right-item {
+					svg {
+						height: 20px;
+						width: 20px;
+					}
+				}
+			}
+
+			.dropdown {
+				position: absolute;
+				top: 100%;
+				left: -1px;
+				display: flex;
+				flex-direction: column;
+				max-height: 0;
+				overflow: hidden;
+				padding: 0.5rem calc(20px - 0.5px) 0.5rem 1rem;
+				max-height: 0;
+				opacity: 0;
+				white-space: nowrap;
+				width: calc(100% + 2px);
+				transition: max-height 0.2s, border-bottom-right-radius 0.2s, border-bottom-left-radius 0.2s;
+				border: 1px solid $black;
+				border-top: none;
+				border-radius: 0 0 15px 15px;
+				background-color: $white;
+
+				&::before {
+					content: '';
+					position: absolute;
+					width: calc(100% - 20px + 0.5px - 1rem);
+					left: 1rem;
+					top: 0;
+					height: 1px;
+					background-color: rgba($black, 0.1);
+				}
+
+				li {
+					width: fit-content;
+					max-width: 200px;
+					cursor: pointer;
+					position: relative;
+
+					&::after {
+						content: '';
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						width: 0;
+						height: 1px;
+						background-color: $black;
+						transition: width 0.2s;
+					}
+
+					&:hover {
+						&::after {
+							width: 100%;
+						}
+					}
+				}
+			}
+
+			&.open {
+				border-bottom-right-radius: 0;
+				border-bottom-left-radius: 0;
+
+				.dropdown {
+					max-height: 300px;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

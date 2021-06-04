@@ -14,6 +14,7 @@ function register_itens()
       'description' => 'Adicione os itens da home',
       'public' => true,
       'supports' => array('title'),
+      'has_archive' => false,
     )
   );
 
@@ -27,6 +28,7 @@ function register_itens()
       'description' => 'Adicione uma notícia que saiu em alguma mídia',
       'public' => true,
       'supports' => array('title'),
+      'has_archive' => true,
     )
   );
 }
@@ -43,6 +45,7 @@ function scripts()
   wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.6.0.min.js');
   wp_enqueue_script('slick-slider-js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js');
   wp_enqueue_script('feather-icons', 'https://unpkg.com/feather-icons');
+  wp_enqueue_script('date-picker', 'https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js');
   wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/dist/js/main-min.js');
 }
 
@@ -87,3 +90,10 @@ function navbar()
   register_nav_menu('navbar-top', __('Navbar Top'));
 }
 add_action('init', 'navbar');
+
+function is_blog()
+{
+  global  $post;
+  $posttype = get_post_type($post);
+  return (((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) && ($posttype == 'post')) ? true : false;
+}

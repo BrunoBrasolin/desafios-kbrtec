@@ -1,6 +1,8 @@
 $(document).ready(function () {
 	feather.replace();
 
+	let searchParams = new URLSearchParams(window.location.search);
+
 	$('.navbar .hamburguer').click(() => $('.navbar .menu').toggleClass('open'));
 
 	$(document).scroll(() => $('.navbar .menu').removeClass('open'));
@@ -134,8 +136,6 @@ $(document).ready(function () {
 
 	// Blog
 
-	let searchParams = new URLSearchParams(window.location.search);
-
 	$('#procura').val(searchParams.get('s'));
 
 	let bigger;
@@ -145,7 +145,7 @@ $(document).ready(function () {
 		bigger = bigger > $(this).width() ? bigger : $(this).width();
 	});
 
-	$('.custom-select .label .text').width(bigger + 10);
+	$('.custom-select .label .text').width(bigger + 25);
 
 	$('.custom-select').click(function () {
 		const icon = $('.custom-select .label .right-item svg');
@@ -160,4 +160,16 @@ $(document).ready(function () {
 		$('.categoria-input').val($(this).data('id'));
 		$('.custom-select .label .text').html($(this).html());
 	});
+
+	// Midia
+
+	const pickerDe = new Litepicker({
+		element: document.getElementById('de'),
+	});
+	const pickerAte = new Litepicker({
+		element: document.getElementById('ate'),
+	});
+
+	$('#de').val(searchParams.get('de'));
+	$('#ate').val(searchParams.get('ate'));
 });
