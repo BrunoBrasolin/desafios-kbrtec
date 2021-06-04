@@ -18,26 +18,6 @@
 		}
 	}
 
-	.banner {
-		max-height: 450px;
-		overflow: hidden;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		img {
-			width: 100%;
-			height: 100%;
-			transition: 0.2s;
-		}
-
-		&:hover {
-			img {
-				transform: scale(1.05);
-			}
-		}
-	}
-
 	.content {
 		@extend .container;
 		padding-top: 5rem;

@@ -7,11 +7,11 @@
     <h1 class="title"><?= get_the_title(); ?></h1>
   </section>
 
-  <div class="banner">
+  <figure class="banner-full">
     <?php if (has_post_thumbnail()) :  ?>
       <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?= get_the_title() ?> | Grupo Sartori" title="<?= get_the_title() ?> | Grupo Sartori">
     <?php endif; ?>
-  </div>
+  </figure>
 
   <section class="content">
     <?= get_the_content(); ?>

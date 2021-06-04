@@ -14,8 +14,8 @@
         'paged' => $_GET["pagina"] ?? 1,
       );
 
-      $de_valido = preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $_GET['de']);
-      $ate_valido = preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $_GET['ate']);
+      $de_valido = preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $_GET['de'] ?? null);
+      $ate_valido = preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $_GET['ate'] ?? null);
 
       if ($de_valido || $ate_valido) {
         $args['meta_query'] = array('relation' => 'and');
