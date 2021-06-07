@@ -37,7 +37,7 @@ $(document).ready(function () {
         var option = document.createElement('option');
         option.value = estado.id;
         option.innerHTML = estado.sigla;
-        document.querySelector('.estado-input').append(option);
+        if (document.querySelector('.estado-input')) document.querySelector('.estado-input').append(option);
       });
     }
   });
@@ -139,12 +139,42 @@ $(document).ready(function () {
     $('.custom-select .label .text').html($(this).html());
   }); // Midia
 
-  var pickerDe = new Litepicker({
-    element: document.getElementById('de')
-  });
-  var pickerAte = new Litepicker({
-    element: document.getElementById('ate')
-  });
+  if (document.getElementById('de') && document.getElementById('ate')) {
+    var pickerDe = new Litepicker({
+      element: document.getElementById('de')
+    });
+    var pickerAte = new Litepicker({
+      element: document.getElementById('ate')
+    });
+  }
+
   $('#de').val(searchParams.get('de'));
-  $('#ate').val(searchParams.get('ate'));
+  $('#ate').val(searchParams.get('ate')); // Empresa
+
+  $('.servicos .content-slider').slick({
+    fade: true,
+    slidesToShow: 1,
+    draggable: false,
+    swipe: false,
+    arrows: false,
+    dots: false
+  });
+  $('.servicos .esquerda .subtitle').click(function () {
+    $('.servicos .content-slider').slick('slickGoTo', $(this).index());
+    $('.servicos .esquerda .subtitle').removeClass('active');
+    $(this).addClass('active');
+  });
+  $('.treinamentos .content-slider').slick({
+    fade: true,
+    slidesToShow: 1,
+    draggable: false,
+    swipe: false,
+    arrows: false,
+    dots: false
+  });
+  $('.treinamentos .esquerda .subtitle-container').click(function () {
+    $('.treinamentos .content-slider').slick('slickGoTo', $(this).index());
+    $('.treinamentos .esquerda .subtitle-container').removeClass('active');
+    $(this).addClass('active');
+  });
 });

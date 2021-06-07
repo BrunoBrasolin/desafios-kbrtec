@@ -146,26 +146,24 @@
 
   <?php wp_reset_query(); ?>
 
+  <?php $numeros_query = new WP_Query(array(
+    'post_type' => 'numeros',
+    'posts_per_page' => 4,
+  )); ?>
   <section class="numeros">
     <section class="numeros-content">
-      <div class="item">
-        <h2 class="title"><?php echo get_field('primeiro_titulo') ?></h2>
-        <div class="text"><?php echo get_field('primeiro_descricao') ?></div>
-      </div>
-      <div class="item">
-        <h2 class="title"><?php echo get_field('segundo_titulo') ?></h2>
-        <div class="text"><?php echo get_field('segundo_descricao') ?></div>
-      </div>
-      <div class="item">
-        <h2 class="title"><?php echo get_field('terceiro_titulo') ?></h2>
-        <div class="text"><?php echo get_field('terceiro_descricao') ?></div>
-      </div>
-      <div class="item">
-        <h2 class="title"><?php echo get_field('quarto_titulo') ?></h2>
-        <div class="text"><?php echo get_field('quarto_descricao') ?></div>
-      </div>
+      <?php
+      if ($numeros_query->have_posts()) :
+        while ($numeros_query->have_posts()) : $numeros_query->the_post(); ?>
+          <div class="item">
+            <h2 class="title"><?= get_field('numero') ?></h2>
+            <div class="text"><?= get_field('descricao') ?></div>
+          </div>
+      <?php endwhile;
+      endif; ?>
     </section>
   </section>
+
 
   <?php wp_reset_query(); ?>
 

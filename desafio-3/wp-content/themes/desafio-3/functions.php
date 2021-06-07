@@ -29,6 +29,7 @@ function register_itens()
       'public' => true,
       'supports' => array('title'),
       'has_archive' => true,
+      'menu_icon' => 'dashicons-camera'
     )
   );
 
@@ -54,6 +55,20 @@ function register_itens()
         'singular_name' => 'Serviço'
       ),
       'description' => 'Serviços prestados pela Sartori',
+      'public' => true,
+      'supports' => array('title'),
+      'has_archive' => false,
+    )
+  );
+
+  register_post_type(
+    'numeros',
+    array(
+      'labels' => array(
+        'name' => 'Números',
+        'singular_name' => 'Numero'
+      ),
+      'description' => 'Numeros que a empresa alcançou',
       'public' => true,
       'supports' => array('title'),
       'has_archive' => false,
