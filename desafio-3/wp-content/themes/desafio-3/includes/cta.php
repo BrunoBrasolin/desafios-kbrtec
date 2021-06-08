@@ -6,7 +6,7 @@
     </div>
 
     <div class="right">
-      <a href="#" class="button">Cadastre-se aqui <span class="icon"><i data-feather="arrow-right"></i></span></a>
+      <a href="#" class="floating-button">Cadastre-se aqui <span class="icon"><i data-feather="arrow-right"></i></span></a>
     </div>
   </div>
 </section>

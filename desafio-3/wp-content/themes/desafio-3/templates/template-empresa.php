@@ -6,13 +6,10 @@
 <?php get_template_part('includes/whatsapp') ?>
 
 <main class="empresa-page">
-  <header class="jumbotron">
-    <img src="<?= get_template_directory_uri() ?>/assets/dist/images/grupo-sartori-icone.svg" alt="Grupo Sartori" title="Grupo Sartori">
-    <h1 class="title">Para a sua empresa</h1>
-  </header>
+  <?php get_template_part('includes/white-jumbotron') ?>
 
-  <section class="recrutamento">
-    <div class="recrutamento-content">
+  <section class="before-banner">
+    <div class="before-banner-content">
       <h2 class="subtitle">Recrutamento & Seleção </h2>
 
       <p class="text">Conduzimos todo processo de recrutamento e seleção com de profissionais interno ou externo para as quaisquer áreas da sua empresa. </p>
@@ -43,7 +40,7 @@
     </section>
   </section>
 
-  <section class="servicos">
+  <section class="tabs">
     <div class="esquerda">
       <h2 class="subtitle active">Assessment</h2>
       <h2 class="subtitle">Avaliações Psicológicas e Psicossociais</h2>

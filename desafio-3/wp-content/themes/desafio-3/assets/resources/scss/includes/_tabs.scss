@@ -1,0 +1,132 @@
+.tabs {
+	@extend .container;
+	display: flex;
+	justify-content: space-between;
+	padding: 3rem 1rem;
+
+	.esquerda {
+		width: 30%;
+		display: flex;
+		flex-direction: column;
+
+		.subtitle {
+			padding: 2.5rem 2rem;
+			font-size: 1.1rem;
+			font-weight: 600;
+			white-space: wrap;
+			line-height: 1.5rem;
+			cursor: pointer;
+			transition: 0.2s;
+			border-bottom: 1px solid rgba($black, 0.1);
+			margin-bottom: 2rem;
+
+			&.active {
+				box-shadow: 0px 4px 50px rgba(150, 132, 190, 0.18);
+				text-align: center;
+				position: relative;
+				&::before {
+					content: '';
+					position: absolute;
+					background: $purple-gradint;
+					left: 0;
+					top: 0;
+				}
+			}
+		}
+	}
+
+	.direita {
+		width: 65%;
+
+		.content {
+			.subtitle {
+				margin: 1rem 0;
+				font-weight: 700;
+			}
+
+			.lista {
+				.item {
+					color: $dark-blue;
+				}
+			}
+
+			.text {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+
+	@media screen and (min-width: 651px) {
+		.esquerda {
+			position: relative;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 1px;
+				height: calc(100%);
+				background-color: rgba($black, 0.1);
+			}
+
+			.subtitle {
+				&:last-child {
+					border-bottom: none;
+					margin-bottom: 0;
+				}
+
+				&.active {
+					&::before {
+						width: 5px;
+						height: 100%;
+					}
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 650px) {
+		flex-direction: column;
+		.esquerda {
+			width: 100%;
+			flex-direction: row;
+			justify-content: space-between;
+
+			.subtitle {
+				font-size: 1rem;
+				padding: 1rem 0.5rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+
+				&.active {
+					&::before {
+						height: 5px;
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		.direita {
+			width: 100%;
+		}
+	}
+	@media screen and (max-width: 480px) {
+		.esquerda {
+			flex-direction: column;
+
+			.subtitle {
+				margin-bottom: 0;
+				padding: 2rem 1rem;
+			}
+		}
+
+		.direita {
+			.content {
+				padding: 2rem 0;
+			}
+		}
+	}
+}

@@ -177,7 +177,7 @@ $(document).ready(function () {
 
 	// Empresa
 
-	$('.servicos .content-slider').slick({
+	$('.tabs .content-slider').slick({
 		fade: true,
 		slidesToShow: 1,
 		draggable: false,
@@ -186,9 +186,9 @@ $(document).ready(function () {
 		dots: false,
 	});
 
-	$('.servicos .esquerda .subtitle').click(function () {
-		$('.servicos .content-slider').slick('slickGoTo', $(this).index());
-		$('.servicos .esquerda .subtitle').removeClass('active');
+	$('.tabs .esquerda .subtitle').click(function () {
+		$('.tabs .content-slider').slick('slickGoTo', $(this).index());
+		$('.tabs .esquerda .subtitle').removeClass('active');
 
 		$(this).addClass('active');
 	});
