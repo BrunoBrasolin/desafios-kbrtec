@@ -1,0 +1,158 @@
+.orcamento-page {
+	.header {
+		display: flex;
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba($black, 0.5);
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+		.title {
+			position: absolute;
+			left: 1rem;
+			top: 50%;
+			transform: translateY(-50%);
+			color: $white;
+			z-index: 2;
+		}
+	}
+
+	.content {
+		background: $purple-gradint;
+
+		.inner-content {
+			@extend .container;
+			padding: 3rem 1rem;
+			color: $white;
+
+			.subtitle,
+			.text {
+				text-align: center;
+			}
+
+			.subtitle {
+				font-size: 1.5rem;
+			}
+
+			.text {
+				margin: 1rem 0;
+				line-height: 1.5rem;
+			}
+
+			.form {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				width: 75%;
+				margin: 0 auto;
+
+				.form-group {
+					width: 100%;
+
+					&.lgpd-input {
+						width: 50%;
+						margin-top: 2rem;
+						display: flex;
+
+						input {
+							margin-right: 0.5rem;
+							margin-top: 3px;
+						}
+					}
+
+					.label {
+						font-size: 0.9rem;
+					}
+
+					.input {
+						width: 100%;
+						background-color: transparent;
+						border: 1px solid #c4c4c4;
+						border-radius: 5px;
+						padding: 0.7rem 1rem;
+						margin: 0.5rem 0;
+						outline: none;
+						transition: 0.2s;
+						color: $white;
+						resize: none;
+
+						option {
+							color: $black;
+						}
+					}
+
+					&.active {
+						.input {
+							background-color: $white;
+							box-shadow: 0px 24px 27px -28px #4a3361;
+							color: $black;
+						}
+					}
+				}
+
+				.linha {
+					display: flex;
+					justify-content: space-between;
+					width: 100%;
+
+					.form-group {
+						width: 49%;
+
+						&.pequeno {
+							width: 24%;
+						}
+					}
+				}
+
+				.anti-robot {
+					background-color: $white;
+					padding: 1rem;
+					margin: 2rem 0;
+
+					.helper {
+						color: $black;
+						font-weight: 600;
+						font-size: 0.75rem;
+						text-align: center;
+            display: block;
+            margin-bottom: 0.25rem;
+					}
+				}
+
+				.floating-button {
+					padding: 1rem 2rem;
+
+					.icon {
+						position: static;
+						margin-left: 1rem;
+					}
+
+					&:hover {
+						.icon {
+							transform: translateX(10px);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width: 1050px) {
+		.header {
+			.title {
+				left: calc((100vw - 1100px) / 2 + 0.5rem);
+			}
+		}
+	}
+}
