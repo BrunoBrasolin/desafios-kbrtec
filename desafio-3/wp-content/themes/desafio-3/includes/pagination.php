@@ -16,9 +16,10 @@
       )); ?>
 
       <?php
-      $post_type = is_blog() ? 'post' : 'midia';
+      $post_type = is_blog() ? 'post' : 'saiu-na-midia';
       $per_page = is_blog() ? 10 : 5;
-      if (ceil(wp_count_posts($post_type)->publish / $per_page) == $_GET["pagina"]) :
+      $page = $_GET["pagina"] ?? 1;
+      if (ceil(wp_count_posts($post_type)->publish / $per_page) == $page) :
       ?>
       </div>
       <div class="link next disabled">

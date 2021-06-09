@@ -28,8 +28,8 @@
           <section class="col middle">
             <p class="text">Assertividade com retenção de talentos, é a nossa especialidade.</p>
             <div class="button-container">
-              <a href="#" class="button button-yellow">Para profissionais</a>
-              <a href="#" class="button button-black">Para sua empresa</a>
+              <a href="<?= home_url() ?>/para-profissionais" class="button button-yellow">Para profissionais</a>
+              <a href="<?= home_url() ?>/para-sua-empresa" class="button button-black">Para sua empresa</a>
             </div>
           </section>
 
@@ -230,7 +230,7 @@
     <div class="list">
       <?php
       $midia_query = new WP_Query(array(
-        'post_type' => 'midia',
+        'post_type' => 'saiu-na-midia',
         'posts_per_page' => 6,
       ));
       if ($midia_query->have_posts()) : while ($midia_query->have_posts()) : $midia_query->the_post();
@@ -244,7 +244,7 @@
       endif; ?>
     </div>
 
-    <a href="#" class="button">
+    <a href="<?= home_url() ?>/saiu-na-midia" class="button">
       Veja outras noticias
       <span class="icon">
         <i data-feather="chevron-right" clas="icon"></i>

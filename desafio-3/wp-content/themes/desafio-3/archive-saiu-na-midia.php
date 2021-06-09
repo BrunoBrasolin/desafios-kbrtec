@@ -9,7 +9,7 @@
       <?php
 
       $args = array(
-        'post_type' => 'midia',
+        'post_type' => 'saiu-na-midia',
         'posts_per_page' => 5,
         'paged' => $_GET["pagina"] ?? 1,
       );

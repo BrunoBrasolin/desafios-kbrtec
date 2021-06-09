@@ -19,7 +19,7 @@ function register_itens()
   );
 
   register_post_type(
-    'midia',
+    'saiu-na-midia',
     array(
       'labels' => array(
         'name' => 'Saiu na mídia',
@@ -29,7 +29,7 @@ function register_itens()
       'public' => true,
       'supports' => array('title'),
       'has_archive' => true,
-      'menu_icon' => 'dashicons-camera'
+      'menu_icon' => 'dashicons-camera',
     )
   );
 

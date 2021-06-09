@@ -6,7 +6,7 @@
     </div>
 
     <div class="right">
-      <a href="#" class="floating-button">Cadastre-se aqui <span class="icon"><i data-feather="arrow-right"></i></span></a>
+      <a href="<?= home_url() ?>/orcamento" class="floating-button">Cadastre-se aqui <span class="icon"><i data-feather="arrow-right"></i></span></a>
     </div>
   </div>
 </section>

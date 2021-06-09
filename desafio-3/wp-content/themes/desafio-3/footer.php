@@ -6,14 +6,14 @@
       <div class="group">
         <h2 class="title">Acesso rápido</h2>
         <ul class="list">
-          <li class="item"><a href="#" class="link">Sobre nós</a></li>
-          <li class="item"><a href="#" class="link">Para sua empresa</a></li>
-          <li class="item"><a href="#" class="link">Para profissionais</a></li>
+          <li class="item"><a href="<?= home_url() ?>/sobre-nos" class="link">Sobre nós</a></li>
+          <li class="item"><a href="<?= home_url() ?>/para-sua-empresa" class="link">Para sua empresa</a></li>
+          <li class="item"><a href="<?= home_url() ?>/para-profissionais" class="link">Para profissionais</a></li>
           <li class="item"><a href="#" class="link">Vagas</a></li>
-          <li class="item"><a href="#" class="link">saiu na mídia</a></li>
+          <li class="item"><a href="<?= home_url() ?>/saiu-na-midia" class="link">saiu na mídia</a></li>
           <li class="item"><a href="#" class="link">Quero Saber mais</a></li>
           <li class="item"><a href="#" class="link">Escola do comportamento</a></li>
-          <li class="item"><a href="#" class="link">Blog</a></li>
+          <li class="item"><a href="<?= home_url() ?>/blog" class="link">Blog</a></li>
         </ul>
       </div>
     </div>
