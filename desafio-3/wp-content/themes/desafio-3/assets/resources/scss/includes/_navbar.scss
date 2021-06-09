@@ -44,17 +44,23 @@
 				&::after {
 					content: '';
 					position: absolute;
-					bottom: 0;
+					bottom: -5px;
 					left: 0;
 					width: 0;
 					height: 1px;
 					transition: 0.2s;
 					background-color: $white;
+					opacity: 0;
 				}
 
+				&[aria-current='page'],
 				&:hover {
+					color: $yellow;
+
 					&::after {
-						width: 100%;
+						opacity: 1;
+						background-color: $yellow;
+						width: 50%;
 					}
 				}
 			}

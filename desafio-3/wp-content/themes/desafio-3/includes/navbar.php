@@ -11,5 +11,5 @@
   </div>
   <?php wp_nav_menu(array('theme_location' => 'navbar-top'));  ?>
 
-  <a href="#" class="button">Contatos</a>
+  <a href="<?= home_url() ?>/contatos" class="button">Contatos</a>
 </nav>

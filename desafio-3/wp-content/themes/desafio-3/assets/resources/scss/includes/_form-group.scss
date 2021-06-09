@@ -1,0 +1,51 @@
+.form-group {
+	width: 100%;
+
+	&.lgpd-input {
+		width: 50%;
+		margin-top: 2rem;
+		display: flex;
+
+		input {
+			margin-right: 0.5rem;
+			margin-top: 3px;
+		}
+	}
+
+	.label {
+		font-size: 0.9rem;
+	}
+
+	.input {
+		width: 100%;
+		background-color: transparent;
+		border: 1px solid #c4c4c4;
+		border-radius: 5px;
+		padding: 0.7rem 1rem;
+		margin: 0.5rem 0;
+		outline: none;
+		transition: 0.2s;
+		color: $white;
+		resize: none;
+
+		option {
+			color: $black;
+		}
+	}
+
+	&:focus-within {
+		.input {
+			background-color: $white;
+			box-shadow: 0px 24px 27px -28px #4a3361;
+			color: $black;
+		}
+	}
+
+	@media screen and (max-width: 850px) {
+		&,
+		&.pequeno,
+		&.lgpd-input {
+			width: 100%;
+		}
+	}
+}

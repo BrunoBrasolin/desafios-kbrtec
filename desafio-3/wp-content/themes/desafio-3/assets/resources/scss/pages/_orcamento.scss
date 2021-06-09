@@ -1,40 +1,4 @@
 .orcamento-page {
-	.header {
-		position: relative;
-		min-height: 300px;
-
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba($black, 0.5);
-			z-index: -1;
-		}
-
-		.background-image {
-			position: absolute;
-			object-fit: cover;
-			height: 100%;
-			width: 100%;
-			z-index: -2;
-		}
-
-		.header-content {
-			@extend .container;
-			display: flex;
-			justify-content: center;
-			flex-direction: column;
-			min-height: 300px;
-
-			.title {
-				color: $white;
-			}
-		}
-	}
-
 	.content {
 		background: $purple-gradint;
 
@@ -67,50 +31,6 @@
 				br,
 				.wpcf7-list-item-label {
 					display: none;
-				}
-
-				.form-group {
-					width: 100%;
-
-					&.lgpd-input {
-						width: 50%;
-						margin-top: 2rem;
-						display: flex;
-
-						input {
-							margin-right: 0.5rem;
-							margin-top: 3px;
-						}
-					}
-
-					.label {
-						font-size: 0.9rem;
-					}
-
-					.input {
-						width: 100%;
-						background-color: transparent;
-						border: 1px solid #c4c4c4;
-						border-radius: 5px;
-						padding: 0.7rem 1rem;
-						margin: 0.5rem 0;
-						outline: none;
-						transition: 0.2s;
-						color: $white;
-						resize: none;
-
-						option {
-							color: $black;
-						}
-					}
-
-					&:focus-within {
-						.input {
-							background-color: $white;
-							box-shadow: 0px 24px 27px -28px #4a3361;
-							color: $black;
-						}
-					}
 				}
 
 				.linha {
@@ -219,14 +139,37 @@
 		}
 	}
 
-	@media screen and (max-width: 850px) {
+	@media screen and(min-width: 1050px) {
 		.content {
+			position: relative;
+
+			&::before {
+				content: '';
+				height: 100%;
+				width: 20%;
+				position: absolute;
+				left: 5.5%;
+				top: 6%;
+				border-top: 1px solid rgba($white, 0.2);
+				border-left: 1px solid rgba($white, 0.2);
+				border-top-left-radius: 120px;
+			}
+
 			.inner-content {
 				form {
-					.linha .form-group,
-					.linha .form-group.pequeno,
-					.form-group.lgpd-input {
-						width: 100%;
+					.anti-robot {
+						position: relative;
+
+						&::after {
+							content: '';
+							background: url('#{$path}/assets/dist/images/dots.png');
+							width: 100%;
+							height: 10px;
+							position: absolute;
+							left: 105%;
+							top: 50%;
+							transform: translateY(-50%);
+						}
 					}
 				}
 			}
