@@ -89,6 +89,7 @@ function scripts()
   wp_enqueue_script('slick-slider-js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js');
   wp_enqueue_script('feather-icons', 'https://unpkg.com/feather-icons');
   wp_enqueue_script('date-picker', 'https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js');
+  wp_enqueue_script('jquery-mask', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js');
   wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/dist/js/main-min.js');
 }
 
