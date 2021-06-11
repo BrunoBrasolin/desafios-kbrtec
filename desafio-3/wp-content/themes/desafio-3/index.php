@@ -42,5 +42,7 @@
   </div>
 
   <?php get_template_part('includes/pagination') ?>
+
+  <?php get_template_part('includes/cta-curriculo'); ?>
 </main>
 <?php get_footer(); ?>

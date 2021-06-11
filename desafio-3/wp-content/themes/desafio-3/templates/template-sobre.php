@@ -22,7 +22,7 @@
       </a>
     </div>
   </header>
-  
+
   <figure class="banner">
     <img src="<?= get_template_directory_uri() ?>/assets/dist/images/sobre-background.png" alt="Grupo Sartori" title="Grupo Sartori">
   </figure>
@@ -209,6 +209,8 @@
       </ul>
     </div>
   </section>
+
+  <?php get_template_part('includes/cta-curriculo'); ?>
 </main>
 
 <?php get_footer(); ?>

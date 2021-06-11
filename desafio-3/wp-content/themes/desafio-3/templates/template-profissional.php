@@ -73,6 +73,8 @@
       </div>
     </div>
   </section>
+
+  <?php get_template_part('includes/cta-teste') ?>
 </main>
 
 <?php get_footer(); ?>
