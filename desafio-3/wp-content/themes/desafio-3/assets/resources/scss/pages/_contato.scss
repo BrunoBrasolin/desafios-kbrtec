@@ -1,0 +1,174 @@
+.contato-page {
+	.content {
+		background: $purple-gradint;
+
+		.inner-content {
+			display: flex;
+
+			.esquerda,
+			.direita {
+				width: 50%;
+			}
+
+			.esquerda {
+				padding: 3rem;
+				padding-left: calc((100vw - 1100px) / 2 + 1rem);
+
+				.subtitle {
+					color: $white;
+					line-height: 2rem;
+					margin-bottom: 2rem;
+				}
+
+				form {
+					br,
+					.wpcf7-list-item-label {
+						display: none;
+					}
+
+					.floating-button {
+						margin-top: 2rem;
+					}
+				}
+			}
+
+			.direita {
+				display: flex;
+				flex-direction: column;
+
+				.top {
+					padding: 3rem 1rem 5rem 5rem;
+					background-color: $dark-grey;
+
+					.contato-link {
+						display: flex;
+						align-items: center;
+						margin-bottom: 0.5rem;
+						padding: 1rem;
+						color: $white;
+						border: 1px solid transparent;
+						border-radius: 8px;
+						width: fit-content;
+						transition: 0.2s;
+
+						svg {
+							color: $yellow;
+						}
+
+						.right {
+							display: flex;
+							flex-direction: column;
+							margin-left: 1rem;
+
+							.type {
+								font-size: 0.6rem;
+								text-transform: uppercase;
+							}
+
+							.number {
+								font-size: 1.2rem;
+
+								.bold {
+									font-weight: 900;
+								}
+							}
+						}
+
+						&:hover {
+							border-color: $yellow;
+						}
+					}
+
+					.email {
+						text-transform: uppercase;
+						color: $white;
+						font-size: 0.9rem;
+						margin-top: 2rem;
+						display: block;
+						transition: 0.2s;
+
+						&:hover {
+							color: $yellow;
+						}
+					}
+				}
+
+				.bottom {
+					padding: 5rem;
+					padding-right: 1rem;
+
+					.subtitle {
+						text-transform: uppercase;
+						color: $white;
+						margin-bottom: 1.5rem;
+					}
+
+					.endereco {
+						color: $white;
+						line-height: 2.5rem;
+						font-weight: 400;
+					}
+				}
+			}
+		}
+	}
+
+	.map {
+		iframe {
+			width: 100%;
+		}
+	}
+
+	@media screen and(min-width: 1050px) {
+		.content {
+			position: relative;
+
+			&::before {
+				content: '';
+				height: 100%;
+				width: 14%;
+				position: absolute;
+				left: 2%;
+				top: 6.5%;
+				border-top: 1px solid rgba($white, 0.2);
+				border-left: 1px solid rgba($white, 0.2);
+				border-top-left-radius: 120px;
+			}
+		}
+	}
+	@media screen and(max-width: 1050px) {
+		.content {
+			.inner-content {
+				.esquerda {
+					padding-left: 1rem;
+				}
+			}
+		}
+	}
+
+	@media screen and(max-width: 768px) {
+		.content {
+			.inner-content {
+				flex-direction: column;
+
+				.esquerda,
+				.direita {
+					width: 100%;
+				}
+
+				.direita {
+					.top {
+						padding: 2rem 1rem;
+						width: 95%;
+						margin-left: auto;
+
+						.email {
+							font-size: 0.8rem;
+              text-align: center;
+						}
+					}
+				}
+			}
+		}
+	}
+}

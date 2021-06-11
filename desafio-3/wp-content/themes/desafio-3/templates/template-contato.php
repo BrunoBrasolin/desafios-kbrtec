@@ -27,8 +27,9 @@
     <div class="inner-content">
       <div class="esquerda">
         <h2 class="subtitle">Entre em contato conosco para qualquer informação ou dúvida.</h2>
-
+        <?= do_shortcode('[contact-form-7 id="383" title="Contatos"]') ?>
       </div>
+
       <div class="direita">
         <div class="top">
           <a href="tel:5513991590164" class="contato-link">
@@ -52,21 +53,25 @@
               <span class="number">(13) <b class="bold">99103-7559</b></span>
             </div>
           </a>
-          <a href="mailto:contato@sartoridho.com.br" class="mail">contato@sartoridho.com.br</a>
+          <a href="mailto:contato@sartoridho.com.br" class="email">contato@sartoridho.com.br</a>
         </div>
 
         <div class="bottom">
           <h3 class="subtitle">Onde estamos</h3>
-          <a href="https://goo.gl/maps/FVmDTs88cRsRmbii9" target="_blank" class="endereco">
+          <span class="endereco">
             Av. Senador Feijó, 686
             <br>
             Vila Mathias, Santos - SP,
             <br>
             CEP/ 11015-504
-          </a>
+          </span>
         </div>
       </div>
     </div>
+
+    <section class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5156.51558368668!2d-46.32952855131257!3d-23.95311443752981!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce030f0dfb241f%3A0x2f319f0f2c4dc0af!2sGrupo%20Sartori%20DHO!5e0!3m2!1sen!2sbr!4v1623438406791!5m2!1sen!2sbr" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
   </section>
 </main>
 
