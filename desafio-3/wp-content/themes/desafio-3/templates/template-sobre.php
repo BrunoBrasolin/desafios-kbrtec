@@ -6,6 +6,8 @@
 <?php get_template_part('includes/whatsapp') ?>
 
 <main class="sobre-page">
+  <?php get_template_part('includes/breadcrumb') ?>
+
   <header class="header">
     <img src="<?= get_template_directory_uri() ?>/assets/dist/images/grupo-sartori-icone.svg" alt="Grupo Sartori" title="Grupo Sartori">
     <h1 class="title">Somos o grupo sartori</h1>

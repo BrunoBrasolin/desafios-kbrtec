@@ -6,6 +6,8 @@
 <?php get_template_part('includes/whatsapp') ?>
 
 <main class="empresa-page">
+  <?php get_template_part('includes/breadcrumb') ?>
+
   <?php get_template_part('includes/white-jumbotron') ?>
 
   <section class="before-banner">

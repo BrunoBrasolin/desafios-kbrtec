@@ -1,6 +1,10 @@
 <?php get_header() ?>
 
+<?php get_template_part('includes/whatsapp') ?>
+
+
 <main class="midia-page">
+  <?php get_template_part('includes/breadcrumb') ?>
 
   <?php get_template_part('includes/top-filter') ?>
 

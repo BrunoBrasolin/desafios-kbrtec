@@ -8,6 +8,8 @@
 
 
 <main class="orcamento-page">
+  <?php get_template_part('includes/breadcrumb') ?>
+
   <header class="image-jumbotron">
     <img class="background-image" src="<?= get_template_directory_uri() ?>/assets/dist/images/banner-orcamento.png" alt="Orçamento | Grupo Sartori" title="Orçamento | Grupo Sartori">
 

@@ -1,6 +1,10 @@
 <?php get_header(); ?>
 
+<?php get_template_part('includes/whatsapp') ?>
+
+
 <main class="single-page">
+  <?php get_template_part('includes/breadcrumb') ?>
 
   <section class="top">
     <span class="date"><?= get_the_date(); ?></span>

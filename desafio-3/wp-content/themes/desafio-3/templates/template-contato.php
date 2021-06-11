@@ -6,6 +6,8 @@
 <?php get_template_part('includes/whatsapp') ?>
 
 <main class="contato-page">
+  <?php get_template_part('includes/breadcrumb') ?>
+
   <header class="image-jumbotron">
     <img class="background-image" src="<?= get_template_directory_uri() ?>/assets/dist/images/banner-contato.png" alt="Contato | Grupo Sartori" title="Contato | Grupo Sartori">
 
@@ -70,7 +72,7 @@
     </div>
 
     <section class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5156.51558368668!2d-46.32952855131257!3d-23.95311443752981!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce030f0dfb241f%3A0x2f319f0f2c4dc0af!2sGrupo%20Sartori%20DHO!5e0!3m2!1sen!2sbr!4v1623438406791!5m2!1sen!2sbr" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5156.51558368668!2d-46.32952855131257!3d-23.95311443752981!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce030f0dfb241f%3A0x2f319f0f2c4dc0af!2sGrupo%20Sartori%20DHO!5e0!3m2!1sen!2sbr!4v1623438406791!5m2!1sen!2sbr" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </section>
   </section>
 

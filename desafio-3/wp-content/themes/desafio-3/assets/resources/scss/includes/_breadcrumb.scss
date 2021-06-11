@@ -1,0 +1,45 @@
+.breadcrumb {
+	position: absolute;
+	z-index: 3;
+	color: white;
+	top: 15%;
+	left: calc((100vw - 1100px) / 2 + 0.5rem);
+	display: flex;
+	align-items: center;
+
+	.item {
+		text-transform: uppercase;
+		font-size: 0.75rem;
+		font-weight: 600;
+
+		.link {
+			color: $black;
+		}
+
+		&:not(:last-child) {
+			.link {
+				margin-right: 1.5rem;
+			}
+		}
+
+		&:last-child {
+			.link {
+				color: $yellow;
+			}
+		}
+	}
+}
+
+.contato-page,
+.orcamento-page,
+.sobre-page {
+	.breadcrumb {
+		.item {
+			&:not(:last-child) {
+				.link {
+					color: $white;
+				}
+			}
+		}
+	}
+}
