@@ -1,5 +1,6 @@
 .navbar {
 	background-color: $black;
+	min-height: 75px;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -20,6 +21,14 @@
 		.hamburguer {
 			display: none;
 			cursor: pointer;
+		}
+
+		.img-logo {
+			transition: 0.2s;
+
+			&:hover {
+				transform: scale(1.05);
+			}
 		}
 	}
 
@@ -103,8 +112,11 @@
 			.img-icone {
 				display: none;
 			}
+
 			.img-logo {
 				display: block;
+				max-width: 75%;
+				height: auto;
 			}
 
 			.hamburguer {
@@ -134,8 +146,10 @@
 		}
 
 		.button {
-			display: none;
-			margin-left: auto;
+			width: 100%;
+			padding: 0.5rem;
+			text-align: center;
+			margin: 0.5rem 0;
 		}
 	}
 }

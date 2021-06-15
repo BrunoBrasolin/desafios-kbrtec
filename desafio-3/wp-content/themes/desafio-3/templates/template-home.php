@@ -76,7 +76,7 @@
           </select>
         </div>
 
-        <span class="erro">Preencha um campo para fazer a filtragem</span>
+        <span class="erro"><i data-feather="alert-triangle"></i>Preencha um campo para fazer a filtragem</span>
 
         <button type="submit" class="button">Filtrar</button>
       </form>

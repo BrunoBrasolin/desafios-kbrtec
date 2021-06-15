@@ -13,7 +13,6 @@
 			padding: 2.5rem 2rem;
 			font-size: 1.1rem;
 			font-weight: 600;
-			white-space: wrap;
 			line-height: 1.5rem;
 			cursor: pointer;
 			transition: 0.2s;
@@ -22,7 +21,6 @@
 
 			&.active {
 				box-shadow: 0px 4px 50px rgba(150, 132, 190, 0.18);
-				text-align: center;
 				position: relative;
 				&::before {
 					content: '';

@@ -51,7 +51,7 @@ $(document).ready(function () {
 
     if (!valido) {
       e.preventDefault();
-      $('.encontre .form .erro').css('display', 'block');
+      $('.encontre .form .erro').css('display', 'flex');
     }
   });
   $('.itens-pequenos-slider').on('init', function (event, slick) {
@@ -189,4 +189,7 @@ $(document).ready(function () {
 
   $('#celular').mask(SPMaskBehavior, spOptions);
   $('#telefone').mask('(00) 0000-0000');
+  $(".label[for='lgpd']").click(function () {
+    return $('#lgpd').find('input').prop('checked', !$('#lgpd').find('input:checkbox:checked').length);
+  });
 });

@@ -8,6 +8,7 @@
 	.next,
 	.prev {
 		color: $black;
+		display: flex;
 	}
 
 	.link {
@@ -89,16 +90,25 @@
 				background-color: $black;
 				color: $white;
 				border-color: $black;
+				transform: scale(1.1);
 				font-size: 1.5rem;
 			}
 		}
 	}
 	@media screen and(max-width: 550px) {
-		.link {
-			.texto {
-				display: none;
-			}
+		flex-direction: column;
 
+		.prev {
+			align-self: flex-start;
+			margin-bottom: 1rem;
+		}
+
+		.next {
+			align-self: flex-end;
+			margin-top: 1rem;
+		}
+
+		.link {
 			svg {
 				height: 20px;
 				width: 20px;
@@ -107,9 +117,10 @@
 
 		.numbers {
 			.page-numbers:not(.next):not(.prev) {
-				height: 35px;
-				width: 35px;
-				font-size: 0.9rem;
+				height: 30px;
+				width: 30px;
+				font-size: 0.6rem;
+				margin-right: 0.5rem;
 			}
 		}
 	}

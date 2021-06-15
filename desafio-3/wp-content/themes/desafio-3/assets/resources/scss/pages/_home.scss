@@ -228,11 +228,19 @@
 				.erro {
 					position: absolute;
 					bottom: -2rem;
-					left: 0;
-					color: #ff6e6e;
+					left: 50%;
+					transform: translateX(-50%);
+					width: fit-content;
 					font-size: 0.75rem;
 					line-height: 1rem;
 					display: none;
+					align-items: center;
+					color: $white;
+
+					svg {
+						margin-right: 0.5rem;
+						color: #ff6e6e;
+					}
 				}
 
 				.button {
@@ -243,7 +251,7 @@
 					font-size: 0.7rem;
 					font-weight: 600;
 					text-transform: uppercase;
-					margin: 0 auto;
+					margin: 1rem auto 0;
 					transition: 0.2s;
 
 					&:hover {
@@ -378,7 +386,7 @@
 	}
 
 	.numeros {
-		margin: 3rem 0;
+		margin-top: 3rem;
 		position: relative;
 
 		&::before {
@@ -441,8 +449,8 @@
 	.precisa {
 		display: flex;
 		align-items: center;
-		padding-left: 3rem;
 		padding-top: 3rem;
+		padding-left: 3rem;
 		position: relative;
 
 		&::before {
@@ -521,7 +529,7 @@
 		.right {
 			padding-right: calc((100vw - 1100px) / 2 + 0.5rem);
 			padding-left: 2rem;
-			margin-bottom: 10rem;
+			margin-bottom: calc(10rem - 3rem / 2 + 1.05rem);
 
 			.title {
 				color: $dark-blue;
@@ -878,10 +886,10 @@
 				content: '';
 				position: absolute;
 				right: 0;
-				top: calc(-25% / 2);
+				top: 0;
 				width: 90%;
 				min-width: 1200px;
-				height: 125%;
+				height: 100%;
 				background-color: #ffb500;
 				z-index: -1;
 			}
@@ -935,6 +943,17 @@
 			.banner-item {
 				justify-content: space-around;
 				min-height: 60vh;
+
+				&::after {
+					content: '';
+					height: 100%;
+					width: 100%;
+					background-color: rgba($black, 0.3);
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+
 				.col {
 					&.left,
 					&.right {
@@ -970,6 +989,7 @@
 			}
 		}
 	}
+
 	@media screen and (max-width: 820px) {
 		.banner-slider {
 			.banner-item {
@@ -1005,7 +1025,10 @@
 			.item-grande {
 				flex-direction: column-reverse;
 
-				.left,
+				.left {
+					width: 100%;
+					height: 400px;
+				}
 				.right {
 					width: 100%;
 					height: 300px;
@@ -1014,14 +1037,19 @@
 		}
 
 		.itens-pequenos-container {
+			flex-direction: column;
+			align-items: center;
+
 			.slick-list {
 				padding-bottom: 1rem;
 			}
 			.itens-pequenos-slider {
 				width: 100%;
 			}
-			flex-direction: column;
-			align-items: center;
+
+			.arrows {
+				padding-bottom: 0;
+			}
 		}
 
 		.numeros {
@@ -1041,7 +1069,7 @@
 
 		.precisa {
 			flex-direction: column-reverse;
-			padding: 1rem 0;
+			padding: 0;
 
 			&::before {
 				content: none;
@@ -1054,11 +1082,26 @@
 
 			.left {
 				background-color: $dark-grey;
+				flex-direction: column-reverse;
+				align-items: center;
 				padding: 2rem 1rem;
 				justify-content: space-evenly;
 
 				.subtitle {
-					margin-right: 0;
+					order: 1;
+					margin: 0 0 1rem 0;
+				}
+
+				.list {
+					display: flex;
+					justify-content: space-between;
+					flex-wrap: wrap;
+					padding: 0 1rem;
+
+					.item {
+						margin-bottom: 1rem;
+						margin-left: 25px;
+					}
 				}
 			}
 
@@ -1067,10 +1110,43 @@
 				flex-direction: column;
 				align-items: center;
 				text-align: center;
-				margin-bottom: 3rem;
+				padding: 2rem 1rem;
+				margin-bottom: 0;
+			}
+		}
+
+		.servicos {
+			margin-top: 0;
+			padding: 0;
+			position: relative;
+			&::after {
+				content: '';
+				height: 100%;
+				width: 100%;
+				background-color: rgba($black, 0.5);
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+
+			* {
+				z-index: 2;
+				position: relative;
+			}
+
+			.servicos-content {
+				padding: 3rem 1rem;
+
+				.list {
+					.item {
+						min-width: inherit;
+						width: inherit;
+					}
+				}
 			}
 		}
 	}
+
 	@media screen and (max-width: 450px) {
 		.encontre {
 			.encontre-content {
@@ -1087,6 +1163,23 @@
 					.input-group {
 						width: 80%;
 						margin: 0.5rem auto;
+					}
+				}
+			}
+		}
+
+		.precisa {
+			.left {
+				.list {
+					padding-left: 25px;
+					padding-right: 0;
+					justify-content: space-between;
+					width: 90%;
+					margin: 0 auto;
+
+					.item {
+						width: 45%;
+						margin-left: 0;
 					}
 				}
 			}

@@ -77,4 +77,8 @@ input[type='submit'] {
 
 main {
 	padding-top: 75px;
+
+	@media screen and (max-width: 850px) {
+		padding-top: 108.5px;
+	}
 }

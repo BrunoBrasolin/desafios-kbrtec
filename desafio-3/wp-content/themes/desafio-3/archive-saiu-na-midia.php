@@ -64,8 +64,10 @@
               Fonte: <?= get_field('fonte') ?>
             </h3>
           </article>
-      <?php endwhile;
-      endif; ?>
+        <?php endwhile; ?>
+      <?php else : ?>
+        <h2 class="title">Nenhuma mídia encontrada</h2>
+      <?php endif; ?>
     </div>
   </section>
 

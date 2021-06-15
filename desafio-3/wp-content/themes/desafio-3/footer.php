@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <div class="col">
+    <div class="col middle">
       <div class="group">
         <h2 class="title">Onde estamos</h2>
         <a href="https://goo.gl/maps/FVmDTs88cRsRmbii9" target="_blank" class="endereco">

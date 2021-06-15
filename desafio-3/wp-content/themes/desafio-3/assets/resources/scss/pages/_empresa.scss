@@ -20,6 +20,7 @@
 				&::after {
 					content: '';
 					background: url('#{$path}/assets/dist/images/dots.png');
+					transform: scale(0.8);
 					width: 100%;
 					height: 10px;
 					position: absolute;
@@ -104,6 +105,7 @@
 
 	.treinamentos {
 		background: $purple-gradint;
+		border-bottom: 1px solid $white;
 
 		.treinamentos-content {
 			@extend .container;
@@ -210,6 +212,7 @@
 				.item {
 					width: 48%;
 					margin: 1rem 0;
+					border-radius: 16px;
 				}
 			}
 		}
@@ -227,7 +230,6 @@
 					}
 
 					.esquerda {
-
 						.subtitle-container {
 							flex-direction: column;
 							align-items: center;

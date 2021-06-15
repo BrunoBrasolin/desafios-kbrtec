@@ -4,12 +4,14 @@
   </h1>
 
   <form class="form">
-    <span class="icon">
-      <i data-feather="filter"></i>
-    </span>
-    <label for="<?= is_blog() ? 'procura' : 'de' ?>" class="label">
-      <?= is_blog() ? 'O que você procura' : 'Filtro por período' ?>
-    </label>
+    <div class="form-header">
+      <span class="icon">
+        <i data-feather="filter"></i>
+      </span>
+      <label for="<?= is_blog() ? 'procura' : 'de' ?>" class="label">
+        <?= is_blog() ? 'O que você procura' : 'Filtro por período' ?>
+      </label>
+    </div>
     <?php if (is_blog()) : ?>
       <div class="input-group">
         <input type="text" class="input" name="s" id="procura">
