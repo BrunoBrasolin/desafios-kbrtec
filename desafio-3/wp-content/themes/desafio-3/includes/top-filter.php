@@ -36,10 +36,10 @@
       </div>
     <?php else : ?>
       <div class="input-group date-input">
-        <input type="text" class="input" name="de" id="de" placeholder="De">
+        <input type="text" class="input" name="de" id="de" placeholder="De" autocomplete="false">
       </div>
       <div class="input-group date-input">
-        <input type="text" class="input" name="ate" id="ate" placeholder="Até">
+        <input type="text" class="input" name="ate" id="ate" placeholder="Até" autocomplete="false">
         <button type="submit" class="button right-item">OK</button>
       </div>
     <?php endif; ?>
