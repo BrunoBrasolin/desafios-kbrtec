@@ -1,0 +1,10 @@
+2021-06-18T13:46:18+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Term as array in D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\archive-product.php:67
+Stack trace:
+#0 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-includes\template-loader.php(106): include()
+#1 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-blog-header.php(19): require_once('D:\\www\\xampp\\ht...')
+#2 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\index.php(17): require('D:\\www\\xampp\\ht...')
+#3 {main}
+  thrown, em D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\archive-product.php, na linha 67
+
+2021-06-18T14:25:51+00:00 CRITICAL Object of class WP_Term could not be converted to string, em D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\archive-product.php, na linha 44
+
