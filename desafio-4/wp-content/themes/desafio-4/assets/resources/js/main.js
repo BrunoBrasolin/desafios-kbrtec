@@ -30,16 +30,17 @@ $(document).ready(() => {
 
 	$('.add-to-cart').click(function (e) {
 		e.preventDefault();
+
+		if ($(this).hasClass('waiting')) return false;
+
 		$.ajax({
-			url: window.location.href,
+			url: `${base_url}/loja?add-to-cart=${$(this).data('product-id')}`,
 			type: 'get',
-			data: {
-				'add-to-cart': $(this).parent().data('product-id'),
-			},
 			beforeSend: () => {
 				$(this).addClass('waiting');
 			},
 			success: () => {
+				$('.header .cart .total-itens').html(parseInt($('.header .cart .total-itens').text()) + 1);
 				$('.add-to-cart-modal .add-to-cart-animation-wapper').append(`
 					<object class="add-to-cart-animation" type="image/svg+xml" data="${base_url}/assets/dist/images/icons/cart-animation.svg">
 						<img src="${base_url}/assets/dist/images/icons/cart-animation.svg" />

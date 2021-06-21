@@ -12,8 +12,8 @@
   $args = array(
     'post_type' => 'product',
     'post_status' => 'publish',
-
   );
+
   if ($_GET['categoria']) {
     $args["tax_query"] = array(array(
       'taxonomy'  => 'product_cat',
@@ -28,9 +28,10 @@
   <aside class="filters">
     <h2 class="title">Categorias</h2>
     <div class="categorias">
-      <a href="<?= get_site_url() ?>/loja" class="categoria <?= !isset($_GET["categoria"]) ? 'active' : '' ?>">Todos os produtos (<?= $products->post_count ?>)</a>
+      <?php $totalProducts = new WP_Query(array('post_type' => 'product', 'post_status' => 'publish')); ?>
+      <a href="<?= home_url('loja') ?>" class="categoria <?= !isset($_GET["categoria"]) ? 'active' : '' ?>">Todos os produtos (<?= $totalProducts->post_count ?>)</a>
       <?php
-      $categories = get_terms(array('taxonomy'   => "product_cat"));
+      $categories = get_terms("product_cat");
       foreach ($categories as $categoryId => $category) :
       ?>
         <a href="?categoria=<?= $category->term_id ?>" class="categoria <?= $category->term_id == $_GET["categoria"] ? 'active' : '' ?>"><?= $category->name ?> (<?= $category->count ?>)</a>
@@ -55,15 +56,23 @@
       if ($products->have_posts()) :
         while ($products->have_posts()) :
           $products->the_post();
-          global $product; // $product = wc_get_product(get_the_ID());
+          $product = wc_get_product(get_the_ID());
           $terms = get_the_terms($post->ID, 'product_cat');
       ?>
-          <div class="product" data-product-id="<?= get_the_ID() ?>">
+          <div class="product">
             <div class="top">
               <figure class="product-image">
-                <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
+                <a href="<?= get_the_permalink(); ?>" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
+                  <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
+                </a>
               </figure>
-              <h3 class="produto-title"><?= get_the_title() ?></h3>
+
+              <h3 class="produto-title">
+                <a href="<?= get_the_permalink(); ?>" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
+                  <?= get_the_title() ?>
+                </a>
+              </h3>
+
               <div class="price-row">
                 <?php if ($product->sale_price > 0) : ?>
                   <span class="sale-price">R$ <?= $product->sale_price ?></span>
@@ -71,7 +80,7 @@
                 <span class="regular-price">R$ <?= $product->regular_price ?></span>
               </div>
             </div>
-            <a href="#" class="button add-to-cart">
+            <a href="#" class="loading-button add-to-cart" data-product-id="<?= get_the_ID() ?>">
               Comprar
               <span class="loading"></span>
             </a>

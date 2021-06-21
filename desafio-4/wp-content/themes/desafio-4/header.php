@@ -12,11 +12,11 @@
 
   <header class="header">
     <div class="header-content">
-      <a href="<?= get_site_url() ?>" class="link logo">
+      <a href="<?= home_url() ?>" class="link logo">
         <img class="asset asset-logo" src="<?= get_template_directory_uri() ?>/assets/dist/images/icons/logo.svg" alt="ekiN" title="ekiN">
       </a>
 
-      <a href="<?= get_site_url() ?>/carrinho" class="link cart">
+      <a href="<?= home_url('carrinho') ?>" class="link cart">
         <img class="asset asset-cart" src="<?= get_template_directory_uri() ?>/assets/dist/images/icons/cart.svg" alt="Cart | ekiN" title="Cart | ekiN">
         <span class="total-itens">
           <?= WC()->cart->get_cart_contents_count() ?>

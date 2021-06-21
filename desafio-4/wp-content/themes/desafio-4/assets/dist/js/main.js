@@ -32,16 +32,15 @@ $(document).ready(function () {
     var _this = this;
 
     e.preventDefault();
+    if ($(this).hasClass('waiting')) return false;
     $.ajax({
-      url: window.location.href,
+      url: "".concat(base_url, "/loja?add-to-cart=").concat($(this).data('product-id')),
       type: 'get',
-      data: {
-        'add-to-cart': $(this).parent().data('product-id')
-      },
       beforeSend: function beforeSend() {
         $(_this).addClass('waiting');
       },
       success: function success() {
+        $('.header .cart .total-itens').html(parseInt($('.header .cart .total-itens').text()) + 1);
         $('.add-to-cart-modal .add-to-cart-animation-wapper').append("\n\t\t\t\t\t<object class=\"add-to-cart-animation\" type=\"image/svg+xml\" data=\"".concat(base_url, "/assets/dist/images/icons/cart-animation.svg\">\n\t\t\t\t\t\t<img src=\"").concat(base_url, "/assets/dist/images/icons/cart-animation.svg\" />\n\t\t\t\t\t</object>\n\t\t\t\t"));
         $('.add-to-cart-modal').addClass('active');
         setTimeout(function () {
