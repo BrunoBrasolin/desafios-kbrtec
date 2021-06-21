@@ -90,6 +90,8 @@
     </svg>
   </div>
 
+  <?php get_template_part('includes/add-to-cart-modal') ?>
+
 </main>
 
 <?php get_footer() ?>

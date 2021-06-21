@@ -7,8 +7,30 @@
 		justify-content: space-between;
 		align-items: center;
 
-		svg {
+		.link {
 			transition: 0.2s;
+			&.logo {
+				max-width: 40%;
+			}
+
+			&.cart {
+				position: relative;
+				.total-itens {
+					position: absolute;
+					height: 20px;
+					width: 20px;
+					border-radius: 50%;
+					background-color: #000;
+					color: #fff;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					font-size: 0.9rem;
+					top: -10px;
+					right: -10px;
+					flex-shrink: 0;
+				}
+			}
 
 			&:hover {
 				transform: scale(1.1);

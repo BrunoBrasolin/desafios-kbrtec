@@ -1,0 +1,57 @@
+.add-to-cart-modal {
+	position: fixed;
+	z-index: -99;
+	opacity: 0;
+
+	&.active {
+		background-color: rgba(#333, 0.5);
+		height: 100vh;
+		width: 100vw;
+		cursor: pointer;
+		z-index: 99;
+		opacity: 1;
+		transition: opacity 0.5s;
+		top: 0;
+		left: 0;
+
+		&,
+		.modal-content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.modal-content {
+			background-color: #fff;
+			padding: 2rem;
+			overflow: hidden;
+			border-radius: 18px;
+			max-width: 90%;
+			position: relative;
+
+			.close-icon {
+				position: absolute;
+				cursor: pointer;
+				top: 1.5rem;
+				right: 1.5rem;
+				padding: 0.5rem;
+			}
+
+			.add-to-cart-animation {
+				width: 400px;
+				height: auto;
+				margin-top: -17%;
+			}
+
+			.message {
+				text-transform: uppercase;
+				font-weight: 700;
+				max-width: 350px;
+				text-align: center;
+				font-size: 1.1rem;
+				line-height: 1.5rem;
+			}
+		}
+	}
+}
