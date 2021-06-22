@@ -1,6 +1,7 @@
 "use strict";
 
-var base_url = 'http://localhost/bruno-brasolin/desafio-4/wp-content/themes/desafio-4';
+var base_url = 'http://localhost/bruno-brasolin/desafio-4/wp-content/themes/desafio-4'; // ARCHIVE PAGE
+
 $(document).ready(function () {
   $('.banner-loja').slick({
     slidesToShow: 1,
@@ -54,5 +55,25 @@ $(document).ready(function () {
   });
   $('.filter-button').click(function () {
     $(this).toggleClass('active');
+  }); // SINGLE PAGE
+
+  $('.main-image-slider').slick({
+    arrows: true,
+    dots: false,
+    slidesToShow: 1,
+    asNavFor: '.gallery-slider',
+    prevArrow: $('.main-image-arrows #prevArrow'),
+    nextArrow: $('.main-image-arrows #nextArrow'),
+    infinite: false
+  });
+  $('.gallery-slider').slick({
+    arrows: false,
+    dots: false,
+    slidesToShow: 4,
+    asNavFor: '.main-image-slider',
+    infinite: false
+  });
+  $('.gallery-slider .gallery-image').click(function () {
+    $('.gallery-slider').slick('slickGoTo', $(this).data('slick-index'));
   });
 });

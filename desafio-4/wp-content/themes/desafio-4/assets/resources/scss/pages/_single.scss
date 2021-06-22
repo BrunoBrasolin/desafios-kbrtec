@@ -21,21 +21,84 @@
 	.row {
 		display: flex;
 		justify-content: space-between;
+		margin-bottom: 3rem;
 
 		.left {
 			width: 55%;
+			display: flex;
+			flex-direction: column;
 
-			figure {
-				overflow: hidden;
+			.main-image-slider-wrapper {
+				position: relative;
+				margin-bottom: 0.5rem;
 
-				img {
-					max-height: 500px;
-					transition: 0.2s;
+				.main-image-slider {
+					.product-image {
+						overflow: hidden;
+
+						img {
+							max-height: 500px;
+							display: block;
+							margin: 0 auto;
+							transition: 0.2s;
+						}
+
+						&:hover {
+							img {
+								transform: scale(1.05);
+							}
+						}
+					}
 				}
 
-				&:hover {
-					img {
-						transform: scale(1.05);
+				.main-image-arrows {
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					display: flex;
+					align-items: center;
+					transform: translateX(-50%);
+
+					.main-image-arrow {
+						height: 40px;
+						width: 40px;
+						border-radius: 50%;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						cursor: pointer;
+						border: 1px solid #000;
+						background-color: #000;
+						transition: 0.2s;
+
+						&:hover {
+							background-color: rgba(#000, 0.5);
+						}
+
+						&.slick-disabled {
+							cursor: default;
+							background-color: rgba(#000, 0.15);
+							border: none;
+						}
+
+						&#prevArrow {
+							transform: scale(-1);
+						}
+
+						&#nextArrow {
+							margin-left: 1rem;
+						}
+					}
+				}
+			}
+
+			.gallery-slider {
+				.slick-track {
+					margin-left: inherit;
+					margin-right: inherit;
+
+					.gallery-image {
+						cursor: pointer;
 					}
 				}
 			}
@@ -114,6 +177,44 @@
 
 			p {
 				margin-bottom: 1rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: 550px) {
+		.row {
+			flex-direction: column;
+
+			.left,
+			.right {
+				width: 100%;
+			}
+
+			.left {
+				.main-image-slider-wrapper {
+					.main-image-slider {
+						.product-image {
+							img {
+								max-height: 250px;
+							}
+						}
+					}
+				}
+
+				.gallery-slider {
+					.gallery-image {
+						img {
+							max-height: 100px;
+							margin: 0 auto;
+						}
+					}
+				}
+			}
+		}
+
+		.details {
+			.details-content {
+				margin-top: -0.9px;
 			}
 		}
 	}
