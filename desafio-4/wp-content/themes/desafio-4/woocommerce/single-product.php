@@ -6,26 +6,24 @@
   <section class="row">
     <div class="left">
       <?php $imagesId = $product->get_gallery_image_ids(); ?>
-      <div class="main-image-slider-wrapper">
-        <div class="main-image-slider">
-          <figure class="product-image">
-            <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
-          </figure>
+      <div class="main-image-slider">
+        <figure class="product-image">
+          <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
+        </figure>
 
-          <?php foreach ($imagesId as $imageId) : $imageUrl = wp_get_attachment_url($imageId); ?>
-            <figure class="product-image">
-              <img src="<?= $imageUrl ?>" alt="<?= get_the_title() ?> | ekiN">
-            </figure>
-          <?php endforeach; ?>
-        </div>
-        <div class="main-image-arrows">
-          <span class="main-image-arrow" id="prevArrow">
-            <img src="<?= get_template_directory_uri() ?>/assets/dist/images/icons/chevron-right.svg" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
-          </span>
-          <span class="main-image-arrow" id="nextArrow">
-            <img src="<?= get_template_directory_uri() ?>/assets/dist/images/icons/chevron-right.svg" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
-          </span>
-        </div>
+        <?php foreach ($imagesId as $imageId) : $imageUrl = wp_get_attachment_url($imageId); ?>
+          <figure class="product-image">
+            <img src="<?= $imageUrl ?>" alt="<?= get_the_title() ?> | ekiN">
+          </figure>
+        <?php endforeach; ?>
+      </div>
+      <div class="main-image-arrows">
+        <span class="main-image-arrow" id="prevArrow">
+          <img src="<?= get_template_directory_uri() ?>/assets/dist/images/icons/chevron-right.svg" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
+        </span>
+        <span class="main-image-arrow" id="nextArrow">
+          <img src="<?= get_template_directory_uri() ?>/assets/dist/images/icons/chevron-right.svg" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
+        </span>
       </div>
 
       <div class="gallery-slider">
