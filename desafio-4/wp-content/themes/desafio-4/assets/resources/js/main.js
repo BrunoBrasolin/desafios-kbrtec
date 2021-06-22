@@ -36,8 +36,8 @@ $(document).ready(() => {
 		if ($(this).hasClass('waiting')) return false;
 
 		$.ajax({
-			url: `${base_url}/loja?add-to-cart=${$(this).data('product-id')}`,
-			type: 'get',
+			url: `${base_url}/loja?add-to-cart=${$(this).data('product-id')}&quantity=1`,
+			type: 'post',
 			beforeSend: () => {
 				$(this).addClass('waiting');
 			},
@@ -57,8 +57,9 @@ $(document).ready(() => {
 		});
 	});
 
-	$('.filter-button').click(function () {
-		$(this).toggleClass('active');
+	$('.filter-button, .close-filter').click(function () {
+		$('.filter-button').toggleClass('active');
+		$('.loja-page .filters').toggleClass('active');
 	});
 
 	// SINGLE PAGE

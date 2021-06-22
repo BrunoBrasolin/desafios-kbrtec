@@ -26,6 +26,10 @@
   ?>
 
   <aside class="filters">
+    <span class="close-filter">
+      <img src="<?= get_template_directory_uri() ?>/assets/dist/images/icons/close.svg" alt="Fechar modal | ekiN" title="Fechar modal | ekiN">
+    </span>
+
     <h2 class="title">Categorias</h2>
     <div class="categorias">
       <?php $totalProducts = new WP_Query(array('post_type' => 'product', 'post_status' => 'publish')); ?>

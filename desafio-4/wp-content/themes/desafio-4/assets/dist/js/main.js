@@ -35,8 +35,8 @@ $(document).ready(function () {
     e.preventDefault();
     if ($(this).hasClass('waiting')) return false;
     $.ajax({
-      url: "".concat(base_url, "/loja?add-to-cart=").concat($(this).data('product-id')),
-      type: 'get',
+      url: "".concat(base_url, "/loja?add-to-cart=").concat($(this).data('product-id'), "&quantity=1"),
+      type: 'post',
       beforeSend: function beforeSend() {
         $(_this).addClass('waiting');
       },
@@ -53,8 +53,9 @@ $(document).ready(function () {
       }
     });
   });
-  $('.filter-button').click(function () {
-    $(this).toggleClass('active');
+  $('.filter-button, .close-filter').click(function () {
+    $('.filter-button').toggleClass('active');
+    $('.loja-page .filters').toggleClass('active');
   }); // SINGLE PAGE
 
   $('.main-image-slider').slick({
