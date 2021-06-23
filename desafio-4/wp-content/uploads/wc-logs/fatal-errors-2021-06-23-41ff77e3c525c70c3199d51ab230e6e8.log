@@ -1,0 +1,48 @@
+2021-06-23T12:55:21+00:00 CRITICAL Uncaught Error: Call to a member function is_type() on string in D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\single-product.php:4
+Stack trace:
+#0 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-includes\template-loader.php(106): include()
+#1 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-blog-header.php(19): require_once('D:\\www\\xampp\\ht...')
+#2 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\index.php(17): require('D:\\www\\xampp\\ht...')
+#3 {main}
+  thrown, em D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\single-product.php, na linha 4
+
+2021-06-23T13:04:03+00:00 CRITICAL Uncaught Error: Call to a member function get_default_attributes() on null in D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\single-product.php:14
+Stack trace:
+#0 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-includes\template-loader.php(106): include()
+#1 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-blog-header.php(19): require_once('D:\\www\\xampp\\ht...')
+#2 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\index.php(17): require('D:\\www\\xampp\\ht...')
+#3 {main}
+  thrown, em D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\single-product.php, na linha 14
+
+2021-06-23T13:10:05+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Variable::get_variation_default_attributest() in D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\single-product.php:14
+Stack trace:
+#0 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-includes\template-loader.php(106): include()
+#1 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-blog-header.php(19): require_once('D:\\www\\xampp\\ht...')
+#2 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\index.php(17): require('D:\\www\\xampp\\ht...')
+#3 {main}
+  thrown, em D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\single-product.php, na linha 14
+
+2021-06-23T13:14:22+00:00 CRITICAL Uncaught Error: Call to a member function get_price() on string in D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\includes\price-row.php:5
+Stack trace:
+#0 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-includes\template.php(732): require()
+#1 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-includes\template.php(676): load_template('D:\\www\\xampp\\ht...', false, Array)
+#2 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#3 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\single-product.php(65): get_template_part('includes/price-...')
+#4 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-includes\template-loader.php(106): include('D:\\www\\xampp\\ht...')
+#5 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-blog-header.php(19): require_once('D:\\www\\xampp\\ht...')
+#6 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\index.php(17): require('D:\\www\\xampp\\ht...')
+#7 {main}
+  thrown, em D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\includes\price-row.php, na linha 5
+
+2021-06-23T13:14:35+00:00 CRITICAL Uncaught Error: Call to a member function get_price() on string in D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\includes\price-row.php:5
+Stack trace:
+#0 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-includes\template.php(732): require()
+#1 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-includes\template.php(676): load_template('D:\\www\\xampp\\ht...', false, Array)
+#2 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#3 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\single-product.php(65): get_template_part('includes/price-...')
+#4 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-includes\template-loader.php(106): include('D:\\www\\xampp\\ht...')
+#5 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-blog-header.php(19): require_once('D:\\www\\xampp\\ht...')
+#6 D:\www\xampp\htdocs\bruno-brasolin\desafio-4\index.php(17): require('D:\\www\\xampp\\ht...')
+#7 {main}
+  thrown, em D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\includes\price-row.php, na linha 5
+

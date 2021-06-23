@@ -79,11 +79,12 @@
 
               <div class="price-row">
                 <?php if ($product->sale_price > 0) : ?>
-                  <span class="sale-price">R$ <?= $product->sale_price ?></span>
-                <?php endif ?>
-                <span class="regular-price">R$ <?= $product->regular_price ?></span>
+                  <span class="sale-price">R$ <?= $product->get_sale_price() ?></span>
+                <?php endif; ?>
+                <span class="regular-price">R$ <?= $product->get_price() ?></span>
               </div>
             </div>
+
             <a href="#" class="loading-button add-to-cart" data-product-id="<?= get_the_ID() ?>">
               Comprar
               <span class="loading"></span>

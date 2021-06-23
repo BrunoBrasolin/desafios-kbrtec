@@ -1,6 +1,15 @@
 <?php get_header() ?>
 
 <?php $product = wc_get_product(get_the_ID()); ?>
+<?php
+if ($product->is_type('variable')) {
+  $product = new WC_Product_Variable(get_the_ID());
+  $variations = $product->get_available_variations();
+  $attributes = $product->get_data()["attributes"];
+} else {
+  $product = new WC_Product_Simple(get_the_ID());
+}
+?>
 
 <main class="single-page">
   <section class="row">
@@ -43,20 +52,34 @@
       <div class="categorias-row">
         <?php
         $categories = get_the_terms(get_the_ID(), "product_cat");
-        foreach ($categories as $categoryId => $category) :
+        if (count($categories) > 0) :
+          foreach ($categories as $categoryId => $category) :
         ?>
-          <a href="<?= home_url('loja') ?>?categoria=<?= $category->term_id ?>" class="categoria <?= $category->term_id == $_GET["categoria"] ? 'active' : '' ?>"><?= $category->name ?></a>
-        <?php endforeach; ?>
+            <a href="<?= home_url('loja') ?>?categoria=<?= $category->term_id ?>" class="categoria <?= $category->term_id == $_GET["categoria"] ? 'active' : '' ?>"><?= $category->name ?></a>
+        <?php endforeach;
+        endif; ?>
       </div>
 
       <h2 class="title"><?= get_the_title() ?></h2>
 
       <div class="price-row">
         <?php if ($product->sale_price > 0) : ?>
-          <span class="sale-price">R$ <?= $product->sale_price ?></span>
-        <?php endif ?>
-        <span class="regular-price">R$ <?= $product->regular_price ?></span>
+          <span class="sale-price">R$ <?= $product->get_sale_price() ?></span>
+        <?php endif; ?>
+        <span class="regular-price">R$ <?= $product->get_price() ?></span>
       </div>
+
+      <?php if ($attributes) : ?>
+        <?php foreach ($attributes as $attribute) : ?>
+          <h3 class="subtitle"><?= $attribute["name"] ?></h3>
+          <ul class="attributes-list">
+            <?php foreach ($attribute["options"] as $option) : ?>
+              <li class="item <?= $product->get_default_attributes()[strtolower($attribute["name"])] == $option ? 'active' : '' ?>" data-attribute-position="<?= $attribute["position"] ?>"><?= $option ?></li>
+            <?php endforeach; ?>
+          </ul>
+          <hr>
+        <?php endforeach; ?>
+      <?php endif; ?>
 
       <a href="#" class="loading-button add-to-cart" data-product-id="<?= get_the_ID() ?>">
         Comprar

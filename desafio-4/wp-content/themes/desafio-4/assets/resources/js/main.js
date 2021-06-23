@@ -85,4 +85,9 @@ $(document).ready(() => {
 	$('.gallery-slider .gallery-image').click(function () {
 		$('.gallery-slider').slick('slickGoTo', $(this).data('slick-index'));
 	});
+
+	$('.attributes-list .item').click(function () {
+		$(`.attributes-list .item[data-attribute-position="${$(this).data('attribute-position')}"]`).removeClass('active');
+		$(this).addClass('active');
+	});
 });
