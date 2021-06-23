@@ -10,8 +10,8 @@
 
 <body>
 
-  <header class="header">
-    <div class="header-content">
+  <header class="limits header">
+    <div class="limits-content">
       <a href="<?= home_url() ?>" class="link logo">
         <img class="asset asset-logo" src="<?= get_template_directory_uri() ?>/assets/dist/images/icons/logo.svg" alt="ekiN" title="ekiN">
       </a>

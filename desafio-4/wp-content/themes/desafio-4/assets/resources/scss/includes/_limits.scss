@@ -1,14 +1,41 @@
-.header {
-	@extend .container;
-	padding: 1rem;
+.limits {
+	&.header {
+		background-color: #fff;
+		color: #000;
+		.link {
+			color: #000;
+		}
+	}
 
-	.header-content {
+	&.footer {
+		background-color: #000;
+		.link {
+			color: #fff;
+		}
+	}
+
+	.limits-content {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		@extend .container;
+		padding: 1rem;
+
+		.center {
+			display: flex;
+			align-items: center;
+
+			.link {
+				&:not(:last-child) {
+					margin-right: 1rem;
+				}
+			}
+		}
 
 		.link {
+			display: inline;
 			transition: 0.2s;
+
 			&.logo {
 				max-width: 40%;
 			}
@@ -29,6 +56,16 @@
 					top: -10px;
 					right: -10px;
 					flex-shrink: 0;
+				}
+			}
+
+			&.credits {
+				font-size: 0.9rem;
+				display: flex;
+				align-items: center;
+
+				img {
+					margin-left: 0.5rem;
 				}
 			}
 

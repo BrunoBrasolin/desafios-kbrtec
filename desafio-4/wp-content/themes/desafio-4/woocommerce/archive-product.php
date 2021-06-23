@@ -14,7 +14,7 @@
     'post_status' => 'publish',
   );
 
-  if ($_GET['categoria']) {
+  if (isset($_GET['categoria'])) {
     $args["tax_query"] = array(array(
       'taxonomy'  => 'product_cat',
       'field'     => 'id',
@@ -45,7 +45,7 @@
 
   <section class="products">
     <h2 class="title">
-      <?php if (!$_GET['categoria']) : ?>
+      <?php if (!isset($_GET['categoria'])) : ?>
         Todos os produtos (<?= $products->post_count ?>)
       <?php else : ?>
         <?php

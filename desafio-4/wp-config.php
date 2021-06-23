@@ -90,3 +90,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+
+define('WP_HOME', 'http://localhost/bruno-brasolin/desafio-4/');
+define('WP_SITEURL', 'http://localhost/bruno-brasolin/desafio-4/');

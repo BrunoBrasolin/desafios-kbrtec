@@ -69,6 +69,8 @@ if ($product->is_type('variable')) {
         <span class="regular-price">R$ <?= $product->get_price() ?></span>
       </div>
 
+      <?php var_dump($product->get_stock_status()); ?>
+
       <?php if ($attributes) : ?>
         <?php foreach ($attributes as $attribute) : ?>
           <h3 class="subtitle"><?= $attribute["name"] ?></h3>
