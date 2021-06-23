@@ -136,6 +136,18 @@
 				margin-top: 2rem;
 			}
 
+			.stock {
+				font-size: 0.8rem;
+
+				&.true {
+					color: green;
+				}
+
+				&.false {
+					color: red;
+				}
+			}
+
 			.price-row {
 				margin: 1rem 0 2rem 0;
 			}

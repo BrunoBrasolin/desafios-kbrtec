@@ -46,3 +46,5 @@ Stack trace:
 #7 {main}
   thrown, em D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\includes\price-row.php, na linha 5
 
+2021-06-23T15:42:51+00:00 CRITICAL syntax error, unexpected 'die' (T_EXIT), em D:\www\xampp\htdocs\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\single-product.php, na linha 13
+

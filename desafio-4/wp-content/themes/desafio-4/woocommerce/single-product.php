@@ -9,6 +9,10 @@ if ($product->is_type('variable')) {
 } else {
   $product = new WC_Product_Simple(get_the_ID());
 }
+echo "<pre>";
+print_r($product);
+echo "</pre>";
+die;
 ?>
 
 <main class="single-page">
@@ -62,6 +66,13 @@ if ($product->is_type('variable')) {
 
       <h2 class="title"><?= get_the_title() ?></h2>
 
+
+      <?php if ($product->get_stock_status()) : ?>
+        <span class="stock true">Em estoque</span>
+      <?php else : ?>
+        <span class="stock false">Fora de estoque</span>
+      <?php endif; ?>
+
       <div class="price-row">
         <?php if ($product->sale_price > 0) : ?>
           <span class="sale-price">R$ <?= $product->get_sale_price() ?></span>
@@ -69,21 +80,19 @@ if ($product->is_type('variable')) {
         <span class="regular-price">R$ <?= $product->get_price() ?></span>
       </div>
 
-      <?php var_dump($product->get_stock_status()); ?>
-
       <?php if ($attributes) : ?>
         <?php foreach ($attributes as $attribute) : ?>
           <h3 class="subtitle"><?= $attribute["name"] ?></h3>
           <ul class="attributes-list">
-            <?php foreach ($attribute["options"] as $option) : ?>
-              <li class="item <?= $product->get_default_attributes()[strtolower($attribute["name"])] == $option ? 'active' : '' ?>" data-attribute-position="<?= $attribute["position"] ?>"><?= $option ?></li>
+            <?php foreach ($attribute["options"] as $id => $option) : ?>
+              <li class="item <?= $product->get_default_attributes()[strtolower($attribute["name"])] == $option ? 'active' : '' ?>" data-attribute-position="<?= $attribute["position"] ?>" data-attribute-id="<?= $id ?>"><?= $option ?></li>
             <?php endforeach; ?>
           </ul>
           <hr>
         <?php endforeach; ?>
       <?php endif; ?>
 
-      <a href="#" class="loading-button add-to-cart" data-product-id="<?= get_the_ID() ?>">
+      <a href="#" class="loading-button add-to-cart" data-product-has-variation="<?= $product->is_type('variable') ?>" data-product-id=" <?= get_the_ID() ?>">
         Comprar
         <span class="loading"></span>
       </a>
