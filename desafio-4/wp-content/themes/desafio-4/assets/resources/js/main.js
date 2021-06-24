@@ -1,5 +1,5 @@
-const base_url = 'http://ambiente-desenvolvimento.provisorio.ws/bruno-brasolin/desafio-4/wp-content/themes/desafio-4';
-// const base_url = 'http://localhost/bruno-brasolin/desafio-4/wp-content/themes/desafio-4';
+// const base_url = 'http://ambiente-desenvolvimento.provisorio.ws/bruno-brasolin/desafio-4/wp-content/themes/desafio-4';
+const base_url = 'http://localhost/bruno-brasolin/desafio-4/wp-content/themes/desafio-4';
 
 // ARCHIVE PAGE
 
