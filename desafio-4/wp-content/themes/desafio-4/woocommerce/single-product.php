@@ -9,10 +9,6 @@ if ($product->is_type('variable')) {
 } else {
   $product = new WC_Product_Simple(get_the_ID());
 }
-echo "<pre>";
-print_r($product);
-echo "</pre>";
-die;
 ?>
 
 <main class="single-page">

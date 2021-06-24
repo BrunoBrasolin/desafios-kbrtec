@@ -2,8 +2,15 @@
 	&.header {
 		background-color: #fff;
 		color: #000;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		transition: box-shadow 0.2s;
+
 		.link {
 			color: #000;
+		}
+
+		&:hover {
+			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 		}
 	}
 
