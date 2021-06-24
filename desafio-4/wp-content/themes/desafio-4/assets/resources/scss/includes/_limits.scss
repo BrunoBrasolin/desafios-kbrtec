@@ -19,6 +19,26 @@
 		.link {
 			color: #fff;
 		}
+
+		@media screen and(max-width: 800px) {
+			.limits-content {
+				flex-direction: column;
+				align-items: center;
+
+				> * {
+					margin-bottom: 1rem;
+					margin-left: 0;
+					flex-direction: column;
+
+					.link {
+						&:not(:last-child) {
+							margin-left: 0;
+							margin-bottom: 0.5rem;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	.limits-content {

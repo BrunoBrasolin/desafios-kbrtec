@@ -61,15 +61,27 @@
         while ($products->have_posts()) :
           $products->the_post();
           $product = wc_get_product(get_the_ID());
-          $terms = get_the_terms($post->ID, 'product_cat');
+          $imagesId = $product->get_gallery_image_ids();
       ?>
           <div class="product">
             <div class="top">
-              <figure class="product-image">
-                <a href="<?= get_the_permalink(); ?>" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
-                  <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
-                </a>
-              </figure>
+              <div class="image-top">
+                <figure class="product-image big-image">
+                  <a href="<?= get_the_permalink(); ?>" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
+                    <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
+                  </a>
+                </figure>
+                <div class="hover hover-slider">
+                  <figure class="product-image-hover active">
+                    <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
+                  </figure>
+                  <?php foreach ($imagesId as $imageId) : $imageUrl = wp_get_attachment_url($imageId); ?>
+                    <figure class="product-image-hover">
+                      <img src="<?= $imageUrl ?>" alt="<?= get_the_title() ?> | ekiN">
+                    </figure>
+                  <?php endforeach; ?>
+                </div>
+              </div>
 
               <h3 class="produto-title">
                 <a href="<?= get_the_permalink(); ?>" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">

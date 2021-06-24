@@ -12,6 +12,16 @@ $(document).ready(function () {
     autplaySpeed: 5000,
     speed: 800
   });
+  $('.hover-slider').slick({
+    slidesToShow: 3,
+    arrows: false,
+    variableWidth: true
+  });
+  $('.hover-slider .product-image-hover').hover(function () {
+    $(this).parent().find('.product-image-hover').removeClass('active');
+    $(this).addClass('active');
+    $(this).parent().parent().parent().parent().parent().find('.product-image img').attr('src', $(this).find('img').attr('src'));
+  });
 
   function closeAddToCartModal() {
     if ($('.add-to-cart-modal').hasClass('active')) {

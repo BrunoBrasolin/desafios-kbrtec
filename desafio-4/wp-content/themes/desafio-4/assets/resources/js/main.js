@@ -1,7 +1,6 @@
 const base_url = 'http://ambiente-desenvolvimento.provisorio.ws/bruno-brasolin/desafio-4/wp-content/themes/desafio-4';
 // const base_url = 'http://localhost/bruno-brasolin/desafio-4/wp-content/themes/desafio-4';
 
-
 // ARCHIVE PAGE
 
 $(document).ready(() => {
@@ -12,6 +11,18 @@ $(document).ready(() => {
 		autoplay: true,
 		autplaySpeed: 5000,
 		speed: 800,
+	});
+
+	$('.hover-slider').slick({
+		slidesToShow: 3,
+		arrows: false,
+		variableWidth: true,
+	});
+
+	$('.hover-slider .product-image-hover').hover(function () {
+		$(this).parent().find('.product-image-hover').removeClass('active');
+		$(this).addClass('active');
+		$(this).parent().parent().parent().parent().parent().find('.product-image img').attr('src', $(this).find('img').attr('src'));
 	});
 
 	function closeAddToCartModal() {
