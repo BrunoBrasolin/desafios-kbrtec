@@ -85,6 +85,8 @@
 							.product-image-hover {
 								background-color: #fff;
 								border: 1px solid transparent;
+								border-radius: 3px;
+								overflow: hidden;
 								transition: 0.2s;
 
 								&:not(:last-child) {
