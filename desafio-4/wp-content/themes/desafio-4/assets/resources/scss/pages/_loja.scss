@@ -37,7 +37,7 @@
 
 		.products-content {
 			display: flex;
-			justify-content: space-around;
+			justify-content: flex-start;
 			flex-wrap: wrap;
 
 			.product {
@@ -48,6 +48,7 @@
 				align-items: center;
 				justify-content: space-between;
 				margin-bottom: 2rem;
+				margin-right: 3%;
 				box-shadow: 0 0 20px rgba(#000, 0.05);
 				border-radius: 8px;
 				overflow: hidden;
