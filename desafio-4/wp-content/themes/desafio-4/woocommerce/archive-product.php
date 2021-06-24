@@ -61,12 +61,11 @@
         while ($products->have_posts()) :
           $products->the_post();
           $product = wc_get_product(get_the_ID());
-          $imagesId = $product->get_gallery_image_ids();
       ?>
           <div class="product">
             <div class="top">
               <div class="image-top">
-                <figure class="product-image big-image">
+                <figure class="product-image">
                   <a href="<?= get_the_permalink(); ?>" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
                     <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
                   </a>
@@ -75,9 +74,9 @@
                   <figure class="product-image-hover active">
                     <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
                   </figure>
-                  <?php foreach ($imagesId as $imageId) : $imageUrl = wp_get_attachment_url($imageId); ?>
+                  <?php foreach ($product->get_gallery_image_ids() as $imageId) : ?>
                     <figure class="product-image-hover">
-                      <img src="<?= $imageUrl ?>" alt="<?= get_the_title() ?> | ekiN">
+                      <img src="<?= wp_get_attachment_url($imageId); ?>" alt="<?= get_the_title() ?> | ekiN">
                     </figure>
                   <?php endforeach; ?>
                 </div>
@@ -90,7 +89,7 @@
               </h3>
 
               <div class="price-row">
-                <?php if ($product->sale_price > 0) : ?>
+                <?php if ($product->get_sale_price > 0) : ?>
                   <span class="sale-price">R$ <?= $product->get_sale_price() ?></span>
                 <?php endif; ?>
                 <span class="regular-price">R$ <?= $product->get_price() ?></span>

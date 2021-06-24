@@ -17,6 +17,7 @@ $(document).ready(() => {
 		slidesToShow: 3,
 		arrows: false,
 		variableWidth: true,
+		infinite: false,
 	});
 
 	$('.hover-slider .product-image-hover').hover(function () {

@@ -15,7 +15,8 @@ $(document).ready(function () {
   $('.hover-slider').slick({
     slidesToShow: 3,
     arrows: false,
-    variableWidth: true
+    variableWidth: true,
+    infinite: false
   });
   $('.hover-slider .product-image-hover').hover(function () {
     $(this).parent().find('.product-image-hover').removeClass('active');
