@@ -1,0 +1,30 @@
+2021-06-24T16:20:00+00:00 CRITICAL Uncaught Error: Call to undefined function get_shipping_packages() in D:\www\wamp64\www\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\single-product.php:19
+Stack trace:
+#0 D:\www\wamp64\www\bruno-brasolin\desafio-4\wp-includes\template-loader.php(106): include()
+#1 D:\www\wamp64\www\bruno-brasolin\desafio-4\wp-blog-header.php(19): require_once('D:\\www\\wamp64\\w...')
+#2 D:\www\wamp64\www\bruno-brasolin\desafio-4\index.php(17): require('D:\\www\\wamp64\\w...')
+#3 {main}
+  thrown, em D:\www\wamp64\www\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\single-product.php, na linha 19
+
+2021-06-24T16:20:56+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Shipping::packages() in D:\www\wamp64\www\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\single-product.php:19
+Stack trace:
+#0 D:\www\wamp64\www\bruno-brasolin\desafio-4\wp-includes\template-loader.php(106): include()
+#1 D:\www\wamp64\www\bruno-brasolin\desafio-4\wp-blog-header.php(19): require_once('D:\\www\\wamp64\\w...')
+#2 D:\www\wamp64\www\bruno-brasolin\desafio-4\index.php(17): require('D:\\www\\wamp64\\w...')
+#3 {main}
+  thrown, em D:\www\wamp64\www\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\single-product.php, na linha 19
+
+2021-06-24T16:27:14+00:00 CRITICAL Object of class WC_Correios_Shipping_SEDEX could not be converted to string, em D:\www\wamp64\www\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\single-product.php, na linha 15
+
+2021-06-24T16:27:31+00:00 CRITICAL Object of class WC_Correios_Shipping_SEDEX could not be converted to string, em D:\www\wamp64\www\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\single-product.php, na linha 15
+
+2021-06-24T16:28:21+00:00 CRITICAL Uncaught Error: Cannot use object of type WC_Correios_Shipping_SEDEX as array in D:\www\wamp64\www\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\single-product.php:16
+Stack trace:
+#0 [internal function]: {closure}(Array)
+#1 D:\www\wamp64\www\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\single-product.php(23): array_map(Object(Closure), Array)
+#2 D:\www\wamp64\www\bruno-brasolin\desafio-4\wp-includes\template-loader.php(106): include('D:\\www\\wamp64\\w...')
+#3 D:\www\wamp64\www\bruno-brasolin\desafio-4\wp-blog-header.php(19): require_once('D:\\www\\wamp64\\w...')
+#4 D:\www\wamp64\www\bruno-brasolin\desafio-4\index.php(17): require('D:\\www\\wamp64\\w...')
+#5 {main}
+  thrown, em D:\www\wamp64\www\bruno-brasolin\desafio-4\wp-content\themes\desafio-4\woocommerce\single-product.php, na linha 16
+

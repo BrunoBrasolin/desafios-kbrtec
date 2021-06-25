@@ -9,7 +9,22 @@ if ($product->is_type('variable')) {
 } else {
   $product = new WC_Product_Simple(get_the_ID());
 }
+$zones = WC_Shipping_Zones::get_zones();
+// foreach ($zones as $zone) {
+//   foreach ($zone['shipping_methods'] as $z) {
+//     // print_r($z->method_title);
+//     echo "<pre>";
+//     print_r($z->method_title);
+//     echo "</pre>";
+//   }
+//   return $zone['shipping_methods'];
+// };
+// die;
 ?>
+
+<?= do_shortcode('[shipping_calculator_on_product_page]') ?>
+
+
 
 <main class="single-page">
   <section class="row">
@@ -34,6 +49,7 @@ if ($product->is_type('variable')) {
           <img src="<?= get_template_directory_uri() ?>/assets/dist/images/icons/chevron-right.svg" alt="<?= get_the_title() ?> | ekiN" title="<?= get_the_title() ?> | ekiN">
         </span>
       </div>
+
 
       <div class="gallery-slider">
         <figure class="gallery-image">
@@ -61,7 +77,6 @@ if ($product->is_type('variable')) {
       </div>
 
       <h2 class="title"><?= get_the_title() ?></h2>
-
 
       <?php if ($product->get_stock_status()) : ?>
         <span class="stock true">Em estoque</span>

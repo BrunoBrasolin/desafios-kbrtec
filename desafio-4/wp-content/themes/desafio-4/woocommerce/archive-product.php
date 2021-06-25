@@ -89,11 +89,9 @@
               </h3>
 
               <div class="price-row">
+                <span class="<?= $product->get_sale_price() > 0 ? 'sale-price' : 'regular-price' ?>">R$ <?= $product->get_regular_price() > 0 ? $product->get_regular_price() : $product->get_price() ?></span>
                 <?php if ($product->get_sale_price() > 0) : ?>
-                  <span class="sale-price">R$ <?= $product->get_regular_price() > 0 ? $product->get_regular_price() : $product->get_price() ?></span>
                   <span class="regular-price">R$ <?= $product->get_sale_price() ?></span>
-                <?php else : ?>
-                  <span class="regular-price">R$ <?= $product->get_regular_price() > 0 ? $product->get_regular_price() : $product->get_price() ?></span>
                 <?php endif; ?>
               </div>
             </div>
