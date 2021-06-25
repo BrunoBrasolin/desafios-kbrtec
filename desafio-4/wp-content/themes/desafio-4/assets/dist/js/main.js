@@ -47,7 +47,6 @@ $(document).ready(function () {
     e.preventDefault();
     if ($(this).hasClass('waiting')) return false;
     var quantity = $('#product_quantity').val();
-    console.log("".concat(base_url, "/loja?add-to-cart=").concat($(this).data('product-id'), "&quantity=").concat(quantity));
     $.ajax({
       url: "".concat(base_url, "/loja"),
       type: 'post',

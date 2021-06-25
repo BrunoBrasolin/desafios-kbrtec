@@ -50,8 +50,6 @@ $(document).ready(() => {
 		if ($(this).hasClass('waiting')) return false;
 
 		const quantity = $('#product_quantity').val();
-		console.log(`${base_url}/loja?add-to-cart=${$(this).data('product-id')}&quantity=${quantity}`);
-
 		$.ajax({
 			url: `${base_url}/loja`,
 			type: 'post',
