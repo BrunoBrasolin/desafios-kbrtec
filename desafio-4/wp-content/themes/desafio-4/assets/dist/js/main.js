@@ -46,14 +46,20 @@ $(document).ready(function () {
 
     e.preventDefault();
     if ($(this).hasClass('waiting')) return false;
+    var quantity = $('#product_quantity').val();
+    console.log("".concat(base_url, "/loja?add-to-cart=").concat($(this).data('product-id'), "&quantity=").concat(quantity));
     $.ajax({
-      url: "".concat(base_url, "/loja?add-to-cart=").concat($(this).data('product-id'), "&quantity=1"),
+      url: "".concat(base_url, "/loja"),
       type: 'post',
+      data: {
+        'add-to-cart': $(this).data('product-id'),
+        quantity: quantity
+      },
       beforeSend: function beforeSend() {
         $(_this).addClass('waiting');
       },
       success: function success() {
-        $('.header .cart .total-itens').html(parseInt($('.header .cart .total-itens').text()) + 1);
+        $('.header .cart .total-itens').html(parseInt($('.header .cart .total-itens').text()) + parseInt(quantity));
         $('.add-to-cart-modal .add-to-cart-animation-wapper').append("\n\t\t\t\t\t<object class=\"add-to-cart-animation\" type=\"image/svg+xml\" data=\"".concat(base_url, "/assets/dist/images/icons/cart-animation.svg\">\n\t\t\t\t\t\t<img src=\"").concat(base_url, "/assets/dist/images/icons/cart-animation.svg\" />\n\t\t\t\t\t</object>\n\t\t\t\t"));
         $('.add-to-cart-modal').addClass('active');
         setTimeout(function () {
@@ -93,4 +99,5 @@ $(document).ready(function () {
     $(".attributes-list .item[data-attribute-position=\"".concat($(this).data('attribute-position'), "\"]")).removeClass('active');
     $(this).addClass('active');
   });
+  $('.input-zip').mask('00000-000');
 });

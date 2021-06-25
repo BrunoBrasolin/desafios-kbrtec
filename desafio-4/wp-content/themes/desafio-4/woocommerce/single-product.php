@@ -22,7 +22,6 @@ $zones = WC_Shipping_Zones::get_zones();
 // die;
 ?>
 
-<?= do_shortcode('[shipping_calculator_on_product_page]') ?>
 
 
 
@@ -93,6 +92,12 @@ $zones = WC_Shipping_Zones::get_zones();
         <?php endif; ?>
       </div>
 
+      <div class="quantity-row">
+        <label for="product_quantity">Quantidade</label>
+        <input id="product_quantity" type="number" value="1" onKeyPress="if(this.value.length==2) return false;" />
+      </div>
+
+
       <?php if ($attributes) : ?>
         <?php foreach ($attributes as $attribute) : ?>
           <h3 class="subtitle"><?= $attribute["name"] ?></h3>
@@ -105,10 +110,31 @@ $zones = WC_Shipping_Zones::get_zones();
         <?php endforeach; ?>
       <?php endif; ?>
 
-      <a href="#" class="loading-button add-to-cart" data-product-has-variation="<?= $product->is_type('variable') ?>" data-product-id=" <?= get_the_ID() ?>">
+      <a href="#" class="loading-button add-to-cart" data-product-has-variation="<?= $product->is_type('variable') ?>" data-product-id="<?= get_the_ID() ?>">
         Comprar
         <span class="loading"></span>
       </a>
+
+
+      <div class="shipping-form" id='shipping-calc'>
+
+        <p><?= get_option('wscip_title', __('Consulte o prazo estimado e valor da entrega', 'wsc-plugin')); ?></p>
+
+        <div class="shipping-row">
+          <input type='tel' id='wscp-postcode' autocomplete="off" placeholder="<?= get_option('wscip_placeholder', __('Insira o seu CEP', 'wsc-plugin')) ?>" name='wscp-postcode' class='input-zip' />
+          <input type='button' class="shipping-button" id='wscp-button' class="" value='<?= __('Calcular', 'wsc-plugin'); ?>'>
+        </div>
+
+        <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/" class="shipping-help" target="_blank"><?php _e('Não sei meu CEP', 'wsc-plugin'); ?></a>
+
+        <input type='hidden' name='wscp-nonce' id='wscp-nonce' value='<?= wp_create_nonce('wscp-nonce'); ?>'>
+        <input type="hidden" name="add-to-cart" value="<?= get_the_ID() ?>">
+
+        <div id='wscp-response'></div>
+
+      </div>
+
+
 
       <div class="short-content">
         <?= $product->short_description ?>

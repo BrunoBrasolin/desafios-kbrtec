@@ -49,14 +49,21 @@ $(document).ready(() => {
 
 		if ($(this).hasClass('waiting')) return false;
 
+		const quantity = $('#product_quantity').val();
+		console.log(`${base_url}/loja?add-to-cart=${$(this).data('product-id')}&quantity=${quantity}`);
+
 		$.ajax({
-			url: `${base_url}/loja?add-to-cart=${$(this).data('product-id')}&quantity=1`,
+			url: `${base_url}/loja`,
 			type: 'post',
+			data: {
+				'add-to-cart': $(this).data('product-id'),
+				quantity: quantity,
+			},
 			beforeSend: () => {
 				$(this).addClass('waiting');
 			},
 			success: () => {
-				$('.header .cart .total-itens').html(parseInt($('.header .cart .total-itens').text()) + 1);
+				$('.header .cart .total-itens').html(parseInt($('.header .cart .total-itens').text()) + parseInt(quantity));
 				$('.add-to-cart-modal .add-to-cart-animation-wapper').append(`
 					<object class="add-to-cart-animation" type="image/svg+xml" data="${base_url}/assets/dist/images/icons/cart-animation.svg">
 						<img src="${base_url}/assets/dist/images/icons/cart-animation.svg" />
@@ -104,4 +111,6 @@ $(document).ready(() => {
 		$(`.attributes-list .item[data-attribute-position="${$(this).data('attribute-position')}"]`).removeClass('active');
 		$(this).addClass('active');
 	});
+
+	$('.input-zip').mask('00000-000');
 });
