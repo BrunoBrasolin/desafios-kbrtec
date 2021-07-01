@@ -1,0 +1,28 @@
+.topbar {
+    background-color: #000;
+    backdrop-filter: blur(30px);
+    
+    .topbar-content {
+      @extend .container;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+        .weather {
+            font-weight: 400;
+            color: #fff;
+        }
+
+        .social-container {
+            display: flex;
+            align-items: center;
+
+            .social-link {
+                &:first-child {
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+}
