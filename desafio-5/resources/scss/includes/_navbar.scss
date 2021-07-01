@@ -1,0 +1,83 @@
+.navbar {
+    @extend .container;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -40px;
+    position: relative;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 525;
+
+    .logo {
+        background-color: #fff;
+        border-radius: 50%;
+        height: 140px;
+        padding: 15px;
+
+        .logo-link {
+            .logo-image {
+                height: 100%;
+            }
+        }
+    }
+
+    .navbar-list {
+        display: flex;
+        align-items: center;
+
+        .navbar-item {
+            margin-right: 2rem;
+
+            .navbar-link {
+                color: #000;
+            }
+        }
+    }
+
+    .right {
+      display: flex;
+
+      .button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        .button-link {
+          background-color: #000;
+          color: #fff;
+          border-radius: 6px;
+          padding: 15px 27px;
+          font-size: 0.75rem;
+        }
+
+        .button-helper {
+          text-transform: uppercase;
+          background-color: $light-blue;
+          color: #fff;
+          padding: 2px 15px;
+          border-radius: 2px;
+          font-weight: 400;
+          position: absolute;
+          bottom: 0;
+          transform: translateY(50%);
+        }
+      }
+
+      .signin {
+        display: flex;
+        align-items: center;
+        margin-left: 1.5rem;
+
+        .icon {
+          margin-right: 0.5rem;
+        }
+
+        .signin-link {
+          color: #000;
+        }
+      }
+    }
+}

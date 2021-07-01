@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff2797d62d89fb2f3a639fd7ff41de86",
+    "content-hash": "95d31ea2b8338a2a9e33c01f55a45f9e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2447,6 +2447,66 @@
                 }
             ],
             "time": "2020-08-18T17:17:46+00:00"
+        },
+        {
+            "name": "slexx/laravel-webp",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/slexx1234/laravel-webp.git",
+                "reference": "2bf046b46410f7f4ae6841ed5994c58bad97f5f0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/slexx1234/laravel-webp/zipball/2bf046b46410f7f4ae6841ed5994c58bad97f5f0",
+                "reference": "2bf046b46410f7f4ae6841ed5994c58bad97f5f0",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "*",
+                "php": ">=7.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Slexx\\LaravelWebp\\LaravelWebpServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Slexx\\LaravelWebp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aleksei Shchepkin",
+                    "email": "slexx1234@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Detect webp support in laravel framework",
+            "homepage": "https://github.com/slexx1234/laravel-webp",
+            "keywords": [
+                "Webp",
+                "blade",
+                "laravel"
+            ],
+            "support": {
+                "email": "slexx1234@gmail.com",
+                "issues": "https://github.com/slexx1234/laravel-webp/issues",
+                "source": "https://github.com/slexx1234/laravel-webp/tree/master"
+            },
+            "time": "2018-12-29T10:24:52+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -7467,7 +7527,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "slexx/laravel-webp": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -16,4 +16,8 @@
 
 <body>
 
-@include('includes.topbar')
+  @include('includes.topbar')
+
+  <header class="header">
+    @include('includes/navbar')
+  </header>

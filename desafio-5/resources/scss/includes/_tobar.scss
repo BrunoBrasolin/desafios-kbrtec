@@ -1,17 +1,19 @@
 .topbar {
     background-color: #000;
     backdrop-filter: blur(30px);
-    
+
     .topbar-content {
-      @extend .container;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+        @extend .container;
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
         .weather {
             font-weight: 400;
             color: #fff;
+            font-size: 0.8rem;
+            margin-left: 20%;
         }
 
         .social-container {

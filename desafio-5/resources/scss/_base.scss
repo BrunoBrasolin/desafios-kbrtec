@@ -2,6 +2,8 @@
 
 $font: "Montserrat", sans-serif;
 
+$light-blue: #32c1db;
+
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +15,7 @@ $font: "Montserrat", sans-serif;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1000px;
     padding: 3rem 1rem;
     margin: 0 auto;
 }
