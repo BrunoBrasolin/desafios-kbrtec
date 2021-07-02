@@ -1,6 +1,7 @@
 .navbar {
     @extend .container;
     padding: 1rem;
+    padding-bottom: calc(1rem - 40px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,7 +12,7 @@
     font-weight: 525;
 
     .logo {
-        background-color: #fff;
+        background-color: $white;
         border-radius: 50%;
         height: 140px;
         padding: 15px;
@@ -31,53 +32,53 @@
             margin-right: 2rem;
 
             .navbar-link {
-                color: #000;
+                color: $black;
             }
         }
     }
 
     .right {
-      display: flex;
-
-      .button {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
 
-        .button-link {
-          background-color: #000;
-          color: #fff;
-          border-radius: 6px;
-          padding: 15px 27px;
-          font-size: 0.75rem;
+        .button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+
+            .button-link {
+                background-color: $black;
+                color: $white;
+                border-radius: 6px;
+                padding: 15px 27px;
+                font-size: 0.75rem;
+            }
+
+            .button-helper {
+                text-transform: uppercase;
+                background-color: $light-blue;
+                color: $white;
+                padding: 2px 15px;
+                border-radius: 2px;
+                font-weight: 400;
+                position: absolute;
+                bottom: 0;
+                transform: translateY(50%);
+            }
         }
 
-        .button-helper {
-          text-transform: uppercase;
-          background-color: $light-blue;
-          color: #fff;
-          padding: 2px 15px;
-          border-radius: 2px;
-          font-weight: 400;
-          position: absolute;
-          bottom: 0;
-          transform: translateY(50%);
-        }
-      }
+        .signin {
+            display: flex;
+            align-items: center;
+            margin-left: 1.5rem;
 
-      .signin {
-        display: flex;
-        align-items: center;
-        margin-left: 1.5rem;
+            .icon {
+                margin-right: 0.5rem;
+            }
 
-        .icon {
-          margin-right: 0.5rem;
+            .signin-link {
+                color: $black;
+            }
         }
-
-        .signin-link {
-          color: #000;
-        }
-      }
     }
 }

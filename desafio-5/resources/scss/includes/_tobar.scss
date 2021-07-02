@@ -1,5 +1,5 @@
 .topbar {
-    background-color: #000;
+    background-color: $black;
     backdrop-filter: blur(30px);
 
     .topbar-content {
@@ -11,7 +11,7 @@
 
         .weather {
             font-weight: 400;
-            color: #fff;
+            color: $white;
             font-size: 0.8rem;
             margin-left: 20%;
         }
