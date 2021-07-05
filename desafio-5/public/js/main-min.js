@@ -1,0 +1,1 @@
+"use strict";document.querySelectorAll(".phone .group").forEach(function(e){return e.addEventListener("click",function(){document.querySelectorAll(".phone .group").forEach(function(e){e.classList.remove("active")}),this.classList.add("active")})});

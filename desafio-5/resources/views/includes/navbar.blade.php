@@ -30,7 +30,9 @@
     </div>
 
     <div class="signin">
-      @svg('user')
+      <span class="icon">
+        <img class="icon" src="{{asset('/svg/user.svg')}}" alt="user">
+      </span>
       <a href="#" class="signin-link">Entrar</a>
     </div>
   </div>

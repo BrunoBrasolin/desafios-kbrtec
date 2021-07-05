@@ -60,6 +60,8 @@
 
         .icon {
           flex-shrink: 0;
+          height: 78px;
+          width: 78px;
         }
 
         .texts {
@@ -97,6 +99,205 @@
     .helper {
       font-weight: 300;
       text-transform: initial;
+    }
+  }
+
+  .phone {
+    position: relative;
+
+    &::before {
+      content: '';
+      height: 50%;
+      width: 50%;
+      background-color: #000;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .phone-content {
+      @extend .container;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+
+      .col {
+        width: 30%;
+
+        &.left,
+        &.right {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: flex-start;
+
+          &.left .group{
+            
+            &:first-child .dot {
+              border-color: #000;
+            }
+
+            .dot {
+              right: 0;
+              transform: translate(50%, -50%);
+              &::after {
+                left: 0;
+              }
+            }
+          }
+          
+          &.right .group .dot {
+            left: 0;
+            transform: translate(-50%, -50%);
+            &::after {
+              right: 0;
+            }
+          }
+
+          .group {
+            background-color: #fff;
+            box-shadow: 0px 12px 56px -10px rgba(61, 63, 64, 0.14);
+            height: 28%;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-transform: uppercase;
+            border-radius: 20px;
+            cursor: pointer;
+            position: relative;
+
+            &::before {
+              content: '';
+              background: $orange-gradient;
+              opacity: 0;
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 100%;
+              width: 100%;
+              border-radius: 20px;
+              transition: 0.2s;
+            }
+
+            .icon,
+            .title,
+            .helper {
+              position: relative;
+              z-index: 1;
+            }
+
+            .title {
+              font-size: 1.1rem;
+              font-weight: 500;
+              margin: 1rem 0 0.15rem 0;
+            }
+
+            .helper {
+              font-size: 0.55rem;
+              opacity: 0;
+              transition: 0.2s;
+            }
+
+            .dot {
+              position: absolute;
+              top: 50%;
+
+              height: 20px;
+              width: 20px;
+
+              background-color: $dark-orange;
+              border-radius: 50%;
+              border: 5px solid;
+              border-color: #fff;
+              opacity: 0;
+              transition: 0.2s;
+
+              &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                width: 0;
+                height: 1px;
+                background-color: $dark-orange;
+                transition: width 0.2s;
+              }
+            }
+            
+            &.active {
+              color: #fff;
+
+              &::before,
+              .dot,
+              .helper {
+                opacity: 1;
+              }
+              .dot::after {
+                width: 130px;
+              }
+            }
+          }
+        }
+
+        &.middle {
+          .phone-group {
+            position: relative;
+
+            .top-phone {
+              position: absolute;
+              top: 2%;
+              left: 50%;
+              transform: translateX(-50%);
+              z-index: 2;
+            }
+
+            .phone-structure {
+              box-shadow: 0 0 20px 0px rgba($black, 0.5);
+              border-radius: 30px;
+            }
+
+            .phone-photo {
+              position: absolute;
+              top: 2.5%;
+              left: 5%;
+              height: 95%;
+              width: 90%;
+            }
+
+            .phone-logo {
+              position: absolute;
+              height: auto;
+              width: 60%;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+            }
+
+            .button {
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              bottom: 15%;
+              width: 75%;
+              text-align: center;
+              background: $orange-gradient;
+              padding: 1rem 0;
+              border-radius: 8px;
+              color: #fff;
+              text-transform: uppercase;
+              font-size: .9rem;
+            }
+          }
+        }
+
+        &.right {
+          align-items: flex-end;
+        }
+      }
     }
   }
 }
