@@ -50,11 +50,13 @@
     <div class="phone-content">
       <div class="title-container">
         <img class="icon" src="{{asset('/svg/percentage.svg')}}" alt="percentage">
-        <h2 class="title">
-          Tenha acesso à
-          <strong class="strong">descontos exclusivos</strong>
-        </h2>
-        <span class="helper">Conheça as categorias</span>
+        <div class="right">
+          <h2 class="title">
+            Tenha acesso à
+            <strong class="strong">descontos exclusivos</strong>
+          </h2>
+          <span class="helper">Conheça as categorias</span>
+        </div>
       </div>
 
       <div class="row">
