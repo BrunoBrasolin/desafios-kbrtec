@@ -25,8 +25,8 @@ const paths = {
 function compScss() {
   return gulp
     .src(paths.dev.scss)
-    .pipe(autoprefixer())
     .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
+    .pipe(autoprefixer())
     .pipe(gulp.dest(paths.dist.css));
 }
 

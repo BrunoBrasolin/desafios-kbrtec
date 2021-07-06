@@ -4,12 +4,17 @@ $font: "Montserrat", sans-serif;
 
 $black: #000;
 $purple: #6d46bf;
+$dark-purple: #6346bf;
 $dark-orange: #ff735c;
 $orange-gradient: linear-gradient(276.7deg, #ff7061 0.86%, #f29500 168.9%);
 $orange: #ffb116;
 $yellow: #fdcb06;
 $light-blue: #32c1db;
 $white: #fff;
+
+$glide-class: "glide" !default;
+$glide-element-separator: "__" !default;
+$glide-modifier-separator: "--" !default;
 
 * {
     margin: 0;

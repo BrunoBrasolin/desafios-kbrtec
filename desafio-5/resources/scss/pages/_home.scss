@@ -118,6 +118,7 @@
 
     .phone-content {
       @extend .container;
+      max-width: 900px;
 
       .title-container {
         display: flex;
@@ -330,6 +331,108 @@
           &.right {
             align-items: flex-end;
           }
+        }
+      }
+    }
+  }
+
+  .conveniados {
+    @extend .container;
+
+    .title {
+      text-align: center;
+      font-weight: 300;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+
+      .strong {
+        display: block;
+        font-weight: 700;
+      }
+    }
+
+    .glide {
+      .glide__track {
+        .glide__slides {
+          .glide__slide {
+            box-shadow: 0px 18px 59px -37px #6346BF;
+            padding: 2rem;
+
+            .image-contaienr {
+              position: relative;
+              height: 200px;
+              width: 200px;
+              margin: 0 auto;
+              
+              img {
+                min-width: 100%;
+                min-height: 100%;
+                object-fit: cover;
+                position: absolute;
+                border-radius: 50%;
+              }
+
+              .percentage {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 50px;
+                width: 50px;
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                background-color: $dark-purple;
+                border-radius: 50%;
+                color: #fff;
+                font-size: 1.1rem;
+                font-weight: 500;
+
+                &::after {
+                  $size: 80px;
+                  content: '';
+                  background-image: url('../images/circle-dots.png');
+                  background-size: $size $size;
+                  height: $size;
+                  width: $size;
+                  position: absolute;
+                }
+              }
+            }
+
+            .subtitle {
+              text-align: center;
+              max-width: 60%;
+              margin: 1rem auto;
+            }
+
+            .desc {
+              text-align: center;
+              font-weight: 300;
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $light-blue;
+        border-radius: 50%;
+        color: #fff;
+
+        &.arrow-left {
+          right: 105%;
+        }
+
+        &.arrow-right {
+          left: 105%;
         }
       }
     }

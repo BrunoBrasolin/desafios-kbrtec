@@ -118,5 +118,76 @@
       </div>
     </div>
   </section>
+
+  <section class="conveniados">
+    <h2 class="title">
+      estabelecimentos
+      <strong class="strong">Conveniados</strong>
+    </h2>
+
+    <div class="glide">
+      <div data-glide-el="track" class="glide__track">
+        <ul class="glide__slides">
+          <li class="glide__slide">
+            <figure class="image-contaienr">
+              <img src="{{asset('/images/o-made-cozinha.jpg')}}" alt="alt" title="title">
+              <span class="percentage">10%</span>
+            </figure>
+            <h3 class="subtitle">Madê Cozinha autoral</h3>
+            <p class="desc">Um restaurante simples, requintado e com muito sabore qualidade.</p>
+          </li>
+
+          <li class="glide__slide">
+            <figure class="image-contaienr">
+              <img src="{{asset('/images/o-made-cozinha.jpg')}}" alt="alt" title="title">
+              <span class="percentage">10%</span>
+            </figure>
+            <h3 class="subtitle">Madê Cozinha autoral</h3>
+            <p class="desc">Um restaurante simples, requintado e com muito sabore qualidade.</p>
+          </li>
+
+          <li class="glide__slide">
+            <figure class="image-contaienr">
+              <img src="{{asset('/images/o-made-cozinha.jpg')}}" alt="alt" title="title">
+              <span class="percentage">10%</span>
+            </figure>
+            <h3 class="subtitle">Madê Cozinha autoral</h3>
+            <p class="desc">Um restaurante simples, requintado e com muito sabore qualidade.</p>
+          </li>
+
+          <li class="glide__slide">
+            <figure class="image-contaienr">
+              <img src="{{asset('/images/o-made-cozinha.jpg')}}" alt="alt" title="title">
+              <span class="percentage">10%</span>
+            </figure>
+            <h3 class="subtitle">Madê Cozinha autoral</h3>
+            <p class="desc">Um restaurante simples, requintado e com muito sabore qualidade.</p>
+          </li>
+
+          <li class="glide__slide">
+            <figure class="image-contaienr">
+              <img src="{{asset('/images/o-made-cozinha.jpg')}}" alt="alt" title="title">
+              <span class="percentage">10%</span>
+            </figure>
+            <h3 class="subtitle">Madê Cozinha autoral</h3>
+            <p class="desc">Um restaurante simples, requintado e com muito sabore qualidade.</p>
+          </li>
+
+          <li class="glide__slide">
+            <figure class="image-contaienr">
+              <img src="{{asset('/images/o-made-cozinha.jpg')}}" alt="alt" title="title">
+              <span class="percentage">10%</span>
+            </figure>
+            <h3 class="subtitle">Madê Cozinha autoral</h3>
+            <p class="desc">Um restaurante simples, requintado e com muito sabore qualidade.</p>
+          </li>
+        </ul>
+      </div>
+      <div data-glide-el="controls">
+        <button data-glide-dir="<" class="arrow arrow-left"><i data-feather="chevron-left"></i></button>
+        <button data-glide-dir=">" class="arrow arrow-right"><i data-feather="chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
 </main>
 @endsection

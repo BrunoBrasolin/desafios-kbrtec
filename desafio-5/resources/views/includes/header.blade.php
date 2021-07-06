@@ -14,6 +14,8 @@
   </title>
 </head>
 
+<script src="https://unpkg.com/feather-icons"></script>
+
 <body>
 
   @include('includes.topbar')
