@@ -9,10 +9,19 @@ document.querySelectorAll(".phone .group").forEach((group) =>
     })
 );
 
-const glideConfig = {
+const glideConveniadosConfig = {
     type: 'carousel',
     perView: 3,
     gap: 15
 }
+new Glide(".glide-conveniados", glideConveniadosConfig).mount();
 
-new Glide(".glide", glideConfig).mount();
+
+const glideNoticiasConfig = {
+    type: 'slider',
+    perView: 3,
+    gap: 20,
+    dots: '.dots',
+    infinite: false
+}
+new Glide(".glide-noticias", glideNoticiasConfig).mount();

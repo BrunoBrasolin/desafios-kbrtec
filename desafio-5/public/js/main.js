@@ -9,9 +9,17 @@ document.querySelectorAll(".phone .group").forEach(function (group) {
     this.classList.add("active");
   });
 });
-var glideConfig = {
+var glideConveniadosConfig = {
   type: 'carousel',
   perView: 3,
   gap: 15
 };
-new Glide(".glide", glideConfig).mount();
+new Glide(".glide-conveniados", glideConveniadosConfig).mount();
+var glideNoticiasConfig = {
+  type: 'slider',
+  perView: 3,
+  gap: 20,
+  dots: '.dots',
+  infinite: false
+};
+new Glide(".glide-noticias", glideNoticiasConfig).mount();

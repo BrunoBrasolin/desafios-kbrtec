@@ -125,7 +125,7 @@
       <strong class="strong">Conveniados</strong>
     </h2>
 
-    <div class="glide">
+    <div class="glide glide-conveniados">
       <div data-glide-el="track" class="glide__track">
         <ul class="glide__slides">
           <li class="glide__slide">
@@ -254,6 +254,80 @@
 
       <div class="right">
         <img src="{{asset('images/vantagem-image.png')}}" alt="Vantagem | Clube de Assinantes A Tribuna" title="Vantagem | Clube de Assinantes A Tribuna">
+      </div>
+    </div>
+  </section>
+
+  <section class="noticias">
+    <h2 class="title">
+      ùltimas notícias
+      <strong class="strong">Acompanhe as novidades </strong>
+    </h2>
+
+
+    <div class="glide glide-noticias">
+      <div data-glide-el="track" class="glide__track">
+        <ul class="glide__slides">
+          <li class="glide__slide">
+            <figure class="image-contaienr">
+              <img src="{{asset('/images/jardinagem.png')}}" alt="alt" title="title">
+            </figure>
+            <div class="content">
+              <span class="date">21/01/2021</span>
+              <h3 class="subtitle">
+                <a href="#" class="link">
+                  6 dicas de jardinagem para ter plantas lindas e viçosas
+                </a>
+              </h3>
+
+              <a href="#" class="button">
+                <i data-feather="plus"></i>
+              </a>
+            </div>
+          </li>
+
+          <li class="glide__slide">
+            <figure class="image-contaienr">
+              <img src="{{asset('/images/decoracao.png')}}" alt="alt" title="title">
+            </figure>
+            <div class="content">
+              <span class="date">21/01/2021</span>
+              <h3 class="subtitle">
+                <a href="#" class="link">
+                  10 ideias de decoração para sua casa usando materiais recicláveis
+                </a>
+              </h3>
+
+              <a href="#" class="button">
+                <i data-feather="plus"></i>
+              </a>
+            </div>
+          </li>
+
+          <li class="glide__slide">
+            <figure class="image-contaienr">
+              <img src="{{asset('/images/jantar.png')}}" alt="alt" title="title">
+            </figure>
+            <div class="content">
+              <span class="date">21/01/2021</span>
+              <h3 class="subtitle">
+                <a href="#" class="link">
+                  10 receitas de jantar para receber uma visita de última hora
+                </a>
+              </h3>
+
+              <a href="#" class="button">
+                <i data-feather="plus"></i>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div data-glide-el="controls[nav]" class="glide__bullet">
+        <button data-glide-dir="=0" class="glide__bullet"></button>
+        <button data-glide-dir="=1" class="glide__bullet"></button>
+        <button data-glide-dir="=2" class="glide__bullet"></button>
       </div>
     </div>
   </section>
