@@ -91,6 +91,18 @@ return [
             'prefix_indexes' => true,
         ],
 
+        'wordpress' => [
+            'driver'    => env('WORDPRESS_DRIVER', 'mysql'),
+            'host'      => env('WORDPRESS_HOST', 'localhost'),
+            'database'  => env('WORDPRESS_DATABASE', 'wordpress'),
+            'username'  => env('WORDPRESS_USERNAME', 'username'),
+            'password'  => env('WORDPRESS_PASSWORD', 'password'),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => 'wp_',
+            'strict'    => false,
+            'engine'    => null,
+        ],
     ],
 
     /*
