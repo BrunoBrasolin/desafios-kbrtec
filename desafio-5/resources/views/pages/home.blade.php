@@ -324,10 +324,81 @@
         </ul>
       </div>
 
-      <div data-glide-el="controls[nav]" class="glide__bullet">
+      <div data-glide-el="controls[nav]" class="glide__bullets">
         <button data-glide-dir="=0" class="glide__bullet"></button>
         <button data-glide-dir="=1" class="glide__bullet"></button>
         <button data-glide-dir="=2" class="glide__bullet"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="calculadora">
+    <div class="calculadora-content">
+      <div class="left">
+        <div class="title-container">
+          <img src="{{asset('svg/calculator.svg')}}" alt="Calculadora de Economia Clube A Tribuna" title="Calculadora de Economia Clube A Tribuna">
+          <h2 class="title">Calculadora de Economia <strong class="strong">Clube A Tribuna</strong></h2>
+        </div>
+
+        <h3 class="subtitle">
+          Saiba quanto você pode 
+          <strong class="strong">economizar em seu dia-a-dia</strong>
+          fazendo parte do Clube A Tribuna!
+        </h3>
+
+        <p class="text">
+          Os valores apresentados tratam-se de estimativas, com base na porcentagem de desconto oferecida aos
+          <strong class="strong">assinantes do Clube A Tribuna</strong>.
+        </p>
+
+        <a href="#" class="button">Assine agora!</a>
+      </div>
+
+      <div class="right">
+        <div class="result-container">
+          <span class="result-title">VOCÊ ECONOMIZARÁ:</span>
+          <span class="result-text">R$ 999,99</span>
+        </div>
+        
+        <div class="gasto">
+          <span class="gasto-texto">Durante um mês, qual o valor que você gasta com:</span>
+        </div>
+
+        <div class="calculadora-row">
+          <div class="title-container">
+            <img src="{{asset('svg/fork.svg')}}" alt="" title="">
+            <h4 class="gasto-title">Idas ao restaurante?</h4>
+          </div>
+
+          <label for="restaurante-input" class="input-group">
+            <span class="symbol">R$:</span>
+            <input type="text" class="input" id="restaurante-input">
+          </label>
+        </div>
+
+        <div class="calculadora-row">
+          <div class="title-container">
+            <img src="{{asset('svg/gas-station.svg')}}" alt="" title="">
+            <h4 class="gasto-title">Abastecimento de veículos com gasolina?</h4>
+          </div>
+
+          <label for="gasolina-input" class="input-group">
+            <span class="symbol">R$:</span>
+            <input type="text" class="input" id="gasolina-input">
+          </label>
+        </div>
+
+        <div class="calculadora-row">
+          <div class="title-container">
+            <img src="{{asset('svg/washing-machine-black.svg')}}" alt="" title="">
+            <h4 class="gasto-title">Utilização de serviços de lavanderia?</h4>
+          </div>
+
+          <label for="lavanderia-input" class="input-group">
+            <span class="symbol">R$:</span>
+            <input type="text" class="input" id="lavanderia-input">
+          </label>
+        </div>
       </div>
     </div>
   </section>
