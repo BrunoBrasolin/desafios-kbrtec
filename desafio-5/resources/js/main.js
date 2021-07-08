@@ -21,7 +21,14 @@ const glideNoticiasConfig = {
     type: 'slider',
     perView: 3,
     gap: 20,
-    dots: '.dots',
     infinite: false
 }
 new Glide(".glide-noticias", glideNoticiasConfig).mount();
+
+
+const glideDescontosConfig = {
+    type: 'slider',
+    perView: 1,
+    infinite: false
+}
+new Glide(".glide-descontos", glideDescontosConfig).mount();

@@ -19,7 +19,12 @@ var glideNoticiasConfig = {
   type: 'slider',
   perView: 3,
   gap: 20,
-  dots: '.dots',
   infinite: false
 };
 new Glide(".glide-noticias", glideNoticiasConfig).mount();
+var glideDescontosConfig = {
+  type: 'slider',
+  perView: 1,
+  infinite: false
+};
+new Glide(".glide-descontos", glideDescontosConfig).mount();
