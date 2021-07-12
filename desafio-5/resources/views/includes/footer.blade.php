@@ -381,6 +381,15 @@
         </div>
       </div>
     </div>
+
+    <div class="right">
+      <img src="{{asset('svg/newsletter.svg')}}" alt="NewsLetter | Clube A Tribuna" title="NewsLetter | Clube A Tribuna">
+      <label class="label">Newsletter</label>
+      <form class="form">
+        <input class="input" type="text" name="newsletter">
+        <button class="button" type="submit">OK</button>
+      </form>
+    </div>
   </div>
 </footer>
 
