@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Site;
-use Illuminate\Http\Request;
+use Corcel\Model\Post;
 
 class SiteController extends Controller
 {
     public function Home()
     {
-        return view('pages.home');
+        $posts = Post::type('post')->published()->newest()->get();
+        return view('pages.home', ['posts' => $posts]); 
     }
 }

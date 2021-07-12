@@ -268,59 +268,25 @@
     <div class="glide glide-noticias">
       <div data-glide-el="track" class="glide__track">
         <ul class="glide__slides">
-          <li class="glide__slide">
-            <figure class="image-contaienr">
-              <img src="{{asset('/images/jardinagem.png')}}" alt="alt" title="title">
-            </figure>
-            <div class="content">
-              <span class="date">21/01/2021</span>
-              <h3 class="subtitle">
-                <a href="#" class="link">
-                  6 dicas de jardinagem para ter plantas lindas e viçosas
+          @foreach($posts as $post)
+            <li class="glide__slide">
+              <figure class="image-contaienr">
+                <img src="{{asset('/images/jardinagem.png')}}" alt="alt" title="title">
+              </figure>
+              <div class="content">
+                <span class="date">{{date_format($post->post_date,"d/m/Y")}}</span>
+                <h3 class="subtitle">
+                  <a href="{{$post->permalink}}" class="link">
+                    {{$post->post_title}}
+                  </a>
+                </h3>
+
+                <a href="#" class="button">
+                  <i data-feather="plus"></i>
                 </a>
-              </h3>
-
-              <a href="#" class="button">
-                <i data-feather="plus"></i>
-              </a>
-            </div>
-          </li>
-
-          <li class="glide__slide">
-            <figure class="image-contaienr">
-              <img src="{{asset('/images/decoracao.png')}}" alt="alt" title="title">
-            </figure>
-            <div class="content">
-              <span class="date">21/01/2021</span>
-              <h3 class="subtitle">
-                <a href="#" class="link">
-                  10 ideias de decoração para sua casa usando materiais recicláveis
-                </a>
-              </h3>
-
-              <a href="#" class="button">
-                <i data-feather="plus"></i>
-              </a>
-            </div>
-          </li>
-
-          <li class="glide__slide">
-            <figure class="image-contaienr">
-              <img src="{{asset('/images/jantar.png')}}" alt="alt" title="title">
-            </figure>
-            <div class="content">
-              <span class="date">21/01/2021</span>
-              <h3 class="subtitle">
-                <a href="#" class="link">
-                  10 receitas de jantar para receber uma visita de última hora
-                </a>
-              </h3>
-
-              <a href="#" class="button">
-                <i data-feather="plus"></i>
-              </a>
-            </div>
-          </li>
+              </div>
+            </li>
+          @endforeach
         </ul>
       </div>
 
