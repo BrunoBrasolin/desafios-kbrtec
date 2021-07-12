@@ -1,0 +1,114 @@
+.footer {
+  background-color: #f9f9f9;
+
+  .footer-top,
+  .footer-bottom {
+    @extend .container;
+    max-width: 1250px;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    
+    .col {
+      width: 15%;
+
+      .group {
+        margin-bottom: 2rem;
+
+        .title {
+          font-size: 1rem;
+          margin-bottom: 1rem;
+          text-transform: uppercase;
+        }
+
+        .list {
+          .item {
+            .link {
+              color: #3a556a;
+              font-size: 0.8rem;
+              margin-bottom: 0.5rem;
+              display: inline-block;
+              font-weight: 300;
+              transition: 0.2s;
+
+              &:hover {
+                transform: translateX(5px);
+              }
+            }
+          }
+        }
+      }
+
+      .link-title {
+        display: inline-block;
+        color: $black;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        transition: 0.2s;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    padding-top: 0;
+    display: flex;
+    justify-content: space-between;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+
+      .top {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        .assine-button {
+          color: $white;
+          background-color: #ea0000;
+          font-weight: 400;
+          text-transform: uppercase;
+          font-size: 0.75rem;
+          padding: 5px 10px;
+          border-radius: 5px;
+          margin-left: 1rem;
+        }
+      }
+
+      .bottom {
+        display: flex;
+        align-items: center;
+
+        > * {
+          margin-right: 0.75rem;
+        }
+
+        .acompanhe {
+          text-transform: uppercase;
+          font-size: 0.65rem;
+        }
+
+        .icon {
+          $size: 33px;
+          height: $size;
+          width: $size;
+          background-color: rgba($dark-purple, 0.1);
+          border-radius: 50%;
+
+          &,
+          .icon-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}
