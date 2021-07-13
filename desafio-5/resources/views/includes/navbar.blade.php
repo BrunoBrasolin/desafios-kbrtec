@@ -1,9 +1,15 @@
 <nav class="navbar">
-  <h1 class="logo">
-    <a href="#" class="logo-link">
-      <img src="{{supportsWebp() ? asset('images/logo.webp') : asset('images/logo.png')}}" alt="Clube de Assinantes A Tribuna" title="Clube de Assinantes A Tribuna" class="logo-image">
-    </a>
-  </h1>
+  <div class="mobile-row">
+    <h1 class="logo">
+      <a href="#" class="logo-link">
+        <img src="{{supportsWebp() ? asset('images/logo.webp') : asset('images/logo.png')}}" alt="Clube de Assinantes A Tribuna" title="Clube de Assinantes A Tribuna" class="logo-image">
+      </a>
+    </h1>
+
+    <span class="icon">
+      <i data-feather="menu"></i>
+    </span>
+  </div>
 
   <ul class="navbar-list">
     <li class="navbar-item">

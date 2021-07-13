@@ -10,9 +10,11 @@
   .footer-top {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     
     .col {
       width: 15%;
+      min-width: 150px;
 
       .group {
         margin-bottom: 2rem;
@@ -146,6 +148,26 @@
           font-weight: 700;
           text-transform: uppercase;
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: 877px) {
+    .footer-bottom {
+      flex-direction: column;
+
+      .left,
+      .right {
+        width: 80%;
+      }
+
+      .right {
+        margin-left: 0;
+        margin-top: 1.5rem;
+      }
+
+      .left {
+        align-items: center;
       }
     }
   }

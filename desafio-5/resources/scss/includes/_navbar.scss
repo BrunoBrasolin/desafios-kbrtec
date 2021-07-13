@@ -1,84 +1,184 @@
 .navbar {
-    @extend .container;
-    padding: 1rem;
-    padding-bottom: calc(1rem - 40px);
+  @extend .container;
+  padding: 1rem;
+  padding-bottom: calc(1rem - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -40px;
+  position: relative;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 525;
+  flex-wrap: wrap;
+
+  .mobile-row {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin-top: -40px;
-    position: relative;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    font-weight: 525;
+    align-items: center;
+    flex-shrink: 0;
 
     .logo {
-        background-color: $white;
-        border-radius: 50%;
-        height: 140px;
-        padding: 15px;
+      background-color: $white;
+      border-radius: 50%;
+      height: 140px;
+      padding: 15px;
+      width: fit-content;
 
-        .logo-link {
-            .logo-image {
-                height: 100%;
-            }
+      .logo-link {
+        .logo-image {
+          height: 100%;
         }
+      }
+    }
+
+    .icon {
+      display: none;
+      margin-top: 20px;
+    }
+  }
+
+  .navbar-list {
+    display: flex;
+    align-items: center;
+
+    .navbar-item {
+      margin-right: 2rem;
+
+      .navbar-link {
+        color: $black;
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+
+    .button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      flex-shrink: 0;
+
+      .button-link {
+        background-color: $black;
+        color: $white;
+        border-radius: 6px;
+        padding: 15px 27px;
+        font-size: 0.75rem;
+      }
+
+      .button-helper {
+        text-transform: uppercase;
+        background-color: $light-blue;
+        color: $white;
+        padding: 2px 15px;
+        border-radius: 2px;
+        font-weight: 400;
+        position: absolute;
+        bottom: 0;
+        transform: translateY(50%);
+      }
+    }
+
+    .signin {
+      display: flex;
+      align-items: center;
+      margin-left: 1rem;
+
+      .icon {
+        margin-right: 0.5rem;
+      }
+
+      .signin-link {
+        color: $black;
+      }
+    }
+  }
+
+  @media screen and (max-width: 877px) {
+    flex-direction: column;
+    padding: {
+      left: 0;
+      right: 0;
+    }
+
+    .mobile-row {
+      padding: {
+        left: 1rem;
+        right: 1rem;
+      }
+
+      width: 100%;
+
+      .icon {
+        display: flex;
+      }
+    }
+
+    .right,
+    .navbar-list {
+      max-height: 0;
+      overflow: hidden;
+      transition: 0.5s;
+
+      flex-direction: column;
+      width: 100%;
+      background-color: $black;
+
+      &.navbar-list.active {
+        max-height: 165px;
+      }
+      &.right.active {
+        max-height: 85px;
+      }
+
+      &.overflow {
+        overflow: visible;
+      }
     }
 
     .navbar-list {
-        display: flex;
-        align-items: center;
+      .navbar-item {
+        margin: 0.5rem 0;
 
-        .navbar-item {
-            margin-right: 2rem;
-
-            .navbar-link {
-                color: $black;
-            }
+        &:first-child {
+          margin-top: 1rem;
         }
+
+        .navbar-link {
+          color: $white;
+        }
+      }
     }
 
     .right {
-        display: flex;
+      flex-direction: column-reverse;
+      margin-top: -1px;
+      width: 100%;
 
-        .button {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
+      .button {
+        background-color: $light-blue;
+        margin-top: 0.5rem;
 
-            .button-link {
-                background-color: $black;
-                color: $white;
-                border-radius: 6px;
-                padding: 15px 27px;
-                font-size: 0.75rem;
-            }
-
-            .button-helper {
-                text-transform: uppercase;
-                background-color: $light-blue;
-                color: $white;
-                padding: 2px 15px;
-                border-radius: 2px;
-                font-weight: 400;
-                position: absolute;
-                bottom: 0;
-                transform: translateY(50%);
-            }
+        .button-link {
+          background-color: transparent;
         }
 
-        .signin {
-            display: flex;
-            align-items: center;
-            margin-left: 1.5rem;
-
-            .icon {
-                margin-right: 0.5rem;
-            }
-
-            .signin-link {
-                color: $black;
-            }
+        .button-helper {
+          background-color: $dark-purple;
         }
+      }
+
+      .signin {
+        justify-content: center;
+        margin: 0.5rem 0;
+
+        .signin-link {
+          color: $white;
+        }
+      }
     }
+  }
 }
