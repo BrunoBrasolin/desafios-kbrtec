@@ -99,7 +99,7 @@ return [
             'password'  => env('WORDPRESS_PASSWORD', 'password'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'prefix'    => 'wp_',
+            'prefix'    => env('WORDPRESS_PREFIX', 'wp_'),
             'strict'    => false,
             'engine'    => null,
         ],
