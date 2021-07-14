@@ -35,21 +35,33 @@ var glideConveniadosConfig = {
       perView: 1
     }
   }
-};
-var glideConveniados = document.querySelector(".glide-conveniados");
+},
+    glideConveniados = document.querySelector(".glide-conveniados");
 if (glideConveniados != null) new Glide(".glide-conveniados", glideConveniadosConfig).mount();
 var glideNoticiasConfig = {
   type: "slider",
   perView: 3,
   gap: 20,
   infinite: false
-};
-var glideNoticias = document.querySelector(".glide-noticias");
+},
+    glideNoticias = document.querySelector(".glide-noticias");
 if (glideNoticias != null) new Glide(".glide-noticias", glideNoticiasConfig).mount();
 var glideDescontosConfig = {
   type: "slider",
   perView: 1,
   infinite: false
-};
-var glideDescontos = document.querySelector(".glide-descontos");
-if (glideDescontos != null) new Glide(".glide-descontos", glideDescontosConfig).mount();
+},
+    glideDescontos = document.querySelector(".glide-descontos");
+if (glideDescontos != null) new Glide(".glide-descontos", glideDescontosConfig).mount(); // Sobre
+
+if (document.querySelector(".faq-list")) {
+  document.querySelectorAll(".faq-item").forEach(function (item) {
+    return item.addEventListener("click", function () {
+      if (this.classList.contains("active")) return;
+      document.querySelectorAll(".faq-item").forEach(function (i) {
+        i.classList.remove("active");
+      });
+      this.classList.add("active");
+    });
+  });
+}

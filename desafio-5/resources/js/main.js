@@ -28,40 +28,52 @@ document.querySelectorAll(".phone .group").forEach((group) =>
 );
 
 const glideConveniadosConfig = {
-  type: "carousel",
-  perView: 3,
-  gap: 15,
-  breakpoints: {
-    877: {
-      perView: 2,
-    },
-    550: {
-      perView: 1,
+    type: "carousel",
+    perView: 3,
+    gap: 15,
+    breakpoints: {
+      877: {
+        perView: 2,
+      },
+      550: {
+        perView: 1,
+      },
     },
   },
-};
-
-const glideConveniados = document.querySelector(".glide-conveniados");
+  glideConveniados = document.querySelector(".glide-conveniados");
 if (glideConveniados != null)
   new Glide(".glide-conveniados", glideConveniadosConfig).mount();
 
 const glideNoticiasConfig = {
-  type: "slider",
-  perView: 3,
-  gap: 20,
-  infinite: false,
-};
-
-const glideNoticias = document.querySelector(".glide-noticias");
+    type: "slider",
+    perView: 3,
+    gap: 20,
+    infinite: false,
+  },
+  glideNoticias = document.querySelector(".glide-noticias");
 if (glideNoticias != null)
   new Glide(".glide-noticias", glideNoticiasConfig).mount();
 
 const glideDescontosConfig = {
-  type: "slider",
-  perView: 1,
-  infinite: false,
-};
-
-const glideDescontos = document.querySelector(".glide-descontos");
+    type: "slider",
+    perView: 1,
+    infinite: false,
+  },
+  glideDescontos = document.querySelector(".glide-descontos");
 if (glideDescontos != null)
   new Glide(".glide-descontos", glideDescontosConfig).mount();
+
+// Sobre
+if (document.querySelector(".faq-list")) {
+  document.querySelectorAll(".faq-item").forEach((item) =>
+    item.addEventListener("click", function () {
+      if (this.classList.contains("active")) return;
+
+      document.querySelectorAll(".faq-item").forEach((i) => {
+        i.classList.remove("active");
+      });
+
+      this.classList.add("active");
+    })
+  );
+}

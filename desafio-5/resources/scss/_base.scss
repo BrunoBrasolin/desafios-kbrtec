@@ -5,12 +5,13 @@ $font: "Montserrat", sans-serif;
 $black: #000;
 $purple: #6d46bf;
 $dark-purple: #6346bf;
-$purple-gradient: linear-gradient(114.25deg, #8345c0 3.63%, #5846be 42.09%);
+$darken-purple: #6146bf;
 $dark-orange: #ff735c;
 $orange-gradient: linear-gradient(276.7deg, #ff7061 0.86%, #f29500 168.9%);
 $orange: #ffb116;
 $yellow: #fdcb06;
 $light-blue: #32c1db;
+$dark-blue: #3f24a9;
 $white: #fff;
 
 $glide-class: "glide" !default;
@@ -18,34 +19,34 @@ $glide-element-separator: "__" !default;
 $glide-modifier-separator: "--" !default;
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    border: none;
-    font-family: $font;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  font-family: $font;
 }
 
 .container {
-    max-width: 1100px;
-    padding: 3rem 1rem;
-    margin: 0 auto;
+  max-width: 1100px;
+  padding: 3rem 1rem;
+  margin: 0 auto;
 }
 
 img,
 video {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 strong,
 .strong {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 button,
 .button,
 input[type="submit"] {
-    cursor: pointer;
+  cursor: pointer;
 }

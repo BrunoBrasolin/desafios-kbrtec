@@ -1,30 +1,36 @@
 .topbar {
-    background-color: $black;
-    backdrop-filter: blur(30px);
+  background-color: $black;
+  backdrop-filter: blur(30px);
 
-    .topbar-content {
-        @extend .container;
-        padding: 0.5rem 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+  .topbar-content {
+    @extend .container;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-        .weather {
-            font-weight: 400;
-            color: $white;
-            font-size: 0.8rem;
-            margin-left: 20%;
-        }
-
-        .social-container {
-            display: flex;
-            align-items: center;
-
-            .social-link {
-                &:first-child {
-                    margin-right: 1rem;
-                }
-            }
-        }
+    .weather {
+      font-weight: 400;
+      color: $white;
+      font-size: 0.8rem;
+      margin-left: 20%;
     }
+
+    .social-container {
+      display: flex;
+      align-items: center;
+
+      .social-link {
+        &:first-child {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .weather {
+        opacity: 0;
+    }
+  }
 }
