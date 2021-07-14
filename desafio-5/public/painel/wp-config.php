@@ -20,16 +20,16 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'desafio-5' );
+define( 'DB_NAME', 'treifront' );
 
 /** MySQL database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'treifront' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', 'q1w2e3r4' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', 'treifront.mysql.dbaas.com.br' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
@@ -63,7 +63,7 @@ define( 'NONCE_SALT',       'lZJYd_>cdLgjO.4j9pBGKm@f,/`C)p[@Jecdy!,}2x;{Wv[$rzp
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix = 'wp_';
+$table_prefix = 'wpbruno3_';
 
 /**
  * For developers: WordPress debugging mode.

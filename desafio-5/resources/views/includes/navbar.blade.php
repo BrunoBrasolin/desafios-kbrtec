@@ -1,7 +1,7 @@
 <nav class="navbar">
   <div class="mobile-row">
     <h1 class="logo">
-      <a href="#" class="logo-link">
+      <a href="{{route('home')}}" class="logo-link">
         <img src="{{supportsWebp() ? asset('images/logo.webp') : asset('images/logo.png')}}" alt="Clube de Assinantes A Tribuna" title="Clube de Assinantes A Tribuna" class="logo-image">
       </a>
     </h1>
@@ -16,13 +16,13 @@
       <a href="#" class="navbar-link">Descontos</a>
     </li>
     <li class="navbar-item">
-      <a href="#" class="navbar-link">FAQ</a>
+      <a href="{{route('faq')}}" class="navbar-link {{\Request::route()->getName() === 'faq' ? 'active' : ''}}">FAQ</a>
     </li>
     <li class="navbar-item">
       <a href="#" class="navbar-link">Seja Parceiro</a>
     </li>
     <li class="navbar-item">
-      <a href="{{route('sobre')}}" class="navbar-link">Sobre</a>
+      <a href="{{route('sobre')}}" class="navbar-link {{\Request::route()->getName() === 'sobre' ? 'active' : ''}}">Sobre</a>
     </li>
     <li class="navbar-item">
       <a href="#" class="navbar-link">Ajuda</a>

@@ -46,6 +46,17 @@
 
       .navbar-link {
         color: $black;
+
+        &.active {
+          color: $light-blue;
+          position: relative;
+
+          &::before {
+            content: url('../svg/star.svg');
+            position: absolute;
+            left: -15px;
+          }
+        }
       }
     }
   }
