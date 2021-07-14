@@ -78,8 +78,8 @@
 
               .price {
                 font-weight: 750;
-                font-size: 1.75rem;
-                width: 125px;
+                font-size: 1.5rem;
+                width: 100px;
                 text-align: end;
                 display: inline-block;
                 margin-right: 0.5rem;
@@ -404,135 +404,6 @@
     }
   }
 
-  .o-clube {
-    background-color: $black;
-
-    .o-clube-content {
-      @extend .container;
-      color: $white;
-
-      .row {
-        display: flex;
-
-        img {
-          flex-shrink: 0;
-          max-width: 200px;
-        }
-
-        .right {
-          margin-left: 4rem;
-
-          .title {
-            margin: 1rem 0 2rem 0;
-            text-transform: uppercase;
-          }
-
-          .desc {
-            font-weight: 300;
-            letter-spacing: 0.5px;
-            line-height: 1.25rem;
-            font-size: 0.85rem;
-          }
-        }
-      }
-    }
-  }
-
-  .vantagens {
-    .top {
-      background-color: $black;
-
-      .top-content {
-        @extend .container;
-        padding: 5rem 0 4rem 0;
-        display: flex;
-        align-items: center;
-        position: relative;
-        color: $white;
-
-        &::after {
-          $height: calc(41px * 0.8);
-          $width: calc(165px * 0.8);
-          content: "";
-          background-image: url("../svg/vantagem-arrow.svg");
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          transform: translateX(-20%);
-          background-size: $width $height;
-          height: $height;
-          width: $width;
-        }
-
-        .title {
-          margin-left: 0.75rem;
-          font-size: 1.3rem;
-
-          .strong {
-            display: block;
-            color: $light-blue;
-          }
-        }
-      }
-    }
-
-    .vantagens-content {
-      @extend .container;
-      display: flex;
-      justify-content: space-between;
-
-      $space-top: 13rem;
-      .left {
-        width: 40%;
-
-        .group {
-          display: flex;
-          flex-direction: column;
-          margin-bottom: 2.5rem;
-
-          .title-container {
-            display: flex;
-            align-items: center;
-
-            .subtitle {
-              margin-left: 1rem;
-              text-transform: uppercase;
-            }
-          }
-
-          .desc {
-            color: #3a556a;
-            margin-top: 0.75rem;
-            font-weight: 300;
-            font-size: 0.95rem;
-          }
-        }
-
-        .button {
-          background-color: $black;
-          color: $white;
-          text-transform: uppercase;
-          padding: 1rem 0.75rem;
-          font-size: 0.75rem;
-          font-weight: 600;
-          border-radius: 5px;
-          margin-top: 2rem;
-          display: inline-block;
-        }
-      }
-
-      .right {
-        margin-top: -$space-top;
-        width: 55%;
-
-        img {
-          object-fit: cover;
-          width: 100%;
-        }
-      }
-    }
-  }
-
   .noticias {
     @extend .container;
 
@@ -792,90 +663,6 @@
     }
   }
 
-  .descontos {
-    @extend .container;
-    display: flex;
-    justify-content: space-between;
-
-    .left {
-      width: 35%;
-
-      .title {
-        font-weight: 300;
-        text-transform: uppercase;
-        margin: 2rem 0;
-
-        .strong {
-          display: block;
-        }
-      }
-
-      .text {
-        font-size: 1.05rem;
-      }
-    }
-
-    .right {
-      width: 60%;
-
-      .glide-descontos {
-        .glide__track {
-          .glide__slides {
-            .glide__slide {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: space-between;
-
-              .desconto-item {
-                width: 30%;
-                box-shadow: 0px 12px 20px rgba(61, 63, 64, 0.14);
-                border-radius: 10px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                margin: 1rem 0.5rem;
-                padding: 2rem 1rem 3rem 1rem;
-                position: relative;
-
-                .desc {
-                  font-size: 0.7rem;
-                  position: absolute;
-                  bottom: 1rem;
-                  width: 50%;
-                  text-align: center;
-                }
-              }
-            }
-          }
-        }
-
-        .arrows {
-          position: absolute;
-          left: -30%;
-          bottom: 12%;
-          display: flex;
-
-          .arrow {
-            $size: 50px;
-            width: $size;
-            height: $size;
-            background-color: $light-blue;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: $white;
-
-            &.arrow-right {
-              margin-left: 1rem;
-            }
-          }
-        }
-      }
-    }
-  }
-
   @media screen and (min-width: 1260px) {
     .conveniados .glide-conveniados .glide__controls .arrow {
       position: absolute;
@@ -991,23 +778,6 @@
       }
     }
 
-    .vantagens .vantagens-content {
-      .left {
-        width: 100%;
-      }
-
-      .right {
-        display: none;
-      }
-    }
-
-    .o-clube .o-clube-content .row {
-      flex-direction: column;
-
-      img {
-        margin: 0 auto;
-      }
-    }
     .calculadora .calculadora-content {
       flex-direction: column;
       align-items: center;
@@ -1016,22 +786,6 @@
       .right {
         width: 100%;
         max-width: 500px;
-      }
-    }
-
-    .descontos {
-      flex-direction: column;
-      align-items: center;
-
-      .left,
-      .right {
-        width: 100%;
-
-        &.right .glide-descontos .arrows {
-          position: static;
-          justify-content: center;
-          margin-top: 1rem;
-        }
       }
     }
   }

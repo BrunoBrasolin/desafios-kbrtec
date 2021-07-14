@@ -22,7 +22,7 @@
       <a href="#" class="navbar-link">Seja Parceiro</a>
     </li>
     <li class="navbar-item">
-      <a href="#" class="navbar-link">Sobre</a>
+      <a href="{{route('sobre')}}" class="navbar-link">Sobre</a>
     </li>
     <li class="navbar-item">
       <a href="#" class="navbar-link">Ajuda</a>

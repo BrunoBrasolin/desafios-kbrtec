@@ -40,7 +40,10 @@ const glideConveniadosConfig = {
     },
   },
 };
-new Glide(".glide-conveniados", glideConveniadosConfig).mount();
+
+const glideConveniados = document.querySelector(".glide-conveniados");
+if (glideConveniados != null)
+  new Glide(".glide-conveniados", glideConveniadosConfig).mount();
 
 const glideNoticiasConfig = {
   type: "slider",
@@ -48,11 +51,17 @@ const glideNoticiasConfig = {
   gap: 20,
   infinite: false,
 };
-new Glide(".glide-noticias", glideNoticiasConfig).mount();
+
+const glideNoticias = document.querySelector(".glide-noticias");
+if (glideNoticias != null)
+  new Glide(".glide-noticias", glideNoticiasConfig).mount();
 
 const glideDescontosConfig = {
   type: "slider",
   perView: 1,
   infinite: false,
 };
-new Glide(".glide-descontos", glideDescontosConfig).mount();
+
+const glideDescontos = document.querySelector(".glide-descontos");
+if (glideDescontos != null)
+  new Glide(".glide-descontos", glideDescontosConfig).mount();

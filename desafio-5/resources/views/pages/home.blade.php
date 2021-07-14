@@ -192,73 +192,7 @@
     </div>
   </section>
 
-  <section class="o-clube">
-    <div class="o-clube-content">
-      <div class="row">
-        <img src="{{asset('images/logo-white.png')}}" alt="Clube de Assinantes A Tribuna" title="Clube de Assinantes A Tribuna">
-        <div class="right">
-          <h2 class="title">O Clube</h2>
-          <p class="desc">
-            O Clube é um programa de relacionamentos com os Assinantes A Tribuna que oferece diversos benefícios para os conveniados A Tribuna.
-            <br /><br />
-            Além de muita informação, os assinantes recebem condições exclusivas nas maiores empresas da região além de descontos em shows e espetáculos de teatro.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="vantagens">
-    <div class="top">
-      <div class="top-content">
-        <img src="{{asset('svg/checklists.svg')}}" alt="" title="">
-        <h2 class="title">
-          <strong class="strong">VANTAGENS </strong>
-          DE SER DO CLUBE
-        </h2>
-      </div>
-    </div>
-
-    <div class="vantagens-content">
-      <div class="left">
-        <div class="group">
-          <div class="title-container">
-            <img src="{{asset('svg/calendar.svg')}}" alt="Acesso exclusivo a eventos | Clube de Assinantes A Tribuna" title="Acesso exclusivo a eventos | Clube de Assinantes A Tribuna">
-            <h3 class="subtitle">Acesso exclusivo a eventos</h3>
-          </div>
-          <p class="desc">
-            Descontos nos principais eventos da região e ainda, promoções que vão desde sorteio de ingressos a experiências com artistas.
-          </p>
-        </div>
-
-        <div class="group">
-          <div class="title-container">
-            <img src="{{asset('svg/speaker.svg')}}" alt="Informação a toda hora | Clube de Assinantes A Tribuna" title="Informação a toda hora | Clube de Assinantes A Tribuna">
-            <h3 class="subtitle">Informação a toda hora</h3>
-          </div>
-          <p class="desc">
-            Acesso ao conteúdo do jornal A Tribuna na versão digital e física, mediante o plano de assinatura.
-          </p>
-        </div>
-
-        <div class="group">
-          <div class="title-container">
-            <img src="{{asset('svg/digital.svg')}}" alt="Plataforma digital | Clube de Assinantes A Tribuna" title="Plataforma digital | Clube de Assinantes A Tribuna">
-            <h3 class="subtitle">Plataforma digital</h3>
-          </div>
-          <p class="desc">
-            Descontos nos principais eventos da região e ainda, promoções que vão desde sorteio de ingressos a experiências com artistas.
-          </p>
-        </div>
-
-        <a href="#" class="button">clique aqui e Faça parte do clube</a>
-      </div>
-
-      <div class="right">
-        <img src="{{asset('images/vantagem-image.png')}}" alt="Vantagem | Clube de Assinantes A Tribuna" title="Vantagem | Clube de Assinantes A Tribuna">
-      </div>
-    </div>
-  </section>
+  @include('includes.o-clube-vantagens')
 
   <section class="noticias">
     <h2 class="title">
@@ -271,23 +205,23 @@
       <div data-glide-el="track" class="glide__track">
         <ul class="glide__slides">
           @foreach($posts as $post)
-            <li class="glide__slide">
-              <figure class="image-contaienr">
-                <img src="{{asset('/images/jardinagem.png')}}" alt="alt" title="title">
-              </figure>
-              <div class="content">
-                <span class="date">{{date_format($post->post_date,"d/m/Y")}}</span>
-                <h3 class="subtitle">
-                  <a href="{{$post->permalink}}" class="link">
-                    {{$post->post_title}}
-                  </a>
-                </h3>
-
-                <a href="#" class="button">
-                  <i data-feather="plus"></i>
+          <li class="glide__slide">
+            <figure class="image-contaienr">
+              <img src="{{asset('/images/jardinagem.png')}}" alt="alt" title="title">
+            </figure>
+            <div class="content">
+              <span class="date">{{date_format($post->post_date,"d/m/Y")}}</span>
+              <h3 class="subtitle">
+                <a href="{{$post->permalink}}" class="link">
+                  {{$post->post_title}}
                 </a>
-              </div>
-            </li>
+              </h3>
+
+              <a href="#" class="button">
+                <i data-feather="plus"></i>
+              </a>
+            </div>
+          </li>
           @endforeach
         </ul>
       </div>
@@ -309,7 +243,7 @@
         </div>
 
         <h3 class="subtitle">
-          Saiba quanto você pode 
+          Saiba quanto você pode
           <strong class="strong">economizar em seu dia-a-dia</strong>
           fazendo parte do Clube A Tribuna!
         </h3>
@@ -327,7 +261,7 @@
           <span class="result-title">VOCÊ ECONOMIZARÁ:</span>
           <span class="result-text">R$ 999,99</span>
         </div>
-        
+
         <div class="gasto">
           <span class="gasto-texto">Durante um mês, qual o valor que você gasta com:</span>
         </div>
@@ -371,104 +305,7 @@
     </div>
   </section>
 
-  <section class="descontos">
-    <div class="left">
-      <h2 class="title">
-        Grandes empresas
-        <strong class="strong">Grandes descontos</strong>
-      </h2>
+  @include('includes.descontos')
 
-      <p class="text">Centenas de parceiros para você economizar muito.</p>
-    </div>
-
-    <div class="right">
-      <div class="glide glide-descontos">
-        <div data-glide-el="track" class="glide__track">
-          <ul class="glide__slides">
-            <li class="glide__slide">
-              <div class="desconto-item">
-                <figure class="logo-contaienr">
-                  <img src="{{asset('/images/logos/logo-1.png')}}" alt="alt" title="title">
-                </figure>
-                <p class="desc">Ganhe 5% de volta</p>
-              </div>
-              <div class="desconto-item">
-                <figure class="logo-contaienr">
-                  <img src="{{asset('/images/logos/logo-2.png')}}" alt="alt" title="title">
-                </figure>
-                <p class="desc">Ganhe 8% de volta</p>
-              </div>
-              <div class="desconto-item">
-                <figure class="logo-contaienr">
-                  <img src="{{asset('/images/logos/logo-3.png')}}" alt="alt" title="title">
-                </figure>
-                <p class="desc">Ganhe 10% de volta</p>
-              </div>
-              <div class="desconto-item">
-                <figure class="logo-contaienr">
-                  <img src="{{asset('/images/logos/logo-4.png')}}" alt="alt" title="title">
-                </figure>
-                <p class="desc">Ganhe 3% de volta</p>
-              </div>
-              <div class="desconto-item">
-                <figure class="logo-contaienr">
-                  <img src="{{asset('/images/logos/logo-5.png')}}" alt="alt" title="title">
-                </figure>
-                <p class="desc">Ganhe 4% de volta</p>
-              </div>
-              <div class="desconto-item">
-                <figure class="logo-contaienr">
-                  <img src="{{asset('/images/logos/logo-6.png')}}" alt="alt" title="title">
-                </figure>
-                <p class="desc">Ganhe 10% de volta</p>
-              </div>
-            </li>
-            <li class="glide__slide">
-              <div class="desconto-item">
-                <figure class="logo-contaienr">
-                  <img src="{{asset('/images/logos/logo-1.png')}}" alt="alt" title="title">
-                </figure>
-                <p class="desc">Ganhe 5% de volta</p>
-              </div>
-              <div class="desconto-item">
-                <figure class="logo-contaienr">
-                  <img src="{{asset('/images/logos/logo-2.png')}}" alt="alt" title="title">
-                </figure>
-                <p class="desc">Ganhe 8% de volta</p>
-              </div>
-              <div class="desconto-item">
-                <figure class="logo-contaienr">
-                  <img src="{{asset('/images/logos/logo-3.png')}}" alt="alt" title="title">
-                </figure>
-                <p class="desc">Ganhe 10% de volta</p>
-              </div>
-              <div class="desconto-item">
-                <figure class="logo-contaienr">
-                  <img src="{{asset('/images/logos/logo-4.png')}}" alt="alt" title="title">
-                </figure>
-                <p class="desc">Ganhe 3% de volta</p>
-              </div>
-              <div class="desconto-item">
-                <figure class="logo-contaienr">
-                  <img src="{{asset('/images/logos/logo-5.png')}}" alt="alt" title="title">
-                </figure>
-                <p class="desc">Ganhe 4% de volta</p>
-              </div>
-              <div class="desconto-item">
-                <figure class="logo-contaienr">
-                  <img src="{{asset('/images/logos/logo-6.png')}}" alt="alt" title="title">
-                </figure>
-                <p class="desc">Ganhe 10% de volta</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div data-glide-el="controls" class="arrows">
-          <button data-glide-dir="<" class="arrow arrow-left"><i data-feather="chevron-left"></i></button>
-          <button data-glide-dir=">" class="arrow arrow-right"><i data-feather="chevron-right"></i></button>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 @endsection
