@@ -10,7 +10,7 @@ RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ ^$1 [N]
 
 RewriteCond %{REQUEST_URI} (\.\w+$) [NC]
-RewriteRule ^blog/?$ /bruno-brasolin/desafio-5/blog.php [NC,L]
+RewriteRule ^painel/?$ /bruno-brasolin/desafio-5/painel [NC,L]
 RewriteRule ^(.*)$ public/$1
 
 RewriteCond %{REQUEST_FILENAME} !-d
