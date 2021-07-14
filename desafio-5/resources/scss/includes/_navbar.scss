@@ -10,7 +10,6 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   font-weight: 525;
-  flex-wrap: wrap;
 
   .mobile-row {
     display: flex;
@@ -98,6 +97,7 @@
   }
 
   @media screen and (max-width: 877px) {
+    flex-wrap: wrap;
     flex-direction: column;
     padding: {
       left: 0;
