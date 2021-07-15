@@ -28,4 +28,9 @@ class SiteController extends Controller
     {
         return view('pages.seja_parceiro');
     }
+
+    public function contato()
+    {
+        return view('pages.contato');
+    }
 }

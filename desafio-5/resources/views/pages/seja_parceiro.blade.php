@@ -44,7 +44,7 @@
         <textarea id="mensagem" class="input textarea" rows="6"></textarea>
       </div>
 
-      <button type="submit" class="button">Enviar</button>
+      <button type="submit" class="form-button">Enviar</button>
     </form>
   </section>
 

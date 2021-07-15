@@ -64,10 +64,10 @@ if (document.querySelector(".faq-page")) {
       this.classList.add("active");
     });
   });
-} // Seja Parceiro
+} // Inputs
 
 
-if (document.querySelector(".seja_parceiro-page")) {
+if (document.querySelector(".input")) {
   document.querySelectorAll(".input").forEach(function (input) {
     input.addEventListener("focus", function () {
       this.classList.add("active");

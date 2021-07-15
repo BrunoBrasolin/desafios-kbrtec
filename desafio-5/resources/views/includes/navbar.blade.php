@@ -25,7 +25,7 @@
       <a href="{{route('sobre')}}" class="navbar-link {{\Request::route()->getName() === 'sobre' ? 'active' : ''}}">Sobre</a>
     </li>
     <li class="navbar-item">
-      <a href="#" class="navbar-link">Ajuda</a>
+      <a href="{{route('contato')}}" class="navbar-link {{\Request::route()->getName() === 'contato' ? 'active' : ''}}">Contato</a>
     </li>
   </ul>
 

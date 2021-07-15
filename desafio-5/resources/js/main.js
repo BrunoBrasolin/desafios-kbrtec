@@ -78,14 +78,13 @@ if (document.querySelector(".faq-page")) {
   );
 }
 
-// Seja Parceiro
-
-if (document.querySelector(".seja_parceiro-page")) {
+// Inputs
+if (document.querySelector(".input")) {
   document.querySelectorAll(".input").forEach((input) => {
     input.addEventListener("focus", function () {
       this.classList.add("active");
     });
-    
+
     input.addEventListener("blur", function () {
       this.classList.remove("active");
     });
