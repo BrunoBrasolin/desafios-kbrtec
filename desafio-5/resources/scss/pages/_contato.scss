@@ -13,6 +13,7 @@
     .row {
       @extend .container;
       display: flex;
+      padding-bottom: 0;
       justify-content: space-between;
 
       .left.form {
@@ -28,7 +29,7 @@
         width: 45%;
         position: relative;
 
-        $right-size: 30%;
+        $right-size: 35%;
 
         .image {
           position: absolute;
@@ -138,9 +139,6 @@
     .top-content {
       .row {
         flex-direction: column;
-        padding: {
-          bottom: 0;
-        }
 
         .left.form {
           width: 100%;
