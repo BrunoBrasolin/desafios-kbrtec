@@ -1,0 +1,39 @@
+.blog-page {
+  .topbar {
+    background: linear-gradient(96.21deg, #8345c0 2.61%, #5846be 99.5%);
+
+    .title {
+      text-align: center;
+      color: $white;
+      text-transform: uppercase;
+      padding: 2.5rem 0;
+    }
+  }
+
+  .content {
+    @extend .container;
+
+    .posts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .blog-item {
+        width: 30%;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .content .posts .blog-item {
+      width: 48%;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .content .posts .blog-item {
+      width: 100%;
+    }
+  }
+}

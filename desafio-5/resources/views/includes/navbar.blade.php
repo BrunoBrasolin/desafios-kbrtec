@@ -27,6 +27,9 @@
     <li class="navbar-item">
       <a href="{{route('contato')}}" class="navbar-link {{\Request::route()->getName() === 'contato' ? 'active' : ''}}">Contato</a>
     </li>
+    <li class="navbar-item">
+      <a href="{{route('blog')}}" class="navbar-link {{\Request::route()->getName() === 'blog' ? 'active' : ''}}">Blog</a>
+    </li>
   </ul>
 
   <div class="right">

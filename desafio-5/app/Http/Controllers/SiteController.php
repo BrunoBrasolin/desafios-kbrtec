@@ -33,4 +33,10 @@ class SiteController extends Controller
     {
         return view('pages.contato');
     }
+
+    public function blog()
+    {
+        $posts = Post::type('post')->published()->newest()->paginate(9);
+        return view('pages.blog', ['posts' => $posts]);
+    }
 }

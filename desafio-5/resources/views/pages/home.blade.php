@@ -205,8 +205,8 @@
       <div data-glide-el="track" class="glide__track">
         <ul class="glide__slides">
           @foreach($posts as $post)
-          <li class="glide__slide">
-            <figure class="image-contaienr">
+          <li class="glide__slide blog-item">
+            <figure class="image-container">
               <img src="{{asset('/images/jardinagem.png')}}" alt="alt" title="title">
             </figure>
             <div class="content">
@@ -272,7 +272,7 @@
             <h4 class="gasto-title">Idas ao restaurante?</h4>
           </div>
 
-          <label for="restaurante-input" class="input-group">
+          <label for="restaurante-input" class="calculadora-input-group">
             <span class="symbol">R$:</span>
             <input type="text" class="input" id="restaurante-input">
           </label>
@@ -284,7 +284,7 @@
             <h4 class="gasto-title">Abastecimento de veículos com gasolina?</h4>
           </div>
 
-          <label for="gasolina-input" class="input-group">
+          <label for="gasolina-input" class="calculadora-input-group">
             <span class="symbol">R$:</span>
             <input type="text" class="input" id="gasolina-input">
           </label>
@@ -296,7 +296,7 @@
             <h4 class="gasto-title">Utilização de serviços de lavanderia?</h4>
           </div>
 
-          <label for="lavanderia-input" class="input-group">
+          <label for="lavanderia-input" class="calculadora-input-group">
             <span class="symbol">R$:</span>
             <input type="text" class="input" id="lavanderia-input">
           </label>
