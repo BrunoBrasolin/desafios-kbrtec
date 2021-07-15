@@ -6,21 +6,26 @@ use Corcel\Model\Post;
 
 class SiteController extends Controller
 {
-    public function Home()
+    public function home()
     {
         $posts = Post::type('post')->published()->newest()->get();
         return view('pages.home', ['posts' => $posts]);
     }
 
-    public function Sobre()
+    public function sobre()
     {
         return view('pages.sobre');
     }
 
-    public function FAQ()
+    public function faq()
     {
         $faq = Post::type('faq')->published()->get();
 
         return view('pages.faq', ['faq' => $faq]);
+    }
+
+    public function seja_parceiro()
+    {
+        return view('pages.seja_parceiro');
     }
 }

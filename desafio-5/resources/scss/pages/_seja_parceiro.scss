@@ -1,0 +1,110 @@
+.seja_parceiro-page {
+  background: linear-gradient(180deg, $black 0%, #161414 100%);
+  padding: 3rem 0;
+
+  .topbar {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+      color: $white;
+      text-transform: uppercase;
+    }
+  }
+
+  .content {
+    padding: 3rem 0;
+    position: relative;
+
+    .background-image {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      max-height: 50%;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+    }
+
+    .form {
+      margin: 0 auto;
+      background: linear-gradient(96.21deg, #8345c0 2.61%, #5846be 99.5%);
+      position: relative;
+      padding: 4rem 3rem;
+      max-width: 600px;
+      border-radius: 10px;
+      color: $white;
+
+      .subtitle {
+        text-align: center;
+        margin: 0 auto;
+        font-size: 1.25rem;
+      }
+
+      .input-row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .input-group:first-child {
+          width: 59%;
+        }
+        .input-group:last-child {
+          width: 39%;
+        }
+
+        @media screen and(max-width: 500px) {
+          .input-group:first-child,
+          .input-group:last-child {
+            width: 100%;
+          }
+        }
+      }
+
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        margin: 0.75rem 0;
+
+        .label {
+          font-weight: 600;
+          margin-bottom: 0.25rem;
+        }
+
+        .input {
+          background-color: transparent;
+          border: 1px solid #2dbde9;
+          border-radius: 10px;
+          padding: 0.75rem 1.25rem;
+          color: $white;
+          transition: 0.2s;
+          outline: none;
+
+          &.textarea {
+            resize: none;
+          }
+
+          &.active {
+            background-color: $white;
+            color: $black;
+            border-color: $white;
+          }
+        }
+      }
+
+      .button {
+        width: 50%;
+        border-radius: 5px;
+        background: #5bcde2;
+        margin: 3rem auto 0 auto;
+        display: block;
+        padding: 0.8rem 0;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #4327ab;
+      }
+    }
+  }
+}

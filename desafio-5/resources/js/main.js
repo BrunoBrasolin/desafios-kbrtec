@@ -63,8 +63,8 @@ const glideDescontosConfig = {
 if (glideDescontos != null)
   new Glide(".glide-descontos", glideDescontosConfig).mount();
 
-// Sobre
-if (document.querySelector(".faq-list")) {
+// FAQ
+if (document.querySelector(".faq-page")) {
   document.querySelectorAll(".faq-item").forEach((item) =>
     item.addEventListener("click", function () {
       if (this.classList.contains("active")) return;
@@ -76,4 +76,18 @@ if (document.querySelector(".faq-list")) {
       this.classList.add("active");
     })
   );
+}
+
+// Seja Parceiro
+
+if (document.querySelector(".seja_parceiro-page")) {
+  document.querySelectorAll(".input").forEach((input) => {
+    input.addEventListener("focus", function () {
+      this.classList.add("active");
+    });
+    
+    input.addEventListener("blur", function () {
+      this.classList.remove("active");
+    });
+  });
 }

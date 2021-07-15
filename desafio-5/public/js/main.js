@@ -52,9 +52,9 @@ var glideDescontosConfig = {
   infinite: false
 },
     glideDescontos = document.querySelector(".glide-descontos");
-if (glideDescontos != null) new Glide(".glide-descontos", glideDescontosConfig).mount(); // Sobre
+if (glideDescontos != null) new Glide(".glide-descontos", glideDescontosConfig).mount(); // FAQ
 
-if (document.querySelector(".faq-list")) {
+if (document.querySelector(".faq-page")) {
   document.querySelectorAll(".faq-item").forEach(function (item) {
     return item.addEventListener("click", function () {
       if (this.classList.contains("active")) return;
@@ -62,6 +62,18 @@ if (document.querySelector(".faq-list")) {
         i.classList.remove("active");
       });
       this.classList.add("active");
+    });
+  });
+} // Seja Parceiro
+
+
+if (document.querySelector(".seja_parceiro-page")) {
+  document.querySelectorAll(".input").forEach(function (input) {
+    input.addEventListener("focus", function () {
+      this.classList.add("active");
+    });
+    input.addEventListener("blur", function () {
+      this.classList.remove("active");
     });
   });
 }

@@ -19,7 +19,7 @@
       <a href="{{route('faq')}}" class="navbar-link {{\Request::route()->getName() === 'faq' ? 'active' : ''}}">FAQ</a>
     </li>
     <li class="navbar-item">
-      <a href="#" class="navbar-link">Seja Parceiro</a>
+      <a href="{{route('seja_parceiro')}}" class="navbar-link {{\Request::route()->getName() === 'seja_parceiro' ? 'active' : ''}}">Seja Parceiro</a>
     </li>
     <li class="navbar-item">
       <a href="{{route('sobre')}}" class="navbar-link {{\Request::route()->getName() === 'sobre' ? 'active' : ''}}">Sobre</a>
