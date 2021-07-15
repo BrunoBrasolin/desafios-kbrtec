@@ -19,6 +19,8 @@
     .social-container {
       display: flex;
       align-items: center;
+      position: relative;
+      z-index: 1;
 
       .social-link {
         &:first-child {
@@ -30,7 +32,7 @@
 
   @media screen and (max-width: 500px) {
     .weather {
-        opacity: 0;
+      opacity: 0;
     }
   }
 }

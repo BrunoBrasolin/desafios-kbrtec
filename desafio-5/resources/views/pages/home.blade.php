@@ -207,7 +207,7 @@
           @foreach($posts as $post)
           <li class="glide__slide blog-item">
             <figure class="image-container">
-              <img src="{{asset('/images/jardinagem.png')}}" alt="alt" title="title">
+              <img src="{{asset($post->thumbnail)}}" alt="alt" title="title">
             </figure>
             <div class="content">
               <span class="date">{{date_format($post->post_date,"d/m/Y")}}</span>

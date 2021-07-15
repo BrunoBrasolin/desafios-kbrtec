@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Corcel\Model\Post;
+use Corcel\Model\Taxonomy;
 
 class SiteController extends Controller
 {
@@ -37,6 +38,13 @@ class SiteController extends Controller
     public function blog()
     {
         $posts = Post::type('post')->published()->newest()->paginate(9);
-        return view('pages.blog', ['posts' => $posts]);
+        $categories = Taxonomy::where('taxonomy', 'category')->with('posts')->get();
+        return view(
+            'pages.blog',
+            [
+                'posts' => $posts,
+                'categories' => $categories
+            ]
+        );
     }
 }

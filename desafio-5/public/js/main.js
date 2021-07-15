@@ -4,13 +4,17 @@ feather.replace();
 document.querySelector(".navbar .icon").addEventListener("click", function () {
   var items = document.querySelectorAll(".navbar .navbar-list, .navbar .right");
   items.forEach(function (item) {
+    if (item.classList.contains("waiting")) return;
+
     if (item.classList.contains("active")) {
       item.classList.remove("active");
       item.classList.remove("overflow");
     } else {
       item.classList.add("active");
+      item.classList.add("waiting");
       setTimeout(function () {
         item.classList.add("overflow");
+        item.classList.remove("waiting");
       }, 300);
     }
   });
@@ -57,7 +61,11 @@ if (glideDescontos != null) new Glide(".glide-descontos", glideDescontosConfig).
 if (document.querySelector(".faq-page")) {
   document.querySelectorAll(".faq-item").forEach(function (item) {
     return item.addEventListener("click", function () {
-      if (this.classList.contains("active")) return;
+      if (this.classList.contains("active")) {
+        this.classList.remove("active");
+        return;
+      }
+
       document.querySelectorAll(".faq-item").forEach(function (i) {
         i.classList.remove("active");
       });
