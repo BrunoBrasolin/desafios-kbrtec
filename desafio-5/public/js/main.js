@@ -84,4 +84,10 @@ if (document.querySelector(".input")) {
       this.classList.remove("active");
     });
   });
+} // Blog
+
+
+if (document.querySelector(".blog-page")) {
+  var searchParams = new URLSearchParams(window.location.search);
+  document.querySelector('.input[name="pesquisa"]').value = searchParams.get("pesquisa");
 }

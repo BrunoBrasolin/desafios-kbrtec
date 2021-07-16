@@ -97,3 +97,11 @@ if (document.querySelector(".input")) {
     });
   });
 }
+
+// Blog
+if (document.querySelector(".blog-page")) {
+  const searchParams = new URLSearchParams(window.location.search);
+
+  document.querySelector('.input[name="pesquisa"]').value =
+    searchParams.get("pesquisa");
+}
