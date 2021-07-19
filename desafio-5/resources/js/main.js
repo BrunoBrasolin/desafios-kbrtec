@@ -104,4 +104,10 @@ if (document.querySelector(".blog-page")) {
 
   document.querySelector('.input[name="pesquisa"]').value =
     searchParams.get("pesquisa");
+
+  document.querySelectorAll(".custom-select option").forEach((option) => {
+    if (option.value === searchParams.get("categoria")) {
+      option.selected = true;
+    }
+  });
 }

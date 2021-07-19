@@ -137,9 +137,10 @@
       flex-direction: column;
       width: 100%;
       background-color: $black;
+      z-index: 1;
 
       &.navbar-list.active {
-        max-height: 165px;
+        max-height: 195px;
       }
       &.right.active {
         max-height: 85px;

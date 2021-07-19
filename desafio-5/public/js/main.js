@@ -90,4 +90,9 @@ if (document.querySelector(".input")) {
 if (document.querySelector(".blog-page")) {
   var searchParams = new URLSearchParams(window.location.search);
   document.querySelector('.input[name="pesquisa"]').value = searchParams.get("pesquisa");
+  document.querySelectorAll(".custom-select option").forEach(function (option) {
+    if (option.value === searchParams.get("categoria")) {
+      option.selected = true;
+    }
+  });
 }

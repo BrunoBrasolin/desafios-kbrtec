@@ -108,8 +108,39 @@
   }
 
   @media screen and (max-width: 900px) {
-    .content .posts .blog-item {
-      width: 48%;
+    .content {
+      .content-header {
+        flex-direction: column;
+
+        .subtitle {
+          width: 100%;
+          text-align: center;
+        }
+
+        .right.form {
+          flex-direction: column;
+
+          > * {
+            margin-top: 1rem;
+          }
+
+          .blog-input-group {
+            width: 100%;
+            max-width: 500px;
+
+            .left-line {
+              margin-left: 2rem;
+              &::before {
+                left: calc(1px - 1rem);
+              }
+            }
+          }
+        }
+      }
+
+      .posts .blog-item {
+        width: 48%;
+      }
     }
   }
 
