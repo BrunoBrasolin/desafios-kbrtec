@@ -41,11 +41,11 @@
           <div class="content">
             <span class="date">{{date_format($post->post_date,"d/m/Y")}}</span>
             <h3 class="subtitle">
-              <a href="{{$post->permalink}}" class="link">
+              <a href="{{route('blog_integra', $post->slug)}}" class="link">
                 {{$post->post_title}}
               </a>
             </h3>
-            <a href="#" class="button">
+            <a href="{{route('blog_integra', $post->slug)}}" class="button">
               <i data-feather="plus"></i>
             </a>
           </div>

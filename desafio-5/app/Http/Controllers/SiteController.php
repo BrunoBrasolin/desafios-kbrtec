@@ -56,4 +56,13 @@ class SiteController extends Controller
             ]
         );
     }
+
+    public function blog_integra(String $slug)
+    {
+        $post = Post::type('post')->published()->slug($slug)->first();
+
+        $post_leia_mais = Post::type('post')->published()->where('id', '!=', $post->post_id)->newest()->take(3)->get();
+
+        return view('pages.blog_integra', ['post' => $post, 'post_leia_mais' => $post_leia_mais]);
+    }
 }
