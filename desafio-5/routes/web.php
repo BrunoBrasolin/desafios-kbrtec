@@ -10,3 +10,4 @@ Route::get('/seja-parceiro', [SiteController::class, 'seja_parceiro'])->name('se
 Route::get('/contato', [SiteController::class, 'contato'])->name('contato');
 Route::get('/blog', [SiteController::class, 'blog'])->name('blog');
 Route::get('/blog/{slug}', [SiteController::class, 'blog_integra'])->name('blog_integra');
+Route::get('/descontos', [SiteController::class, 'descontos'])->name('descontos');

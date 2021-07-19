@@ -65,4 +65,9 @@ class SiteController extends Controller
 
         return view('pages.blog_integra', ['post' => $post, 'post_leia_mais' => $post_leia_mais]);
     }
+
+    public function descontos()
+    {
+        return view('pages.descontos');
+    }
 }

@@ -16,5 +16,20 @@ function register_itens()
       'has_archive' => false,
     )
   );
+
+  register_post_type(
+    'desconto',
+    array(
+      'labels' => array(
+        'name' => 'Descontos',
+        'singular_name' => 'Desconto'
+      ),
+      'description' => 'Descontos',
+      'public' => true,
+      'supports' => array('title'),
+      'has_archive' => false,
+      'menu_icon' => 'dashicons-tag',
+    )
+  );
 }
 add_action('init', 'register_itens');

@@ -13,7 +13,7 @@
 
   <ul class="navbar-list">
     <li class="navbar-item">
-      <a href="#" class="navbar-link">Descontos</a>
+      <a href="{{ route('descontos') }}" class="navbar-link {{\Request::route()->getName() === 'descontos' ? 'active' : ''}}">Descontos</a>
     </li>
     <li class="navbar-item">
       <a href="{{route('faq')}}" class="navbar-link {{\Request::route()->getName() === 'faq' ? 'active' : ''}}">FAQ</a>
@@ -39,7 +39,7 @@
     </div>
 
     <div class="signin">
-      <span class="icon">
+      <span class="icon-container">
         <img class="icon" src="{{asset('/svg/user.svg')}}" alt="user">
       </span>
       <a href="#" class="signin-link">Entrar</a>

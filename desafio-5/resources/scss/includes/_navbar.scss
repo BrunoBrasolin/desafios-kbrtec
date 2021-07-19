@@ -23,11 +23,16 @@
       height: 140px;
       padding: 15px;
       width: fit-content;
+      transition: 0.2s;
 
       .logo-link {
         .logo-image {
           height: 100%;
         }
+      }
+
+      &:hover {
+        transform: scale(1.05);
       }
     }
 
@@ -46,15 +51,21 @@
 
       .navbar-link {
         color: $black;
+        position: relative;
+        transition: 0.2s;
 
-        &.active {
+        &::before {
+          content: url("../svg/star.svg");
+          position: absolute;
+          left: -15px;
+          opacity: 0;
+        }
+
+        &.active,
+        &:hover {
           color: $light-blue;
-          position: relative;
-
           &::before {
-            content: url('../svg/star.svg');
-            position: absolute;
-            left: -15px;
+            opacity: 1;
           }
         }
       }
@@ -77,6 +88,7 @@
         border-radius: 6px;
         padding: 15px 27px;
         font-size: 0.75rem;
+        transition: 0.2s;
       }
 
       .button-helper {
@@ -89,6 +101,19 @@
         position: absolute;
         bottom: 0;
         transform: translateY(50%);
+        transition: 0.2s;
+      }
+
+      &:hover {
+        .button-link {
+          background-color: $light-blue;
+          transform: scale(1.05);
+        }
+
+        .button-helper {
+          background-color: $black;
+          transform: translateY(100%);
+        }
       }
     }
 
@@ -97,14 +122,32 @@
       align-items: center;
       margin-left: 1rem;
 
-      .icon {
-        margin-right: 0.5rem;
+      .icon-container {
+        margin-right: 0.25rem;
+        display: flex;
+        transition: 0.2s;
       }
 
       .signin-link {
         color: $black;
+        transition: 0.2s;
+      }
+
+      &:hover {
+        .icon-container {
+          transform: scale(1.5);
+        }
+
+        .signin-link {
+          transform: translateX(5px);
+        }
       }
     }
+  }
+
+  .navbar-list,
+  .right {
+    margin-top: 20px;
   }
 
   @media screen and (max-width: 950px) {
