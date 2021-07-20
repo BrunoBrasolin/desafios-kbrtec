@@ -18,45 +18,46 @@ document.querySelector(".navbar .icon").addEventListener("click", function () {
       }, 300);
     }
   });
-});
-document.querySelectorAll(".phone .group").forEach(function (group) {
-  return group.addEventListener("click", function () {
-    document.querySelectorAll(".phone .group").forEach(function (group) {
-      group.classList.remove("active");
+}); // Home
+
+if (document.querySelector(".home-page")) {
+  document.querySelectorAll(".phone .group").forEach(function (group) {
+    return group.addEventListener("click", function () {
+      document.querySelectorAll(".phone .group").forEach(function (group) {
+        group.classList.remove("active");
+      });
+      this.classList.add("active");
     });
-    this.classList.add("active");
   });
-});
-var glideConveniadosConfig = {
-  type: "carousel",
-  perView: 3,
-  gap: 15,
-  breakpoints: {
-    877: {
-      perView: 2
-    },
-    550: {
-      perView: 1
+  var glideConveniadosConfig = {
+    type: "carousel",
+    perView: 3,
+    gap: 15,
+    breakpoints: {
+      877: {
+        perView: 2
+      },
+      550: {
+        perView: 1
+      }
     }
-  }
-},
-    glideConveniados = document.querySelector(".glide-conveniados");
-if (glideConveniados != null) new Glide(".glide-conveniados", glideConveniadosConfig).mount();
-var glideNoticiasConfig = {
-  type: "slider",
-  perView: 3,
-  gap: 20,
-  infinite: false
-},
-    glideNoticias = document.querySelector(".glide-noticias");
-if (glideNoticias != null) new Glide(".glide-noticias", glideNoticiasConfig).mount();
-var glideDescontosConfig = {
-  type: "slider",
-  perView: 1,
-  infinite: false
-},
-    glideDescontos = document.querySelector(".glide-descontos");
-if (glideDescontos != null) new Glide(".glide-descontos", glideDescontosConfig).mount(); // FAQ
+  };
+  new Glide(".glide-conveniados", glideConveniadosConfig).mount();
+  var glideNoticiasConfig = {
+    type: "slider",
+    perView: 3,
+    gap: 20,
+    infinite: false
+  };
+  new Glide(".glide-noticias", glideNoticiasConfig).mount();
+  var glideDescontosConfig = {
+    type: "slider",
+    perView: 1,
+    infinite: false
+  };
+  new Glide(".glide-descontos", glideDescontosConfig).mount();
+} // FAQ
+
 
 if (document.querySelector(".faq-page")) {
   document.querySelectorAll(".faq-item").forEach(function (item) {

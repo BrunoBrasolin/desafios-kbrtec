@@ -27,6 +27,7 @@ function register_itens()
       'description' => 'Descontos',
       'public' => true,
       'supports' => array('title'),
+      'taxonomies'  => array('category'),
       'has_archive' => false,
       'menu_icon' => 'dashicons-tag',
     )

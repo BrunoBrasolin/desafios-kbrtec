@@ -11,6 +11,7 @@
       img {
         flex-shrink: 0;
         max-width: 200px;
+        transition: 0.2s;
       }
 
       .right {
@@ -26,6 +27,12 @@
           letter-spacing: 0.5px;
           line-height: 1.25rem;
           font-size: 0.85rem;
+        }
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.05);
         }
       }
     }
@@ -88,6 +95,11 @@
           display: flex;
           align-items: center;
 
+          img,
+          .subtitle {
+            transition: 0.2s;
+          }
+
           .subtitle {
             margin-left: 1rem;
             text-transform: uppercase;
@@ -99,6 +111,16 @@
           margin-top: 0.75rem;
           font-weight: 300;
           font-size: 0.95rem;
+        }
+
+        &:hover {
+          img {
+            transform: scale(1.1);
+          }
+
+          .title-container .subtitle {
+            transform: translateX(5px);
+          }
         }
       }
 
@@ -112,16 +134,31 @@
         border-radius: 5px;
         margin-top: 2rem;
         display: inline-block;
+        transition: 0.2s;
+
+        &:hover {
+          transform: scale(1.015);
+          box-shadow: 0 0 20px rgba($black, 0.5);
+        }
       }
     }
 
     .right {
       margin-top: -$space-top;
       width: 55%;
+      display: flex;
+      overflow: hidden;
 
       img {
         object-fit: cover;
         width: 100%;
+        transition: .2s;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
       }
     }
   }

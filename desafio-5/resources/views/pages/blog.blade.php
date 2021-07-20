@@ -34,22 +34,13 @@
 
     <ul class="posts">
       @foreach ($posts as $post)
-        <li class="blog-item">
-          <figure class="image-container">
-            <img src="{{asset($post->thumbnail)}}" alt="alt" title="title">
-          </figure>
-          <div class="content">
-            <span class="date">{{date_format($post->post_date,"d/m/Y")}}</span>
-            <h3 class="subtitle">
-              <a href="{{route('blog_integra', $post->slug)}}" class="link">
-                {{$post->post_title}}
-              </a>
-            </h3>
-            <a href="{{route('blog_integra', $post->slug)}}" class="button">
-              <i data-feather="plus"></i>
-            </a>
-          </div>
-        </li>
+        <x-blogitem
+          :thumbnail="$post->thumbnail ?? null" 
+          :post-title="$post->post_title" 
+          :slug="$post->slug" 
+          :post-date="$post->post_date" 
+          extra-class="glide__slide"
+        />
       @endforeach
     </ul>
   </div>
