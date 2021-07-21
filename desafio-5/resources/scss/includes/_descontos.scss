@@ -44,12 +44,26 @@
               padding: 2rem 1rem 3rem 1rem;
               position: relative;
 
+              .logo-container,
+              .desc {
+                transition: 0.2s;
+              }
+
               .desc {
                 font-size: 0.7rem;
                 position: absolute;
                 bottom: 1rem;
                 width: 50%;
                 text-align: center;
+              }
+
+              &:hover {
+                .logo-container {
+                  transform: scale(1.05);
+                }
+                .desc {
+                  transform: translateY(3px);
+                }
               }
             }
           }
@@ -67,14 +81,21 @@
           width: $size;
           height: $size;
           background-color: $light-blue;
+          border: 1px solid $light-blue;
           border-radius: 50%;
           display: flex;
           justify-content: center;
           align-items: center;
           color: $white;
+          transition: 0.2s;
 
           &.arrow-right {
             margin-left: 1rem;
+          }
+
+          &:hover {
+            background-color: $white;
+            color: $light-blue;
           }
         }
       }

@@ -43,6 +43,8 @@
     overflow: hidden;
     position: relative;
     width: 100%;
+    background-color: $white;
+    transition: 0.2s;
 
     .date {
       position: absolute;
@@ -53,6 +55,7 @@
       font-weight: 300;
       padding: 4.5px 18px;
       font-size: 0.65rem;
+      transition: 0.2s;
     }
 
     .subtitle {
@@ -75,12 +78,29 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: 0.2s;
     }
   }
 
   &:hover {
     .image-container img {
       transform: scale(1.05);
+    }
+
+    .content {
+      background-color: $dark-purple;
+      .date {
+        background-color: #8566e8;
+      }
+
+      .subtitle .link {
+        color: $white;
+      }
+    }
+
+    .button {
+      background-color: $white;
+      color: $dark-purple;
     }
   }
 }
