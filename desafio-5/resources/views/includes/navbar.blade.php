@@ -1,3 +1,7 @@
+@php
+$route = Request::route() ? Request::route()->getName() ?? null : '';
+@endphp
+
 <nav class="navbar">
   <div class="mobile-row">
     <h1 class="logo">
@@ -13,22 +17,22 @@
 
   <ul class="navbar-list">
     <li class="navbar-item">
-      <a href="{{ route('descontos') }}" class="navbar-link {{\Request::route()->getName() === 'descontos' ? 'active' : ''}}">Descontos</a>
+      <a href="{{ route('descontos') }}" class="navbar-link {{$route === 'descontos' ? 'active' : ''}}">Descontos</a>
     </li>
     <li class="navbar-item">
-      <a href="{{route('faq')}}" class="navbar-link {{\Request::route()->getName() === 'faq' ? 'active' : ''}}">FAQ</a>
+      <a href="{{route('faq')}}" class="navbar-link {{$route === 'faq' ? 'active' : ''}}">FAQ</a>
     </li>
     <li class="navbar-item">
-      <a href="{{route('seja_parceiro')}}" class="navbar-link {{\Request::route()->getName() === 'seja_parceiro' ? 'active' : ''}}">Seja Parceiro</a>
+      <a href="{{route('seja_parceiro')}}" class="navbar-link {{$route === 'seja_parceiro' ? 'active' : ''}}">Seja Parceiro</a>
     </li>
     <li class="navbar-item">
-      <a href="{{route('sobre')}}" class="navbar-link {{\Request::route()->getName() === 'sobre' ? 'active' : ''}}">Sobre</a>
+      <a href="{{route('sobre')}}" class="navbar-link {{$route === 'sobre' ? 'active' : ''}}">Sobre</a>
     </li>
     <li class="navbar-item">
-      <a href="{{route('contato')}}" class="navbar-link {{\Request::route()->getName() === 'contato' ? 'active' : ''}}">Contato</a>
+      <a href="{{route('contato')}}" class="navbar-link {{$route === 'contato' ? 'active' : ''}}">Contato</a>
     </li>
     <li class="navbar-item">
-      <a href="{{route('blog')}}" class="navbar-link {{\Request::route()->getName() === 'blog' ? 'active' : ''}}">Blog</a>
+      <a href="{{route('blog')}}" class="navbar-link {{$route === 'blog' ? 'active' : ''}}">Blog</a>
     </li>
   </ul>
 

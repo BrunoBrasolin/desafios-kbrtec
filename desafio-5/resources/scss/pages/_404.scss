@@ -1,0 +1,30 @@
+main[class="404-page"] {
+  padding: 5rem 0;
+  text-align: center;
+  text-transform: uppercase;
+  background: $purple-gradient;
+
+  .title,
+  .subtitle,
+  .button {
+    color: $white;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .button {
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    display: inline-block;
+    background-color: $light-blue;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: .2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
