@@ -129,59 +129,9 @@
     <div class="glide glide-conveniados">
       <div data-glide-el="track" class="glide__track">
         <ul class="glide__slides">
-          <li class="glide__slide">
-            <figure class="image-contaienr">
-              <img src="{{asset('/images/o-made-cozinha.jpg')}}" alt="alt" title="title">
-              <span class="percentage">10%</span>
-            </figure>
-            <h3 class="subtitle">Madê Cozinha autoral</h3>
-            <p class="desc">Um restaurante simples, requintado e com muito sabore qualidade.</p>
-          </li>
-
-          <li class="glide__slide">
-            <figure class="image-contaienr">
-              <img src="{{asset('/images/o-made-cozinha.jpg')}}" alt="alt" title="title">
-              <span class="percentage">10%</span>
-            </figure>
-            <h3 class="subtitle">Madê Cozinha autoral</h3>
-            <p class="desc">Um restaurante simples, requintado e com muito sabore qualidade.</p>
-          </li>
-
-          <li class="glide__slide">
-            <figure class="image-contaienr">
-              <img src="{{asset('/images/o-made-cozinha.jpg')}}" alt="alt" title="title">
-              <span class="percentage">10%</span>
-            </figure>
-            <h3 class="subtitle">Madê Cozinha autoral</h3>
-            <p class="desc">Um restaurante simples, requintado e com muito sabore qualidade.</p>
-          </li>
-
-          <li class="glide__slide">
-            <figure class="image-contaienr">
-              <img src="{{asset('/images/o-made-cozinha.jpg')}}" alt="alt" title="title">
-              <span class="percentage">10%</span>
-            </figure>
-            <h3 class="subtitle">Madê Cozinha autoral</h3>
-            <p class="desc">Um restaurante simples, requintado e com muito sabore qualidade.</p>
-          </li>
-
-          <li class="glide__slide">
-            <figure class="image-contaienr">
-              <img src="{{asset('/images/o-made-cozinha.jpg')}}" alt="alt" title="title">
-              <span class="percentage">10%</span>
-            </figure>
-            <h3 class="subtitle">Madê Cozinha autoral</h3>
-            <p class="desc">Um restaurante simples, requintado e com muito sabore qualidade.</p>
-          </li>
-
-          <li class="glide__slide">
-            <figure class="image-contaienr">
-              <img src="{{asset('/images/o-made-cozinha.jpg')}}" alt="alt" title="title">
-              <span class="percentage">10%</span>
-            </figure>
-            <h3 class="subtitle">Madê Cozinha autoral</h3>
-            <p class="desc">Um restaurante simples, requintado e com muito sabore qualidade.</p>
-          </li>
+          @foreach($descontos as $desconto)
+          <x-descontoitem :post-title="$desconto->post_title" :subtitulo="$desconto->subtitulo" :slug="$desconto->slug" :desconto="$desconto->desconto" extra-class="glide__slide" />
+          @endforeach
         </ul>
       </div>
       <div data-glide-el="controls" class="glide__controls">
@@ -204,13 +154,7 @@
       <div data-glide-el="track" class="glide__track">
         <ul class="glide__slides">
           @foreach($posts as $post)
-            <x-blogitem
-              :thumbnail="$post->thumbnail ?? null" 
-              :post-title="$post->post_title" 
-              :slug="$post->slug" 
-              :post-date="$post->post_date" 
-              extra-class="glide__slide"
-            />
+          <x-blogitem :thumbnail="$post->thumbnail ?? null" :post-title="$post->post_title" :slug="$post->slug" :post-date="$post->post_date" extra-class="glide__slide" />
           @endforeach
         </ul>
       </div>

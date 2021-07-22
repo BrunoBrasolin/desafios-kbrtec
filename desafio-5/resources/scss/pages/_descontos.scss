@@ -1,0 +1,116 @@
+.descontos-page {
+  .topbar {
+    background: linear-gradient(96.21deg, #8345c0 2.61%, #5846be 99.5%);
+
+    .title {
+      text-align: center;
+      color: $white;
+      text-transform: uppercase;
+      padding: 2.5rem 0;
+    }
+  }
+
+  .content {
+    @extend .container;
+
+    &__header {
+      display: flex;
+      margin-bottom: 3rem;
+      justify-content: space-between;
+
+      .subtitle {
+        text-transform: uppercase;
+        font-weight: 300;
+        width: 30%;
+      }
+
+      .right.form {
+        display: flex;
+        align-items: center;
+
+        .descontos-input-group {
+          display: flex;
+          justify-content: space-between;
+          margin-left: 1rem;
+          padding-bottom: 0.5rem;
+          padding-left: 0.25rem;
+          border-bottom: 1px solid rgba($black, 0.2);
+          min-width: 250px;
+
+          .input {
+            outline: none;
+            flex: 1;
+          }
+
+          .button {
+            text-transform: uppercase;
+            font-weight: 700;
+            background-color: transparent;
+            color: $dark-purple;
+
+            &,
+            svg {
+              $size: 25px;
+              height: $size;
+              width: $size;
+            }
+          }
+        }
+
+        .custom-select {
+          color: #1f394c;
+          outline: none;
+          padding: 0.5rem 0.25rem;
+          -moz-appearance: none;
+          -webkit-appearance: none;
+          appearance: none;
+        }
+      }
+    }
+
+    .descontos {
+      display: grid;
+      grid-template-columns: repeat(3, 30%);
+      flex-wrap: wrap;
+      row-gap: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .content {
+      &__header {
+        flex-direction: column;
+
+        .subtitle {
+          width: 100%;
+          text-align: center;
+        }
+
+        .right.form {
+          flex-direction: column;
+
+          > * {
+            margin-top: 1rem;
+          }
+
+          .descontos-input-group {
+            width: 100%;
+            max-width: 500px;
+          }
+        }
+      }
+
+      .descontos {
+        grid-template-columns: repeat(2, 48%);
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .content {
+      .descontos {
+        grid-template-columns: 100%;
+      }
+    }
+  }
+}

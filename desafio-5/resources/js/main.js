@@ -98,8 +98,8 @@ if (document.querySelector(".input")) {
   });
 }
 
-// Blog
-if (document.querySelector(".blog-page")) {
+// Blog & Descontos
+if (document.querySelector(".blog-page") || document.querySelector(".descontos-page")) {
   const searchParams = new URLSearchParams(window.location.search);
 
   document.querySelector('.input[name="pesquisa"]').value =

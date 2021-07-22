@@ -85,10 +85,10 @@ if (document.querySelector(".input")) {
       this.classList.remove("active");
     });
   });
-} // Blog
+} // Blog & Descontos
 
 
-if (document.querySelector(".blog-page")) {
+if (document.querySelector(".blog-page") || document.querySelector(".descontos-page")) {
   var searchParams = new URLSearchParams(window.location.search);
   document.querySelector('.input[name="pesquisa"]').value = searchParams.get("pesquisa");
   document.querySelectorAll(".custom-select option").forEach(function (option) {

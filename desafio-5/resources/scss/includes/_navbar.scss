@@ -10,6 +10,7 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   font-weight: 525;
+  text-align: center;
 
   .mobile-row {
     display: flex;
@@ -148,6 +149,12 @@
   .navbar-list,
   .right {
     margin-top: 20px;
+  }
+
+  @media screen and (max-width: 1050px) and (min-width: 951px) {
+    .right .signin .icon-container {
+      display: none;
+    }
   }
 
   @media screen and (max-width: 950px) {
