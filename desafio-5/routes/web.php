@@ -11,3 +11,4 @@ Route::get('/contato', [SiteController::class, 'contato'])->name('contato');
 Route::get('/blog', [SiteController::class, 'blog'])->name('blog');
 Route::get('/blog/{slug}', [SiteController::class, 'blog_integra'])->name('blog_integra');
 Route::get('/descontos', [SiteController::class, 'descontos'])->name('descontos');
+Route::get('/descontos/{slug}', [SiteController::class, 'descontos_integra'])->name('descontos_integra');

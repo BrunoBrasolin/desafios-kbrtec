@@ -6,7 +6,7 @@
     <h3 class="subtitle">{{$post_title}}</h3>
     <p class="desc">{{$subtitulo}}</p>
 
-    <a href="{{route('blog_integra', $slug)}}" class="button">
+    <a href="{{route('descontos_integra', $slug)}}" class="button">
         <i data-feather="plus"></i>
     </a>
 </li>

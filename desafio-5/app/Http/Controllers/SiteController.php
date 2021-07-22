@@ -71,6 +71,8 @@ class SiteController extends Controller
     {
         $post = Post::type('post')->published()->slug($slug)->first();
 
+        if (!$post) abort(404);
+
         $post_leia_mais = Post::type('post')->published()->where('id', '!=', $post->post_id)->newest()->take(3)->get();
 
         return view(
@@ -100,6 +102,20 @@ class SiteController extends Controller
             [
                 'categories' => $categories,
                 'descontos' => $descontos
+            ]
+        );
+    }
+
+    public function descontos_integra(String $slug)
+    {
+        $desconto = Post::type('desconto')->published()->slug($slug)->first();
+
+        if (!$desconto) abort(404);
+
+        return view(
+            'pages.descontos_integra',
+            [
+                'desconto' => $desconto
             ]
         );
     }

@@ -9,7 +9,7 @@
     <h1 class="title">Descontos</h1>
   </header>
 
-  <div class="content">
+  <section class="content">
     <header class="content__header">
       <h2 class="subtitle">
         estabelecimentos

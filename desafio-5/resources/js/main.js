@@ -99,7 +99,10 @@ if (document.querySelector(".input")) {
 }
 
 // Blog & Descontos
-if (document.querySelector(".blog-page") || document.querySelector(".descontos-page")) {
+if (
+  document.querySelector(".blog-page") ||
+  document.querySelector(".descontos-page")
+) {
   const searchParams = new URLSearchParams(window.location.search);
 
   document.querySelector('.input[name="pesquisa"]').value =
@@ -110,4 +113,19 @@ if (document.querySelector(".blog-page") || document.querySelector(".descontos-p
       option.selected = true;
     }
   });
+}
+
+if (document.querySelector(".descontos_integra-page")) {
+  const cep = document.querySelector(".cep").innerHTML;
+  document.querySelector(".cep").innerHTML = `${cep.slice(0, 5)}-${cep.slice(
+    5
+  )}`;
+
+  const site = document.querySelector(".site").innerHTML;
+
+  document.querySelector(".site").innerHTML = site
+    .replace("https://", "")
+    .replace("http://", "")
+    .replace("www.", "")
+    .replace(site.charAt(site.length - 1) == "/" ? "/" : "", "");
 }
