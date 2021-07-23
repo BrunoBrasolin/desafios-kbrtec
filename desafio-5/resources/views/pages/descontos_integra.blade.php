@@ -12,8 +12,7 @@
   <section class="content">
     <header class="content__header">
       <div class="left">
-        <img src="http://ambiente-desenvolvimento.provisorio.ws/bruno-brasolin/desafio-5/painel/wp-content/uploads/2021/07/image-14.png" alt="">
-
+        <img src="{{$desconto->acf->logo->url}}" alt="">
         <div class="title-container">
           <h1 class="title">{{$desconto->post_title}}</h1>
           <h2 class="subtitle">{{$desconto->subtitulo}}</h2>
@@ -38,7 +37,11 @@
       <div class="left">
         @if($desconto->regras)
         <h3 class="left__title">Regras de uso</h3>
-        {!! $desconto->regras !!}
+        <div class="regras">
+          <p class="desc">
+            {!! nl2br($desconto->acf->regras) !!}
+          </p>
+        </div>
         @endif
 
         <a href="#" class="button">Para acessar o cupom Clique aqui</a>
