@@ -116,7 +116,7 @@
 
         .endereco {
           color: $black;
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
           letter-spacing: 0.5px;
 
           &:hover {
@@ -143,6 +143,35 @@
 
           &:hover {
             transform: translateX(5px);
+          }
+        }
+
+        .social-row {
+          margin-top: 1.5rem;
+          display: flex;
+          align-items: center;
+
+          &__link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 0.5rem;
+            background-color: rgba($dark-purple, 0.1);
+            border-radius: 50%;
+            $size: 30px;
+            height: $size;
+            width: $size;
+            transition: 0.2s;
+
+            &:hover {
+              transform: scale(1.15);
+            }
+          }
+
+          .text {
+            font-size: 0.75rem;
+            color: #1F394C;
+            font-weight: 500;
           }
         }
       }

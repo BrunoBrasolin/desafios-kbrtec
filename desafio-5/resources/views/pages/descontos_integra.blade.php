@@ -64,6 +64,20 @@
           <img src="{{asset('svg/email-purple.svg')}}" alt="" title="">
           {{$desconto->email}}
         </a>
+
+        <div class="social-row">
+          @if($desconto->facebook)
+          <a href="{{$desconto->facebook}}" target="_blank" class="social-row__link facebook">
+            <img src="{{asset('svg/facebook-purple.svg')}}" alt="" title="">
+          </a>
+          @endif
+          @if($desconto->instagram)
+          <a href="{{$desconto->instagram}}" target="_blank" class="social-row__link instagram">
+            <img src="{{asset('svg/instagram-purple.svg')}}" alt="" title="">
+          </a>
+          @endif
+          <span class="text">#acompanhe-nos</span>
+        </div>
       </div>
     </section>
   </section>
