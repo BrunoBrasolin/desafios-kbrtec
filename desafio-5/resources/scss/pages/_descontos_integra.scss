@@ -22,56 +22,56 @@
       .left,
       .right {
         display: flex;
+      }
 
-        &.left {
-          width: 50%;
-          align-items: flex-end;
+      .left {
+        width: 50%;
+        align-items: flex-end;
 
-          img {
-            margin-right: 2rem;
+        img {
+          margin-right: 2rem;
+        }
+
+        .title-container {
+          .subtitle {
+            font-weight: 300;
+            font-size: 1rem;
           }
+        }
+      }
 
-          .title-container {
-            .subtitle {
-              font-weight: 300;
-              font-size: 1rem;
-            }
+      .right {
+        align-items: center;
+
+        .desconto-title {
+          display: flex;
+          align-items: center;
+          font-weight: 300;
+          margin-right: 1.5rem;
+
+          &__number {
+            background-color: $dark-purple;
+            color: $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 500;
+            border-radius: 50%;
+            $size: 50px;
+            height: $size;
+            width: $size;
+            margin-right: 0.5rem;
           }
         }
 
-        &.right {
-          align-items: center;
-
-          .desconto-title {
-            display: flex;
-            align-items: center;
-            font-weight: 300;
-            margin-right: 1.5rem;
-
-            &__number {
-              background-color: $dark-purple;
-              color: $white;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              font-weight: 500;
-              border-radius: 50%;
-              $size: 50px;
-              height: $size;
-              width: $size;
-              margin-right: 0.5rem;
-            }
-          }
-
-          .button {
-            background-color: rgba($black, 0.06);
-            padding: 0.55rem 2rem;
-            text-transform: uppercase;
-            font-weight: 600;
-            color: $dark-purple;
-            border-radius: 5px;
-            font-size: 0.9rem;
-          }
+        .button {
+          background-color: rgba($black, 0.06);
+          padding: 0.55rem 2rem;
+          text-transform: uppercase;
+          font-weight: 600;
+          color: $dark-purple;
+          border-radius: 5px;
+          font-size: 0.9rem;
         }
       }
     }
@@ -97,6 +97,7 @@
           text-align: center;
           border-radius: 5px;
           font-size: 0.9rem;
+          font-weight: 600;
           margin-top: 2.5rem;
         }
       }
@@ -106,6 +107,103 @@
         padding: 2rem;
         box-shadow: 0px 12px 56px -10px rgba(61, 63, 64, 0.14);
         border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+
+        &__title {
+          margin-bottom: 0.35rem;
+        }
+
+        .endereco {
+          color: $black;
+          margin-bottom: 2rem;
+          letter-spacing: 0.5px;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .link {
+          display: flex;
+          align-items: flex-start;
+          line-break: anywhere;
+          color: $black;
+          margin-bottom: 0.3rem;
+          transition: 0.3s;
+
+          &.whatsapp,
+          &.telefone {
+            font-weight: 700;
+          }
+
+          img {
+            margin-right: 0.5rem;
+          }
+
+          &:hover {
+            transform: translateX(5px);
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    .content {
+      &__bottom {
+        flex-direction: column;
+
+        .left,
+        .right {
+          width: 100%;
+        }
+
+        .left {
+          margin-bottom: 2rem;
+
+          .button {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .content {
+      &__header {
+        flex-direction: column;
+
+        .left,
+        .right {
+          width: 100%;
+        }
+
+        .left {
+          margin-bottom: 1rem;
+          align-items: center;
+          justify-content: center;
+
+          .title-container {
+            width: 50%;
+          }
+        }
+
+        .right {
+          justify-content: space-around;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .content__header .right {
+      .desconto-title {
+        margin-right: 0;
+      }
+
+      .button {
+        display: none;
       }
     }
   }

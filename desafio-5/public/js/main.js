@@ -101,6 +101,6 @@ if (document.querySelector(".blog-page") || document.querySelector(".descontos-p
 if (document.querySelector(".descontos_integra-page")) {
   var cep = document.querySelector(".cep").innerHTML;
   document.querySelector(".cep").innerHTML = "".concat(cep.slice(0, 5), "-").concat(cep.slice(5));
-  var site = document.querySelector(".site").innerHTML;
-  document.querySelector(".site").innerHTML = site.replace("https://", "").replace("http://", "").replace("www.", "").replace(site.charAt(site.length - 1) == "/" ? "/" : "", "");
+  var site = document.querySelector(".site-text").innerHTML;
+  document.querySelector(".site-text").innerHTML = site.replace("https://", "").replace("http://", "").replace("www.", "").replace(site.charAt(site.length - 1) == "/" ? "/" : "", "");
 }

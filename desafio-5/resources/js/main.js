@@ -121,9 +121,9 @@ if (document.querySelector(".descontos_integra-page")) {
     5
   )}`;
 
-  const site = document.querySelector(".site").innerHTML;
+  const site = document.querySelector(".site-text").innerHTML;
 
-  document.querySelector(".site").innerHTML = site
+  document.querySelector(".site-text").innerHTML = site
     .replace("https://", "")
     .replace("http://", "")
     .replace("www.", "")

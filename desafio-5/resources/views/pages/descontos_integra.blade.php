@@ -46,18 +46,24 @@
 
       <div class="right">
         <h3 class="right__title">Onde estamos</h3>
-        <p class="endereco">{{$desconto->logradouro}} - {{$desconto->bairro}}/{{$desconto->estado}}, <span class="cep">{{$desconto->cep}}</span></p>
+        <a href="https://goo.gl/maps/GN6iQocZyDGgisH6A" target="_blank" class="endereco">{{$desconto->logradouro}} - {{$desconto->bairro}}/{{$desconto->estado}}, <span class="cep">{{$desconto->cep}}</span></a>
         <h3 class="right__title">Fale conosco</h3>
-        <a href="https://api.whatsapp.com/send?phone={{$desconto->whatsapp}}" class="link whatsapp">
+        <a href="https://api.whatsapp.com/send?phone={{$desconto->whatsapp}}" target="_blank" class="link whatsapp">
           <img src="{{asset('svg/whatsapp-green.svg')}}" alt="" title="">
           {{$desconto->whatsapp}}
         </a>
-        <a href="tel:{{$desconto->telefone}}" class="link telefone">
+        <a href="tel:{{$desconto->telefone}}" target="_blank" class="link telefone">
           <img src="{{asset('svg/phone-call-purple.svg')}}" alt="" title="">
           {{$desconto->telefone}}
         </a>
-        <a href="mailto:{{$desconto->email}}" class="link email">{{$desconto->email}}</a>
-        <a href="mailto:{{$desconto->site}}" class="link site">{{$desconto->site}}</a>
+        <a href="{{$desconto->site}}" target="_blank" class="link site">
+          <img src="{{asset('svg/site.svg')}}" alt="" title="">
+          <span class="site-text">{{$desconto->site}}</span>
+        </a>
+        <a href="mailto:{{$desconto->email}}" target="_blank" class="link email">
+          <img src="{{asset('svg/email-purple.svg')}}" alt="" title="">
+          {{$desconto->email}}
+        </a>
       </div>
     </section>
   </section>
