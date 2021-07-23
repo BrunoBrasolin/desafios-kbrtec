@@ -1,6 +1,5 @@
 @extends('layouts.site')
 
-
 @section('content')
 
 <main class="home-page">
@@ -149,7 +148,6 @@
       <strong class="strong">Acompanhe as novidades </strong>
     </h2>
 
-
     <div class="glide glide-noticias">
       <div data-glide-el="track" class="glide__track">
         <ul class="glide__slides">
@@ -160,9 +158,6 @@
       </div>
 
       <div data-glide-el="controls[nav]" class="glide__bullets">
-        <button data-glide-dir="=0" class="glide__bullet"></button>
-        <button data-glide-dir="=1" class="glide__bullet"></button>
-        <button data-glide-dir="=2" class="glide__bullet"></button>
       </div>
     </div>
   </section>

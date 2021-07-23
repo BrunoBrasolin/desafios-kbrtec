@@ -43,6 +43,12 @@ if (document.querySelector(".home-page")) {
     }
   };
   new Glide(".glide-conveniados", glideConveniadosConfig).mount();
+  document.querySelectorAll(".glide-noticias .glide__slide").forEach(function (slide, index) {
+    var button = document.createElement("button");
+    button.setAttribute("data-glide-dir", "=".concat(index));
+    button.classList.add("glide__bullet");
+    document.querySelector(".glide-noticias .glide__bullets").appendChild(button);
+  });
   var glideNoticiasConfig = {
     type: "slider",
     perView: 3,

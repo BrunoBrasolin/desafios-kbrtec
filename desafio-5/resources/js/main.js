@@ -49,6 +49,18 @@ if (document.querySelector(".home-page")) {
 
   new Glide(".glide-conveniados", glideConveniadosConfig).mount();
 
+  document
+    .querySelectorAll(".glide-noticias .glide__slide")
+    .forEach((slide, index) => {
+      const button = document.createElement("button");
+
+      button.setAttribute("data-glide-dir", `=${index}`);
+      button.classList.add("glide__bullet");
+
+      document
+        .querySelector(".glide-noticias .glide__bullets")
+        .appendChild(button);
+    });
   const glideNoticiasConfig = {
     type: "slider",
     perView: 3,
