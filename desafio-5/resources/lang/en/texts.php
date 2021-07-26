@@ -170,6 +170,9 @@ return [
         ]
       ]
     ],
+    'header' => [
+      'title' => 'A Tribuna\'s Subscriber Club',
+    ],
   ],
 
   '404' => [

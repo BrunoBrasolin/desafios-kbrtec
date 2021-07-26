@@ -11,7 +11,7 @@
     @if(View::hasSection('title'))
       @yield('title') |
     @endif
-      Clube de Assinantes A Tribuna
+      {{ __('texts.includes.header.title') }}
   </title>
 </head>
 

@@ -170,6 +170,9 @@ return [
         ]
       ]
     ],
+    'header' => [
+      'title' => 'Clube de Assinantes A Tribuna',
+    ],
   ],
 
   '404' => [

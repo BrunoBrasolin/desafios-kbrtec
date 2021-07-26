@@ -1,6 +1,6 @@
 @extends('layouts.site')
 
-@section('title', {{ __('texts.faq.title') }})
+@section('title', __('texts.faq.title') )
 
 @section('content')
 
