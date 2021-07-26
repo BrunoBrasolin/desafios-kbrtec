@@ -1,5 +1,19 @@
 @extends('layouts.site')
 
+@section('meta-tag')
+<meta property="og:title" content="{{ $post->post_title }}" />
+<meta property="og:url" content="{{ URL::current() }}" />
+<meta property="og:type" content="blog" />
+<meta property="og:description" content="{{ \Illuminate\Support\Str::limit(strip_tags($post->post_content), 150, $end='...') }}" />
+<meta property="og:image" content="{{$post->thumbnail}}" />
+
+<meta name="twitter:title" content="{{ $post->post_title }}" />
+<meta name="twitter:url" content="{{ URL::current() }}" />
+<meta name="twitter:image" content="{{$post->thumbnail}}" />
+<meta name="twitter:description" content="{{ \Illuminate\Support\Str::limit(strip_tags($post->post_content), 150, $end='...') }}" />
+<meta name="twitter:cart" content="summary" />
+@endsection
+
 @section('title', $post->post_title)
 
 @section('content')
