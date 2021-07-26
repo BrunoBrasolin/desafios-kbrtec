@@ -12,37 +12,37 @@
           <li class="glide__slide">
             <div class="desconto-item">
               <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-1.png')}}" alt="alt" title="title">
+                <img src="{{asset('/images/logos/logo-1.png')}}" alt="" title="">
               </figure>
               <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '5']) }}</p>
             </div>
             <div class="desconto-item">
               <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-2.png')}}" alt="alt" title="title">
+                <img src="{{asset('/images/logos/logo-2.png')}}" alt="" title="">
               </figure>
               <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '8']) }}</p>
             </div>
             <div class="desconto-item">
               <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-3.png')}}" alt="alt" title="title">
+                <img src="{{asset('/images/logos/logo-3.png')}}" alt="" title="">
               </figure>
               <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '0']) }}</p>
             </div>
             <div class="desconto-item">
               <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-4.png')}}" alt="alt" title="title">
+                <img src="{{asset('/images/logos/logo-4.png')}}" alt="" title="">
               </figure>
               <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '3']) }}</p>
             </div>
             <div class="desconto-item">
               <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-5.png')}}" alt="alt" title="title">
+                <img src="{{asset('/images/logos/logo-5.png')}}" alt="" title="">
               </figure>
               <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '4']) }}</p>
             </div>
             <div class="desconto-item">
               <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-6.png')}}" alt="alt" title="title">
+                <img src="{{asset('/images/logos/logo-6.png')}}" alt="" title="">
               </figure>
               <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '0']) }}</p>
             </div>
@@ -50,37 +50,37 @@
           <li class="glide__slide">
             <div class="desconto-item">
               <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-1.png')}}" alt="alt" title="title">
+                <img src="{{asset('/images/logos/logo-1.png')}}" alt="" title="">
               </figure>
               <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '5']) }}</p>
             </div>
             <div class="desconto-item">
               <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-2.png')}}" alt="alt" title="title">
+                <img src="{{asset('/images/logos/logo-2.png')}}" alt="" title="">
               </figure>
               <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '8']) }}</p>
             </div>
             <div class="desconto-item">
               <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-3.png')}}" alt="alt" title="title">
+                <img src="{{asset('/images/logos/logo-3.png')}}" alt="" title="">
               </figure>
               <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '0']) }}</p>
             </div>
             <div class="desconto-item">
               <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-4.png')}}" alt="alt" title="title">
+                <img src="{{asset('/images/logos/logo-4.png')}}" alt="" title="">
               </figure>
               <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '3']) }}</p>
             </div>
             <div class="desconto-item">
               <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-5.png')}}" alt="alt" title="title">
+                <img src="{{asset('/images/logos/logo-5.png')}}" alt="" title="">
               </figure>
               <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '4']) }}</p>
             </div>
             <div class="desconto-item">
               <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-6.png')}}" alt="alt" title="title">
+                <img src="{{asset('/images/logos/logo-6.png')}}" alt="" title="">
               </figure>
               <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '0']) }}</p>
             </div>

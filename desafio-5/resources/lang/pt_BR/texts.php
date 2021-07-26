@@ -1,6 +1,8 @@
 <?php
 
 return [
+  'application_name' => 'Clube de Assinantes A Tribuna',
+
   'home' => [
     'banner' => [
       'title' => 'O Maior clube de vantagens da região',
@@ -191,6 +193,9 @@ return [
     'signin' => 'Entrar',
     'weather' => 'Tempo',
     'search' => 'Buscar',
-    'company' => 'Empresa'
+    'company' => 'Empresa',
+    'calculator' => 'Calculadora',
+    'sign_it' => 'Assine',
+    'advantages' => 'Vantagens',
   ]
 ];

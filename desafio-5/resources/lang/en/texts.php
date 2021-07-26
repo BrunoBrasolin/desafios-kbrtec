@@ -1,6 +1,8 @@
 <?php
 
 return [
+  'application_name' => 'A Tribuna\'s Subiscriber Club',
+
   'home' => [
     'banner' => [
       'title' => 'The biggest advantage club in the region',
@@ -80,7 +82,7 @@ return [
   ],
 
   'blog' => [
-    'title' => 'blog',
+    'title' => 'Blog',
     'subtitle' => 'Follow club news',
     'label' => 'What are you looking for?',
   ],
@@ -119,7 +121,7 @@ return [
   ],
 
   'seja_parceiro' => [
-    'title' => 'be a partner',
+    'title' => 'Be a Partner',
     'subtitle' => 'PRE-REGISTER',
   ],
 
@@ -191,6 +193,9 @@ return [
     'signin' => 'Signin',
     'weather' => 'Weather',
     'search' => 'Search',
-    'company' => 'Company'
+    'company' => 'Company',
+    'calculator' => 'Calculator',
+    'sign_it' => 'Sign it',
+    'advantages' => 'Advantages',
   ]
 ];

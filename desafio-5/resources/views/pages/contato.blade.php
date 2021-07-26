@@ -45,19 +45,19 @@
       </form>
 
       <div class="right">
-        <img class="image" src="{{supportsWebp() ? asset('images/contato-image.webp') : asset('images/contato-image.png')}}" alt="" title="" class="background-image">
+        <img class="image" src="{{supportsWebp() ? asset('images/contato-image.webp') : asset('images/contato-image.png')}}" alt="{{ __('texts.contato.title') }} | {{ __('texts.application_name') }}" title="{{ __('texts.contato.title') }} | {{ __('texts.application_name') }}" class="background-image">
 
         <div class="social-content">
-          <a href="#" target="_blank" class="social-link">
-            <img src="{{asset('svg/facebook-purple-transparent.svg')}}" class="icon" alt="" title="">
+          <a href="{{env('FACEBOOK_LINK') ?? '#'}}" target="_blank" class="social-link" title="Facebook | {{ __('texts.application_name') }}">
+            <img src="{{asset('svg/facebook-purple-transparent.svg')}}" class="icon" alt="Facebook | {{ __('texts.application_name') }}" title="Facebook | {{ __('texts.application_name') }}">
             <span class="text">/clubeatribuna</span>
           </a>
-          <a href="#" target="_blank" class="social-link">
-            <img src="{{asset('svg/instagram-purple-transparent.svg')}}" class="icon" alt="" title="">
+          <a href="{{env('INSTAGRAM_LINK') ?? '#'}}" target="_blank" class="social-link" title="Instagram | {{ __('texts.application_name') }}">
+            <img src="{{asset('svg/instagram-purple-transparent.svg')}}" class="icon" alt="Instagram | {{ __('texts.application_name') }}" title="Instagram | {{ __('texts.application_name') }}">
             <span class="text">@clubeatribuna</span>
           </a>
-          <a href="#" target="_blank" class="social-link">
-            <img src="{{asset('svg/email-purple-transparent.svg')}}" class="icon" alt="" title="">
+          <a href="{{env('EMAIL_LINK') ?? '#'}}" target="_blank" class="social-link" title="E-mail | {{ __('texts.application_name') }}">
+            <img src="{{asset('svg/email-purple-transparent.svg')}}" class="icon" alt="E-mail | {{ __('texts.application_name') }}" title="E-mail | {{ __('texts.application_name') }}">
             <span class="text">atendimento@grupo-tribuna.com</span>
           </a>
         </div>
@@ -69,14 +69,14 @@
     <h2 class="subtitle">{{ __('texts.contato.location.subtitle') }}</h2>
 
     <div class="location">
-      <img src="{{asset('svg/pin-blue.svg')}}" class="icon" alt="" title="">
+      <img src="{{asset('svg/pin-blue.svg')}}" class="icon" alt="Pin | {{ __('texts.application_name') }}" title="Pin | {{ __('texts.application_name') }}">
       <strong class="city">Santos</strong>
       <span class="endereco">
         RUA JOÃO PESSOA, 329 - CENTRO
         <br />
         SANTOS/SP - 11.013-900
       </span>
-      <a href="https://goo.gl/maps/GN6iQocZyDGgisH6A" target="_blank" class="link"></a>
+      <a href="https://goo.gl/maps/GN6iQocZyDGgisH6A" target="_blank" class="link" title="{{ __('texts.contato.location.subtitle') }} | {{ __('texts.application_name') }}"></a>
     </div>
   </section>
 

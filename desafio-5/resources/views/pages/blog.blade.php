@@ -15,7 +15,7 @@
 
       <form action="{{route('blog')}}" class="right form">
         <label for="pesquisa" class="label">
-          <img src="{{asset('svg/filter.svg')}}" alt="" title="">
+          <img src="{{asset('svg/filter.svg')}}" alt="Filter | {{ __('texts.application_name') }}" title="Filter | {{ __('texts.application_name') }}">
           {{ __('texts.blog.label') }}
         </label>
         <div class="blog-input-group">

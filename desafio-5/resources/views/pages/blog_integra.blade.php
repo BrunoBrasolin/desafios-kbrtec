@@ -12,21 +12,21 @@
   </header>
 
   <figure class="banner-image">
-    <img src="{{$post->thumbnail}}" alt="{{$post->post_title}} | Clube de Assinantes A Tribuna" title="{{$post->post_title}} | Clube de Assinantes A Tribuna">
+    <img src="{{$post->thumbnail}}" alt="{{$post->post_title}} | {{ __('texts.application_name') }}" title="{{$post->post_title}} | {{ __('texts.application_name') }}">
   </figure>
 
   <section class="blog_integra-content">
     {!! $post->post_content !!}
 
     <section class="share-row">
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('blog_integra', $post->slug) }}" class="share-link facebook" target="_blank">
-        <img src="{{asset('svg/facebook-blue.svg')}}" alt="" title="">
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('blog_integra', $post->slug) }}" class="share-link facebook" target="_blank" title="Facebook | {{ __('texts.application_name') }}">
+        <img src="{{asset('svg/facebook-blue.svg')}}" alt="Facebook | {{ __('texts.application_name') }}" title="Facebook | {{ __('texts.application_name') }}">
       </a>
-      <a href="https://twitter.com/intent/tweet?text={{ $post->post_title }}&url={{ route('blog_integra', $post->slug) }}" class="share-link twitter" target="_blank">
-        <img src="{{asset('svg/twitter.svg')}}" alt="" title="">
+      <a href="https://twitter.com/intent/tweet?text={{ $post->post_title }}&url={{ route('blog_integra', $post->slug) }}" class="share-link twitter" target="_blank" title="Twitter | {{ __('texts.application_name') }}">
+        <img src="{{asset('svg/twitter.svg')}}" alt="Twitter | {{ __('texts.application_name') }}" title="Twitter | {{ __('texts.application_name') }}">
       </a>
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ route('blog_integra', $post->slug )}}" class="share-link linkedin" target="_blank">
-        <img src="{{asset('svg/linkedin.svg')}}" alt="" title="">
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ route('blog_integra', $post->slug )}}" class="share-link linkedin" target="_blank" title="LinkedIn | {{ __('texts.application_name') }}">
+        <img src="{{asset('svg/linkedin.svg')}}" alt="LinkedIn | {{ __('texts.application_name') }}" title="LinkedIn | {{ __('texts.application_name') }}">
       </a>
 
       <span class="texto">{{ __('texts.words.share') }}</span>
@@ -39,13 +39,7 @@
 
     <div class="leia-mais-posts">
       @foreach($post_leia_mais as $post)
-        <x-blogitem
-          :thumbnail="$post->thumbnail ?? null" 
-          :post-title="$post->post_title" 
-          :slug="$post->slug" 
-          :post-date="$post->post_date" 
-          extra-class="glide__slide"
-        />
+      <x-blogitem :thumbnail="$post->thumbnail ?? null" :post-title="$post->post_title" :slug="$post->slug" :post-date="$post->post_date" extra-class="glide__slide" />
       @endforeach
     </div>
   </section>

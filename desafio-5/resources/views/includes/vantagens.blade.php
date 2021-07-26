@@ -10,7 +10,7 @@
     <div class="left">
       <div class="group">
         <div class="title-container">
-          <img src="{{asset('svg/calendar.svg')}}" alt="Acesso exclusivo a eventos | Clube de Assinantes A Tribuna" title="Acesso exclusivo a eventos | Clube de Assinantes A Tribuna">
+          <img src="{{asset('svg/calendar.svg')}}" alt="{{ __('texts.includes.vantagens.groups.events.subtitle') }} | {{ __('texts.application_name') }}" title="{{ __('texts.includes.vantagens.groups.events.subtitle') }} | {{ __('texts.application_name') }}">
           <h3 class="subtitle">{{ __('texts.includes.vantagens.groups.events.subtitle') }}</h3>
         </div>
         <p class="desc">{{ __('texts.includes.vantagens.groups.events.desc') }}</p>
@@ -18,7 +18,7 @@
 
       <div class="group">
         <div class="title-container">
-          <img src="{{asset('svg/speaker.svg')}}" alt="Informação a toda hora | Clube de Assinantes A Tribuna" title="Informação a toda hora | Clube de Assinantes A Tribuna">
+          <img src="{{asset('svg/speaker.svg')}}" alt="{{ __('texts.includes.vantagens.groups.information.subtitle') }} | {{ __('texts.application_name') }}" title="{{ __('texts.includes.vantagens.groups.information.subtitle') }} | {{ __('texts.application_name') }}">
           <h3 class="subtitle">{{ __('texts.includes.vantagens.groups.information.subtitle') }}</h3>
         </div>
         <p class="desc">{{ __('texts.includes.vantagens.groups.information.desc') }}</p>
@@ -26,17 +26,17 @@
 
       <div class="group">
         <div class="title-container">
-          <img src="{{asset('svg/digital.svg')}}" alt="Plataforma digital | Clube de Assinantes A Tribuna" title="Plataforma digital | Clube de Assinantes A Tribuna">
+          <img src="{{asset('svg/digital.svg')}}" alt="{{ __('texts.includes.vantagens.groups.digital.subtitle') }} | {{ __('texts.application_name') }}" title="{{ __('texts.includes.vantagens.groups.digital.subtitle') }} | {{ __('texts.application_name') }}">
           <h3 class="subtitle">{{ __('texts.includes.vantagens.groups.digital.subtitle') }}</h3>
         </div>
         <p class="desc">{{ __('texts.includes.vantagens.groups.digital.desc') }}</p>
       </div>
 
-      <a href="#" class="button">{{ __('texts.includes.vantagens.button') }}</a>
+      <a href="#" class="button" title="{{ __('texts.includes.vantagens.button') }} | {{ __('texts.application_name') }}">{{ __('texts.includes.vantagens.button') }}</a>
     </div>
 
     <div class="right">
-      <img src="{{asset('images/vantagem-image.png')}}" alt="Vantagem | Clube de Assinantes A Tribuna" title="Vantagem | Clube de Assinantes A Tribuna">
+      <img src="{{asset('images/vantagem-image.png')}}" alt="{{ __('texts.words.advantages') }} | {{ __('texts.application_name') }}" title="{{ __('texts.words.advantages') }} | {{ __('texts.application_name') }}">
     </div>
   </div>
 </section>
