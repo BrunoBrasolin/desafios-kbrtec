@@ -172,6 +172,11 @@ return [
     ],
   ],
 
+  '404' => [
+    'subtitle' => 'Página não encontrada',
+    'button' => 'Voltar para página inicial',
+  ],
+
   'words' => [
     'share' => 'Comparilhe',
     'category' => 'Categoria',

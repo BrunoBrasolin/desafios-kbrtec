@@ -16,7 +16,7 @@ Route::middleware('language.portuguese')->group(function () {
 });
 
 Route::middleware('language.english')->prefix('en')->group(function () {
-  Route::get('/en', [SiteController::class, 'home'])->name('home');
+  Route::get('/', [SiteController::class, 'home'])->name('home');
   Route::get('/about-us', [SiteController::class, 'sobre'])->name('sobre');
   Route::get('/faq', [SiteController::class, 'faq'])->name('faq');
   Route::get('/be-a-partner', [SiteController::class, 'seja_parceiro'])->name('seja_parceiro');

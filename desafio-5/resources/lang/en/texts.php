@@ -172,6 +172,11 @@ return [
     ],
   ],
 
+  '404' => [
+    'subtitle' => 'Page not found',
+    'button' => 'Back to home page',
+  ],
+
   'words' => [
     'share' => 'Share',
     'category' => 'Category',
