@@ -6,7 +6,8 @@
 
 <main class="descontos_integra-page">
   <header class="topbar">
-    <h1 class="title"></h1>
+    <h1 class="title">{{ __('texts.descontos_integra.title') }}
+    </h1>
   </header>
 
   <section class="content">

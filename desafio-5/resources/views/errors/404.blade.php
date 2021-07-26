@@ -1,6 +1,6 @@
 @extends('layouts.site')
 
-@section('title', 'Página não encontrada')
+@section('title', {{ __('texts.404.subtitle') }})
 
 @section('content')
 
