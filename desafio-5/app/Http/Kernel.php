@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\EnglishLanguage;
 use App\Http\Middleware\PortugueseLanguage;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -64,5 +65,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'language.portuguese' => PortugueseLanguage::class,
+        'language.english' => EnglishLanguage::class,
     ];
 }

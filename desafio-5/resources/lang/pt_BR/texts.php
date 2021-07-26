@@ -75,7 +75,7 @@ return [
 
   'blog_integra' => [
     'leia_mais' => [
-      'title' => 'leia tabém <strong class="strong">outras notícias</strong>',
+      'title' => 'leia também <strong class="strong">outras notícias</strong>',
     ]
   ],
 
