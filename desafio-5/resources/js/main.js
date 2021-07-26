@@ -127,11 +127,40 @@ if (
   });
 }
 
+// Descontos Integra
+
 if (document.querySelector(".descontos_integra-page")) {
   const cep = document.querySelector(".cep").innerHTML;
   document.querySelector(".cep").innerHTML = `${cep.slice(0, 5)}-${cep.slice(
     5
   )}`;
+
+  const whatsapp = document.querySelector(".whatsapp_numero").innerHTML;
+  const phone = document.querySelector(".phone_numero").innerHTML;
+
+  whatsapp.length == 10
+    ? (document.querySelector(
+        ".whatsapp_numero"
+      ).innerHTML = `(${whatsapp.slice(0, 2)}) ${whatsapp.slice(
+        2,
+        6
+      )}-${whatsapp.slice(6)}`)
+    : (document.querySelector(
+        ".whatsapp_numero"
+      ).innerHTML = `(${whatsapp.slice(0, 2)}) ${whatsapp.slice(
+        2,
+        7
+      )}-${whatsapp.slice(7)}`);
+
+  phone.length == 10
+    ? (document.querySelector(".phone_numero").innerHTML = `(${phone.slice(
+        0,
+        2
+      )}) ${phone.slice(2, 6)}-${phone.slice(6)}`)
+    : (document.querySelector(".phone_numero").innerHTML = `(${phone.slice(
+        0,
+        2
+      )}) ${phone.slice(2, 7)}-${phone.slice(7)}`);
 
   const site = document.querySelector(".site-text").innerHTML;
 

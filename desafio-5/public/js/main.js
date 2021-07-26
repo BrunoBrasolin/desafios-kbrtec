@@ -102,11 +102,16 @@ if (document.querySelector(".blog-page") || document.querySelector(".descontos-p
       option.selected = true;
     }
   });
-}
+} // Descontos Integra
+
 
 if (document.querySelector(".descontos_integra-page")) {
   var cep = document.querySelector(".cep").innerHTML;
   document.querySelector(".cep").innerHTML = "".concat(cep.slice(0, 5), "-").concat(cep.slice(5));
+  var whatsapp = document.querySelector(".whatsapp_numero").innerHTML;
+  var phone = document.querySelector(".phone_numero").innerHTML;
+  whatsapp.length == 10 ? document.querySelector(".whatsapp_numero").innerHTML = "(".concat(whatsapp.slice(0, 2), ") ").concat(whatsapp.slice(2, 6), "-").concat(whatsapp.slice(6)) : document.querySelector(".whatsapp_numero").innerHTML = "(".concat(whatsapp.slice(0, 2), ") ").concat(whatsapp.slice(2, 7), "-").concat(whatsapp.slice(7));
+  phone.length == 10 ? document.querySelector(".phone_numero").innerHTML = "(".concat(phone.slice(0, 2), ") ").concat(phone.slice(2, 6), "-").concat(phone.slice(6)) : document.querySelector(".phone_numero").innerHTML = "(".concat(phone.slice(0, 2), ") ").concat(phone.slice(2, 7), "-").concat(phone.slice(7));
   var site = document.querySelector(".site-text").innerHTML;
   document.querySelector(".site-text").innerHTML = site.replace("https://", "").replace("http://", "").replace("www.", "").replace(site.charAt(site.length - 1) == "/" ? "/" : "", "");
 }

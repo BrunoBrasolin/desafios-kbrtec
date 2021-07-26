@@ -54,11 +54,11 @@
         <h3 class="right__title">{{ __('texts.descontos_integra.contato-title') }}</h3>
         <a href="https://api.whatsapp.com/send?phone={{$desconto->whatsapp}}" target="_blank" class="link whatsapp" title="WhatsApp | {{ __('texts.application_name') }}">
           <img src="{{asset('svg/whatsapp-green.svg')}}" alt="WhatsApp | {{ __('texts.application_name') }}" title="WhatsApp | {{ __('texts.application_name') }}">
-          {{$desconto->whatsapp}}
+          <span class="whatsapp_numero">{{$desconto->whatsapp}}</span>
         </a>
         <a href="tel:{{$desconto->telefone}}" target="_blank" class="link telefone" title="{{ __('texts.words.phone') }} | {{ __('texts.application_name') }}">
           <img src="{{asset('svg/phone-call-purple.svg')}}" alt="{{ __('texts.words.phone') }} | {{ __('texts.application_name') }}" title="{{ __('texts.words.phone') }} | {{ __('texts.application_name') }}">
-          {{$desconto->telefone}}
+          <span class="phone_numero">{{$desconto->telefone}}</span>
         </a>
         <a href="{{$desconto->site}}" target="_blank" class="link site" title="Site | {{ __('texts.application_name') }}">
           <img src="{{asset('svg/site.svg')}}" alt="Website | {{ __('texts.application_name') }}" title="Website | {{ __('texts.application_name') }}">
