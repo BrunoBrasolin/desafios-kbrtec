@@ -11,7 +11,7 @@ class SiteController extends Controller
     public function home()
     {
         $posts = Post::type('post')->published()->newest()->get();
-        $descontos = Post::type('desconto')->published()->newest()->get();
+        $descontos = Post::type('desconto')->published()->newest()->take(6)->get();
 
         return view(
             'pages.home',

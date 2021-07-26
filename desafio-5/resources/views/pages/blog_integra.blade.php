@@ -29,16 +29,13 @@
         <img src="{{asset('svg/linkedin.svg')}}" alt="" title="">
       </a>
 
-      <span class="texto">Compartilhe</span>
+      <span class="texto">{{ __('texts.words.share') }}</span>
     </section>
   </section>
 
   <section class="leia-mais">
     <hr class="line">
-    <h2 class="title">
-      leia tabém 
-      <strong class="strong">outras notícias</strong>
-    </h2>
+    <h2 class="title">{!! __('texts.blog_integra.leia_mais.title') !!}</h2>
 
     <div class="leia-mais-posts">
       @foreach($post_leia_mais as $post)

@@ -1,7 +1,7 @@
 <section class="topbar">
   <div class="topbar-content">
     <span class="weather">
-      27° | 22° TEMPO
+      27° | 22° {{ __('texts.words.weather') }}
     </span>
 
     <div class="social-container">

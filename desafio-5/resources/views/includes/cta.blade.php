@@ -1,7 +1,7 @@
 <section class="cta">
   <div class="cta-content">
-    <h2 class="title">Ainda não é sócio do Clube do Assinante a tribuna?</h2>
+    <h2 class="title">{{ __('texts.includes.cta.title') }}</h2>
 
-    <a href="#" class="button">clique aqui e Faça parte do clube</a>
+    <a href="#" class="button">{{ __('texts.includes.cta.button') }}</a>
   </div>
 </section>

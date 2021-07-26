@@ -1,0 +1,50 @@
+.o-clube {
+  background-color: $black;
+
+  .o-clube-content {
+    @extend .container;
+    color: $white;
+
+    .row {
+      display: flex;
+
+      img {
+        flex-shrink: 0;
+        max-width: 200px;
+        transition: 0.2s;
+      }
+
+      .right {
+        margin-left: 4rem;
+
+        .title {
+          margin: 1rem 0 2rem 0;
+          text-transform: uppercase;
+        }
+
+        .desc {
+          font-weight: 300;
+          letter-spacing: 0.5px;
+          line-height: 1.25rem;
+          font-size: 0.85rem;
+        }
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 877px) {
+    .o-clube-content .row {
+      flex-direction: column;
+
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+}

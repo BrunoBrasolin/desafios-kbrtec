@@ -42,6 +42,22 @@
             flex: 1;
           }
 
+          ::-webkit-input-placeholder {
+            text-transform: uppercase;
+          }
+
+          :-moz-placeholder {
+            text-transform: uppercase;
+          }
+
+          ::-moz-placeholder {
+            text-transform: uppercase;
+          }
+
+          :-ms-input-placeholder {
+            text-transform: uppercase;
+          }
+
           .button {
             text-transform: uppercase;
             font-weight: 700;

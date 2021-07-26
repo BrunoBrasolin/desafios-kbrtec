@@ -6,17 +6,17 @@
 
 <main class="blog-page">
   <header class="topbar">
-    <h1 class="title">Blog</h1>
+    <h1 class="title">{{ __('texts.blog.title') }}</h1>
   </header>
 
   <div class="content">
     <header class="content-header">
-      <h2 class="subtitle">Acompanhe as notícias do clube</h2>
+      <h2 class="subtitle">{{ __('texts.blog.subtitle') }}</h2>
 
       <form action="{{route('blog')}}" class="right form">
         <label for="pesquisa" class="label">
           <img src="{{asset('svg/filter.svg')}}" alt="" title="">
-          O que você procura?
+          {{ __('texts.blog.label') }}
         </label>
         <div class="blog-input-group">
           <input type="text" name="pesquisa" id="pesquisa" class="input">
@@ -24,7 +24,7 @@
         </div>
 
         <select class="custom-select blog-input-group" name="categoria">
-          <option value="" selected>Categoria</option>
+          <option value="" selected>{{ __('texts.words.category') }}</option>
           @foreach($categories as $category)
           <option value="{{$category->slug}}">{{$category->name}}</option>
           @endforeach

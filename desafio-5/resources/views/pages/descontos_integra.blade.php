@@ -6,7 +6,7 @@
 
 <main class="descontos_integra-page">
   <header class="topbar">
-    <h1 class="title">Descontos</h1>
+    <h1 class="title"></h1>
   </header>
 
   <section class="content">
@@ -24,10 +24,10 @@
           <span class="desconto-title__number">
             {{$desconto->desconto}}%
           </span>
-          de desconto
+          {{ __('texts.descontos_integra.desconto.title') }}
         </h3>
 
-        <a href="{{URL::previous()}}" class="button">Voltar</a>
+        <a href="{{URL::previous()}}" class="button">{{ __('texts.descontos_integra.button') }}</a>
       </div>
     </header>
 
@@ -36,7 +36,7 @@
     <section class="content__bottom">
       <div class="left">
         @if($desconto->regras)
-        <h3 class="left__title">Regras de uso</h3>
+        <h3 class="left__title">{{ __('texts.descontos_integra.rules.title') }}</h3>
         <div class="regras">
           <p class="desc">
             {!! nl2br($desconto->acf->regras) !!}
@@ -44,13 +44,13 @@
         </div>
         @endif
 
-        <a href="#" class="button">Para acessar o cupom Clique aqui</a>
+        <a href="#" class="button">{{ __('texts.descontos_integra.rules.button') }}</a>
       </div>
 
       <div class="right">
-        <h3 class="right__title">Onde estamos</h3>
+        <h3 class="right__title">{{ __('texts.descontos_integra.endereco-title') }}</h3>
         <a href="https://goo.gl/maps/GN6iQocZyDGgisH6A" target="_blank" class="endereco">{{$desconto->logradouro}} - {{$desconto->bairro}}/{{$desconto->estado}}, <span class="cep">{{$desconto->cep}}</span></a>
-        <h3 class="right__title">Fale conosco</h3>
+        <h3 class="right__title">{{ __('texts.descontos_integra.contato-title') }}</h3>
         <a href="https://api.whatsapp.com/send?phone={{$desconto->whatsapp}}" target="_blank" class="link whatsapp">
           <img src="{{asset('svg/whatsapp-green.svg')}}" alt="" title="">
           {{$desconto->whatsapp}}
@@ -79,7 +79,7 @@
             <img src="{{asset('svg/instagram-purple.svg')}}" alt="" title="">
           </a>
           @endif
-          <span class="text">#acompanhe-nos</span>
+          <span class="text">{{ __('texts.descontos_integra.social.text') }}</span>
         </div>
       </div>
     </section>

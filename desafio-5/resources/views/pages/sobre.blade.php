@@ -6,7 +6,9 @@
 
 <main class="sobre-page">
 
-  @include('includes.o-clube-vantagens')
+  @include('includes.o-clube')
+
+  @include('includes.vantagens')
 
   @include('includes.descontos')
 

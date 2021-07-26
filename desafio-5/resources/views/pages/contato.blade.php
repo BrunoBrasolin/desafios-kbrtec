@@ -7,28 +7,25 @@
 <main class="contato-page">
 
   <section class="top-content">
-    <h1 class="title">Contato</h1>
+    <h1 class="title">{{ __('texts.contato.title') }}</h1>
 
     <div class="row">
       <form class="left form">
-        <h2 class="subtitle">
-          fale com o <br />
-          CLUBE do assinante a tribuna
-        </h2>
+        <h2 class="subtitle">{!! __('texts.contato.subtitle') !!}</h2>
 
         <div class="input-group">
-          <label for="nome" class="label">Nome:</label>
+          <label for="nome" class="label">{{ __('texts.words.name') }}:</label>
           <input type="text" class="input" id="nome">
         </div>
 
         <div class="input-row">
           <div class="input-group">
-            <label for="responsavel" class="label">Responsável:</label>
+            <label for="responsavel" class="label">{{ __('texts.words.responsible') }}:</label>
             <input type="text" class="input" id="responsavel">
           </div>
 
           <div class="input-group">
-            <label for="telefone" class="label">Telefone:</label>
+            <label for="telefone" class="label">{{ __('texts.words.phone') }}:</label>
             <input type="text" class="input" id="telefone">
           </div>
         </div>
@@ -39,11 +36,11 @@
         </div>
 
         <div class="input-group">
-          <label for="mensagem" class="label">Mensagem:</label>
+          <label for="mensagem" class="label">{{ __('texts.words.message') }}:</label>
           <textarea id="mensagem" class="input textarea" rows="6"></textarea>
         </div>
 
-        <button type="submit" class="form-button">Enviar</button>
+        <button type="submit" class="form-button">{{ __('texts.words.sent') }}</button>
 
       </form>
 
@@ -69,7 +66,7 @@
   </section>
 
   <section class="bottom-content">
-    <h2 class="subtitle">Onde estamos?</h2>
+    <h2 class="subtitle">{{ __('texts.contato.location.subtitle') }}</h2>
 
     <div class="location">
       <img src="{{asset('svg/pin-blue.svg')}}" class="icon" alt="" title="">
