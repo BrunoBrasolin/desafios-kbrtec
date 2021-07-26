@@ -51,7 +51,7 @@ class SiteController extends Controller
                 $query->where('post_title', 'LIKE', '%' . $request->pesquisa . '%');
             if (isset($request->categoria))
                 $query->taxonomy('category', $request->categoria);
-        })->newest()->paginate(2);
+        })->newest()->paginate(9, ['*'], 'pagina');
 
 
         $categories = Taxonomy::where('taxonomy', 'category')->whereHas('posts', function ($query) {
@@ -91,7 +91,7 @@ class SiteController extends Controller
                 $query->where('post_title', 'LIKE', '%' . $request->pesquisa . '%');
             if (isset($request->categoria))
                 $query->taxonomy('category', $request->categoria);
-        })->newest()->paginate(9);
+        })->newest()->paginate(9, ['*'], 'pagina');
 
         $categories = Taxonomy::where('taxonomy', 'category')->whereHas('posts', function ($query) {
             $query->where('post_type', 'desconto');

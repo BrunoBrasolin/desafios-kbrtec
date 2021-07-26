@@ -48,7 +48,7 @@
       @endforeach
     </ul>
 
-
+    {{$descontos->links('includes.pagination')}}
 
 </main>
 
