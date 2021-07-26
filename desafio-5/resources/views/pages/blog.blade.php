@@ -26,7 +26,7 @@
         <select class="custom-select blog-input-group" name="categoria">
           <option value="" selected>Categoria</option>
           @foreach($categories as $category)
-            <option value="{{$category->slug}}">{{$category->name}}</option>
+          <option value="{{$category->slug}}">{{$category->name}}</option>
           @endforeach
         </select>
       </form>
@@ -34,16 +34,13 @@
 
     <ul class="posts">
       @foreach ($posts as $post)
-        <x-blogitem
-          :thumbnail="$post->thumbnail ?? null" 
-          :post-title="$post->post_title" 
-          :slug="$post->slug" 
-          :post-date="$post->post_date" 
-          extra-class="glide__slide"
-        />
+      <x-blogitem :thumbnail="$post->thumbnail ?? null" :post-title="$post->post_title" :slug="$post->slug" :post-date="$post->post_date" extra-class="glide__slide" />
       @endforeach
     </ul>
+
+    {{$posts->links('includes.pagination')}}
   </div>
+
 </main>
 
 @endsection
