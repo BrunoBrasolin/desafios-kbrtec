@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: space-between;
   margin-top: -40px;
-  position: relative;
   font-size: 0.8rem;
   text-transform: uppercase;
   font-weight: 525;
@@ -17,6 +16,7 @@
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
+    position: relative;
 
     .logo {
       background-color: $white;
