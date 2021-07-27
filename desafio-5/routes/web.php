@@ -15,7 +15,7 @@ Route::middleware('language.portuguese')->group(function () {
   Route::get('/descontos/{slug}', [SiteController::class, 'descontos_integra'])->name('descontos_integra');
 });
 
-Route::middleware('language.english')->prefix('en')->group(function () {
+Route::middleware('language.english')->prefix('en')->name('en.')->group(function () {
   Route::get('/', [SiteController::class, 'home'])->name('home');
   Route::get('/about-us', [SiteController::class, 'sobre'])->name('sobre');
   Route::get('/faq', [SiteController::class, 'faq'])->name('faq');

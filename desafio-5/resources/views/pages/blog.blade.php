@@ -1,3 +1,11 @@
+@php
+$lang = app()->getLocale();
+if($lang == 'en')
+$prefix = 'en.';
+else if ($lang == 'pt_BR')
+$prefix = '';
+@endphp
+
 @extends('layouts.site')
 
 @section('title', __('texts.blog.title') )
@@ -13,7 +21,7 @@
     <header class="content-header">
       <h2 class="subtitle">{{ __('texts.blog.subtitle') }}</h2>
 
-      <form action="{{route('blog')}}" class="right form">
+      <form action="{{route($prefix . 'blog')}}" class="right form">
         <label for="pesquisa" class="label">
           <img src="{{asset('svg/filter.svg')}}" alt="Filter | {{ __('texts.application_name') }}" title="Filter | {{ __('texts.application_name') }}">
           {{ __('texts.blog.label') }}

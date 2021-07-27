@@ -1,3 +1,11 @@
+@php
+$lang = app()->getLocale();
+if($lang == 'en')
+$prefix = 'en.';
+else if ($lang == 'pt_BR')
+$prefix = '';
+@endphp
+
 @extends('layouts.site')
 
 @section('meta-tag')
@@ -33,13 +41,13 @@
     {!! $post->post_content !!}
 
     <section class="share-row">
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('blog_integra', $post->slug) }}" class="share-link facebook" target="_blank" title="Facebook | {{ __('texts.application_name') }}">
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ route($prefix . 'blog_integra', $post->slug) }}" class="share-link facebook" target="_blank" title="Facebook | {{ __('texts.application_name') }}">
         <img src="{{asset('svg/facebook-blue.svg')}}" alt="Facebook | {{ __('texts.application_name') }}" title="Facebook | {{ __('texts.application_name') }}">
       </a>
-      <a href="https://twitter.com/intent/tweet?text={{ $post->post_title }}&url={{ route('blog_integra', $post->slug) }}" class="share-link twitter" target="_blank" title="Twitter | {{ __('texts.application_name') }}">
+      <a href="https://twitter.com/intent/tweet?text={{ $post->post_title }}&url={{ route($prefix . 'blog_integra', $post->slug) }}" class="share-link twitter" target="_blank" title="Twitter | {{ __('texts.application_name') }}">
         <img src="{{asset('svg/twitter.svg')}}" alt="Twitter | {{ __('texts.application_name') }}" title="Twitter | {{ __('texts.application_name') }}">
       </a>
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ route('blog_integra', $post->slug )}}" class="share-link linkedin" target="_blank" title="LinkedIn | {{ __('texts.application_name') }}">
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ route($prefix . 'blog_integra', $post->slug )}}" class="share-link linkedin" target="_blank" title="LinkedIn | {{ __('texts.application_name') }}">
         <img src="{{asset('svg/linkedin.svg')}}" alt="LinkedIn | {{ __('texts.application_name') }}" title="LinkedIn | {{ __('texts.application_name') }}">
       </a>
 

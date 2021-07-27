@@ -1,3 +1,11 @@
+@php
+$lang = app()->getLocale();
+if($lang == 'en')
+$prefix = 'en.';
+else if ($lang == 'pt_BR')
+$prefix = '';
+@endphp
+
 @extends('layouts.site')
 
 @section('title', __('texts.descontos.title') )
@@ -13,7 +21,7 @@
     <header class="content__header">
       <h2 class="subtitle">{!! __('texts.descontos.subtitle') !!}</h2>
 
-      <form action="{{route('descontos')}}" class="right form">
+      <form action="{{route($prefix . 'descontos')}}" class="right form">
         <select class="custom-select descontos-input-group" name="categoria">
           <option value="" selected>{{ __('texts.words.category') }}</option>
           @foreach($categories as $category)
