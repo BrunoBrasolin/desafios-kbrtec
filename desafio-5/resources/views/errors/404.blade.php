@@ -1,3 +1,11 @@
+@php
+$lang = app()->getLocale();
+if($lang == 'en')
+$prefix = 'en.';
+else if ($lang == 'pt_BR')
+$prefix = '';
+@endphp
+
 @extends('layouts.site')
 
 @section('title', __('texts.404.subtitle') )

@@ -1,0 +1,39 @@
+.descontos-page-topbar {
+  background: linear-gradient(96.21deg, #8345c0 2.61%, #5846be 99.5%);
+
+  .title {
+    text-align: center;
+    color: $white;
+    text-transform: uppercase;
+    padding: 2.5rem 0;
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 50%;
+      height: 3px;
+      background-color: $dark-purple;
+      position: absolute;
+      top: calc(50% - 1.5px);
+      right: 0;
+    }
+
+    @media screen and (min-width: 1050px) {
+      &::before {
+        $size: 100px;
+        content: "";
+        background-image: url("../svg/percentage-white-gradient.svg");
+        background-size: $size;
+        position: absolute;
+        height: $size;
+        width: $size;
+        top: 50%;
+        background-repeat: no-repeat;
+        left: -125px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

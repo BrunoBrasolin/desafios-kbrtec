@@ -503,10 +503,9 @@
           color: $black;
           font-weight: 600;
           margin-top: 4rem;
-          transition: 0.2s;
+          transition: 0.5s;
 
           &:hover {
-            transform: scale(1.05);
             box-shadow: 0 2.5px 20px rgba($light-blue, 0.8);
           }
         }
@@ -619,6 +618,44 @@
   @media screen and (min-width: 1260px) {
     .conveniados .glide-conveniados .glide__controls .arrow {
       position: absolute;
+    }
+  }
+
+  @media screen and (min-width: 1051px) {
+    .calculadora .calculadora-content {
+      position: relative;
+
+      &::before {
+        content: "";
+        background-image: url("../images/logo-white.png");
+        background-size: auto 100%;
+        position: absolute;
+        opacity: 0.2;
+        height: 100%;
+        width: 710px;
+        right: 112%;
+        top: 0;
+        background-repeat: no-repeat;
+      }
+
+      .button {
+        position: relative;
+
+        &::after {
+          $size: 100px;
+          content: "";
+          background-image: url("../images/logo-white.png");
+          background-size: $size;
+          position: absolute;
+          opacity: 0.2;
+          height: $size;
+          width: $size;
+          top: 50%;
+          right: 110%;
+          transform: translateY(-50%);
+          background-repeat: no-repeat;
+        }
+      }
     }
   }
 

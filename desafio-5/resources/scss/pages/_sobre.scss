@@ -1,0 +1,19 @@
+.sobre-page {
+  .vantagens .vantagens-content .right {
+    @media screen and (min-width: 1200px) {
+      overflow: visible;
+      position: relative;
+
+      &::after {
+        content: "";
+        height: 88.1%;
+        width: 75%;
+        background-color: $dark-purple;
+        position: absolute;
+        bottom: -10%;
+        right: -10%;
+        z-index: -1;
+      }
+    }
+  }
+}
