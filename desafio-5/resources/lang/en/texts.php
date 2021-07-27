@@ -78,7 +78,8 @@ return [
   'blog_integra' => [
     'leia_mais' => [
       'title' => 'also read <strong class="strong">other news</strong>',
-    ]
+    ],
+    'sem_traducao' => 'Looks like this post hasn\'t been translated yet.'
   ],
 
   'blog' => [
@@ -141,11 +142,11 @@ return [
     ],
     'navbar' => [
       'descontos' => 'Discounts',
-      'faq' => 'faq',
-      'seja_parceiro' => 'be a partner',
-      'sobre' => 'about us',
-      'contato' => 'contact',
-      'blog' => 'blog',
+      'faq' => 'FAQ',
+      'seja_parceiro' => 'Be a Partner',
+      'sobre' => 'About Us',
+      'contato' => 'Contact',
+      'blog' => 'Blog',
       'button' => [
         'link' => 'join the club',
         'helper' => 'sign here'

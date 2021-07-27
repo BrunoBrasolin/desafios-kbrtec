@@ -60,10 +60,7 @@
 
     .subtitle {
       font-size: 1.05rem;
-
-      .link {
-        color: $black;
-      }
+      color: $black;
     }
 
     .button {
@@ -93,7 +90,7 @@
         background-color: #8566e8;
       }
 
-      .subtitle .link {
+      .subtitle {
         color: $white;
       }
     }

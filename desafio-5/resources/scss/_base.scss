@@ -51,3 +51,10 @@ button,
 input[type="submit"] {
   cursor: pointer;
 }
+
+@media screen and (max-width: 500px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+}

@@ -43,7 +43,14 @@ $prefix = '';
 
     <ul class="posts">
       @foreach ($posts as $post)
-      <x-blogitem :thumbnail="$post->thumbnail ?? null" :post-title="$post->post_title" :slug="$post->slug" :post-date="$post->post_date" extra-class="glide__slide" />
+      @php
+      if($lang == 'en')
+      $postTitle = $post->english_title != '' ? $post->english_title : $post->post_title;
+      elseif ($lang == 'pt_BR')
+      $postTitle = $post->post_title;
+      @endphp
+
+      <x-blogitem :thumbnail="$post->thumbnail ?? null" :post-title="$postTitle" :slug="$post->slug" :post-date="$post->post_date" extra-class="glide__slide" />
       @endforeach
     </ul>
 

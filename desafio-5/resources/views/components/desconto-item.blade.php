@@ -8,13 +8,15 @@ $prefix = '';
 
 <li class="{{$extra_class}} desconto-item">
     <figure class="image-contaienr">
-        <img src="{{asset('/images/o-made-cozinha.jpg')}}" alt="{{$post_title}} | {{ __('texts.application_name') }}" title="{{$post_title}} | {{ __('texts.application_name') }}">
+        <img src="{{$image}}" alt="{{$post_title}} | {{ __('texts.application_name') }}" title="{{$post_title}} | {{ __('texts.application_name') }}">
         <span class="percentage">{{$desconto}}%</span>
     </figure>
     <h3 class="subtitle">{{$post_title}}</h3>
     <p class="desc">{{$subtitulo}}</p>
 
-    <a href="{{route($prefix . 'descontos_integra', $slug)}}" class="button" title="{{$post_title}} | {{ __('texts.application_name') }}">
+    <span class="button">
         <i data-feather="plus"></i>
-    </a>
+    </span>
+
+    <a href="{{route($prefix . 'descontos_integra', $slug)}}" title="{{$post_title}} | {{ __('texts.application_name') }}" class="stretch-link"></a>
 </li>

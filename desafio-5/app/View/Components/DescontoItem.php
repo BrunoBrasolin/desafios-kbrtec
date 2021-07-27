@@ -20,7 +20,7 @@ class DescontoItem extends Component
      *
      * @return void
      */
-    public function __construct($image = null, $postTitle, $slug, $subtitulo = null, $desconto, $extraClass = null)
+    public function __construct($image, $postTitle, $slug, $subtitulo = null, $desconto, $extraClass = null)
     {
         $this->image = $image;
         $this->post_title = $postTitle;

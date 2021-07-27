@@ -123,7 +123,7 @@
       <div data-glide-el="track" class="glide__track">
         <ul class="glide__slides">
           @foreach($descontos as $desconto)
-          <x-descontoitem :post-title="$desconto->post_title" :subtitulo="$desconto->subtitulo" :slug="$desconto->slug" :desconto="$desconto->desconto" extra-class="glide__slide" />
+          <x-descontoitem :image="$desconto->acf->foto_principal->url" :post-title="$desconto->post_title" :subtitulo="$desconto->subtitulo" :slug="$desconto->slug" :desconto="$desconto->desconto" extra-class="glide__slide" />
           @endforeach
         </ul>
       </div>

@@ -10,8 +10,8 @@ class SiteController extends Controller
 {
     public function home()
     {
-        $posts = Post::type('post')->published()->newest()->get();
-        $descontos = Post::type('desconto')->published()->newest()->take(6)->get();
+        $posts = Post::type('post')->published()->newest()->take(10)->get();
+        $descontos = Post::type('desconto')->published()->newest()->take(12)->get();
 
         return view(
             'pages.home',

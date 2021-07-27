@@ -18,6 +18,37 @@ document.querySelector(".navbar .icon").addEventListener("click", function () {
       }, 300);
     }
   });
+});
+var xhr = new XMLHttpRequest();
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(setLocation);
+  } else {
+    x.innerHTML = "Geolocation não suportada.";
+  }
+}
+
+var latitude = 0;
+var longitude = 0;
+
+function setLocation(position) {
+  var url = "https://api.openweathermap.org/data/2.5/weather?lat=".concat(position.coords.latitude, "&lon=").concat(position.coords.longitude, "&appid=dc434a23daedb9ef257f2f93954ee237&units=metric&lang=pt_br");
+  xhr.open("GET", url);
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      var response = JSON.parse(xhr.responseText);
+      document.querySelector(".weather-min").innerHTML = response.main.temp_min;
+      document.querySelector(".weather-max").innerHTML = response.main.temp_max;
+    }
+  };
+
+  xhr.send();
+}
+
+window.addEventListener("load", function (event) {
+  getLocation();
 }); // Home
 
 if (document.querySelector(".home-page")) {
@@ -53,7 +84,15 @@ if (document.querySelector(".home-page")) {
     type: "slider",
     perView: 3,
     gap: 20,
-    infinite: false
+    infinite: false,
+    breakpoints: {
+      877: {
+        perView: 2
+      },
+      550: {
+        perView: 1
+      }
+    }
   };
   new Glide(".glide-noticias", glideNoticiasConfig).mount();
   var glideDescontosConfig = {
@@ -106,12 +145,31 @@ if (document.querySelector(".blog-page") || document.querySelector(".descontos-p
 
 
 if (document.querySelector(".descontos_integra-page")) {
-  var cep = document.querySelector(".cep").innerHTML;
-  document.querySelector(".cep").innerHTML = "".concat(cep.slice(0, 5), "-").concat(cep.slice(5));
-  var whatsapp = document.querySelector(".whatsapp_numero").innerHTML;
-  var phone = document.querySelector(".phone_numero").innerHTML;
-  whatsapp.length == 10 ? document.querySelector(".whatsapp_numero").innerHTML = "(".concat(whatsapp.slice(0, 2), ") ").concat(whatsapp.slice(2, 6), "-").concat(whatsapp.slice(6)) : document.querySelector(".whatsapp_numero").innerHTML = "(".concat(whatsapp.slice(0, 2), ") ").concat(whatsapp.slice(2, 7), "-").concat(whatsapp.slice(7));
-  phone.length == 10 ? document.querySelector(".phone_numero").innerHTML = "(".concat(phone.slice(0, 2), ") ").concat(phone.slice(2, 6), "-").concat(phone.slice(6)) : document.querySelector(".phone_numero").innerHTML = "(".concat(phone.slice(0, 2), ") ").concat(phone.slice(2, 7), "-").concat(phone.slice(7));
-  var site = document.querySelector(".site-text").innerHTML;
-  document.querySelector(".site-text").innerHTML = site.replace("https://", "").replace("http://", "").replace("www.", "").replace(site.charAt(site.length - 1) == "/" ? "/" : "", "");
+  var htmlCep = document.querySelector(".cep");
+
+  if (htmlCep) {
+    var cep = htmlCep.innerHTML;
+    htmlCep.innerHTML = "".concat(cep.slice(0, 5), "-").concat(cep.slice(5));
+  }
+
+  var htmlWhatsapp = document.querySelector(".whatsapp_numero");
+
+  if (htmlWhatsapp) {
+    var whatsapp = htmlWhatsapp.innerHTML;
+    whatsapp.length == 10 ? document.querySelector(".whatsapp_numero").innerHTML = "(".concat(whatsapp.slice(0, 2), ") ").concat(whatsapp.slice(2, 6), "-").concat(whatsapp.slice(6)) : document.querySelector(".whatsapp_numero").innerHTML = "(".concat(whatsapp.slice(0, 2), ") ").concat(whatsapp.slice(2, 7), "-").concat(whatsapp.slice(7));
+  }
+
+  var htmlPhone = document.querySelector(".phone_numero");
+
+  if (htmlPhone) {
+    var phone = htmlPhone.innerHTML;
+    phone.length == 10 ? htmlPhone.innerHTML = "(".concat(phone.slice(0, 2), ") ").concat(phone.slice(2, 6), "-").concat(phone.slice(6)) : htmlPhone.innerHTML = "(".concat(phone.slice(0, 2), ") ").concat(phone.slice(2, 7), "-").concat(phone.slice(7));
+  }
+
+  var htmlSite = document.querySelector(".site-text");
+
+  if (htmlSite) {
+    var site = htmlSite.innerHTML;
+    htmlSite.innerHTML = site.replace("https://", "").replace("http://", "").replace("www.", "").replace(site.charAt(site.length - 1) == "/" ? "/" : "", "");
+  }
 }

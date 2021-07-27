@@ -1,3 +1,11 @@
+@php
+$lang = app()->getLocale();
+if($lang == 'en')
+$prefix = 'en.';
+else if ($lang == 'pt_BR')
+$prefix = '';
+@endphp
+
 <section class="descontos">
   <div class="left">
     <h2 class="title">{!! __('texts.includes.descontos.title') !!}</h2>
@@ -9,82 +17,21 @@
     <div class="glide glide-descontos">
       <div data-glide-el="track" class="glide__track">
         <ul class="glide__slides">
+          @foreach( $descontos as $desconto)
+          @if($loop->iteration == 1 || $loop->iteration == 6)
           <li class="glide__slide">
+            @endif
             <div class="desconto-item">
               <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-1.png')}}" alt="" title="">
+                <img src="{{$desconto->acf->logo->url}}" alt="{{ $desconto->post_title }} | {{ __('texts.application_name') }}" title="{{ $desconto->post_title }} | {{ __('texts.application_name') }}">
               </figure>
-              <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '5']) }}</p>
+              <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => $desconto->desconto]) }}</p>
+              <a href="{{route($prefix . 'descontos_integra', $desconto->slug)}}" title="{{$desconto->post_title}} | {{ __('texts.application_name') }}" class="stretch-link"></a>
             </div>
-            <div class="desconto-item">
-              <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-2.png')}}" alt="" title="">
-              </figure>
-              <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '8']) }}</p>
-            </div>
-            <div class="desconto-item">
-              <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-3.png')}}" alt="" title="">
-              </figure>
-              <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '0']) }}</p>
-            </div>
-            <div class="desconto-item">
-              <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-4.png')}}" alt="" title="">
-              </figure>
-              <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '3']) }}</p>
-            </div>
-            <div class="desconto-item">
-              <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-5.png')}}" alt="" title="">
-              </figure>
-              <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '4']) }}</p>
-            </div>
-            <div class="desconto-item">
-              <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-6.png')}}" alt="" title="">
-              </figure>
-              <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '0']) }}</p>
-            </div>
+            @if($loop->iteration == 6 || $loop->iteration == 12)
           </li>
-          <li class="glide__slide">
-            <div class="desconto-item">
-              <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-1.png')}}" alt="" title="">
-              </figure>
-              <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '5']) }}</p>
-            </div>
-            <div class="desconto-item">
-              <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-2.png')}}" alt="" title="">
-              </figure>
-              <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '8']) }}</p>
-            </div>
-            <div class="desconto-item">
-              <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-3.png')}}" alt="" title="">
-              </figure>
-              <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '0']) }}</p>
-            </div>
-            <div class="desconto-item">
-              <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-4.png')}}" alt="" title="">
-              </figure>
-              <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '3']) }}</p>
-            </div>
-            <div class="desconto-item">
-              <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-5.png')}}" alt="" title="">
-              </figure>
-              <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '4']) }}</p>
-            </div>
-            <div class="desconto-item">
-              <figure class="logo-container">
-                <img src="{{asset('/images/logos/logo-6.png')}}" alt="" title="">
-              </figure>
-              <p class="desc">{{ __('texts.includes.descontos.item.desc', ['percentage' => '0']) }}</p>
-            </div>
-          </li>
+          @endif
+          @endforeach
         </ul>
       </div>
       <div data-glide-el="controls" class="arrows">

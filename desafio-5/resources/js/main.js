@@ -22,6 +22,40 @@ document.querySelector(".navbar .icon").addEventListener("click", () => {
   });
 });
 
+const xhr = new XMLHttpRequest();
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(setLocation);
+  } else {
+    x.innerHTML = "Geolocation não suportada.";
+  }
+}
+
+let latitude = 0;
+let longitude = 0;
+
+function setLocation(position) {
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=dc434a23daedb9ef257f2f93954ee237&units=metric&lang=pt_br`;
+
+  xhr.open("GET", url);
+
+  xhr.onreadystatechange = () => {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      const response = JSON.parse(xhr.responseText);
+      document.querySelector(".weather-min").innerHTML =
+        response.main.temp_min;
+
+      document.querySelector(".weather-max").innerHTML =
+        response.main.temp_max;
+    }
+  };
+  xhr.send();
+}
+window.addEventListener("load", (event) => {
+  getLocation();
+});
+
 // Home
 if (document.querySelector(".home-page")) {
   document.querySelectorAll(".phone .group").forEach((group) =>
@@ -66,6 +100,14 @@ if (document.querySelector(".home-page")) {
     perView: 3,
     gap: 20,
     infinite: false,
+    breakpoints: {
+      877: {
+        perView: 2,
+      },
+      550: {
+        perView: 1,
+      },
+    },
   };
 
   new Glide(".glide-noticias", glideNoticiasConfig).mount();
@@ -130,43 +172,53 @@ if (
 // Descontos Integra
 
 if (document.querySelector(".descontos_integra-page")) {
-  const cep = document.querySelector(".cep").innerHTML;
-  document.querySelector(".cep").innerHTML = `${cep.slice(0, 5)}-${cep.slice(
-    5
-  )}`;
+  const htmlCep = document.querySelector(".cep");
+  if (htmlCep) {
+    const cep = htmlCep.innerHTML;
+    htmlCep.innerHTML = `${cep.slice(0, 5)}-${cep.slice(5)}`;
+  }
 
-  const whatsapp = document.querySelector(".whatsapp_numero").innerHTML;
-  const phone = document.querySelector(".phone_numero").innerHTML;
+  const htmlWhatsapp = document.querySelector(".whatsapp_numero");
+  if (htmlWhatsapp) {
+    const whatsapp = htmlWhatsapp.innerHTML;
+    whatsapp.length == 10
+      ? (document.querySelector(
+          ".whatsapp_numero"
+        ).innerHTML = `(${whatsapp.slice(0, 2)}) ${whatsapp.slice(
+          2,
+          6
+        )}-${whatsapp.slice(6)}`)
+      : (document.querySelector(
+          ".whatsapp_numero"
+        ).innerHTML = `(${whatsapp.slice(0, 2)}) ${whatsapp.slice(
+          2,
+          7
+        )}-${whatsapp.slice(7)}`);
+  }
 
-  whatsapp.length == 10
-    ? (document.querySelector(
-        ".whatsapp_numero"
-      ).innerHTML = `(${whatsapp.slice(0, 2)}) ${whatsapp.slice(
-        2,
-        6
-      )}-${whatsapp.slice(6)}`)
-    : (document.querySelector(
-        ".whatsapp_numero"
-      ).innerHTML = `(${whatsapp.slice(0, 2)}) ${whatsapp.slice(
-        2,
-        7
-      )}-${whatsapp.slice(7)}`);
+  const htmlPhone = document.querySelector(".phone_numero");
+  if (htmlPhone) {
+    const phone = htmlPhone.innerHTML;
 
-  phone.length == 10
-    ? (document.querySelector(".phone_numero").innerHTML = `(${phone.slice(
-        0,
-        2
-      )}) ${phone.slice(2, 6)}-${phone.slice(6)}`)
-    : (document.querySelector(".phone_numero").innerHTML = `(${phone.slice(
-        0,
-        2
-      )}) ${phone.slice(2, 7)}-${phone.slice(7)}`);
+    phone.length == 10
+      ? (htmlPhone.innerHTML = `(${phone.slice(0, 2)}) ${phone.slice(
+          2,
+          6
+        )}-${phone.slice(6)}`)
+      : (htmlPhone.innerHTML = `(${phone.slice(0, 2)}) ${phone.slice(
+          2,
+          7
+        )}-${phone.slice(7)}`);
+  }
 
-  const site = document.querySelector(".site-text").innerHTML;
+  const htmlSite = document.querySelector(".site-text");
+  if (htmlSite) {
+    const site = htmlSite.innerHTML;
 
-  document.querySelector(".site-text").innerHTML = site
-    .replace("https://", "")
-    .replace("http://", "")
-    .replace("www.", "")
-    .replace(site.charAt(site.length - 1) == "/" ? "/" : "", "");
+    htmlSite.innerHTML = site
+      .replace("https://", "")
+      .replace("http://", "")
+      .replace("www.", "")
+      .replace(site.charAt(site.length - 1) == "/" ? "/" : "", "");
+  }
 }

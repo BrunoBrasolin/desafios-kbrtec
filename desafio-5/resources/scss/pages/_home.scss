@@ -250,6 +250,7 @@
                 font-size: 1.1rem;
                 font-weight: 500;
                 margin: 1rem 0 0.15rem 0;
+                text-align: center;
               }
 
               .helper {
@@ -362,6 +363,7 @@
 
   .conveniados {
     @extend .container;
+    padding-bottom: 0;
 
     .title {
       text-align: center;
@@ -376,6 +378,10 @@
     }
 
     .glide-conveniados {
+      .glide__slides {
+        padding: 3rem 0;
+      }
+
       .glide__controls {
         display: flex;
         align-items: center;
@@ -421,11 +427,15 @@
     }
 
     .glide-noticias {
+      .glide__slides {
+        padding: 3rem 0;
+      }
+
       .glide__bullets {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 2rem 0;
+        margin-bottom: 2rem;
 
         .glide__bullet {
           height: 15px;
@@ -777,6 +787,40 @@
       .right {
         width: 100%;
         max-width: 500px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .banner .banner-content .row .col .texts .text {
+      font-size: 1rem;
+    }
+
+    .phone .phone-content .row .col.left .group .title,
+    .home-page .phone .phone-content .row .col.right .group .title {
+      font-size: 1rem;
+    }
+
+    .calculadora .calculadora-content .right .calculadora-row {
+      flex-direction: column;
+      align-items: center;
+
+      .title-container {
+        width: 100%;
+        
+        img {
+          margin-right: 0.5rem;
+        }
+
+        .gasto-title {
+          margin-left: 0.5rem;
+        }
+      }
+
+      .calculadora-input-group {
+        width: 50%;
+        min-width: 170px;
+        margin-top: 1rem;
       }
     }
   }

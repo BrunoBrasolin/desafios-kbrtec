@@ -4,25 +4,40 @@ if($lang == 'en')
 $prefix = 'en.';
 else if ($lang == 'pt_BR')
 $prefix = '';
+
+$semTraducao = false;
+
+if($lang == 'en')
+{
+$postTitle = $post->english_title != '' ? $post->english_title : $post->post_title;
+if($post->english_content == '') $semTraducao = true;
+$postContent = $post->english_content != '' ? $post->english_content : $post->post_content;
+}
+else if ($lang == 'pt_BR')
+{
+$postTitle = $post_title;
+$postContent = $post_content;
+}
+
 @endphp
 
 @extends('layouts.site')
 
 @section('meta-tag')
-<meta property="og:title" content="{{ $post->post_title }}" />
+<meta property="og:title" content="{{ $postTitle }}" />
 <meta property="og:url" content="{{ URL::current() }}" />
 <meta property="og:type" content="blog" />
-<meta property="og:description" content="{{ \Illuminate\Support\Str::limit(strip_tags($post->post_content), 150, $end='...') }}" />
+<meta property="og:description" content="{{ \Illuminate\Support\Str::limit(strip_tags($postContent), 150, $end='...') }}" />
 <meta property="og:image" content="{{$post->thumbnail}}" />
 
-<meta name="twitter:title" content="{{ $post->post_title }}" />
+<meta name="twitter:title" content="{{ $postTitle }}" />
 <meta name="twitter:url" content="{{ URL::current() }}" />
 <meta name="twitter:image" content="{{$post->thumbnail}}" />
-<meta name="twitter:description" content="{{ \Illuminate\Support\Str::limit(strip_tags($post->post_content), 150, $end='...') }}" />
+<meta name="twitter:description" content="{{ \Illuminate\Support\Str::limit(strip_tags($postContent), 150, $end='...') }}" />
 <meta name="twitter:cart" content="summary" />
 @endsection
 
-@section('title', $post->post_title)
+@section('title', $postTitle)
 
 @section('content')
 
@@ -31,21 +46,27 @@ $prefix = '';
   <header class="blog_integra-header">
     @include('includes.breadcrumbs')
     <span class="date">{{ date_format($post->post_date,"d/m/Y") }}</span>
-    <h1>{{ $post->post_title }}</h1>
+    <h1 class="title">{{ $postTitle }}</h1>
   </header>
 
+  @if($post->thumbnail)
   <figure class="banner-image">
-    <img src="{{$post->thumbnail}}" alt="{{$post->post_title}} | {{ __('texts.application_name') }}" title="{{$post->post_title}} | {{ __('texts.application_name') }}">
+    <img src="{{$post->thumbnail}}" alt="{{$postTitle}} | {{ __('texts.application_name') }}" title="{{$postTitle}} | {{ __('texts.application_name') }}">
   </figure>
+  @endif
 
   <section class="blog_integra-content">
-    {!! $post->post_content !!}
+    @if($semTraducao)
+    {{ __('texts.blog_integra.sem_traducao') }}
+    @else
+    {!! $postContent !!}
+    @endif
 
     <section class="share-row">
       <a href="https://www.facebook.com/sharer/sharer.php?u={{ route($prefix . 'blog_integra', $post->slug) }}" class="share-link facebook" target="_blank" title="Facebook | {{ __('texts.application_name') }}">
         <img src="{{asset('svg/facebook-blue.svg')}}" alt="Facebook | {{ __('texts.application_name') }}" title="Facebook | {{ __('texts.application_name') }}">
       </a>
-      <a href="https://twitter.com/intent/tweet?text={{ $post->post_title }}&url={{ route($prefix . 'blog_integra', $post->slug) }}" class="share-link twitter" target="_blank" title="Twitter | {{ __('texts.application_name') }}">
+      <a href="https://twitter.com/intent/tweet?text={{ $postTitle }}&url={{ route($prefix . 'blog_integra', $post->slug) }}" class="share-link twitter" target="_blank" title="Twitter | {{ __('texts.application_name') }}">
         <img src="{{asset('svg/twitter.svg')}}" alt="Twitter | {{ __('texts.application_name') }}" title="Twitter | {{ __('texts.application_name') }}">
       </a>
       <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ route($prefix . 'blog_integra', $post->slug )}}" class="share-link linkedin" target="_blank" title="LinkedIn | {{ __('texts.application_name') }}">
@@ -62,7 +83,13 @@ $prefix = '';
 
     <div class="leia-mais-posts">
       @foreach($post_leia_mais as $post)
-      <x-blogitem :thumbnail="$post->thumbnail ?? null" :post-title="$post->post_title" :slug="$post->slug" :post-date="$post->post_date" extra-class="glide__slide" />
+      @php
+      if($lang == 'en')
+      $postTitle = $post->english_title != '' ? $post->english_title : $post->post_title;
+      elseif ($lang == 'pt_BR')
+      $postTitle = $post->post_title;
+      @endphp
+      <x-blogitem :thumbnail="$post->thumbnail ?? null" :post-title="$postTitle" :slug="$post->slug" :post-date="$post->post_date" extra-class="glide__slide" />
       @endforeach
     </div>
   </section>

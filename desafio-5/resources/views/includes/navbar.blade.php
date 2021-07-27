@@ -22,22 +22,22 @@ $prefix = '';
 
   <ul class="navbar-list">
     <li class="navbar-item">
-      <a href="{{route($prefix . 'descontos')}}" class="navbar-link {{$route === 'descontos' ? 'active' : ''}}" title="{{ __('texts.includes.navbar.descontos') }} | {{ __('texts.application_name') }}">{{ __('texts.includes.navbar.descontos') }}</a>
+      <a href="{{route($prefix . 'descontos')}}" class="navbar-link {{$route === 'descontos' || $route === 'en.descontos' || $route === 'descontos_integra' || $route === 'en.descontos_integra' ? 'active' : ''}}" title="{{ __('texts.includes.navbar.descontos') }} | {{ __('texts.application_name') }}">{{ __('texts.includes.navbar.descontos') }}</a>
     </li>
     <li class="navbar-item">
-      <a href="{{route($prefix . 'faq')}}" class="navbar-link {{$route === 'faq' ? 'active' : ''}}" title="{{ __('texts.includes.navbar.faq') }} | {{ __('texts.application_name') }}">{{ __('texts.includes.navbar.faq') }}</a>
+      <a href="{{route($prefix . 'faq')}}" class="navbar-link {{$route === 'faq' || $route === 'en.faq' ? 'active' : ''}}" title="{{ __('texts.includes.navbar.faq') }} | {{ __('texts.application_name') }}">{{ __('texts.includes.navbar.faq') }}</a>
     </li>
     <li class="navbar-item">
-      <a href="{{route($prefix . 'seja_parceiro')}}" class="navbar-link {{$route === 'seja_parceiro' ? 'active' : ''}}" title="{{ __('texts.includes.navbar.seja_parceiro') }} | {{ __('texts.application_name') }}">{{ __('texts.includes.navbar.seja_parceiro') }}</a>
+      <a href="{{route($prefix . 'seja_parceiro')}}" class="navbar-link {{$route === 'seja_parceiro' || $route === 'en.seja_parceiro' ? 'active' : ''}}" title="{{ __('texts.includes.navbar.seja_parceiro') }} | {{ __('texts.application_name') }}">{{ __('texts.includes.navbar.seja_parceiro') }}</a>
     </li>
     <li class="navbar-item">
-      <a href="{{route($prefix . 'sobre')}}" class="navbar-link {{$route === 'sobre' ? 'active' : ''}}" title="{{ __('texts.includes.navbar.sobre') }} | {{ __('texts.application_name') }}">{{ __('texts.includes.navbar.sobre') }}</a>
+      <a href="{{route($prefix . 'sobre')}}" class="navbar-link {{$route === 'sobre' || $route === 'en.sobre' ? 'active' : ''}}" title="{{ __('texts.includes.navbar.sobre') }} | {{ __('texts.application_name') }}">{{ __('texts.includes.navbar.sobre') }}</a>
     </li>
     <li class="navbar-item">
-      <a href="{{route($prefix . 'contato')}}" class="navbar-link {{$route === 'contato' ? 'active' : ''}}" title="{{ __('texts.includes.navbar.contato') }} | {{ __('texts.application_name') }}">{{ __('texts.includes.navbar.contato') }}</a>
+      <a href="{{route($prefix . 'contato')}}" class="navbar-link {{$route === 'contato' || $route === 'en.contato' ? 'active' : ''}}" title="{{ __('texts.includes.navbar.contato') }} | {{ __('texts.application_name') }}">{{ __('texts.includes.navbar.contato') }}</a>
     </li>
     <li class="navbar-item">
-      <a href="{{route($prefix . 'blog')}}" class="navbar-link {{$route === 'blog' ? 'active' : ''}}" title="{{ __('texts.includes.navbar.blog') }} | {{ __('texts.application_name') }}">{{ __('texts.includes.navbar.blog') }}</a>
+      <a href="{{route($prefix . 'blog')}}" class="navbar-link {{$route === 'blog' || $route === 'en.blog' || $route === 'blog_integra' || $route === 'en.blog_integra' ? 'active' : ''}}" title="{{ __('texts.includes.navbar.blog') }} | {{ __('texts.application_name') }}">{{ __('texts.includes.navbar.blog') }}</a>
     </li>
   </ul>
 

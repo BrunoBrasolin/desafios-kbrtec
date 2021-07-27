@@ -19,13 +19,14 @@ $prefix = '';
     <div class="content">
         <span class="date">{{date_format($post_date,"d/m/Y")}}</span>
         <h3 class="subtitle">
-            <a href="{{route($prefix . 'blog_integra', $slug)}}" class="link" title="{{$post_title}} | {{ __('texts.application_name') }}">
-                {{$post_title}}
-            </a>
+            {{$post_title}}
         </h3>
 
-        <a href="{{route($prefix . 'blog_integra', $slug)}}" class="button" title="{{$post_title}} | {{ __('texts.application_name') }}">
+        <span class="button">
+
             <i data-feather="plus"></i>
-        </a>
+        </span>
+
+        <a href="{{route($prefix . 'blog_integra', $slug)}}" title="{{$post_title}} | {{ __('texts.application_name') }}" class="stretch-link"></a>
     </div>
 </li>

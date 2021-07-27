@@ -78,7 +78,8 @@ return [
   'blog_integra' => [
     'leia_mais' => [
       'title' => 'leia também <strong class="strong">outras notícias</strong>',
-    ]
+    ],
+    'sem_traducao' => 'Parece que este post ainda não foi traduzido'
   ],
 
   'blog' => [
