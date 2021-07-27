@@ -5,7 +5,7 @@ $lang = app()->getLocale();
 <section class="topbar">
   <div class="topbar-content">
     <span class="weather">
-      <span class="weather-min">0</span>° | <span class="weather-max">0</span>° {{ __('texts.words.weather') }}
+      <span class="weather-min">x</span>° | <span class="weather-max">x</span>° {{ __('texts.words.weather') }}
     </span>
 
     <div class="social-container">
