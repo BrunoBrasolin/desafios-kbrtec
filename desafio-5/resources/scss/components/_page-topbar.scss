@@ -1,0 +1,13 @@
+.page-topbar {
+  background: linear-gradient(96.21deg, #8345c0 2.61%, #5846be 99.5%);
+  position: relative;
+
+  .title {
+    text-align: center;
+    color: $white;
+    text-transform: uppercase;
+    padding: 2.5rem 0;
+    width: fit-content;
+    margin: 0 auto;
+  }
+}

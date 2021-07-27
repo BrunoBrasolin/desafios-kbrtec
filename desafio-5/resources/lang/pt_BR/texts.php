@@ -82,7 +82,7 @@ return [
   ],
 
   'blog' => [
-    'title' => 'blog',
+    'title' => 'Blog',
     'subtitle' => 'Acompanhe as notícias do clube',
     'label' => 'O que você procura?',
   ],
@@ -118,6 +118,10 @@ return [
   'faq' => [
     'title' => 'FAQ',
     'subtitle' => 'DÚVIDAS FREQUENTES',
+  ],
+
+  'sobre' => [
+    'title' => 'Sobre',
   ],
 
   'seja_parceiro' => [

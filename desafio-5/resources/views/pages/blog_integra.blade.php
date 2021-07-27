@@ -29,6 +29,7 @@ $prefix = '';
 <main class="blog_integra-page">
 
   <header class="blog_integra-header">
+    @include('includes.breadcrumbs')
     <span class="date">{{ date_format($post->post_date,"d/m/Y") }}</span>
     <h1>{{ $post->post_title }}</h1>
   </header>

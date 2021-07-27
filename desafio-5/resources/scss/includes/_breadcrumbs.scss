@@ -1,0 +1,34 @@
+.breadcrumbs {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 300;
+  left: calc((100vw - 1100px + 1rem) / 2);
+
+  &__item {
+    margin-right: 10px;
+
+    &.active {
+      display: flex;
+
+      &::before {
+        content: "/";
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__link,
+  &__item.active::before {
+    color: $white;
+    font-size: 0.9rem;
+    transition: 0.2s;
+  }
+
+  &__link:hover {
+    color: $light-blue;
+  }
+}

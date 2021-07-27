@@ -14,6 +14,7 @@ $prefix = '';
 
 <main class="descontos-page">
   <header class="topbar">
+    @include('includes.breadcrumbs')
     <h1 class="title">{{ __('texts.descontos.title') }}</h1>
   </header>
 

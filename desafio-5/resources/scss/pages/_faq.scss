@@ -4,6 +4,19 @@
   .content {
     @extend .container;
 
+    &__topbar {
+      @extend .page-topbar;
+      background: transparent;
+
+      .title {
+        padding: 0;
+      }
+
+      .breadcrumbs {
+        left: 0;
+      }
+    }
+
     .title,
     .subtitle {
       text-align: center;

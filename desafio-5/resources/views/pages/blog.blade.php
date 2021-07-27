@@ -14,6 +14,7 @@ $prefix = '';
 
 <main class="blog-page">
   <header class="topbar">
+    @include('includes.breadcrumbs')
     <h1 class="title">{{ __('texts.blog.title') }}</h1>
   </header>
 

@@ -1,5 +1,5 @@
 .descontos-page-topbar {
-  background: linear-gradient(96.21deg, #8345c0 2.61%, #5846be 99.5%);
+  @extend .page-topbar;
 
   .title {
     text-align: center;

@@ -3,14 +3,12 @@
   padding: 3rem 0;
 
   .topbar {
+    @extend .page-topbar;
+    background: $black;
     margin-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     .title {
-      color: $white;
-      text-transform: uppercase;
+      padding: 0;
     }
   }
 

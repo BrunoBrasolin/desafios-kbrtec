@@ -120,6 +120,10 @@ return [
     'subtitle' => 'FREQUENT QUESTIONS',
   ],
 
+  'sobre' => [
+    'title' => 'About us',
+  ],
+
   'seja_parceiro' => [
     'title' => 'Be a Partner',
     'subtitle' => 'PRE-REGISTER',

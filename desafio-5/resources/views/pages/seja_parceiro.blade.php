@@ -7,6 +7,7 @@
 <main class="seja_parceiro-page">
 
   <header class="topbar">
+    @include('includes.breadcrumbs')
     <h1 class="title">{{ __('texts.seja_parceiro.title') }}</h1>
   </header>
 

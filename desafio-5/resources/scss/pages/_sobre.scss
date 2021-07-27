@@ -1,4 +1,9 @@
 .sobre-page {
+  &__topbar {
+    @extend .page-topbar;
+    background: $black;
+  }
+
   .vantagens .vantagens-content .right {
     @media screen and (min-width: 1200px) {
       overflow: visible;

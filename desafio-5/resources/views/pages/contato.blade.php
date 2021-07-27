@@ -7,7 +7,10 @@
 <main class="contato-page">
 
   <section class="top-content">
-    <h1 class="title">{{ __('texts.contato.title') }}</h1>
+    <header class="top-content__topbar">
+      @include('includes.breadcrumbs')
+      <h1 class="title">{{ __('texts.contato.title') }}</h1>
+    </header>
 
     <div class="row">
       <form class="left form">
