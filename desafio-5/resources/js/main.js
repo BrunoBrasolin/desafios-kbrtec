@@ -28,15 +28,19 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(setLocation);
   } else {
-    x.innerHTML = "Geolocation não suportada.";
+    console.log("Não suporta");
   }
 }
 
-let latitude = 0;
-let longitude = 0;
-
 function setLocation(position) {
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=dc434a23daedb9ef257f2f93954ee237&units=metric&lang=pt_br`;
+  const appID = "dc434a23daedb9ef257f2f93954ee237";
+  const units = "metric";
+  const lang = "pt_br";
+  // const latitude = position.coords.latitude ;
+  // const longitude = position.coords.longitude ;
+  const latitude = "23.9592";
+  const longitude = "46.3318";
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${appID}&units=${units}&lang=${lang}`;
 
   xhr.open("GET", url);
 
@@ -52,7 +56,8 @@ function setLocation(position) {
 }
 
 window.addEventListener("load", (event) => {
-  getLocation();
+  // getLocation();
+  setLocation();
 });
 
 // Home
