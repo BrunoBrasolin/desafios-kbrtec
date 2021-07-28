@@ -15,8 +15,8 @@ $postContent = $post->english_content != '' ? $post->english_content : $post->po
 }
 else if ($lang == 'pt_BR')
 {
-$postTitle = $post_title;
-$postContent = $post_content;
+$postTitle = $post->post_title;
+$postContent = $post->post_content;
 }
 
 @endphp

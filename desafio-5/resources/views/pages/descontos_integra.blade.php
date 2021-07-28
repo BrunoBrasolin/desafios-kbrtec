@@ -52,7 +52,26 @@ $descontoRule = $desconto->regras;
 
     <p class="descricao">{!! $descontoDescription !!}</p>
 
-  
+    <div class="glide glide-fotos">
+      <div data-glide-el="track" class="glide__track">
+        <div class="glide__slides">
+          {!! $desconto->fotos !!}
+        </div>
+      </div>
+
+      <div data-glide-el="controls" class="glide__controls">
+        <button data-glide-dir="<" class="arrow arrow-left"><i data-feather="chevron-left"></i></button>
+        <button data-glide-dir=">" class="arrow arrow-right"><i data-feather="chevron-right"></i></button>
+      </div>
+    </div>
+
+    <div class="glide glide-fotos-nav">
+      <div data-glide-el="track" class="glide__track">
+        <div class="glide__slides">
+          {!! $desconto->fotos !!}
+        </div>
+      </div>
+    </div>
 
     <section class="content__bottom">
       <div class="left">

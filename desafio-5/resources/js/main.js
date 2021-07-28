@@ -43,15 +43,14 @@ function setLocation(position) {
   xhr.onreadystatechange = () => {
     if (xhr.readyState == 4 && xhr.status == 200) {
       const response = JSON.parse(xhr.responseText);
-      document.querySelector(".weather-min").innerHTML =
-        response.main.temp_min;
+      document.querySelector(".weather-min").innerHTML = response.main.temp_min;
 
-      document.querySelector(".weather-max").innerHTML =
-        response.main.temp_max;
+      document.querySelector(".weather-max").innerHTML = response.main.temp_max;
     }
   };
   xhr.send();
 }
+
 window.addEventListener("load", (event) => {
   getLocation();
 });
@@ -221,4 +220,37 @@ if (document.querySelector(".descontos_integra-page")) {
       .replace("www.", "")
       .replace(site.charAt(site.length - 1) == "/" ? "/" : "", "");
   }
+
+  const glideFotosConfig = {
+    type: "carousel",
+    perView: 1,
+    gap: 20,
+    infinite: false,
+  };
+
+  const glideFotos = new Glide(".glide-fotos", glideFotosConfig).mount();
+
+  const glideFotosNavConfig = {
+    type: "carousel",
+    perView: 6,
+    gap: 20,
+    infinite: false,
+    breakpoints: {
+      877: {
+        perView: 4,
+      },
+      550: {
+        perView: 2,
+      },
+    },
+  };
+
+  const glideFotosNav = new Glide(
+    ".glide-fotos-nav",
+    glideFotosNavConfig
+  ).mount();
+
+  glideFotos.on("run", (e) => glideFotosNav.go(e.direction));
+
+  glideFotosNav.on("run", (e) => glideFotos.go(e.direction));
 }

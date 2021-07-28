@@ -79,6 +79,52 @@
       margin: 2rem 0;
     }
 
+    .glide-fotos {
+      .glide__slides {
+        max-height: 500px;
+        margin-bottom: 1.5rem;
+
+        img {
+          object-fit: cover;
+          border-radius: 20px;
+        }
+      }
+
+      .glide__controls {
+        .arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: $white;
+          color: $light-blue;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          $size: 40px;
+          height: $size;
+          width: $size;
+
+          &.arrow-left {
+            left: 2.5%;
+          }
+
+          &.arrow-right {
+            right: 2.5%;
+          }
+        }
+      }
+    }
+
+    .glide-fotos-nav {
+      .glide__slides {
+        img {
+          object-fit: cover;
+          border-radius: 10px;
+        }
+      }
+    }
+
     &__bottom {
       display: flex;
       justify-content: space-between;
@@ -238,6 +284,7 @@
       }
     }
   }
+
   @media screen and (max-width: 500px) {
     .content__header .right {
       .desconto-title {

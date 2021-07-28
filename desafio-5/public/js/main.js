@@ -172,4 +172,33 @@ if (document.querySelector(".descontos_integra-page")) {
     var site = htmlSite.innerHTML;
     htmlSite.innerHTML = site.replace("https://", "").replace("http://", "").replace("www.", "").replace(site.charAt(site.length - 1) == "/" ? "/" : "", "");
   }
+
+  var glideFotosConfig = {
+    type: "carousel",
+    perView: 1,
+    gap: 20,
+    infinite: false
+  };
+  var glideFotos = new Glide(".glide-fotos", glideFotosConfig).mount();
+  var glideFotosNavConfig = {
+    type: "carousel",
+    perView: 6,
+    gap: 20,
+    infinite: false,
+    breakpoints: {
+      877: {
+        perView: 4
+      },
+      550: {
+        perView: 2
+      }
+    }
+  };
+  var glideFotosNav = new Glide(".glide-fotos-nav", glideFotosNavConfig).mount();
+  glideFotos.on("run", function (e) {
+    return glideFotosNav.go(e.direction);
+  });
+  glideFotosNav.on("run", function (e) {
+    return glideFotos.go(e.direction);
+  });
 }
