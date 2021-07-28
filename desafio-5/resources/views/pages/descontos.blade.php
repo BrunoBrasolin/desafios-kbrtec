@@ -41,7 +41,12 @@ $prefix = '';
 
     <ul class="descontos">
       @foreach($descontos as $desconto)
-      <x-descontoitem :image="$desconto->acf->foto_principal->url" :post-title="$desconto->post_title" :subtitulo="$desconto->subtitulo" :slug="$desconto->slug" :desconto="$desconto->desconto" />
+      @php
+      $lang = app()->getLocale();
+      if($lang == 'en') $descontoSubtitle = $desconto->english_subtitle;
+      else if ($lang == 'pt_BR') $descontoSubtitle = $desconto->subtitulo;
+      @endphp
+      <x-descontoitem :image="$desconto->acf->foto_principal->url" :post-title="$desconto->post_title" :subtitulo="$descontoSubtitle" :slug="$desconto->slug" :desconto="$desconto->desconto" />
       @endforeach
     </ul>
 

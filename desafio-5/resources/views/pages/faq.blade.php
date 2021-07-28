@@ -1,3 +1,7 @@
+@php
+$lang = app()->getLocale();
+@endphp
+
 @extends('layouts.site')
 
 @section('title', __('texts.faq.title') )
@@ -17,12 +21,16 @@
       @foreach ($faq as $item)
       <li class="faq-item">
         <div class="pergunta-content">
-          <h3 class="pergunta">{{$item->pergunta}}</h3>
+          <h3 class="pergunta">
+            {{$lang == 'en' ? $item->question : $item->pergunta }}
+          </h3>
           <span class="icon">
             <i data-feather="chevron-down"></i>
           </span>
         </div>
-        <h4 class="resposta">{{$item->resposta}}</h4>
+        <h4 class="resposta">
+          {{$lang == 'en' ? $item->answer : $item->resposta }}
+        </h4>
       </li>
       @endforeach
     </ul>

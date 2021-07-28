@@ -29,6 +29,7 @@
           .subtitle {
             font-weight: 300;
             font-size: 1rem;
+            margin-top: 1rem;
           }
         }
       }
@@ -117,6 +118,8 @@
     }
 
     .glide-fotos-nav {
+      margin-bottom: 4rem;
+
       .glide__slides {
         img {
           object-fit: cover;
@@ -177,6 +180,7 @@
           color: $black;
           margin-bottom: 1.5rem;
           letter-spacing: 0.5px;
+          line-height: 1.4rem;
 
           &:hover {
             text-decoration: underline;
@@ -188,7 +192,7 @@
           align-items: flex-start;
           line-break: anywhere;
           color: $black;
-          margin-bottom: 0.3rem;
+          margin-bottom: 0.75rem;
           transition: 0.3s;
 
           &.whatsapp,
@@ -272,9 +276,15 @@
           margin-bottom: 1rem;
           align-items: center;
           justify-content: center;
+          flex-direction: column;
+
+          img {
+            margin-right: 0;
+          }
 
           .title-container {
-            width: 50%;
+            text-align: center;
+            margin-top: 1rem;
           }
         }
 

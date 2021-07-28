@@ -52,9 +52,14 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-@media screen and (max-width: 500px) {
-  html,
-  body {
-    font-size: 14px;
+html,
+body {
+  color: #1f394c;
+
+  @media screen and (max-width: 500px) {
+    html,
+    body {
+      font-size: 14px;
+    }
   }
 }

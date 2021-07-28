@@ -30,7 +30,7 @@
           .glide__slide {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: space-around;
 
             .desconto-item {
               width: 30%;
@@ -44,10 +44,15 @@
               padding: 2rem 1rem 3rem 1rem;
               position: relative;
               transition: 0.2s;
+              height: 210px;
 
               .logo-container,
               .desc {
                 transition: 0.2s;
+              }
+
+              .logo-container {
+                padding: 10px;
               }
 
               .desc {

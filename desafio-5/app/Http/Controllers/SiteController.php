@@ -24,7 +24,8 @@ class SiteController extends Controller
 
     public function sobre()
     {
-        return view('pages.sobre');
+        $descontos = Post::type('desconto')->published()->newest()->take(12)->get();
+        return view('pages.sobre', ['descontos' => $descontos]);
     }
 
     public function faq()

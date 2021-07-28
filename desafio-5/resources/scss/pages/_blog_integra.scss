@@ -50,6 +50,25 @@
       display: block;
     }
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    hr {
+      border: 0;
+      clear: both;
+      display: block;
+      width: 96%;
+      background-color: #1f394c;
+      height: 1px;
+    }
+
     p,
     blockquote {
       font-weight: 300;
@@ -82,7 +101,7 @@
       transition: 0.2s;
 
       &:hover {
-        color: $darken-purple;
+        color: $light-blue;
       }
     }
   }
