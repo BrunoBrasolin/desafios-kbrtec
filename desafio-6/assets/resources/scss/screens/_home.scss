@@ -1,0 +1,7 @@
+.home-screen {
+	transform: translateX(150%);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: calc(80vh - #{$container_padding_y} * 2);
+}

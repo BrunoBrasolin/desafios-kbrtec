@@ -12,10 +12,48 @@
 	<body>
 		<main class="container">
 			<section class="splash-screen">
-				<img src="assets/public/images/logo/logo_white.webp" alt="Logo White" title="Nubank" />
+				<img src="assets/public/images/logo/logo_white.webp" class="splash-screen__logo" alt="Logo White" title="Nubank" />
+			</section>
+
+			<section class="home-screen">
+				<header class="header">
+					<div class="header__title-row">
+						<img class="header__title-row__logo" src="assets/public/images/logo/logo_white.webp" alt="Logo White"/>
+						<h1 class="header__title-row__title app_username">Gabriel</h1>
+					</div>
+					<i data-feather="chevron-down" class="header__icon"></i>
+
+					<div class="header__dropdown">
+						<img class="header__dropdown__qrcode" src="assets/public/images/qrcode.webp" alt="QR Code" />
+
+						<div class="header__dropdown__info-row">
+							<span class="header__dropdown__info-row__title">Agência</span>
+							<b class="header__dropdown__info-row__value">0001</b>
+						</div>
+						<div class="header__dropdown__info-row">
+							<span class="header__dropdown__info-row__title">Conta</span>
+							<b class="header__dropdown__info-row__value">98825-5</b>
+						</div>
+
+						<a href="#" class="header__dropdown__link-row">
+							<img class="header__dropdown__link-row__icon" src="assets/public/images/icons/white/question.webp" alt="Question">
+							<span class="header__dropdown__link-row__title">Ajuda</span>
+							<i data-feather="chevron-right" class="header__dropdown__link-row__arrow" ></i>
+						</a>
+					</div>
+				</header>
+
+				<footer class="footer">
+					<div class="footer__group">
+						<img class="footer__group__icon" src="assets/public/images/icons/white/invite-home.webp" alt="Invite Friends" title="Nubank" />
+						<span class="footer__group__text">Indicar amigos</span>
+					</div>
+				</footer>
 			</section>
 		</main>
 
-		<script src="assets/public/js/main.js"></script>
+		<script type="module" src="assets/public/js/vendor/feather.min.js"></script>
+		<script type="module" src="assets/public/js/constants.js"></script>
+		<script type="module" src="assets/public/js/index.js"></script>
 	</body>
 </html>

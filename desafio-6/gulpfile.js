@@ -2,10 +2,8 @@ const gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	webp = require('gulp-webp'),
 	autoprefixer = require('gulp-autoprefixer'),
-	concat = require('gulp-concat'),
 	uglify = require('gulp-uglify'),
 	svgmin = require('gulp-svgmin'),
-	babel = require('gulp-babel'),
 	webserver = require('gulp-webserver');
 
 const paths = {
@@ -34,7 +32,6 @@ function compScss() {
 function compJs() {
 	return gulp
 		.src(paths.dev.js)
-		.pipe(concat('main.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest(paths.dist.js));
 }

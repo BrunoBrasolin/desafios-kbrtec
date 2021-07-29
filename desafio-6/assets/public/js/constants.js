@@ -1,0 +1,1 @@
+const SHOW_INDEX_DELAY=1e3,SHOW_INDEX_TRANSITION=500,searchParams=new URLSearchParams(window.location.search),USERNAME=searchParams.get("username")??"Gabriel";export{SHOW_INDEX_DELAY,SHOW_INDEX_TRANSITION,USERNAME};

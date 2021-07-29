@@ -8,9 +8,9 @@
 	transform: translate(-50%, -50%);
 	height: 100%;
 	width: 100%;
-	transition: 1.5s;
+	transition: opacity $show_home_time;
 
-	img {
+	&__logo {
 		max-width: 25%;
 	}
 }
