@@ -1,0 +1,1 @@
+function showIndex(){document.querySelector(".splash-screen").style.left="-50%"}setTimeout(()=>showIndex(),1e3);
