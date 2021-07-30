@@ -9,6 +9,16 @@ $container_padding_y: 3rem;
 $purple: rgb(130, 10, 209);
 $white: #fff;
 $gray: rgba($white, 0.5);
+$dark-gray: #ababab;
+$light-gray: #f3f3f3;
+$red: #d25a54;
+$black: #000;
+$green: #93cb31;
+
+// Glide4
+$glide-class: 'glide' !default;
+$glide-element-separator: '__' !default;
+$glide-modifier-separator: '--' !default;
 
 * {
 	margin: 0;

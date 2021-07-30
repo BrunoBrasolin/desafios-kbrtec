@@ -8,4 +8,7 @@ window.addEventListener('load', () => {
 
 document.querySelectorAll('.header__icon, .header__title-row').forEach(selector => selector.addEventListener('click', () => toggleDropdown()));
 
-document.querySelector('.header__dropdown__exit-link').addEventListener('click', () => exitApp());
+document.querySelector('.header__dropdown__exit-link').addEventListener('click', event => {
+	event.preventDefault();
+	exitApp();
+});
