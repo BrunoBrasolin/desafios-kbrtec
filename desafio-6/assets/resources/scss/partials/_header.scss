@@ -47,16 +47,22 @@
 		transition: max-height 0.2s, opacity 0.2s;
 		width: 100%;
 		$margin: 0.2rem;
+		$border: 1px solid $gray;
 
 		&__qrcode {
 			width: 60%;
 			margin-bottom: $margin;
+			margin-top: 1rem;
 		}
 
 		&__info-row {
 			display: flex;
 			align-items: center;
 			margin: $margin 0;
+
+			&:last-of-type {
+				margin-bottom: 1rem;
+			}
 
 			&__title {
 				font-weight: 300;
@@ -70,10 +76,45 @@
 			width: 100%;
 			color: $white;
 			position: relative;
+			padding: 0.5rem 0;
+
+			&:nth-child(even) {
+				border-top: $border;
+				border-bottom: $border;
+			}
 
 			&__icon {
-				height: 25px;
+				width: 22px;
+				margin-right: 0.5rem;
 			}
+
+			&__title {
+				display: flex;
+				flex-direction: column;
+
+				&__helper {
+					font-size: 0.75rem;
+					color: $gray;
+				}
+			}
+
+			&__arrow {
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+
+		&__exit-link {
+			width: 100%;
+			border-top: $border;
+			border-bottom: $border;
+			text-align: center;
+			color: $white;
+			text-transform: uppercase;
+			margin: 1.25rem 0;
+			padding: 0.5rem 0;
 		}
 	}
 }
